@@ -1046,3 +1046,12 @@ code.option, code.flag, code.filter, code.output {
 .logo {
   margin: 20px 0 0 0;
 }
+
+#post-pagination {
+  text-align: center;
+  margin: 50px 0 ;
+}
+
+.previous {
+  margin: 0 50px 0 0;
+}
