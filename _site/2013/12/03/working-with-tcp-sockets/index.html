@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>TCP Sockets编程</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>TCP Sockets编程</h1>
+          <p><img class="cover" src="/images/2013/12/9787115330529.jpg" /></p>
+
+<p>原作名：Working with TCP Sockets</p>
+
+<p>ISBN：9787115330529</p>
+
+<p>作者：[加] Jesse Storimer </p>
+
+<p>译者：门　佳  </p>
+
+<p>出版社：人民邮电出版社</p>
+
+<p>出版时间：2013-10</p>
+
+<p>评价：☆☆☆</p>
+
+<p>挺薄挺小也挺简单的一本书，相当与将Ruby中的TCP Sockets讲了一部分，顺带说明了一些基础知识。它并不能让你能够深入了解，对于Sockets入门来说勉勉强强。如果想提升Ruby水平，本书作用也不大，坦白来说本书是不是Ruby写的都影响不大。</p>
+
+<p>任何在0~65535之间的端口都可以使用，但是在选用之前别忘了一些重要的约定。</p>
+
+<p>规则1：不要使用0~1024之间的端口。这些端口是作为熟知（well-known）端口并保留给系统使用。
+规则2：不要使用49000~65535之间的端口。这些都是临时（ephemeral）端口。</p>
+
+<p>除此之外，1025~48999之间端口的使用的一视同仁的。</p>
+
+<p>如果你希望侦听每一个接口，那么可以使用0.0.0.0.这样会绑定到所有可用的接口、环回接口等。</p>
+
+<p>Mongrel、Unicorn、Puma、Passenger以及Net::HTTP，它们无一例外地采用了readpartial(1024*16)。所有这些Web项目都是用16KB作为各自的读取长度。</p>
+
+<p>线程和进程都可以用于并行操作，但是方式大不相同。没有万能药，究竟用哪个取决于实际情况。</p>
+
+<p>就生成而言，线程的生成成本要低得多。生成一个进程需要创建原始进程所拥有的一切资源的副本。线程以进程为单位，多个线程都存在于同一个进程中。由于多个线程共享内存，无需创建副本，因而线程的生成速度要快得多。</p>
+
+<p>因为线程共享内存，当使用会被多个线程访问的数据结构时，一定要多加小心。这通常意味着要在线程之间使用互斥量、锁和同步访问。进程就无需如此了，因为每个进程都有自己的一份资源副本。</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

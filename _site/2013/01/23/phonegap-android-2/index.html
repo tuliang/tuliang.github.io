@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>PhoneGap-Android开发环境搭建2-配置安卓开发环境</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>PhoneGap-Android开发环境搭建2-配置安卓开发环境</h1>
+          <p>安装好JDK后，开始安装安卓开发环境</p>
+
+<p>安卓开发环境下载地址：<a href="http://developer.android.com/sdk/index.html" target="_blank"><a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a></a>
+<a href="/images/2013/01/2.1.png"><img class="alignnone size-full wp-image-2238" alt="2.1" src="/images/2013/01/2.1.png" width="348" height="355" /></a></p>
+
+<p>点击下载后，将其解压到某个目录</p>
+
+<p>然后我们继续修改环境变量，我的电脑-&gt;属性-&gt;高级-&gt;环境变量-&gt;系统变量中添加以下环境变量
+在系统变量中增加PATH，PATH值为（刚才解压的目录）：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">D:\adt-bundle-windows-x86_64\sdk\tools
+</code></pre></div>
+<p>修改完毕后，重启计算机。重启后打开cmd，敲入命令</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">android –h
+</code></pre></div>
+<p>如果输出类似下面的信息就表示安装成功</p>
+
+<p><img class="alignnone size-full wp-image-2239" alt="2.2" src="/images/2013/01/2.2.png" width="603" height="176" /></p>
+
+<p>打开D:\adt-bundle-windows-x86_64\eclipse下面的eclipse.exe</p>
+
+<p><img class="alignnone size-full wp-image-2240" alt="2.3" src="/images/2013/01/2.3.png" width="207" height="115" /></p>
+
+<p>点击Window，然后选择Preferences</p>
+
+<p><img class="alignnone size-full wp-image-2241" alt="2.4" src="/images/2013/01/2.4.png" width="707" height="555" /></p>
+
+<p>点击Android并选择好安卓sdk的目录</p>
+
+<p>最后我们需要创建AVD。（其实就是一个android模拟器，相当于一部虚拟的android手机）</p>
+
+<p>选择Windows &gt; Android Virtual Device Manager</p>
+
+<p>点击左侧面板的Android Virtual Devices，再右侧点击New</p>
+
+<p><img class="alignnone size-full wp-image-2242" alt="2.5" src="/images/2013/01/2.5.png" width="418" height="583" /></p>
+
+<p>填好后保存即可。</p>
+
+<p>通过File -&gt; New -&gt; Project 菜单，建立新项目&quot;Android&quot;文件夹下的&quot;Android Application Project&quot;</p>
+
+<p>项目文件创建好后，直接点击run按钮，一个hello world就完成了。</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

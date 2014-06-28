@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Siege</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>Siege</h1>
+          <p>siege（围攻）是一个压力测试和评测工具，设计用于web开发这评估应用在压力下的承受能力;可以配置针对一个WEB站点进行多用户的并发访问，记录每个用户所有请求过程的响应时间，并在一定数量的并发访问下重复进行。</p>
+
+<h3>在Mac OS X下安装siege</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">wget http://www.joedog.org/pub/siege/siege-latest.tar.gz
+tar -xvf siege-latest.tar.gz
+cd siege-*
+
+./configure
+make
+sudo make install
+</code></pre></div>
+<p>完毕后，查看是否安装成功，使用<code>which siege</code></p>
+
+<h3>在Ubuntu下安装siege</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-cache search siege
+sudo apt-get install siege 
+</code></pre></div>
+<p>现在可以开始使用这个工具了，例如</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">siege -c 300 -t 100s 127.0.0.1:3000
+</code></pre></div>
+<p>参数详解：</p>
+
+<p>-C,或–config 在屏幕上打印显示出当前的配置,配置是包括在他的配置文件$HOME/.siegerc中,可以编辑里面的参数,这样每次siege 都会按照它运行.<br>
+-v 运行时能看到详细的运行信息<br>
+-c n,或–concurrent=n 模拟有n个用户在同时访问,n不要设得太大,因为越大,siege 消耗本地机器的资源越多<br>
+-i,–internet 随机访问urls.txt中的url列表项,以此模拟真实的访问情况(随机性),当urls.txt存在是有效<br>
+-d n,–delay=n hit每个url之间的延迟,在0-n之间<br>
+-r n,–reps=n 重复运行测试n次,不能与 -t同时存在<br>
+-t n,–time=n 持续运行siege ‘n’秒(如10S),分钟(10M),小时(10H)<br>
+-l 运行结束,将统计数据保存到日志文件中siege .log,一般位于/usr/local/var/siege .log中,也可在.siegerc中自定义<br>
+-R SIEGERC,–rc=SIEGERC 指定用特定的siege 配置文件来运行,默认的为$HOME/.siegerc<br>
+-f FILE, –file=FILE 指定用特定的urls文件运行siege ,默认为urls.txt,位于siege 安装目录下的etc/urls.txt<br>
+-u URL,–url=URL 测试指定的一个URL,对它进行”siege “,此选项会忽略有关urls文件的设定  </p>
+
+<p>结果说明：</p>
+
+<p>Transactions: 30000 hits //完成30000次处理<br>
+Availability: 100.00 % //100.00 % 成功率<br>
+Elapsed time: 68.59 secs //总共使用时间<br>
+Data transferred: 817.76 MB //共数据传输 817.76 MB<br>
+Response time: 0.04 secs //响应时间，显示网络连接的速度<br>
+Transaction rate: 437.38 trans/sec //平均每秒完成 437.38 次处理<br>
+Throughput: 11.92 MB/sec //平均每秒传送数据<br>
+Concurrency: 17.53 //实际最高并发连接数<br>
+Successful transactions: 30000 //成功处理次数<br>
+Failed transactions: 0 //失败处理次数<br>
+Longest transaction: 3.12 //每次传输所花最长时间<br>
+Shortest transaction: 0.00 //每次传输所花最短时间  </p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

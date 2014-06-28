@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Git权威指南</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>Git权威指南</h1>
+          <p><img src="/images/2013/05/9787111349679-228x300.jpg" alt="9787111349679" width="228" height="300" class="cover" /></p>
+
+<p>ISBN：9787111349679</p>
+
+<p>作者：蒋鑫</p>
+
+<p>出版社：机械工业出版社</p>
+
+<p>出版时间：2011-6</p>
+
+<p>评价：☆☆☆☆</p>
+
+<p>我一直读“技特”，原来是错的。（P1）Git正确的发音应该听起来像是“歌易特”。</p>
+
+<p>git的diff命令带上参数后可以对任意版本对比：</p>
+
+<p>里程碑B和里程碑A比较
+<code>git diff B A</code></p>
+
+<p>工作区和里程碑A比较
+<code>git diff A</code></p>
+
+<p>暂存区和里程碑A比较
+<code>git diff --cached A</code></p>
+
+<p>工作区和暂存区比较
+<code>git diff</code></p>
+
+<p>暂存区和HEAD比较
+<code>git diff --cached</code></p>
+
+<p>工作区和HEAD比较
+<code>git diff HEAD</code></p>
+
+<p><code>git commit -a</code>可以直接提交，而不用放入暂存区中，不建议使用。因为这样就放弃了git暂存区的最大好处：对提交内容进行控制的能力。</p>
+
+<p>.gitignore设置的文件忽略只对未跟踪有效，对于已加入版本库的文件无效。</p>
+
+<p>后面十几章有些太细节，近期也用不到，选择性的看了一些。</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

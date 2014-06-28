@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ROR添加用户</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>ROR添加用户</h1>
+          <p>ROR中用户一般使用devise</p>
+
+<p>打开Gemfile文件，加入</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s1">&#39;devise&#39;</span>
+</code></pre></div>
+<p>然后在命令行中输入</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">bundle</span> <span class="n">install</span>
+</code></pre></div>
+<p>然后继续在命令行中输入</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="ss">devise</span><span class="p">:</span><span class="n">install</span>
+</code></pre></div>
+<p>generator会安装一个初始化程序。这个初始化程序会描述Devise所有的配置选项，请仔细查看。这些都做好以后，你就可以用generator把Devise添加到你的任何一个模型（model）里：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">devise</span> <span class="no">MODEL</span>
+</code></pre></div>
+<p>用那些应用程序用户使用的分类名（class name）来代替MODEL，使用者通常是User，但也有可能是Admin。如此一来就会生成一个模型（model）（如果这个模型一开始不存在的话），并用它来配置默认的Devise模块（module）。下面，你可以运行</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="ss">db</span><span class="p">:</span><span class="n">migrate</span>
+</code></pre></div>
+<p>注意，如果此时app处于开启状态，请重启app，不然会出现错误，诸如用户不能登录，或是无法定义route helpers。</p>
+
+<p>在相应的控制器中加入下面这段代码，可以使该控制器下页面需要登陆</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">beforefilter</span> <span class="ss">:authenticateuser!</span>
+</code></pre></div>
+<p>最后输入下面的代码，用来生成视图</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="ss">devise</span><span class="p">:</span><span class="n">views</span>
+</code></pre></div>
+<p>devise翻译是单独一个文件</p>
+
+<p>在<a href="https://github.com/plataformatec/devise/wiki/I18n" target="_blank"><a href="https://github.com/plataformatec/devise/wiki/I18n">https://github.com/plataformatec/devise/wiki/I18n</a></a>可以找到下载</p>
+
+<p>我们需要devise.zh-CN.yml，下载后放入config/locales/目录下</p>
+
+<p>重启一下服务器就可以了</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

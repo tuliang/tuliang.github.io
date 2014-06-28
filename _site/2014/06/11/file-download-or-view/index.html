@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Web文件下载和查看</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>Web文件下载和查看</h1>
+          <p>在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用HTML5 download Attribute。</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- will download as &quot;expenses.pdf&quot; --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/files/expenses.pdf&quot;</span> <span class="na">download=</span><span class="s">&quot;expenses.pdf&quot;</span><span class="nt">&gt;</span>Download Your Expense Report<span class="nt">&lt;/a&gt;</span>
+</code></pre></div>
+<p>这种方式虽然简单，但是兼容性不太好。查看<a href="http://caniuse.com/download">http://caniuse.com/download</a>，我们可以发现IE和Safari全版本都不支持这个属性。</p>
+
+<p>根本原因在HTTP Head中，文件类型由<code>Content-Type</code>控制。如果pdf文件是正确的<code>application/pdf</code>，浏览器会打开pdf，而不是去下载，jpg、png这些文件类型同理。</p>
+
+<p>而下载是由<code>Content-Disposition</code>来控制的，例如：<code>Content-Disposition: attachment; filename=&quot;fname.txt&quot;</code>。它的意思是将该文件作为附件，并且下载的文件名是fname.txt.</p>
+
+<p>如果使用S3
+访问文件的url，可以直接打开。
+下载文件，使用AWS的api可以生成下载的url：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">url</span> <span class="o">=</span> <span class="n">object</span><span class="o">.</span><span class="n">url_for</span><span class="p">(</span><span class="ss">:read</span><span class="p">,</span> <span class="n">response_content_disposition</span><span class="p">:</span> <span class="s2">&quot;attachment; filename=</span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>相关文档：<br>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html</a>
+<a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/S3/S3Object.html">http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/S3/S3Object.html</a></p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

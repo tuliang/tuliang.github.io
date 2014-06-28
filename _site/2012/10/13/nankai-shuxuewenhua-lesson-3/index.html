@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>南开《数学文化》第三课</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>南开《数学文化》第三课</h1>
+          <h2>有限与无限</h2>
+
+<p>“有无限个房间”的旅馆
+1）客满后又来1位客人（客满指所有的房间都有人住，每间房住1位客人）</p>
+
+<p>首先将第1间的客人移入第2间，第2间的客人移入第3间，第n间的客人移入第n+1间。
+这样第1间就空出来了，即客人可以入住。</p>
+
+<p>2）客满后又来了1个旅游团，旅游团中有无穷个客人</p>
+
+<p>首先将第1间的客人移入第2间，第2间的客人移入第4间，第n间的客人移入第n*2间。
+因为奇数是无穷个，所以客人可以入住。</p>
+
+<p>3）客满后又来了10000个旅游团，旅游团中有无穷个客人</p>
+
+<p>首先将第1间的客人移入第10001间，第2间的客人移入第20002间，第n间的客人移入第n*10001间。
+将每个旅游团第1位客人安排到1~10000的客房中，将每个旅游团第2位客人安排到10002 ~ 20001的客房中，将每个旅游团第n位客人安排到(n-1)*10001+1~ n*10001-1的客房中，最后客人都可以入住。</p>
+
+<p>我们可以将本来住在客满的旅馆中的客人也看做是1个旅游团，这样很容易就发现，当来n个拥有无限客人的旅游团时，我们是将无限分为n+1份。看到这里就你会明白来了1个拥有无限客人的旅游团是将无限分为2（1+1）份，而来了10000个拥有无限客人的旅游团则是将无限分为10001（1+10000）份。</p>
+
+<p>但是现在有个问题，如果是来了无限个拥有无限客人的旅游团，怎么办呢？无限+1结果还是无限，新来的客人将无房间可住。这种方法可以解决有限个旅游团的问题，却不能解决无限个旅游团的问题。</p>
+
+<p>仔细想想，来了无限个拥有无限客人的旅游团，其实是无限个拥有无限客人的旅游团如何安排到无限个房间中？我们转换一下思路，将旅游团都编个号，我们可以得到1、2、3、直至无限个旅游团。然后将每个旅游团中的每个客人进行编号，可以得到1-1，1-2，1-无限，2-1，2-2，2-无限，无限-1，无限-2，无限-无限。在全部都编好号码后，最后我们就可以将这些安排至无限个房间中了。</p>
+
+<p>如果将“1-1，1-2，1-无限，2-1，2-2，2-无限，无限-1，无限-2，无限-无限”，中的连接符改为点，那么这些不就是小数吗？从这可以发现小数是和自然数是一一对应。再扩展一下，连接符也可以改为分隔符，没错分数也是和自然数一一对应的。从这里我们就可以知道为什么：“无穷集合的本质是在它里边可以找到一个真子集和全集一一对应。”</p>
+
+<p>欧几里得的《几何原本》里边有这样一个公理，就是“部分小于全体”。这个公理只对有限集成立，对无限集“部分可以等于全体”。这个等于是在建立一一对应的这个理解下，两个集合，如果能够建立一个一一对应的关系，就把这两个集合中元素的个数叫做相等。</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

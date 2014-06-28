@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript语言精粹</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>JavaScript语言精粹</h1>
+          <p><img class="cover" alt="9787121084379" src="/images/2013/05/9787121084379.jpg" width="200" height="260" /></p>
+
+<p>原作名：JavaScript: The Good Parts</p>
+
+<p>ISBN：9787121084379</p>
+
+<p>作者：Douglas Crockford</p>
+
+<p>译者：赵泽欣 / 鄢学鹍</p>
+
+<p>出版社：电子工业出版社</p>
+
+<p>出版时间：2009</p>
+
+<p>评价：☆☆☆☆☆</p>
+
+<p>本书作者是一位大师，有很多发明创造，例如现在广泛使用的JSON就是他创立的。这本书应该是你学习JavaScript的第二本书，在使用《JavaScript DOM编程艺术》入门之后。它可以让你知道什么是精华，什么是鸡肋。</p>
+
+<p>优秀的代码成就优秀的程序员。大多数编程语言都有精华部分和鸡肋部分。我发现如果只使用精华部分而避免使用鸡肋的部分，我可以称为一个更好的程序员。</p>
+
+<p>JavaScript的函数是（主要）基于语法作用域（lexical scoping）的顶级对象。JavaScript是第一个成为主流lambda语言。实际上，相对Java而言，JavaScript与Lisp和Scheme有更多的共同点。它是披着C外衣的Lisp。这使得JavaScript成为一个非常强大的语言。</p>
+
+<p>避免使用/* */注释。在JavaScript中，这些字符可能出现在正则表达式中，所以块注释对于被注释的代码块来说是不安全的。例如：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*</span>
+<span class="cm">var rm_a = /a*/</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<span class="o">*</span><span class="err">/</span>
+</code></pre></div>
+<p>使用forin语句循环时，属性名出现的顺序是不确定的。如果你想要确保属性以特定的顺序出现，最好的办法就是完全避免使用for in语句，而是创建一个数组，在其中以正确的顺序包含属性名。</p>
+
+<p>在JavaScript中函数就是对象。所以他们可以像任何其他的值一样被使用。函数可以存放在变量、对象和数组中。函数可以被当作参数传递给其他函数，函数也可以再返回函数。而且，因为函数是对象，所以函数可以拥有方法。</p>
+
+<p>函数总是会返回一个值。如果没有指定返回值，则返回undefined。如果函数以在前面上new前缀的方式来调用，且返回值不是一个对象，则返回this（该新对象）。</p>
+
+<p>JavaScript允许给语言的基本类型增加方法。举例来说，我们可以通过给Function.prototype增加方法来使得该方法对所有函数可用：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">Function</span><span class="p">.</span><span class="nx">protoype</span><span class="p">.</span><span class="nx">method</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=</span> <span class="nx">fund</span><span class="p">;</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>通过给Function.protoype增加一个method方法，我们就不必键入prototype这个属性名。
+通过给基本类型增加方法，我们可以大大提高语言的表现力。因为JavaScript原型继承的动态本质，新的方法立刻被赋予到所有的值（对象实例）上，哪怕值（对象实例）是在方法被创建之前就创建好了。</p>
+
+<p>很多现代语言都推荐尽可能迟地声明变量。而用在JavaScript上的话却会成为糟糕的建议，因为它缺少块级作用域。所以，最好的做法是在函数体的顶部声明函数中可能用到的所有变量。</p>
+
+<p>模块模式利用了函数作用域和闭包来创建绑定对象与私有成员的关联。模块模式的一般形式是：一个定义了私有变量和函数的函数；利用闭包创建可以访问私有变量和函数的特权函数；最后返回这个特权函数，或者把它们保存到一个可访问的地方。</p>
+
+<p>使用模块模式就可以摒弃全局变量的使用。它促进了信息隐藏和其他优秀的设计实践。对与应用程序的封装，或者构造其他单例对象。假如我们想要构造一个用来产生序列号的对象：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">serial_maker</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">prefix</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">seq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">set_prefix</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">prefix</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">set_seq</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">seq</span> <span class="o">=</span> <span class="nx">s</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="nx">gensym</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">prefix</span> <span class="o">+</span> <span class="nx">seq</span><span class="p">;</span>
+      <span class="nx">seq</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">seqer</span> <span class="o">=</span> <span class="nx">serial_maker</span><span class="p">();</span>
+<span class="nx">seqer</span><span class="p">.</span><span class="nx">set_prefix</span><span class="p">(</span><span class="s1">&#39;Q&#39;</span><span class="p">);</span>
+<span class="nx">seqer</span><span class="p">.</span><span class="nx">set_seq</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">unique</span> <span class="o">=</span> <span class="nx">seqer</span><span class="p">.</span><span class="nx">gensym</span><span class="p">();</span>
+</code></pre></div>
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

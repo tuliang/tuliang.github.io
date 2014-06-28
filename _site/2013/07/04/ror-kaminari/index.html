@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Ruby on Rails kaminari</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>Ruby on Rails kaminari</h1>
+          <p>常用的分页Gem分为：will_paginate 和 kaminari</p>
+
+<p>其中 will_paginate比较老,应用案例较多, kaminari 更新,性能和兼容性更好</p>
+
+<p>今天来说明一下kaminari如何使用</p>
+
+<h3>安装：</h3>
+
+<p>在Gemfile文件中加入：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s1">&#39;kaminari&#39;</span>
+</code></pre></div>
+<p>然后在命令行中输入：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">bundle</span> <span class="n">install</span>
+</code></pre></div>
+<h3>使用：</h3>
+
+<p>kaminari的大部分方法是scope，例如将<code>User</code>Model以20条每页进行分页：</p>
+
+<p>在Controller</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vi">@users</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:page</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">per</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div>
+<p>在View</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;%=</span> <span class="n">paginate</span> <span class="vi">@users</span> <span class="o">%&gt;</span>
+</code></pre></div>
+<h3>自定义：</h3>
+
+<p>很多时候我们是使用Bootstrap来hold住前端的样式</p>
+
+<p>如何将kaminari的样式修改成适合Bootstrap的呢？</p>
+
+<p>首先我们需要新建一个kaminari的自定义模板，在命令行中输入：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="ss">kaminari</span><span class="p">:</span><span class="n">views</span> <span class="n">default</span>
+</code></pre></div>
+<p>修改模板中的样式，就可以任意改变分页的样式。一个完整的例子：</p>
+
+<p><code>_first_page.html.erb</code>文件</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sx">%= link_to_unless current_page.first?, raw(t &#39;views.pagination.first&#39;), url, :remote =</span><span class="o">&gt;</span> <span class="n">remote</span> <span class="sx">%&gt;</span>
+<span class="sx">&lt;/li&gt;</span>
+</code></pre></div>
+<p><code>_gap.html.erb</code>文件</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;page gap&quot;</span><span class="o">&gt;&lt;%=</span> <span class="n">raw</span><span class="p">(</span><span class="n">t</span> <span class="s1">&#39;views.pagination.truncate&#39;</span><span class="p">)</span> <span class="sx">%&gt;&lt;/li&gt;</span>
+</code></pre></div>
+<p><code>_next_page.html.erb</code>文件</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;next&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sx">%= link_to_unless current_page.last?, raw(t &#39;views.pagination.next&#39;), url, :rel =</span><span class="o">&gt;</span> <span class="s1">&#39;next&#39;</span><span class="p">,</span> <span class="ss">:remote</span> <span class="o">=&gt;</span> <span class="n">remote</span> <span class="sx">%&gt;</span>
+<span class="sx">&lt;/li&gt;</span>
+</code></pre></div>
+<p><code>_page.html.erb</code>文件</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;page&lt;%= &#39; current&#39; if page.current? %&gt;&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sx">%= link_to_unless page.current?, page, url, {:remote =</span><span class="o">&gt;</span> <span class="n">remote</span><span class="p">,</span> <span class="ss">:rel</span> <span class="o">=&gt;</span> <span class="n">page</span><span class="o">.</span><span class="n">next?</span> <span class="p">?</span> <span class="s1">&#39;next&#39;</span> <span class="p">:</span> <span class="n">page</span><span class="o">.</span><span class="n">prev?</span> <span class="p">?</span> <span class="s1">&#39;prev&#39;</span> <span class="p">:</span> <span class="kp">nil</span><span class="p">}</span> <span class="sx">%&gt;</span>
+<span class="sx">&lt;/li&gt;</span>
+</code></pre></div>
+<p><code>_paginator.html.erb</code>文件</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="sx">%= paginator.render do -%&gt;</span>
+<span class="sx">  &lt;nav class=</span><span class="s2">&quot;pagination&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="sx">%= first_page_tag unless current_page.first? %&gt;</span>
+<span class="sx">      &lt;%=</span> <span class="n">prev_page_tag</span> <span class="k">unless</span> <span class="n">current_page</span><span class="o">.</span><span class="n">first?</span> <span class="sx">%&gt;</span>
+<span class="sx">      &lt;% each_page do |page| -%&gt;</span>
+        <span class="o">&lt;</span><span class="sx">% if </span><span class="n">page</span><span class="o">.</span><span class="n">left_outer?</span> <span class="o">||</span> <span class="n">page</span><span class="o">.</span><span class="n">right_outer?</span> <span class="o">||</span> <span class="n">page</span><span class="o">.</span><span class="n">inside_window?</span> <span class="o">-</span><span class="sx">%&gt;</span>
+<span class="sx">          &lt;%= page_tag page %&gt;</span>
+        <span class="o">&lt;</span><span class="sx">% elsif </span><span class="o">!</span><span class="n">page</span><span class="o">.</span><span class="n">was_truncated?</span> <span class="o">-</span><span class="sx">%&gt;</span>
+<span class="sx">          &lt;%= gap_tag %&gt;</span>
+        <span class="o">&lt;</span><span class="sx">% end </span><span class="o">-</span><span class="sx">%&gt;</span>
+<span class="sx">      &lt;% end -%&gt;</span>
+      <span class="o">&lt;</span><span class="sx">%= next_page_tag unless current_page.last? %&gt;</span>
+<span class="sx">      &lt;%=</span> <span class="n">last_page_tag</span> <span class="k">unless</span> <span class="n">current_page</span><span class="o">.</span><span class="n">last?</span> <span class="sx">%&gt;</span>
+<span class="sx">    &lt;/ul&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/nav&gt;</span>
+<span class="sr">&lt;% end -%&gt;</span>
+</code></pre></div>
+<p><code>_prev_page.html.erb</code>文件</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;prev&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sx">%= link_to_unless current_page.first?, raw(t &#39;views.pagination.previous&#39;), url, :rel =</span><span class="o">&gt;</span> <span class="s1">&#39;prev&#39;</span><span class="p">,</span> <span class="ss">:remote</span> <span class="o">=&gt;</span> <span class="n">remote</span> <span class="sx">%&gt;</span>
+<span class="sx">&lt;/li&gt;</span>
+</code></pre></div>
+<p>因为kaminari在当前页和...是没有a标签的，需要将很多a标签的css转移到li上，所以在CSS中加上：</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.pagination</span> <span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="nc">.current</span><span class="o">,</span>
+<span class="nc">.pagination</span> <span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="nc">.gap</span> <span class="p">{</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">38px</span><span class="p">;</span>
+  <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#dddddd</span><span class="p">;</span>
+  <span class="k">border-left-width</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.pagination</span> <span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="nc">.current</span><span class="nd">:first-child</span><span class="o">,</span>
+<span class="nc">.pagination</span> <span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="nc">.gap</span><span class="nd">:first-child</span> <span class="p">{</span>
+  <span class="k">border-left-width</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">3px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">3px</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">3px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.pagination</span> <span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="nc">.current</span><span class="nd">:last-child</span><span class="o">,</span>
+<span class="nc">.pagination</span> <span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="nc">.gap</span><span class="nd">:last-child</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">0</span> <span class="m">3px</span> <span class="m">3px</span> <span class="m">0</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">0</span> <span class="m">3px</span> <span class="m">3px</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">0</span> <span class="m">3px</span> <span class="m">3px</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>更多资料请参考：</p>
+
+<ul>
+<li> <a href="https://github.com/amatsuda/kaminari">kaminari Github Helper</a></li>
+</ul>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

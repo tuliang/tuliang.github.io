@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>JS变量声明提前</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>JS变量声明提前</h1>
+          <p>JS使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。到底是什么意思呢？我们来看下面这段代码：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">f</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scope</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scope</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">f</span><span class="p">();</span>
+</code></pre></div>
+<p>你可能认为输出是：
+global<br>
+local  </p>
+
+<p>但是运行一下你就会发现实际结果是：
+undefined<br>
+local  </p>
+
+<p>深入研究你会发现就算是你使用传递参数：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">scope</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scope</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scope</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">f</span><span class="p">();</span>
+</code></pre></div>
+<p>实际结果依然是：<br>
+undefined<br>
+local  </p>
+
+<p>或者代码改写为：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">f</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scope</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">scope</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scope</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">f</span><span class="p">();</span>
+</code></pre></div>
+<p>实际结果仍然是：<br>
+undefined  </p>
+
+<p>为什么，后面的代码能够影响到前面的代码？照成这种结果的原因的就是前面提到的函数作用域，在JS中上面的代码实际上是这样的：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">f</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">scope</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scope</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scope</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">f</span><span class="p">();</span>
+</code></pre></div>
+<p>JS这个特性被非正式地称为声明提前，即JS函数里声明的所有变量都被提前至函数体的顶部，但是这个声明提前至声明却不赋值。由于JS拥有这种特性，在编写JS代码时一些程序员特意将变量声明放在函数体的顶部，而不是像其他语言中让变量声明和使用变量的代码尽量靠近。所以在函数体中使用到var来声明变量时，记得将声明和赋值语句放在函数体的顶部，避免因为这种特性造成变量值为undefined的BUG。</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

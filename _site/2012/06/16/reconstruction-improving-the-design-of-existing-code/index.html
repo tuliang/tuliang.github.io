@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>重构：改善既有代码的设计</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>重构：改善既有代码的设计</h1>
+          <p><img class="cover" title="9787115221704" src="/images/2012/01/9787115221704-228x300.jpg" alt="重构：改善既有代码的设计" width="228" height="300" /></p>
+
+<p>ISBN：9787115221704</p>
+
+<p>作者：Martin Fowler</p>
+
+<p>译者：熊节</p>
+
+<p>出版社：人民邮电出版社</p>
+
+<p>出版时间：2010.04</p>
+
+<p>评价：☆☆☆☆☆</p>
+
+<p>所谓重构（refactoring）是这样一个过程：在不改变代码外在行为的前提下，对代码做出修改，以改进程序的内部结构。重构是一种经过千锤百炼形成的有条不紊的程序整理方法，可以最大限度地减少整理过程中引入错误的几率。本质上说，重构就是在代码写好之后改进它的设计。</p>
+
+<p>重构的基本技巧——小步前进，频繁测试。（PS：这个很重要，经常一次改动过多，如果再被其他的事情打断或干扰，等再继续的时候已经忘了刚才该到哪了）</p>
+
+<p>重构中提到的方法有很多种在实际编码中都使用过，只是当时自己不知道罢了。这本书作者总结了一些重构的方法，如果是自己使用过的就会产生强烈的共鸣，引起你的回忆，从而加深印象。对于没有使用过的，则可以提供一种思路，你会发觉原来还可以这么做，编程会更加灵活，可以选择的方法也会变得更多。</p>
+
+<p>当你感觉需要撰写注释时，请先尝试重构，试着让所有注释都变得多余。</p>
+
+<p>如果你需要给一个运行中的系统添加功能，你不可能说服经理把系统停止运行两个月让你进行重构。你只能一点一点地做你的工作，今天一点点，明天一点点。</p>
+
+<p>永远不要忘记“两顶帽子”。重构时你总会发现某些代码并不正确。你绝对相信自己的判断，因此想马上把它们改正过来。啊，顶住诱惑，别那么做。重构时你的目标之一就是保持代码的功能完全不变，既不多也不少。对于那些需要修改的东西，列个清单把它们记录下来，需要添加或修改的测试用例。需要进行的其他重构、需要撰写的文档、需要画的图······都暂时记上。这样就不会忘记这些需要完成的工作。千万别让这些工作打乱你手上的工作。重构完成之后，再去做这些事情也不迟。</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

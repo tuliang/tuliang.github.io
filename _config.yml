@@ -1,0 +1,18 @@
+# Site settings
+title: 涂亮 
+email: info@tuliang.org
+description: "个人博客"
+baseurl: ""
+url: "http://www.tuliang.org/"
+username: 'tuliang'
+highlighter: pygments
+repository: "https://github.com/tuliang"
+
+# Build settings
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
+permalink: pretty
+
+# chart_apis
+chart_apis: http://chart.apis.google.com/chart?cht=tx&chl=

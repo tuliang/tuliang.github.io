@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5揭秘</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>HTML5揭秘</h1>
+          <p><img src="/images/2012/11/9787121124082-228x300.jpg" alt="HTML5揭秘" title="9787121124082" width="228" height="300" class="cover" /></p>
+
+<p>ISBN：9787121124082</p>
+
+<p>作者： Mark Pilgrim</p>
+
+<p>译者：常可 胡金埔 赵静</p>
+
+<p>出版社：电子工业出版社</p>
+
+<p>出版时间：2010-12</p>
+
+<p>评价：☆☆☆</p>
+
+<p>不论是关于IMG标签的讨论还是W3C和WHAT小组的各种历史，证明了“在世界上交付出东西的人才是赢家。”</p>
+
+<p>HTML5只是一些独立特性的集合，因此你不能检测浏览器是否支持“HTML5”，因为这没有意义。但是你可以分别检测浏览器是否支持诸如“画布”、“视频”、“地理位置”等HTML5特性。</p>
+
+<p>不同浏览器的模式：
+Quirks模式
+在Quirks模式模式中，浏览器违反了Web格式规范，以避免那些依照90年代末期的流行做法编写的网页不至于被呈现得无法阅读。</p>
+
+<p>标准模式
+在标准模式中，浏览器尽力尝试用符合标准规范的方式去渲染页面文档。HTML5里将这个模式称为“非Quirks模式”。</p>
+
+<p>准标准模式
+Firefox、Safari、Chrome、Opera(7.5+)、和IE8也具有被称为“准标准模式”的渲染模式，其中以传统方式实现了表格单元格的竖直尺寸，而没有严格遵循CSS2规范。HTML5里将这个模式称为“有限Quirks模式”。</p>
+
+<p>现在HTML5视频方面实在太混乱了，为了兼容大部分浏览器，需要至少3个格式的视频。如果是IE9之前的版本，还要加上FALSH。</p>
+
+<p>全书看下来，对HTML5有一定的认识了，这本书很适合拿来了解HTML5。可惜的是，本书是2010出版的，书上的很多东西都变了，而且作者貌似在网络上消失了，看来第二版基本没希望了。不过另一方面可喜的是，从2010到现在2012，2年多过去了，HTML5已经收到越来越多的支持，连Adobe都宣布放弃FLASH。HTML5的前景越来越清晰了，在未来，特别是移动端将会是HTML5的天下。</p>
+
+<p>勘错：</p>
+
+<p>P63</p>
+
+<p>该页面绘制箭头代码错误，正确的代码应为：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// 开始一个新路径</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+<span class="c1">// x轴</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">260</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+<span class="c1">// x轴箭头</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">495</span><span class="p">,</span> <span class="mi">35</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">495</span><span class="p">,</span> <span class="mi">45</span><span class="p">);</span>
+<span class="c1">// y轴</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">153</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">173</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">375</span><span class="p">);</span>
+<span class="c1">// y轴箭头</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">375</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">370</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">375</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">370</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="s2">&quot;#000&quot;</span><span class="p">;</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span><span class="c1">// 绘制</span>
+</code></pre></div>
+<p>专家发言中：<br>
+所胡HTML5浏览器中<br>
+应为：<br>
+所有HTML5浏览器中  </p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

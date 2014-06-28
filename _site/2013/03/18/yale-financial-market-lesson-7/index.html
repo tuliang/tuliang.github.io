@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>耶鲁：《金融市场》第7课</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>耶鲁：《金融市场》第7课</h1>
+          <h2>行为金融学:心理的作用</h2>
+
+<p>行为金融学它不同于行为心理学，也不等同于将行为心理学应用于金融学。它的意义是将各种社会科学应用于金融学。</p>
+
+<p>人们倾向于过度自信，这不仅仅发生于男性身上，女性们也是出了名的过度自信。有一个关于大男子主义的说法，但实验证明女性也存在有同样的问题。当我们看股票图表时，看到的是自认为自己明白的东西，这种情况在年轻人中格外突出。他们糊涂地认为自己懂的比实际的要多。</p>
+
+<p>不仅仅是关于个人心中的过度自信，我们常常对领导者寄予过高期望。我们有一种感觉，一些人天生聪慧知晓一切，所有我们认为他们能够改变我们的生活或公司。所有董事会总是不断寻找天才CEO，而他们却一直被愚弄并一次次地失望。他们聘请某人而这人却过大于功，因为这人意识到自己必须扮演好这样一个天才的角色，所有他们必须做出些什么。他们盲目地做事，不知道他们自己做的是什么，结果把整个公司搞砸。我们总是急功近利地去审视工作，我们想雇佣才华出众的人来当CEO，随后却对其失望，然后如走马灯似地不断换人。</p>
+
+<p>行为金融学中最重要的一个理论是卡内曼和特沃斯基的前景理论。</p>
+
+<ol>
+<li> 它用价值函数替代期望效用里的效用函数；</li>
+<li> 用权重替代概率。心理学上有个相关的理论，叫做后悔理论。形式上有些不同但本质一样，于前景理论是一致的。后悔理论认为，认为尝过后悔的滋味后便会竭尽所能地避免重蹈覆辙。</li>
+</ol>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

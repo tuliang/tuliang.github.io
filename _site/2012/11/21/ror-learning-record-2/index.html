@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ROR学习记录2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>ROR学习记录2</h1>
+          <p>上次我们完成了一个最简单的博客，现在来完善它。首先我们需要给填入的信息做一些验证</p>
+
+<p>打开app/models/post.rb加入</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">validates</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:presence</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="ss">:uniqueness</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="n">validates</span> <span class="ss">:content</span><span class="p">,</span> <span class="ss">:presence</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</code></pre></div>
+<p><img class="alignnone size-medium wp-image-2066" title="1" src="/images/2012/11/15.png" alt=""  /></p>
+
+<p>presence表示必须存在，不能为空<br>
+uniqueness表示唯一，不能重复<br>
+这样设置之后，不符合的值就不会通过  </p>
+
+<p><img class="alignnone size-medium wp-image-2067" title="2" src="/images/2012/11/21-300x179.png" alt="" width="300" height="179" /></p>
+
+<p>现在我们开始修改Views，打开views/posts/index.html.erb，修改成</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Recent</span> <span class="n">posts</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
+
+<span class="sr">&lt;% @posts.each do |post| %&gt;</span>
+<span class="sr">  &lt;%= render :partial =&gt; post %&gt;</span>
+<span class="sr">  &lt;%= link_to &#39;Edit&#39;, edit_post_path(post) %&gt;</span>
+<span class="sr">  &lt;%= link_to &#39;Destroy&#39;, post, method: delete, data: { confirm: &#39;Are you sure?&#39; } %&gt;</span>
+<span class="sr">&lt;% end %&gt;</span>
+
+<span class="sr">&lt;br /</span><span class="o">&gt;</span>
+<span class="o">&lt;%=</span> <span class="n">link_to</span> <span class="s1">&#39;New Post&#39;</span><span class="p">,</span> <span class="n">new_post_path</span> <span class="o">%&gt;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">render</span> <span class="ss">:partial</span> <span class="o">=&gt;</span> <span class="n">post</span>
+</code></pre></div>
+<p>这段代码表示引入views/posts/目录下名为_post.html.erb的模板</p>
+
+<p>在views/posts/目录下新建一个名为_post.html.erb的文件修改成</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;post&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;&lt;</span><span class="sx">%= link_to_unless_current post.title, post %&gt;&lt;/h2&gt;</span>
+<span class="sx">  &lt;div class=</span><span class="s2">&quot;content&quot;</span><span class="o">&gt;&lt;%=</span> <span class="n">simple_format</span> <span class="n">post</span><span class="o">.</span><span class="n">content</span> <span class="sx">%&gt;&lt;/div&gt;</span>
+<span class="o">&lt;</span><span class="sr">/div&gt;</span>
+</code></pre></div>
+<p>然后我们来修改views/posts/show.html.erb，这个页面其实和index页面很像，我们没必要再做一次，这就是我们之前制作_post.html.erb模板的原因。将文件show.html.erb修改成</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="sx">%= render :partial =</span><span class="o">&gt;</span> <span class="vi">@post</span> <span class="sx">%&gt;</span>
+
+<span class="sx">&lt;%= link_to &#39;Edit&#39;, edit_post_path(@post) %&gt;</span>
+<span class="o">&lt;%=</span> <span class="n">link_to</span> <span class="s1">&#39;Back&#39;</span><span class="p">,</span> <span class="n">post_path</span> <span class="o">%&gt;</span>
+</code></pre></div>
+<p>最后博客的样式就统一了，以后只需要修改一处即可。</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

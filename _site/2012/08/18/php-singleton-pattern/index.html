@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>PHP版单件模式</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>PHP版单件模式</h1>
+          <p>单件模式（Singleton Pattern），确保一个类只有一个实例，并提供一个全局访问点。</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="cm">/*</span>
+<span class="cm"> * 单件模式</span>
+<span class="cm"> * 确保一个类只有一个实例，并提供一个全局访问点。</span>
+<span class="cm"> */</span>
+
+<span class="k">class</span> <span class="nc">MyClass</span><span class="p">{</span>
+    <span class="k">private</span> <span class="k">static</span> <span class="nv">$MyObj</span><span class="p">;</span>
+
+    <span class="c1">//创建私有并且为空的构造函数使其不能new对象</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(){}</span>
+
+    <span class="c1">//创建私有并且为空的克隆函数使其不能clone对象</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">__clone</span><span class="p">(){}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getObj</span><span class="p">(){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">null</span> <span class="o">==</span> <span class="nx">self</span><span class="o">::</span><span class="nv">$MyObj</span><span class="p">){</span>
+            <span class="nx">self</span><span class="o">::</span><span class="nv">$MyObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="o">::</span><span class="nv">$MyObj</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$MyObj</span> <span class="o">=</span> <span class="nx">MyClass</span><span class="o">::</span><span class="na">getObj</span><span class="p">();</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$MyObj</span><span class="p">);</span>
+<span class="nv">$MyObj</span> <span class="o">=</span> <span class="nx">MyClass</span><span class="o">::</span><span class="na">getObj</span><span class="p">();</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$MyObj</span><span class="p">);</span>
+</code></pre></div>
+<p>输出：</p>
+
+<p>object(MyClass)[1]</p>
+
+<p>object(MyClass)[1]</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

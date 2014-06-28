@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Ruby on Rails 两个Model有多种多对多关联</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>Ruby on Rails 两个Model有多种多对多关联</h1>
+          <p>两个Model进行关联在Rails中是很常见的。一对一、多对多和一对多，都非常简单。有时候Model之间会有多种关联，比如某种岗位会有必要的要求，也有一些加分项。这个时候就是两种多对多的关联了，研究了一下Rails的关联机制，可以发现：利用<code>:source</code>和<code>:through</code>是可以实现这种需求的。</p>
+
+<p>例如，我们有<code>career</code>和<code>educational_path</code>两个Model，对它们要进行两种多对多的关联，可以这么做：</p>
+
+<p>首先我们创立<code>required_educational_paths</code>和<code>recommended_educational_paths</code>这两个Model来支持这两种关联。</p>
+
+<p>它们两个的数据结构是一样的：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">t</span><span class="o">.</span><span class="n">integer</span> <span class="s2">&quot;career_id&quot;</span>
+<span class="n">t</span><span class="o">.</span><span class="n">integer</span> <span class="s2">&quot;educational_path_id&quot;</span>
+</code></pre></div>
+<p>Model中的代码也是相同的：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">attr_accessible</span> <span class="ss">:career_id</span><span class="p">,</span> <span class="ss">:educational_path_id</span>
+<span class="n">belongs_to</span> <span class="ss">:career</span>
+<span class="n">belongs_to</span> <span class="ss">:educational_path</span>
+</code></pre></div>
+<p>然后在<code>career</code>这个Model中加上</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">has_many</span> <span class="ss">:required_educational_paths</span>
+<span class="n">has_many</span> <span class="ss">:required_educationals</span><span class="p">,</span> <span class="ss">:source</span> <span class="o">=&gt;</span> <span class="s1">&#39;educational_path&#39;</span><span class="p">,</span> 
+  <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:required_educational_paths</span>
+<span class="n">attr_accessible</span> <span class="ss">:required_educationals</span><span class="p">,</span> <span class="ss">:required_educational_ids</span>
+
+<span class="n">has_many</span> <span class="ss">:recommended_educational_paths</span>
+<span class="n">has_many</span> <span class="ss">:recommended_educationals</span><span class="p">,</span> <span class="ss">:source</span> <span class="o">=&gt;</span> <span class="s1">&#39;educational_path&#39;</span><span class="p">,</span> 
+  <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:recommended_educational_paths</span>
+<span class="n">attr_accessible</span> <span class="ss">:recommended_educationals</span><span class="p">,</span> <span class="ss">:recommended_educational_ids</span>
+</code></pre></div>
+<p>可以看到我们使用了<code>required_educationals</code>和<code>recommended_educationals</code>两个虚拟的Model来让<code>career</code>关联<code>educational_path</code>，同时它们通过之前建立的<code>required_educational_paths</code>和<code>recommended_educational_paths</code>保存关联的数据。</p>
+
+<p>同理，在<code>educational_path</code>这个Model中加上</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">has_many</span> <span class="ss">:required_educational_paths</span>
+<span class="n">has_many</span> <span class="ss">:required_careers</span><span class="p">,</span> <span class="ss">:source</span> <span class="o">=&gt;</span> <span class="s1">&#39;careers&#39;</span><span class="p">,</span> 
+  <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:required_educational_paths</span>
+<span class="n">attr_accessible</span> <span class="ss">:required_careers</span><span class="p">,</span> <span class="ss">:required_career_ids</span>
+
+<span class="n">has_many</span> <span class="ss">:recommended_educational_paths</span>
+<span class="n">has_many</span> <span class="ss">:recommended_careers</span><span class="p">,</span> <span class="ss">:source</span> <span class="o">=&gt;</span> <span class="s1">&#39;careers&#39;</span><span class="p">,</span> 
+  <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:recommended_educational_paths</span>
+<span class="n">attr_accessible</span> <span class="ss">:recommended_careers</span><span class="p">,</span> <span class="ss">:recommended_career_ids</span>
+</code></pre></div>
+<p>到此为止整个关联就算是完成了。使用起来也是非常的简单。你可以使用<code>career.required_educationals</code>和<code>career.recommended_educationals</code> 或者 <code>career.required_educational_ids</code>和<code>career.recommended_educational_ids</code>，同理在<code>educational_path</code>也可以使用这两种不同的关联。</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

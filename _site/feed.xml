@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>涂亮</title>
+    <description>个人博客</description>
+    <link>http://www.tuliang.org//</link>
+    <atom:link href="http://www.tuliang.org//feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>MacTalk 人生元编程</title>
+        <description>&lt;p&gt;&lt;img class=&quot;cover&quot; src=&quot;/images/2014/6/9787115342232.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ISBN：9787115342232&lt;/p&gt;
+
+&lt;p&gt;作者：池建强 &lt;/p&gt;
+
+&lt;p&gt;出版社：人民邮电出版社&lt;/p&gt;
+
+&lt;p&gt;出版时间：2014-2&lt;/p&gt;
+
+&lt;p&gt;评价：☆☆☆&lt;/p&gt;
+
+&lt;p&gt;文章没有很深入，也很零散，适合没事的时候看看。&lt;/p&gt;
+
+&lt;p&gt;书里面讲硬链接和软链接挺清晰的，让人一下就明白了，特此记录一下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;硬链接类似引用计数，添加一个硬链接inode里的“Links”属性值就加1，减少一个 就减一。当“Links”为0时，文件才会被彻底删除。硬链接没有创建inode，所以无法跨文件系统，这一点可以由软链接实现。并且，没有办法可以给目录创建硬链接，但是系统提供了“.”和“..”。&lt;/li&gt;
+&lt;li&gt;软链接，它会创建inode，可以跨文件系统。它类似window的快捷方式，源文件被删除的话，这个软链接就失效了。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 28 Jun 2014 17:05:27 +0800</pubDate>
+        <link>http://www.tuliang.org//2014/06/28/mactalk-ren-sheng-yuan-bian-cheng/</link>
+        <guid isPermaLink="true">http://www.tuliang.org//2014/06/28/mactalk-ren-sheng-yuan-bian-cheng/</guid>
+      </item>
+    
+      <item>
+        <title>Web文件下载和查看</title>
+        <description>&lt;p&gt;在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用HTML5 download Attribute。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- will download as &amp;quot;expenses.pdf&amp;quot; --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/files/expenses.pdf&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;download=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;expenses.pdf&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Download Your Expense Report&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这种方式虽然简单，但是兼容性不太好。查看&lt;a href=&quot;http://caniuse.com/download&quot;&gt;http://caniuse.com/download&lt;/a&gt;，我们可以发现IE和Safari全版本都不支持这个属性。&lt;/p&gt;
+
+&lt;p&gt;根本原因在HTTP Head中，文件类型由&lt;code&gt;Content-Type&lt;/code&gt;控制。如果pdf文件是正确的&lt;code&gt;application/pdf&lt;/code&gt;，浏览器会打开pdf，而不是去下载，jpg、png这些文件类型同理。&lt;/p&gt;
+
+&lt;p&gt;而下载是由&lt;code&gt;Content-Disposition&lt;/code&gt;来控制的，例如：&lt;code&gt;Content-Disposition: attachment; filename=&amp;quot;fname.txt&amp;quot;&lt;/code&gt;。它的意思是将该文件作为附件，并且下载的文件名是fname.txt.&lt;/p&gt;
+
+&lt;p&gt;如果使用S3
+访问文件的url，可以直接打开。
+下载文件，使用AWS的api可以生成下载的url：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url_for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response_content_disposition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;attachment; filename=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;相关文档：&lt;br&gt;
+&lt;a href=&quot;http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html&quot;&gt;http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html&lt;/a&gt;
+&lt;a href=&quot;http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/S3/S3Object.html&quot;&gt;http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/S3/S3Object.html&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 11 Jun 2014 12:13:20 +0800</pubDate>
+        <link>http://www.tuliang.org//2014/06/11/file-download-or-view/</link>
+        <guid isPermaLink="true">http://www.tuliang.org//2014/06/11/file-download-or-view/</guid>
+      </item>
+    
+      <item>
+        <title>数学之美</title>
+        <description>&lt;p&gt;&lt;img class=&quot;cover&quot; src=&quot;/images/2014/5/9787115282828.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ISBN：9787115282828&lt;/p&gt;
+
+&lt;p&gt;作者：吴军&lt;/p&gt;
+
+&lt;p&gt;出版社：人民邮电出版社&lt;/p&gt;
+
+&lt;p&gt;出版时间：2012-5&lt;/p&gt;
+
+&lt;p&gt;评价：☆☆☆☆☆&lt;/p&gt;
+
+&lt;p&gt;数学、文字和自然语言一样，都是信息的载体，它们之间原本有着天然的联系。语言和数学的产生都是为了同一个目的——记录和传播信息。&lt;/p&gt;
+
+&lt;p&gt;文字的数量和记录一个文明的信息量显然是相关的。然而随着文明的进步，信息量的增加，文字的数量便不再随着文明的发展而增加了，因为没有人能够学会和记住这么多的文字。于是，概念的第一次概括和归类就开始了。在中国，“日”本意是太阳，但是它同时又是一个时间周期，也就是我们讲的一天。这种概念的聚类，在原理上与今天自然语言处理或者机器学习的聚类有很大的相似性。&lt;/p&gt;
+
+&lt;p&gt;文字按照意思来聚类，最终会带来一些歧义，也就是有时会弄不清多义字在当前环境下表示的含义。而解决这个问题的方法一直都是依靠上下文，大部分时候可以做到去除歧义。当然，总有个别做不到的时候，这就导致了人们对同一段文字理解的不同。古代不同人对儒家经典的注释和说明，就是按照自己理解消除歧义。今天的情况也类似，对上下文建立的概率模型再好，也有失灵的时候。这些是语言从产生就固有的特点。&lt;/p&gt;
+
+&lt;p&gt;文字的载体是石头还是纸张并不重要，它所承载的信息才是最重要的。&lt;/p&gt;
+
+&lt;p&gt;无法消除二义性的例子：此地安能居住，其人好不悲伤
+此地-安能-居住，其人-好不-悲伤
+此地安-能居住，其人好-不悲伤&lt;/p&gt;
+
+&lt;p&gt;很难讲一个准确率在97%的分词器就一定比另一个准确率95%的要好。因为这要看它们选用的所谓正确的人工分词的数据是如何来的。中文分词现在是一个已经解决了的问题，提高的空间微乎其微了。只要采用统计语言模型，效果都查不到哪里去。&lt;/p&gt;
+
+&lt;p&gt;在不同的应用中，会有一种颗粒度比另一只更好的情况。比如在机器翻译中，一般来讲颗粒度大翻译效果好。比如“联想公司”作为一个整体，很容易翻译，如果分开成“联想”“公司”，就会翻译失败。但是在另外一些应用中，比如网页搜索，小的颗粒度更好。比如“清华大学”如果作为一个词，用户使用“清华”就找不到了。&lt;/p&gt;
+
+&lt;p&gt;自然语言处理的问题其实就是一种通信系统中的解码问题。一般来说编码和解码都是人对人，语音识别就变成人编码，机器解码，其他类似的问题比如从汉语翻译到英语，它们 原理都是一样的。&lt;/p&gt;
+
+&lt;p&gt;“汉语信息熵和语言模型的复杂度”，使用信息熵来说明汉语是最简洁的语言。&lt;/p&gt;
+
+&lt;p&gt;信息的作用在于消除不确定性，自然语言处理的大量问题就是找相关的信息。&lt;/p&gt;
+
+&lt;p&gt;网络爬虫——图论：广度优先遍历和深度优先遍历&lt;/p&gt;
+
+&lt;p&gt;判断两个集合是否相等，最笨的方法是对集合中的元素一一对比，时间复杂度O(N&lt;sup&gt;2)。稍微好一点的是两个集合分别排序，然后循序比较，时间复杂度O(NlogN)。完美的方法是计算这两个集合的指纹，然后直接进行比较，即使用MD5或者SHA-1生成指纹进行比较。网盘的秒传就用到了这个方法。&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;最大熵原理指出，需要对一个随机事件的概率分布进行预测时，我们的预测应当满足全部已知的条件，而对未知的情况不要做任何主观假设。在这种情况下，概率分布最均匀，预测的风险最小。因为这时概率分布的信息熵最大，所以人们称这种模型叫做“最大熵模型”。我们常说，不要把所有鸡蛋放在一个篮子里，其实就是最大熵原理的一个朴素说法，因为当我们遇到不确定性时，就要保留各种可能性。&lt;/p&gt;
+
+&lt;p&gt;名词：
+维特比算法
+有限状态机
+动态规划&lt;/p&gt;
+
+&lt;p&gt;延伸阅读：&lt;br&gt;
+第3章：统计语言模型的工程诀窍。知识背景：概率论和数理统计。&lt;br&gt;
+第5章：隐含马尔科夫模型的训练。知识背景：概率论。&lt;br&gt;
+第6章：信息论在信息处理中的应用。知识背景：概率论。&lt;br&gt;
+第10章：PageRank的计算方法。知识背景：线性代数。&lt;br&gt;
+第11章：TF-IDF的信息论依据。知识背景：信息论和概率论。&lt;br&gt;
+第12章：有限状态传感器。知识背景：图论。&lt;br&gt;
+第14章：计算向量余弦的技巧。知识背景：数值分析。&lt;br&gt;
+第15章：奇异值分解的方法和应用场景。知识背景：线性代数。&lt;br&gt;
+第16章：信息指纹的重复性和相似哈希。知识背景：概率论、组合数学。&lt;br&gt;
+第21章：个性化的语言模型。知识背景：概率论。&lt;br&gt;
+第23章：布隆过滤器的误识别问题。知识背景：概率论。&lt;br&gt;
+第24章：贝叶斯网络的训练。知识背景：概率论。&lt;br&gt;
+第27章：期望最大化和收敛的必然性。知识背景：机器学习或者模式分类。  &lt;/p&gt;
+</description>
+        <pubDate>Fri, 23 May 2014 00:00:00 +0800</pubDate>
+        <link>http://www.tuliang.org//2014/05/23/Beauty-of-mathematics/</link>
+        <guid isPermaLink="true">http://www.tuliang.org//2014/05/23/Beauty-of-mathematics/</guid>
+      </item>
+    
+      <item>
+        <title>是，首相</title>
+        <description>&lt;p&gt;&lt;img class=&quot;cover&quot; src=&quot;/images/2014/4/9787108043610.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;原作名：The complete yes prime minister&lt;/p&gt;
+
+&lt;p&gt;ISBN：9787108043610&lt;/p&gt;
+
+&lt;p&gt;作者：(英)乔纳森·林恩 / (英)安东尼·杰伊 编著&lt;/p&gt;
+
+&lt;p&gt;译者：徐国强 / 闫春伶&lt;/p&gt;
+
+&lt;p&gt;出版社：生活·读书·新知三联书店&lt;/p&gt;
+
+&lt;p&gt;出版时间：2013-4&lt;/p&gt;
+
+&lt;p&gt;评价：☆☆☆☆☆&lt;/p&gt;
+
+&lt;p&gt;从《是，大臣》到《是，首相》，哈克越来越占上风。一方面是成为首相后权力变大，但是我觉得最重要的还是哈克的政治手段越来越高明。无论是多萝西，还是伯纳德，甚至财政部秘书都被用来牵制汉佛莱。&lt;/p&gt;
+
+&lt;p&gt;和大公司一样，政府中每个人，每个部分都只会思考和追求自己的利益，为了这个各种为战。所谓政治就是在各种各样的利益集团中达到平衡，台面上台面下都会有一些游戏规则，谁违背了这些规则，其他人会联合起来对付他。大部分人只能随波逐流，只有顶尖的人才能利用和改变规则，甚至可以创造出新的规则。&lt;/p&gt;
+
+&lt;p&gt;汉佛莱和哈克都是英国官僚系统的顶级玩家，分别代表了政客和文官两方面的力量。哈克在最后感觉的无力感，是现代官僚系统的强大，它杜绝了独裁，同时也损失了效率。只要有组织存在，就会有相应的游戏规则。在现有的游戏规则下，大家都是在既有的铁轨上奔跑，搞改革可能移动到更好的铁轨上，也可能脱轨。治大国若烹小鲜，古人诚不欺我也。&lt;/p&gt;
+
+&lt;p&gt;封底的一段甚是有趣，估计看到的人都会收藏起来：“汉弗莱对于报纸真是一窍不通。他是一个文官，而我是政治家。我对报纸了如指掌。它们既能成就我，也能毁掉我。《泰晤士报》的读者是治理这个国家的人；《每日镜报》的读者是认为自己正在治理这个国家的人；《卫报》的读者是认为应该由自己治理国家的人；《晨星报》的读者是想把国家交给其他国家治理的人；《独立报》的读者是不知谁在治理这个国家却认为他们做得不对的人；《每日邮报》的读者是治理国家的人的妻子：《金融时报》的读者是拥有这个国家的人；《每日快报》的读者是认为这个国家像过去一样治理就行的人；《每日电讯报》的读者是认为这还是他们的国家的人：《太阳报》的读者并不在乎谁在治理这个国家，他们只要求三版女郎的奶子够大就行……”&lt;/p&gt;
+</description>
+        <pubDate>Mon, 28 Apr 2014 00:00:00 +0800</pubDate>
+        <link>http://www.tuliang.org//2014/04/28/the-complete-yes-prime-minister/</link>
+        <guid isPermaLink="true">http://www.tuliang.org//2014/04/28/the-complete-yes-prime-minister/</guid>
+      </item>
+    
+      <item>
+        <title>学习GNU Emacs</title>
+        <description>&lt;p&gt;&lt;img class=&quot;cover&quot; src=&quot;/images/2014/3/9787111103486.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;原作名：Learning GNU Emacs Third Edition&lt;/p&gt;
+
+&lt;p&gt;ISBN：9787111103486&lt;/p&gt;
+
+&lt;p&gt;出版社：机械工业出版社&lt;/p&gt;
+
+&lt;p&gt;出版时间：2003-1&lt;/p&gt;
+
+&lt;p&gt;评价：☆☆☆&lt;/p&gt;
+
+&lt;p&gt;书上的资料很老了，看看前面几章熟悉一下操作，后面的章节选择性的扫一下。&lt;/p&gt;
+
+&lt;p&gt;你可以参考下面列出的阅读顺序进行学习：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;系统管理员: 前言、第一~三章、第十六章&lt;/li&gt;
+&lt;li&gt;非专业: 前言、第一~三章、第十六章&lt;/li&gt;
+&lt;li&gt;程序员: 前言、第一~五章、第十~十二章&lt;/li&gt;
+&lt;li&gt;作家或专业人士: 前言、第一~四章、第八~九章、第十六章&lt;/li&gt;
+&lt;li&gt;对Emacs进行定制: 第十一章，也许还要再学习第十三章&lt;/li&gt;
+&lt;li&gt;在Emacs里使用电子邮件: 第六章&lt;/li&gt;
+&lt;li&gt;在Emacs里使用UNIX命令: 第五章&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;从Emacs里访问因特网: 第六~七章和第九章&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x C-f 查找文件并在一个新缓冲区打开它&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x C-v 读入另外一个文件替换掉用“C-x C-f”读入的文件&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x i 把文件插入到光标的当前位置&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x C-s 保存文件&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x C-w 把缓冲区内容写入一个文件&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x C-c 退出Emacs&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-h 进入Emacs的在线帮助系统&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-h f 给出某个给定命令名的在线帮助信息&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-h k 给出某个给定击键序列的在线帮助信息&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-h t 启动Emacs教程&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-h i 启动Info文档阅读器&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-\ 退出拼符&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-p 上一行&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-n 下一行&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-b 上一个字符&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-f 下一个字符&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-a 移到行首&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-e 移到行末&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC-b 上移一个单词&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC-f 下移一个单词&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC-{ 上移一段&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC-} 下移一段&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC-a 上移一句&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC-e 下移一句&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC-&amp;gt; 文件尾&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC-&amp;lt; 文件头&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-v/PgUp 上一屏&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC-v/PgDn 下一屏&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC-x goto-line n 移动到第n行&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如果准备重复执行一个命令很多次，可以用“ESC-n”指定指定的次数。例如：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ESC 5 C-n
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;会执行5次C-n，即光标上移5行&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;C-l 重新绘制屏显画面，清理屏幕显示的内容&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x u 撤销操作&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-g 放弃当前命令&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-d 删除光标位置上的字符&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;DEL 删除光标前面的字符&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC d 删除光标后面的单词&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC DEL 删除光标前面的单词&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-k 从光标位置删除到行尾&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC k 删除光标后面的句子&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x DEL 删除光标前面的句子&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-y 恢复被删除的文本&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-w 删除文本块（默认清空文件）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-@ 标记文本块开始位置（如有必要按下C-x C-x互换插入点和文本，检查文本块是否已标记正确）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-y 粘贴文本块&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC w 复制文本块&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-t 交换两个字符的位置（把光标放在第二个位置）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC t 交换两个单词的位置&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x C-t 交换两个文本行的位置&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC c 把单词的首字母改为大写&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC u 把单词的字母全部改为大写&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC l 把单词的字母全部改为小写&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC - ESC c 把前一个单词的首字母改为大写&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC - ESC u 把前一个单词的字母全部改为大写&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC - ESC l 把前一个单词的字母全部改为小写&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-s 查找(进入后，再次按下C-s是查找下一个)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-r 查找上一个&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC % 开始查询-替换操作&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;SPACE/y 替换，然后去下一个位置&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;DEL/n 不替换，然后去下一个位置&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;. 在当前位置做替换后退出查询-替换操作&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;, 替换并显示替换情况（再按空格或y后才移动到下一个位置）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;! 对后面的文件内容全部进行替换&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;^ 返回上一次进行替换的位置&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;RETURN/q 退出查询-替换操作&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x 2 把当前窗口分割为上下排列的两个窗口&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x 3 把当前窗口分割为左右排列的两个窗口&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x C-b 显示缓冲区的清单&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x b 移动到指定的编辑缓冲区&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x k 删除指定的编辑缓冲区&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;C-x s 以问答方式保存各个修改过的编辑缓冲区&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ESC x calendar 显示日历&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 21 Mar 2014 00:00:00 +0800</pubDate>
+        <link>http://www.tuliang.org//2014/03/21/learning-gnu-emacs-chinese/</link>
+        <guid isPermaLink="true">http://www.tuliang.org//2014/03/21/learning-gnu-emacs-chinese/</guid>
+      </item>
+    
+      <item>
+        <title>update emacs on os x</title>
+        <description>&lt;p&gt;最近买了hhkb开始折腾Emacs。&lt;/p&gt;
+
+&lt;p&gt;mac自带Emacs，但是版本比较老是Emacs22，Emacs24是现在最新的，有很多新功能，比如原生支持显示行数。&lt;/p&gt;
+
+&lt;p&gt;升级参考wikemacs.org：&lt;a href=&quot;http://wikemacs.org/index.php/Installing_Emacs_on_OS_X&quot;&gt;Installing Emacs on OS X&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;使用brew安装emacs&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;brew update  
+brew install emacs --cocoa  
+ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;删除mac原生的emacs&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo rm /usr/bin/emacs  
+sudo rm -rf /usr/share/emacs  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;大功告成~&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 Mar 2014 00:00:00 +0800</pubDate>
+        <link>http://www.tuliang.org//2014/03/17/update-emacs-on-os-x/</link>
+        <guid isPermaLink="true">http://www.tuliang.org//2014/03/17/update-emacs-on-os-x/</guid>
+      </item>
+    
+      <item>
+        <title>JavaScript异步编程</title>
+        <description>&lt;p&gt;&lt;img class=&quot;cover&quot; src=&quot;/images/2013/12/9787115316578.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;原作名：Async JavaScript: Build More Responsive Apps with Less Code&lt;/p&gt;
+
+&lt;p&gt;ISBN：9787115316578&lt;/p&gt;
+
+&lt;p&gt;作者：Trevor Burnham  &lt;/p&gt;
+
+&lt;p&gt;译者：许青松 &lt;/p&gt;
+
+&lt;p&gt;出版社：人民邮电出版社&lt;/p&gt;
+
+&lt;p&gt;出版时间：2013-6&lt;/p&gt;
+
+&lt;p&gt;评价：☆☆☆☆&lt;/p&gt;
+
+&lt;p&gt;最近图灵喜欢出一些很薄很小的书，本书就是其中一例。不过，这个书虽小，但是已经将JavaScript异步编程方面讲了一遍。它可以解除你对JavaScript异步编程的一些误解，彻底了解它运行的机制，同时也给出了不少实际的解决方法。&lt;/p&gt;
+
+&lt;p&gt;“如果队列中至少有一个事件适合“触发”，则虚拟机会挑选一个事件，并调用此事件的处理器。事件处理器返回后，我们又回到队列处。”、“输入事件的工作方式完全一样：用户单击一个已附加单击事件处理器的DOM元素时，会有一个单击事件排入队列。但是，该单击事件处理器要等到当前所有正在运行的代码均以结束后才会执行。因此，使用JavaScript的那些网友一不小心就会变得毫无反应。”，这些都说明了一个问题：JavaScript是无阻塞的，事件执行并不确定。&lt;/p&gt;
+
+&lt;p&gt;看上去是很糟糕，不过这样可以避免cpu等待，提高了性能。node.js强大的性能，很大程度上就是因为这个无阻塞特性。 &lt;/p&gt;
+
+&lt;p&gt;面对JavaScript的无阻塞作者给出了不少解决方法，首先是使用on和trigger形成的观察者模式，然后讲解了级联技术：&lt;/p&gt;
+
+&lt;p&gt;级联技术非常有用，因为它让我们不费吹灰之力就能定义异步任务的分化逻辑。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;step1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/step1&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;step2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;step1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/step2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lastStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;step2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/step3&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这里的lastStep对象当且仅当所有这3个Ajax调用都成功完成时才执行，其中任意一个Ajax调用未能完成，lastStep均被拒绝。&lt;/p&gt;
+
+&lt;p&gt;JavaScript是单线程的：“像setTimeout这样的异步函数只是简单地做延迟执行，而不是孵化新的线程。”&lt;/p&gt;
+
+&lt;p&gt;现在多核的情况越来越普遍，JavaScript当然想利用起来，然后我们看到了worker，但是它还比较简陋。&lt;/p&gt;
+
+&lt;p&gt;脚本加载：yepone是一个小巧而精干的工具，Require则是一个巨硕而强大的工具。最终选择哪个库完全取决于正在开发的应用类型和开发团队的类型。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 11 Dec 2013 00:00:00 +0800</pubDate>
+        <link>http://www.tuliang.org//2013/12/11/async-javascript-build-more-responsive-apps-with-less-code/</link>
+        <guid isPermaLink="true">http://www.tuliang.org//2013/12/11/async-javascript-build-more-responsive-apps-with-less-code/</guid>
+      </item>
+    
+      <item>
+        <title>TCP Sockets编程</title>
+        <description>&lt;p&gt;&lt;img class=&quot;cover&quot; src=&quot;/images/2013/12/9787115330529.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;原作名：Working with TCP Sockets&lt;/p&gt;
+
+&lt;p&gt;ISBN：9787115330529&lt;/p&gt;
+
+&lt;p&gt;作者：[加] Jesse Storimer &lt;/p&gt;
+
+&lt;p&gt;译者：门　佳  &lt;/p&gt;
+
+&lt;p&gt;出版社：人民邮电出版社&lt;/p&gt;
+
+&lt;p&gt;出版时间：2013-10&lt;/p&gt;
+
+&lt;p&gt;评价：☆☆☆&lt;/p&gt;
+
+&lt;p&gt;挺薄挺小也挺简单的一本书，相当与将Ruby中的TCP Sockets讲了一部分，顺带说明了一些基础知识。它并不能让你能够深入了解，对于Sockets入门来说勉勉强强。如果想提升Ruby水平，本书作用也不大，坦白来说本书是不是Ruby写的都影响不大。&lt;/p&gt;
+
+&lt;p&gt;任何在0~65535之间的端口都可以使用，但是在选用之前别忘了一些重要的约定。&lt;/p&gt;
+
+&lt;p&gt;规则1：不要使用0~1024之间的端口。这些端口是作为熟知（well-known）端口并保留给系统使用。
+规则2：不要使用49000~65535之间的端口。这些都是临时（ephemeral）端口。&lt;/p&gt;
+
+&lt;p&gt;除此之外，1025~48999之间端口的使用的一视同仁的。&lt;/p&gt;
+
+&lt;p&gt;如果你希望侦听每一个接口，那么可以使用0.0.0.0.这样会绑定到所有可用的接口、环回接口等。&lt;/p&gt;
+
+&lt;p&gt;Mongrel、Unicorn、Puma、Passenger以及Net::HTTP，它们无一例外地采用了readpartial(1024*16)。所有这些Web项目都是用16KB作为各自的读取长度。&lt;/p&gt;
+
+&lt;p&gt;线程和进程都可以用于并行操作，但是方式大不相同。没有万能药，究竟用哪个取决于实际情况。&lt;/p&gt;
+
+&lt;p&gt;就生成而言，线程的生成成本要低得多。生成一个进程需要创建原始进程所拥有的一切资源的副本。线程以进程为单位，多个线程都存在于同一个进程中。由于多个线程共享内存，无需创建副本，因而线程的生成速度要快得多。&lt;/p&gt;
+
+&lt;p&gt;因为线程共享内存，当使用会被多个线程访问的数据结构时，一定要多加小心。这通常意味着要在线程之间使用互斥量、锁和同步访问。进程就无需如此了，因为每个进程都有自己的一份资源副本。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 03 Dec 2013 00:00:00 +0800</pubDate>
+        <link>http://www.tuliang.org//2013/12/03/working-with-tcp-sockets/</link>
+        <guid isPermaLink="true">http://www.tuliang.org//2013/12/03/working-with-tcp-sockets/</guid>
+      </item>
+    
+      <item>
+        <title>游击队员</title>
+        <description>&lt;p&gt;&lt;img class=&quot;cover&quot; src=&quot;/images/2013/12/9787544264655.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;原作名：GUERRILLAS&lt;/p&gt;
+
+&lt;p&gt;ISBN：9787544264655&lt;/p&gt;
+
+&lt;p&gt;作者：(英)V. S. 奈保尔  &lt;/p&gt;
+
+&lt;p&gt;译者：张晓意  &lt;/p&gt;
+
+&lt;p&gt;出版社：南海出版公司&lt;/p&gt;
+
+&lt;p&gt;出版时间：2013-3&lt;/p&gt;
+
+&lt;p&gt;评价：☆☆☆&lt;/p&gt;
+
+&lt;p&gt;不知道是翻译还是原作的问题，文笔烂的一塌糊涂。剧情在前面没什么意思，后面稍微有点起色，这方面原作就跑不了干系了。 
+　　 
+比较有趣的是，从侧面写出了很多第三世界国家的现状。虽然早就不是殖民时代了，但是整个经济和政权是被欧美牢牢控制的。女主角简或许就是大部分民众的代表，她认为殖民时代过了，现在是一个自由民主的世界。事实上，她错了，大错特错，按某人的话说是Too young too naive。最后简的结局，也再现了普通民众这种天真幻想的后果。 
+　　 
+现实是残酷的，平时经济控制，反抗则军事镇压。书中形象的称为“挨鞭子了”。当地的普通民众对此已经习以为常，当地人的一段话道出了这这些现象：“现在每个人都站在了政府一边，都爱美国人，整个事件简直让人想哭”。 
+　　 
+面对现实，普通民众能怎么办，作者并没有给出答案。私以为得病不怕，最怕放弃。对话谈判这些只有大家实力相当的情况下才可能平等，广大第三世界的民族自主还需努力。放弃幻想，发展实力吧。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 03 Dec 2013 00:00:00 +0800</pubDate>
+        <link>http://www.tuliang.org//2013/12/03/guerrillas/</link>
+        <guid isPermaLink="true">http://www.tuliang.org//2013/12/03/guerrillas/</guid>
+      </item>
+    
+      <item>
+        <title>耶鲁：《聆听音乐》第12课</title>
+        <description>&lt;h2&gt;客席指挥：布鲁克青年交响乐团&lt;/h2&gt;
+
+&lt;p&gt;当你去聆听了一场音乐会并对这场音乐会做出评价。无论你是在心中完成评价，还是把你的想法写出来。你都要做到以下几点：&lt;/p&gt;
+
+&lt;p&gt;本质上我们只需要评价他们的演绎。表演得有多好？演奏者的表现如何？而不是去探讨作曲者是谁，不是探讨作品是在什么时候创作的，也不是关于作品的历史背景，甚至也不是关于作品的意义。&lt;/p&gt;
+
+&lt;p&gt;同时，切记也不要讨论作品的曲式。曲式就是一种线索，我们可以清楚地追踪作品进行到哪里，但在评论中我们也不会这样写：“管弦乐队开始演奏了，现在是主部主题，接下来是一个完美的连接段，继续进行到副部主题，我非常喜欢后面的结束主题，因为它有好多和声的撞击。”曲式可以作为鉴赏音乐的线索，但我们不希望被它牵着鼻子走。&lt;/p&gt;
+
+&lt;p&gt;具有绝对音感的人大概只占万分之一，他们能瞬间辨认出音高。&lt;/p&gt;
+
+&lt;p&gt;参考曲目：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; 贝多芬《田园交响曲》&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 24 Nov 2013 00:00:00 +0800</pubDate>
+        <link>http://www.tuliang.org//2013/11/24/yale-listen-to-music-lesson-12/</link>
+        <guid isPermaLink="true">http://www.tuliang.org//2013/11/24/yale-listen-to-music-lesson-12/</guid>
+      </item>
+    
+  </channel>
+</rss>

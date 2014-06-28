@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>计算机与人脑</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>计算机与人脑</h1>
+          <p><img class="cover" alt="9787100032445" src="/images/2013/01/9787100032445-204x300.jpg" width="204" height="300" /></p>
+
+<p>ISBN：9787100032445</p>
+
+<p>作者： [美] 约·冯·诺意曼</p>
+
+<p>译者：甘子玉</p>
+
+<p>出版社：商务印书馆</p>
+
+<p>出版时间：1965-3</p>
+
+<p>评价：☆☆☆☆</p>
+
+<p>看了译者序，感叹那个年代翻译都不好当啊。那时，简体似乎还未推广，至少这本书中还是有不少繁体字的。</p>
+
+<p>为什么在现代计算机不论在体积还是容量上都远超人脑的情况下，计算机在有些方面还是无法替代人脑呢？作者在书中提到人脑区别于一般的算术和数学，它使用另外的记数系统，可以视为解释这种现象的一种假说。（P58）神经系统所运用的记数系统，和我们所熟悉的一般的算术和数学的系统根本不同。它不是一种准确的符号系统，在符号系统中，符号的记数位置、符号的出现或不出现等，对消息的意义具有决定性。它是一种另外的记数系统，消息的意义由消息的统计性质来传送。我们已经看到，这种方法怎样带来了较低的算术准确度水平，但却得到较高的逻辑可靠度水平。就是说，算术上的恶化，换来了逻辑上的改进。</p>
+
+<p>进一步理解人脑和计算机，计算机所使用的数学语言是基于人脑所使用的自然语言的。（P60）当我们讲到数学时，我们是讨论一种第二语言，它是建筑在中央神经系统所真正使用的第一语言的基础之上的。</p>
+
+<p>遗憾的是此书是作者的遗作，并未完成，如果能在这方面继续深挖，可以大大推动计算机，特别是人工智能方面的发展。</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

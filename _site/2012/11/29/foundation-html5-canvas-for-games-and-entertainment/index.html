@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas基础教程</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>HTML5 Canvas基础教程</h1>
+          <p><img src="/images/2012/11/9787115271013-238x300.jpg" alt="HTML5 Canvas基础教程" title="9787115271013" width="238" height="300" class="cover" /></p>
+
+<p>原作名：Foundation HTML5 Canvas: For Games and Entertainment</p>
+
+<p>ISBN：9787115271013</p>
+
+<p>作者： Rob Hawkes </p>
+
+<p>译者：周广新 / 曾少宁 / 盛海艳　等  </p>
+
+<p>出版社：人民邮电出版社</p>
+
+<p>出版时间：2012-1</p>
+
+<p>评价：☆☆☆☆</p>
+
+<p>在画布中绘制图像后，我们就可以对它执行所有的2D渲染上下文方法。也就是说在画布中可以进行的平移、旋转、缩放和翻转等功能都是可以使用的。</p>
+
+<p>理解了物理学，你就能够创建更加逼真和具有动态效果的动画。也许现在你还无法明显感受到这一点。无论是使用速度、加速度这些简单概念，还是构建一个包含不同方向作用力的完善系统，通过学习物理学，我们才能真实而全面地展现动画效果。物理学概念不仅是制作逼真动画的基础，它们还是在各种动画（从游戏和数据可视化一直到卡通和电影）中反复验证的概念。</p>
+
+<p>尝试把你所学到的知识在JavaScript中实际应用，只有亲自把相关概念运用到现实之中，才会真正领悟其中的真谛。</p>
+
+<p>Canvas正在经历多年前Flash所经历的发展阶段，JavaScript开发人员可以借鉴Flash开发人员的经验。</p>
+
+<p>推荐阅读书籍：
+Keith Peters《<a href="http://book.douban.com/subject/3016575/" target="_blank">Flash ActionScript3.0动画教程</a>》</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

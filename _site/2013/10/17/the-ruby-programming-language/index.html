@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Ruby编程语言</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>Ruby编程语言</h1>
+          <p><img class="cover" src="/images/2013/09/9787121077012.jpg" /></p>
+
+<p>原作名：The Ruby Programming Language</p>
+
+<p>ISBN：9787121077012</p>
+
+<p>作者：David Flanagan / 松本行弘  </p>
+
+<p>译者：廖志刚 / 张禾 </p>
+
+<p>出版社：电子工业出版社</p>
+
+<p>出版时间：2009-01</p>
+
+<p>评价：☆☆☆☆</p>
+
+<p>初学Ruby或者会Rails然后回来补习Ruby基础的可以看一看。</p>
+
+<p>Ruby支持并行赋值：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="c1"># x = 1; y = 2</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="c1"># a b互换</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span> <span class="c1"># x = 1; y = 2; z = 3</span>
+</code></pre></div>
+<p>也允许返回多个值：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">demo</span>
+  <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">]</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>通常情况下，不带感叹号的方法返回调用该方法的对象的一个修改过的拷贝，而带感叹号的方法则是一个可变方法，该方法会修改原对象。</p>
+
+<p>全局变量以$为前缀，实例变量以@为前缀，类变量以@@为前缀。</p>
+
+<p>puts将文本字符串打印到控制台并在其后面添加一个换行符（除非该字符串已经以一个换行符结尾了）。如果传递给puts的对象不是一个字符串，那么puts就调用该对象的to_s方法，并且打印该方法所返回的字符串。print方法和puts方法做的基本是同一件事情，但是它并不在末尾添加一个换行符。</p>
+
+<p>函数p是puts的一个有用替代者，不仅仅是因为p比puts更加简短，而且还因为它是通过inspect方法将对象转化成字符串的，有时候此方法能比to_s方法返回对程序员更加友好的对象表示。</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="no">Object</span>
+<span class="c1"># =&gt; #&lt;Object:0x007fe3e1cbc038&gt;</span>
+
+<span class="nb">p</span> <span class="no">Object</span>
+<span class="c1"># =&gt; #&lt;Object title: &quot;Object title&quot;, description: &quot;Object description&quot;&gt;</span>
+</code></pre></div>
+<p>当一个整数结果太大而无法容纳一个Fixnum时，Ruby会自动将其转化成一个Bignum（类似的，如果Bignum整数计算后可以放入Fixnum，那么将被转化Fixnum），这样做的结果就是，Ruby中的整数算术操作不像其他语言中那样产生溢出。浮点数会上溢至两个特殊的值，即正无穷或负无穷，此外还会下溢至0。</p>
+
+<p>Ruby1.9定义了三个命名清晰的字符串迭代器来取代each方法：each_byte按字节对一个字符串进行顺序的迭代，与之类似，each_char按字符进行迭代，而each_line则按行迭代。</p>
+
+<p>范围（range）字面量的表现形式是在开始和结束值之间放置二三个点。如果使用两个点，那么改范围就是包含性的，值将是改范围的一部分。如果使用三个点，那么该范围就是排他性的，值将不是范围的一部分。</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span>
+<span class="n">a</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="mi">10</span>
+<span class="n">b</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</code></pre></div>
+<p>Ruby的<code>==</code>操作符测试两个不同的对象是否拥有同样的值，而equals方法测试两个对象是否是同一个对象。在这个方面Ruby和Java恰好相反。</p>
+
+<p>一般情况下，一个yield表达式的值就是代码块中最后一个表达式的值。（PS：和JS非常像）</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">squareroots</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">collect</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">then</span> <span class="mi">0</span> <span class="k">else</span> <span class="no">Math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Ruby方法可以返回多个值，这需要显式使用return语句，并把要返回的值用逗号分隔开。</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">polar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+  <span class="k">return</span> <span class="no">Math</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="no">Math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>通常我们想使用并行赋值时，会使用这种形式的方法定义。通过并行赋值，每个返回值会被赋给一个单独的变量。</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">polar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<p>用def语句定义方法时，也可以包含异常处理代码。异常处理代码会使用rescue、else和ensure从句，这与begin语句的方式一致。在短小的方法中，用rescue子句和def语句配合让代码非常干净整洁，这意味着你不用使用一个多余的begin语句，也省去了一级额外的格式缩进。</p>
+
+<p>参数的默认值不一定必须是常量：它们可以是任意表达式，也可以是实例变量的引用，还可以是前面定义参数的引用。比如：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">suffix</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">s</span><span class="o">[</span><span class="n">index</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="n">index</span><span class="o">]</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>参数默认值在运行时被求值，而不是解析时被求值。在下面的方法中，默认值[]在每次方法调用时产生一个新的空数组，而并非在数组定义产生一个数组，然后不断重用它：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=[]</span><span class="p">)</span>
+  <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">x</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>使用&amp;来调用代码块：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+<span class="n">summation</span> <span class="o">=</span> <span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="o">|</span><span class="n">total</span><span class="p">,</span><span class="n">x</span><span class="o">|</span> <span class="n">total</span><span class="o">+</span><span class="n">x</span> <span class="p">}</span>
+<span class="n">sum</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">summation</span><span class="p">)</span>
+<span class="n">sum</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="n">sum</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">summation</span><span class="p">)</span>
+</code></pre></div>
+<p>私有方法不能在所定义的类外被调用，但是它们会被子类继承，这意味着子类可以调用它们，也可以覆盖它们。在Ruby中，应该只对你了解的超类进行子类化。如果希望使用某个类的公开API而非它的具体实现，应该通过封装其实例和代理来扩展它的功能，而不是继承它。</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>

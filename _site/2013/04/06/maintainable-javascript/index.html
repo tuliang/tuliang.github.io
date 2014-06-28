@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>编写可维护的JavaScript</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.0.3">
+  <link rel="alternate" type="application/rss+xml" title="Jekyll • Simple, blog-aware, static sites - Feed" href="/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/tuliang/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/about/">About</a>
+  </li>
+  <li>
+    <a href="/feed.xml">via RSS</a>
+  </li>
+  <li>
+    <a href="https://github.com/tuliang"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <h1>编写可维护的JavaScript</h1>
+          <p><img src="/images/2013/04/9787115310088-228x300.jpg" alt="9787115310088" width="228" height="300" class="cover" /></p>
+
+<p>原作名：Maintainable JavaScript</p>
+
+<p>ISBN： 9787115310088</p>
+
+<p>作者：Nicholas C. Zakas</p>
+
+<p>译者：李晶 / 郭凯 / 张散集</p>
+
+<p>出版社：人民邮电出版社</p>
+
+<p>出版时间：2013-3</p>
+
+<p>评价：☆☆☆☆</p>
+
+<p>很薄的一本书，淘宝的翻译一般般，不过在国内翻译的作品中算是不错了。这本书，虽然主讲团队合作，对单打独斗的人也有些益处。第一、二部分其中有些章节很仔细的看了，将的还是挺不错的。其他部分，特别是第三部分——自动化，只是过了一下。这些工具需要抽时间研究一下，虽然现在大部分时候是单打独斗的。能自动化的，最好还是自动化，省心省力，也适合我这种喜欢偷懒的人:-D。</p>
+
+<p>JS工具箱：JSLint/JSHint（验证工具）、Handlebars（页面模板）、RequireJS（模块加载器）。</p>
+
+<p>不赞成使用Object、Array来创建对象和数组，最好使用大括号{ }与中括号[ ]。后一种写法可以高效地完成前一种写法相同的任务，后一种写法简洁，前一种写法更复杂。</p>
+
+<p>推荐将局部变量的定义作为函数内第一条语句，同时使用单var语句。这样的做法可以算是一种最佳实践，解决了声明提前的困扰的同时，也让代码更短。</p>
+
+<p>和变量声明一样，函数声明也会被JavaScript引擎提前。因此在代码中函数的调用可以出现在函数声明之前。对于函数的声明提前，同样建议将函数写在调用代码的前面，最好紧接着之前说的单var语句的后面。</p>
+
+<p>保持松耦合。（P56）在一起工作的组件无法达到“无耦合”（no coupling）。在所有系统中，组件之间总要共享一些信息来完成各自的工作。这很好理解，我们的目标是确保对一个组件的修改不会经常性地影响其他部分。</p>
+
+<p>不要使用JS改变style属性，使用className。（P59）将CSS从JavaScript中抽离意味着所有的样式信息都应当保持在CSS中。当需要通过JavaScript来修改元素样式的时候，最佳方法是操作CSS的className.</p>
+
+<p>勘错：
+P6<br>
+“2个空格表示一个缩进”出现了两次，其中应该有一个为“4个空格表示一个缩进”</p>
+
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>Published with <a href="http://pages.github.com">
+        <img src="/img/footer-logo.svg" height="30" alt="GitHub Pages">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<i class=\"fa fa-link\"></i>";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+
+
+
+</body>
+</html>
