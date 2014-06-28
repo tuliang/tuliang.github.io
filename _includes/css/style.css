@@ -57,7 +57,7 @@ nav li {
 }
 
 .main-nav {
-  margin-top: 52px;
+  text-align: center;
 }
 
 .main-nav li {
@@ -1041,4 +1041,8 @@ code.option, code.flag, code.filter, code.output {
     margin: 0 -40px;
     padding: 0 10px;
   }
+}
+
+.logo {
+  margin: 20px 0 0 0;
 }
