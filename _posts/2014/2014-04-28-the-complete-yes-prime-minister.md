@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 是，首相
+category: read
 ---
 <img class="cover" src="/images/2014/4/9787108043610.jpg" />
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 数学之美
+category: read
 ---
 <img class="cover" src="/images/2014/5/9787115282828.jpg" />
 

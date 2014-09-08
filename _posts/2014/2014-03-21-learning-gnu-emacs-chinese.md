@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 学习GNU Emacs
+category: read
 ---
 <img class="cover" src="/images/2014/3/9787111103486.jpg" />
 
