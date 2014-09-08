@@ -1,8 +1,6 @@
 ---
 layout: post
-title: "MacTalk 人生元编程"
-date: 2014-06-28 17:05:27 +0800
-comments: true
+title: MacTalk 人生元编程
 category: 阅读
 ---
 <img class="cover" src="/images/2014/6/9787115342232.jpg" />

@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "CoffeeScript小书"
+title: CoffeeScript小书
+category: 阅读
 ---
 <img class="cover" src="/images/2014/7/9781449321055.jpg" />
 

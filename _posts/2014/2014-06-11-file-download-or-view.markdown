@@ -1,8 +1,6 @@
 ---
 layout: post
 title: Web文件下载和查看
-date: 2014-06-11 12:13:20 +0800
-comments: true
 categories: 
 ---
 在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用HTML5 download Attribute。

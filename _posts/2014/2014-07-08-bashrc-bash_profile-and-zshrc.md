@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ".bashrc、.bash_profile 和.zshrc"
+category: Linux/Unix 
 ---
 在Mac系统中, 我们通过编辑`.bashrc`和`.bash_profile`来设置用户的工作环境, 很多文章对它们进行修改。
 
