@@ -1,9 +1,9 @@
 # Site settings
 title: 涂亮 
 email: info@tuliang.org
-description: "个人博客"
+description: "涂亮的个人博客"
 baseurl: ""
-url: "http://www.tuliang.org/"
+url: "tuliang.org"
 username: 'tuliang'
 highlighter: pygments
 repository: "https://github.com/tuliang"
