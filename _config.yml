@@ -13,7 +13,7 @@ paginate: 10
 markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
-permalink: title
+permalink: :title
 
 # chart_apis
 chart_apis: http://chart.apis.google.com/chart?cht=tx&chl=
