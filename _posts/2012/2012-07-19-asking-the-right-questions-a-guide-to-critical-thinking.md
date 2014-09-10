@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 学会提问：批判性思维指南
+category: read
 ---
 <img class="cover" title="9787501951581" src="/images/2012/07/9787501951581-202x300.jpg" alt="学会提问：批判性思维指南" width="202" height="300" />
 

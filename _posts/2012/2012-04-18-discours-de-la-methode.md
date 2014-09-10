@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 谈谈方法
+category: read
 ---
 <img class="cover" title="9787100030908" src="/images/2012/04/9787100030908.jpg" alt="谈谈方法" width="150" height="222" />
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: PHP5权威编程
+category: read
 ---
 <img class="cover" title="9787121050787" src="/images/2012/08/9787121050787-300x300.jpg" alt="PHP5权威编程" width="300" height="300" />
 

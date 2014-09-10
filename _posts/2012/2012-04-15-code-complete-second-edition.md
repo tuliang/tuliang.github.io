@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 代码大全（第2版）
+category: read
 ---
 <img class="cover" title="9787121022982" src="/images/2012/03/9787121022982-233x300.jpg" alt="代码大全（第2版）" width="233" height="300" />
 

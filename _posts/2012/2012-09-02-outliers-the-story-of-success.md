@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 异类：不一样的成功启示录
+category: read
 ---
 <img class="cover" title="9787508615158" src="/images/2012/09/9787508615158-219x300.jpg" alt="异类：不一样的成功启示录" width="219" height="300" />
 

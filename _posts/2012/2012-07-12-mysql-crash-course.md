@@ -1,6 +1,7 @@
 ---
 layout: post
 title: MySQL必知必会
+category: read
 ---
 <img class="cover" title="9787115191120" src="/images/2012/07/9787115191120-204x300.jpg" alt="MySQL必知必会" width="204" height="300" />
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: PHP经典实例（第2版）
+category: read
 ---
 <img class="cover" title="9787508386089" src="/images/2012/03/9787508386089-228x300.jpg" alt="PHP经典实例（第二版）" width="228" height="300" />
 

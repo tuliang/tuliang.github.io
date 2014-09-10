@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 人月神话
+category: read
 ---
 <img class="cover" src="/images/2012/01/9787302155676-221x300.jpg" width="221" height="300" />
 

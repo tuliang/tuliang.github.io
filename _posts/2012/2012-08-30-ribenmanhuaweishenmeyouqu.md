@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 日本漫画为什么有趣
+category: read
 ---
 <img class="cover" title="9787513304672" alt="日本漫画为什么有趣" src="/images/2012/08/9787513304672-207x300.jpg" width="207" height="300" />
 

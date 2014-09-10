@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 如何阅读一本书
+category: read
 ---
 <img class="cover" title="9787100040945" src="/images/2012/03/9787100040945-219x300.jpg" alt="如何阅读一本书" width="219" height="300" />
 

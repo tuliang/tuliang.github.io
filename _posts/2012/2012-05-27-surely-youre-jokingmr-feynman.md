@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 别闹了，费曼先生
+category: read
 ---
 <img class="cover" title="9787108016195" src="/images/2012/05/9787108016195-202x300.jpg" alt="别闹了，费曼先生" width="202" height="300" />
 

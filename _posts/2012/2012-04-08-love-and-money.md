@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 爱情与金钱
+category: read
 ---
 <img class="cover" title="9787560011707" src="/images/2012/04/9787560011707.jpg" alt="爱情与金钱" width="150" height="233" />
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 软件随想录：程序员部落酋长Joel谈软件
+category: read
 ---
 <img class="cover" title="9787115216342" src="/images/2012/04/9787115216342-207x300.jpg" alt="软件随想录：程序员部落酋长Joel谈软件" width="207" height="300" />
 

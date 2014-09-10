@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 爆漫王。 角色王。
+category: read
 ---
 <img src="/images/2012/12/9787539759777.jpg" alt="9787539759777" width="200" height="200" class="cover" />
 

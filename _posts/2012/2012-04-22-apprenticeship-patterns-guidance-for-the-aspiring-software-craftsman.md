@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 软件开发者路线图：从学徒到高手
+category: read
 ---
 <img class="cover" title="9787111310068" src="/images/2012/04/9787111310068-229x300.jpg" alt="软件开发者路线图：从学徒到高手" width="229" height="300" />
 

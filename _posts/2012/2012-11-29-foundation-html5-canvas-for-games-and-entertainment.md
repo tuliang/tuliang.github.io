@@ -1,6 +1,7 @@
 ---
 layout: post
 title: HTML5 Canvas基础教程
+category: read
 ---
 <img src="/images/2012/11/9787115271013-238x300.jpg" alt="HTML5 Canvas基础教程" title="9787115271013" width="238" height="300" class="cover" />
 

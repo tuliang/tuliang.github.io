@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 国民财富的性质和原因的研究（下卷）
+category: read
 ---
 <img class="cover" src="/images/2012/01/9787100005012-200x300.jpg" width="200" height="300" />
 

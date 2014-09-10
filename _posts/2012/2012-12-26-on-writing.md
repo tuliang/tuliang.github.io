@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 写作这回事：创作生涯回忆录
+category: read
 ---
 <img src="/images/2012/12/9787532748440-214x300.jpg" alt="9787532748440" width="214" height="300" class="cover" />
 

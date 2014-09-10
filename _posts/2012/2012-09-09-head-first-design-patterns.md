@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Head First 设计模式
+category: read
 ---
 <img class="cover" title="9787508353937" src="/images/2012/09/9787508353937-257x300.jpg" alt="Head First 设计模式" width="257" height="300" />
 

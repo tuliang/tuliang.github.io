@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 重构：改善既有代码的设计
+category: read
 ---
 <img class="cover" title="9787115221704" src="/images/2012/01/9787115221704-228x300.jpg" alt="重构：改善既有代码的设计" width="228" height="300" />
 

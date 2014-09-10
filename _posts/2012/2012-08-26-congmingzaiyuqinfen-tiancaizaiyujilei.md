@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 聪明在于勤奋天才在于积累
+category: read
 ---
 <img class="cover" title="9787500783053" src="/images/2012/08/9787500783053-207x300.jpg" alt="聪明在于勤奋天才在于积累" width="207" height="300" />
 

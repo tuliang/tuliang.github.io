@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 古今数学思想（一）
+category: read
 ---
 <img class="cover" title="9787532361724" src="/images/2012/08/9787532361724-204x300.jpg" alt="古今数学思想（一）" width="204" height="300" />
 

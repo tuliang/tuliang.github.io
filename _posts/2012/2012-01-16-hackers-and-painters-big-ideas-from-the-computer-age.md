@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 黑客与画家：硅谷创业之父Paul Graham文集
+category: read
 ---
 <img class="cover" src="/images/2012/01/9787115249494-212x300.jpg" width="212" height="300" />
 

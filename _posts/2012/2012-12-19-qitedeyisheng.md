@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 奇特的一生
+category: read
 ---
 <img src="/images/2012/12/9787535021175-228x300.jpg" alt="9787535021175" width="228" height="300" class="cover" />
 

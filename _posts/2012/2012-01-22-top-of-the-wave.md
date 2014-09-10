@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 浪潮之巅
+category: read
 ---
 <img class="cover" src="/images/2012/01/9787121139512-219x300.jpg" width="219" height="300" />
 

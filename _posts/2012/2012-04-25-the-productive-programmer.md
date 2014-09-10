@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 卓有成效的程序员
+category: read
 ---
 <img class="cover" title="9787508386089" src="/images/2012/03/97875083860891-223x300.jpg" alt="卓有成效的程序员" width="223" height="300" />
 

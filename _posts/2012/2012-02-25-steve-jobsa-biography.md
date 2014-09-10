@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 史蒂夫·乔布斯传
+category: read
 ---
 <img class="cover" src="/images/2012/02/9787508630069-223x300.jpg" width="223" height="300" />
 

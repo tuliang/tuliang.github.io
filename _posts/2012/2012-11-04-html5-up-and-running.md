@@ -1,6 +1,7 @@
 ---
 layout: post
 title: HTML5揭秘
+category: read
 ---
 <img src="/images/2012/11/9787121124082-228x300.jpg" alt="HTML5揭秘" title="9787121124082" width="228" height="300" class="cover" />
 

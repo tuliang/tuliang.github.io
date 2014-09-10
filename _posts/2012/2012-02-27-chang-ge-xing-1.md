@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 长歌行：01
+category: read
 ---
 <img class="cover" title="9787540548544" src="/images/2012/02/9787540548544-204x300.jpg" alt="长歌行：01" width="204" height="300" />
 

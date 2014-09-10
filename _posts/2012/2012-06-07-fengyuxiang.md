@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 冯玉祥自述
+category: read
 ---
 <img class="cover" title="9787539949871" src="/images/2012/06/9787539949871.jpg" alt="冯玉祥自述" width="300" height="300" />
 

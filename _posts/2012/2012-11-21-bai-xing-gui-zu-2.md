@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 百姓贵族：2
+category: read
 ---
 <img class="cover" title="9787510052897" src="/images/2012/11/9787510052897-204x300.jpg" alt="百姓贵族：2" width="204" height="300" />
 

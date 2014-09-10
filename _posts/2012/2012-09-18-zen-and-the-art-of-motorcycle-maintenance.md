@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 禅与摩托车维修艺术
+category: read
 ---
 <img class="cover" title="9787229040369" src="/images/2012/09/9787229040369-212x300.jpg" alt="禅与摩托车维修艺术" width="212" height="300" />
 

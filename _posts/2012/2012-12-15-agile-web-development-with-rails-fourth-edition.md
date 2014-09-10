@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Web开发敏捷之道：应用Rails进行敏捷Web开发
+category: read
 ---
 <img class="cover" alt="9787111374046" src="/images/2012/12/9787111374046-232x300.jpg" width="232" height="300" />
 
