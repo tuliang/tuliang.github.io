@@ -1,6 +1,7 @@
 ---
 layout: post
 title: TCP Sockets编程
+category: read
 ---
 <img class="cover" src="/images/2013/12/9787115330529.jpg" />
 

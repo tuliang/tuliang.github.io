@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Getting Real
+category: read
 ---
 <img class="cover" src="/images/2013/08/9780578012810.jpg" />
 

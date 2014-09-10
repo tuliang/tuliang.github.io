@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript异步编程
+category: read
 ---
 <img class="cover" src="/images/2013/12/9787115316578.jpg" />
 

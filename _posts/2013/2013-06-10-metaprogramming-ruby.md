@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ruby元编程
+category: read
 ---
 <img class="cover" src="/images/2013/06/9787560974583-242x300.jpg" width="242" height="300" />
 

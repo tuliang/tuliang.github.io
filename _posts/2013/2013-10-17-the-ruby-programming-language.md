@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ruby编程语言
+category: read
 ---
 <img class="cover" src="/images/2013/09/9787121077012.jpg" />
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Programming Ruby中文版
+category: read
 ---
 <img class="cover" src="/images/2013/04/9787121038150.jpg" />
 

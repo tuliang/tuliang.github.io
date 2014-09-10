@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 松本行弘的程序世界
+category: read
 ---
 <img class="cover" alt="9787115255075" src="/images/2013/05/9787115255075-223x300.jpg" width="223" height="300" />
 

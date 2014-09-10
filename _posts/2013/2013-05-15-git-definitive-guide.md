@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Git权威指南
+category: read
 ---
 <img src="/images/2013/05/9787111349679-228x300.jpg" alt="9787111349679" width="228" height="300" class="cover" />
 

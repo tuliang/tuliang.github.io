@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript语言精粹
+category: read
 ---
 <img class="cover" alt="9787121084379" src="/images/2013/05/9787121084379.jpg" width="200" height="260" />
 

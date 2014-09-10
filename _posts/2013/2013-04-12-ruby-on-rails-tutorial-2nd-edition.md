@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ruby on Rails Tutorial 原书第2版
+category: read
 ---
 <img class="cover" alt="9780321832054" src="/images/2013/04/9780321832054-228x300.jpg" width="228" height="300" />
 

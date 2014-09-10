@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaSctipt编程精解
+category: read
 ---
 <img src="/images/2013/03/9787111396659-228x300.jpg" alt="9787111396659" width="228" height="300" class="cover" />
 

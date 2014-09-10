@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 高效能人士的七个习惯
+category: read
 ---
 <img class="cover" src="/images/2013/06/9787500649038.jpg" />
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 狂热分子：群众运动圣经
+category: read
 ---
 <img class="cover" alt="9787563374625" src="/images/2013/02/9787563374625.jpg" width="207" height="300" />
 

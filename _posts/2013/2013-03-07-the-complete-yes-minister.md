@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 是，大臣
+category: read
 ---
 <img src="/images/2013/03/9787108041012-207x300.jpg" alt="9787108041012" width="207" height="300" class="cover" />
 

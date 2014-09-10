@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 娱乐至死
+category: read
 ---
 <img src="/images/2013/01/9787563344970-207x300.jpg" alt="9787563344970" width="207" height="300" class="cover" />
 

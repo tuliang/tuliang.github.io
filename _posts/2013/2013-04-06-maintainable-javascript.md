@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 编写可维护的JavaScript
+category: read
 ---
 <img src="/images/2013/04/9787115310088-228x300.jpg" alt="9787115310088" width="228" height="300" class="cover" />
 

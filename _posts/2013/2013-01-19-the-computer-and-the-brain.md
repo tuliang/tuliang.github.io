@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 计算机与人脑
+category: read
 ---
 <img class="cover" alt="9787100032445" src="/images/2013/01/9787100032445-204x300.jpg" width="204" height="300" />
 

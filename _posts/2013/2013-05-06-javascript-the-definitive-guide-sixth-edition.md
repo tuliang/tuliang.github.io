@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript 权威指南（第 6 版）
+category: read
 ---
 <img src="/images/2013/05/9787111376613-228x300.jpg" alt="9787111376613" width="228" height="300" class="cover" />
 

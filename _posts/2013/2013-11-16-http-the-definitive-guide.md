@@ -1,6 +1,7 @@
 ---
 layout: post
 title: HTTP权威指南
+category: read
 ---
 <img class="cover" src="/images/2013/10/9787115281487.jpg" />
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 旧制度与大革命
+category: read
 ---
 <img class="cover" src="/images/2013/06/9787511716101.jpg" />
 

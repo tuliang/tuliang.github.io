@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 改变未来的九大算法
+category: read
 ---
 <img class="cover" src="/images/2013/11/9787508639017.jpg" />
 

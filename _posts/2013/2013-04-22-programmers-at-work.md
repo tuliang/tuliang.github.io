@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 编程大师访谈录
+category: read
 ---
 <img class="cover" alt="s24509127" src="/images/2013/04/s24509127-202x300.jpg" width="202" height="300" />
 

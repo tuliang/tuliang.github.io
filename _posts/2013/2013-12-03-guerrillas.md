@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 游击队员
+category: read
 ---
 <img class="cover" src="/images/2013/12/9787544264655.jpg" />
 

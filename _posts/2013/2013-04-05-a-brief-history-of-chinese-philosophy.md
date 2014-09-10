@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 中国哲学简史
+category: read
 ---
 <img class="cover" alt="9787301173954" src="/images/2013/04/9787301173954-211x300.jpg" width="211" height="300" />
 

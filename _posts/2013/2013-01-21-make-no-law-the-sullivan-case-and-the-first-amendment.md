@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 批评官员的尺度：《纽约时报》诉警察局长沙利文案
+category: read
 ---
 <img src="/images/2013/01/9787301188736-207x300.jpg" alt="9787301188736" width="207" height="300" class="cover" />
 

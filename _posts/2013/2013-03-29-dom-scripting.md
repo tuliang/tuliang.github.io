@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript DOM编程艺术 （第2版）
+category: read
 ---
 <img src="/images/2013/03/9787115249999-232x300.jpg" alt="9787115249999" width="232" height="300" class="cover" />
 
