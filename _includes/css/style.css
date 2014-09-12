@@ -21,6 +21,10 @@ body {
   display: block;
 }
 
+img {
+  background: #fff;
+}
+
 .clear:after {
   content: " ";
   display: block;
