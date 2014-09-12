@@ -21,11 +21,11 @@ Robert J. Shiller是Yale大学Arthur M. Okun经济学讲座教授和Yale大学�
 
 课程目录：
 
-<a title="耶鲁：《金融市场》第1课" href="/yale-financial-market-lesson-1.html" target="_blank">[第1集]金融和保险在我们经济和社会中的强大作用</a> - Finance and Insurance as Powerful Forces in Our Economy and Society
+<a title="耶鲁：《金融市场》第1课" href="/yale-financial-market-lesson-1" target="_blank">[第1集]金融和保险在我们经济和社会中的强大作用</a> - Finance and Insurance as Powerful Forces in Our Economy and Society
 
-<a title="耶鲁：《金融市场》第2课" href="/yale-financial-market-lesson-2.html" target="_blank">[第2集]风险管理中的普遍原理:风险聚集和对冲</a> - The Universal Principle of Risk Management: Pooling and the Hedging of Risks
+<a title="耶鲁：《金融市场》第2课" href="/yale-financial-market-lesson-2" target="_blank">[第2集]风险管理中的普遍原理:风险聚集和对冲</a> - The Universal Principle of Risk Management: Pooling and the Hedging of Risks
 
-<a title="耶鲁：《金融市场》第3课" href="/yale-financial-market-lesson-3.html" target="_blank">[第3集]金融中的科技与发明</a> - Technology and Invention in Finance
+<a title="耶鲁：《金融市场》第3课" href="/yale-financial-market-lesson-3" target="_blank">[第3集]金融中的科技与发明</a> - Technology and Invention in Finance
 
 <a href="/yale-financial-market-lesson-4" title="耶鲁：《金融市场》第4课" target="_blank">[第4集]投资组合多元化和辅助性的金融机构(资本资产定价模型)</a> - Portfolio Diversification and Supporting Financial Institutions (CAPM Model)
 
