@@ -7,9 +7,9 @@ category: open
 
 如果你对iPhone Development有兴趣，以下是入门门槛供参考：首先你要有一台Mac电脑（因为 iPhone App 使用 Mac 平台内建的 Xcode 开发工具），网上也有在Windows下搭设开发环境的教程，请大家自行GOOGLE一下,接著下载 iPhone SDK 安装，然后最基本的是你要熟悉C语言，再来你得学习开发iPhone所使用的Objective-C语言，接著是Cocoa。
 
-<a title="斯坦福：iPhone开发教程2010年冬-[第1集] 基础入门" href="/2013/01/21/stamford-iphone-2010-winter-lesson-1.html" target="_blank">[第1集] 基础入门</a>
+<a title="斯坦福：iPhone开发教程2010年冬-[第1集] 基础入门" href="/stamford-iphone-2010-winter-lesson-1" target="_blank">[第1集] 基础入门</a>
 
-<a title="斯坦福：iPhone开发教程2010年冬-[第2集] 各种基础的类,功能,对象和实例的介绍" href="/2013/01/21/stamford-iphone-2010-winter-lesson-2.html" target="_blank">[第2集] 各种基础的类,功能,对象和实例的介绍</a>
+<a title="斯坦福：iPhone开发教程2010年冬-[第2集] 各种基础的类,功能,对象和实例的介绍" href="/stamford-iphone-2010-winter-lesson-2" target="_blank">[第2集] 各种基础的类,功能,对象和实例的介绍</a>
 
 [第3集] 如何创建你自己的定制类
 

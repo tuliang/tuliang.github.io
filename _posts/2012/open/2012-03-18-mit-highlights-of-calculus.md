@@ -20,13 +20,13 @@ category: open
 
 ###第一部分：微积分重点
 
-<a title="麻省理工《微积分重点》第一部分第零课" href="/2012/03/18/mit-highlights-of-calculus-section-1-lesson-0.html" target="_blank">课程简介</a>-Gil Strang's Introduction to Highlights of Calculus
+<a title="麻省理工《微积分重点》第一部分第零课" href="/mit-highlights-of-calculus-section-1-lesson-0" target="_blank">课程简介</a>-Gil Strang's Introduction to Highlights of Calculus
 
-<a title="麻省理工《微积分重点》第一部分第一课" href="/2012/03/18/mit-highlights-of-calculus-section-1-lesson-1.html" target="_blank">第1课：微积分总览</a>-Big Picture of Calculus
+<a title="麻省理工《微积分重点》第一部分第一课" href="/mit-highlights-of-calculus-section-1-lesson-1" target="_blank">第1课：微积分总览</a>-Big Picture of Calculus
 
-<a title="麻省理工《微积分重点》第一部分第二课" href="/2012/03/19/mit-highlights-of-calculus-section-1-lesson-2.html" target="_blank">第2课：导数总览</a>-Big Picture: Derivatives
+<a title="麻省理工《微积分重点》第一部分第二课" href="/mit-highlights-of-calculus-section-1-lesson-2" target="_blank">第2课：导数总览</a>-Big Picture: Derivatives
 
-<a title="麻省理工《微积分重点》第一部分第三课" href="/2013/06/19/mit-highlights-of-calculus-section-1-lesson-3.html" target="_blank">第3课：极值和二阶导数</a>-Max and Min and Second Derivative
+<a title="麻省理工《微积分重点》第一部分第三课" href="/mit-highlights-of-calculus-section-1-lesson-3" target="_blank">第3课：极值和二阶导数</a>-Max and Min and Second Derivative
 
 第4课：指数函数-The Exponential Function
 
