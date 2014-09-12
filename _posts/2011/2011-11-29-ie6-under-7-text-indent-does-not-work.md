@@ -1,6 +1,7 @@
 ---
 layout: post
 title: IE6,7下text-indent不起效
+category: front-end-web
 ---
 使用
 

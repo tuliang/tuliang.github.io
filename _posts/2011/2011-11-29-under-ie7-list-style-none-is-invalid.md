@@ -1,6 +1,7 @@
 ---
 layout: post
 title: IE7下list-style:none无效
+category: front-end-web
 ---
 IE7下有时候`list-style:none`无效，我们不能忽略的是,`list-style`: 包含了三个属性:
 ```css
