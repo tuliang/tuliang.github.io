@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ACM图灵奖：计算机发展史的缩影
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787040232196-202x300.jpg" width="202" height="300" />
 

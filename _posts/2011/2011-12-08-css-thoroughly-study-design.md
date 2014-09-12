@@ -1,6 +1,7 @@
 ---
 layout: post
 title: CSS设计彻底研究
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787115172969.jpg" width="141" height="200" />
 

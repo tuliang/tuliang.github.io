@@ -1,6 +1,7 @@
 ---
 layout: post
 title: CSS禅意花园：Web视觉艺术设计的王者之书
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787115160355-287x300.jpg" width="287" height="300" />
 

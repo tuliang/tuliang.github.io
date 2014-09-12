@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 公正：该如何做是好？
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787508627557-219x300.jpg" width="219" height="300" />
 

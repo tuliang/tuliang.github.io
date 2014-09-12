@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 迈向神境的作家（下）：文学少女8
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787020085477-211x300.jpg" width="211" height="300" />
 

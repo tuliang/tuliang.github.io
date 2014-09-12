@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 功利主义
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787208075160-209x300.jpg" width="209" height="300" />
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 程序员修炼之道：从小工到专家
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787121123368-238x300.jpg" width="238" height="300" />
 

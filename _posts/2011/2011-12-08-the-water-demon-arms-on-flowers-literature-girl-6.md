@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 怀抱花月的水妖：文学少女6
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787020084272-207x300.jpg" width="207" height="300" />
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 芥川龙之介中短篇小说集
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787216047890-192x300.jpg" width="192" height="300" />
 

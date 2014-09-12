@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Joomla！建站步步通
+category: read
 ---
 <img class="cover" src="/images/2011/12/9781705457009-212x300.jpg" width="212" height="300" />
 

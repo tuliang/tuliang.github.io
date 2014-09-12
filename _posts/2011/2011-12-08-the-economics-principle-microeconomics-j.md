@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 经济学原理：微观经济学分册
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787301150894-207x300.jpg" width="207" height="300" />
 

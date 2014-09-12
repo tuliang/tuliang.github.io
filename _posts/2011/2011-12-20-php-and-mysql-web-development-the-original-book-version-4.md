@@ -1,6 +1,7 @@
 ---
 layout: post
 title: php和mysql web开发（原书第4版）
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787111262817-228x300.jpg" width="228" height="300" />
 

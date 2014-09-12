@@ -1,6 +1,7 @@
 ---
 layout: post
 title: jQuery实战
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787115195999-238x300.jpg" width="238" height="300" />
 

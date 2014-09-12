@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 乌合之众：大众心理研究
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787510407550.jpg" width="150" height="220" />
 

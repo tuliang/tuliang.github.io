@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 绝望恸哭的信徒：文学少女5
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787020084203-207x300.jpg" width="207" height="300" />
 

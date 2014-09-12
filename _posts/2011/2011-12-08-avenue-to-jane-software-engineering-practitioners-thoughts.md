@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 大道至简：软件工程实践者的思想
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787121038693-207x300.jpg" width="207" height="300" />
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 迈向神境的作家（上）：文学少女7
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787020085408-211x300.jpg" width="211" height="300" />
 

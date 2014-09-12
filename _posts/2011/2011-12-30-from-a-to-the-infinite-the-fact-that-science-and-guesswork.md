@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 从一到无穷大：科学中的事实和臆测
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787030107596.jpg" width="200" height="288" />
 

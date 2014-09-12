@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 背负污名的天使：文学少女4
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787020083572-207x300.jpg" width="207" height="300" />
 

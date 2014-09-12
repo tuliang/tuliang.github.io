@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 经济学原理：宏观经济学分册
+category: read
 ---
 <img class="cover" src="/images/2011/12/9787301150900-211x300.jpg" width="211" height="300" />
 
