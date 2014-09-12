@@ -33,29 +33,29 @@ Craig Wright从1973年开始在耶鲁大学任教，目前是the Henry L. and Lu
 
 课程安排：
 
-<a href="/2013/03/18/yale-listen-to-music-lesson-1.html" title="耶鲁：《聆听音乐》第1课" target="_blank">[第1集]导言</a> - Introduction
+<a href="/yale-listen-to-music-lesson-1" title="耶鲁：《聆听音乐》第1课" target="_blank">[第1集]导言</a> - Introduction
 
-<a href="/2013/03/18/yale-listen-to-music-lesson-2.html" title="耶鲁：《聆听音乐》第2课" target="_blank">[第2集]介绍乐器和音乐风格</a> - Introduction to Instruments and Musical Genres
+<a href="/yale-listen-to-music-lesson-2" title="耶鲁：《聆听音乐》第2课" target="_blank">[第2集]介绍乐器和音乐风格</a> - Introduction to Instruments and Musical Genres
 
-<a href="/2013/03/18/yale-listen-to-music-lesson-3.html" title="耶鲁：《聆听音乐》第3课" target="_blank">[第3集]节奏：音乐的基础</a> - Rhythm: Fundamentals
+<a href="/yale-listen-to-music-lesson-3" title="耶鲁：《聆听音乐》第3课" target="_blank">[第3集]节奏：音乐的基础</a> - Rhythm: Fundamentals
 
-<a href="/2013/03/18/yale-listen-to-music-lesson-4.html" title="耶鲁：《聆听音乐》第4课" target="_blank">[第4集]节奏：爵士 流行和古典</a> - Rhythm: Jazz, Pop and Classical
+<a href="/yale-listen-to-music-lesson-4" title="耶鲁：《聆听音乐》第4课" target="_blank">[第4集]节奏：爵士 流行和古典</a> - Rhythm: Jazz, Pop and Classical
 
-<a href="/2013/03/18/yale-listen-to-music-lesson-5.html" title="耶鲁：《聆听音乐》第5课" target="_blank">[第5集]旋律：音符，音节，基本细节</a> - Melody: Notes, Scales, Nuts and Bolts
+<a href="/yale-listen-to-music-lesson-5" title="耶鲁：《聆听音乐》第5课" target="_blank">[第5集]旋律：音符，音节，基本细节</a> - Melody: Notes, Scales, Nuts and Bolts
 
-<a href="/2013/03/18/yale-listen-to-music-lesson-6.html" title="耶鲁：《聆听音乐》第6课" target="_blank">[第6集]旋律：莫扎特和瓦格纳</a> - Melody: Mozart and Wagner
+<a href="/yale-listen-to-music-lesson-6" title="耶鲁：《聆听音乐》第6课" target="_blank">[第6集]旋律：莫扎特和瓦格纳</a> - Melody: Mozart and Wagner
 
-<a href="/2013/03/18/yale-listen-to-music-lesson-7.html" title="耶鲁：《聆听音乐》第7课" target="_blank">[第7集]和声：和弦和如何创建主题</a> - Harmony: Chords and How to Build Them
+<a href="/yale-listen-to-music-lesson-7" title="耶鲁：《聆听音乐》第7课" target="_blank">[第7集]和声：和弦和如何创建主题</a> - Harmony: Chords and How to Build Them
 
-<a href="/2013/03/18/yale-listen-to-music-lesson-8.html" title="耶鲁：《聆听音乐》第8课" target="_blank">[第8集]贝斯风格：布鲁斯和摇滚</a> - Bass Patterns: Blues and Rock
+<a href="/yale-listen-to-music-lesson-8" title="耶鲁：《聆听音乐》第8课" target="_blank">[第8集]贝斯风格：布鲁斯和摇滚</a> - Bass Patterns: Blues and Rock
 
-<a href="/2013/03/18/yale-listen-to-music-lesson-9.html" title="耶鲁：《聆听音乐》第9课" target="_blank">[第9集]奏鸣曲式：莫扎特和贝多芬</a> - Sonata-Allegro Form: Mozart and Beethoven
+<a href="/yale-listen-to-music-lesson-9" title="耶鲁：《聆听音乐》第9课" target="_blank">[第9集]奏鸣曲式：莫扎特和贝多芬</a> - Sonata-Allegro Form: Mozart and Beethoven
 
-<a href="/2013/03/18/yale-listen-to-music-lesson-10.html" title="耶鲁：《聆听音乐》第10课" target="_blank">[第10集]奏鸣曲式和主题以及主题变奏</a> - Sonata-Allegro and Theme and Variations
+<a href="/yale-listen-to-music-lesson-10" title="耶鲁：《聆听音乐》第10课" target="_blank">[第10集]奏鸣曲式和主题以及主题变奏</a> - Sonata-Allegro and Theme and Variations
 
-<a href="/2013/03/18/yale-listen-to-music-lesson-11.html" title="耶鲁：《聆听音乐》第11课" target="_blank">[第11集]曲式：回旋曲式，奏鸣曲式，主题变奏曲</a> - Form: Rondo, Sonata-Allegro and Theme and Variations (cont.)
+<a href="/yale-listen-to-music-lesson-11" title="耶鲁：《聆听音乐》第11课" target="_blank">[第11集]曲式：回旋曲式，奏鸣曲式，主题变奏曲</a> - Form: Rondo, Sonata-Allegro and Theme and Variations (cont.)
 
-<a href="/2013/11/24/yale-listen-to-music-lesson-12.html" title="耶鲁：《聆听音乐》第11课" target="_blank">[第12集]客席指挥：布鲁克青年交响乐团</a> - Guest Conductor: Saybrook Youth Orchestra
+<a href="/yale-listen-to-music-lesson-12" title="耶鲁：《聆听音乐》第11课" target="_blank">[第12集]客席指挥：布鲁克青年交响乐团</a> - Guest Conductor: Saybrook Youth Orchestra
 
 [第13集]赋格：巴赫，比才和伯恩斯坦 - Fugue: Bach, Bizet and Bernstein
 
