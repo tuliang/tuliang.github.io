@@ -17,12 +17,12 @@ body {
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
-.clear {
-  display: block;
-}
-
 img {
   background: #fff;
+}
+
+.clear {
+  display: block;
 }
 
 .clear:after {
