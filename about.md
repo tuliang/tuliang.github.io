@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 关于我
-permalink: /about
+permalink: /about/
 ---
 涂亮，男，1989年在武汉出生，现就职于杭州阿里巴巴。
 
