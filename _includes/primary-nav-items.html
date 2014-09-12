@@ -1,14 +1,17 @@
 <ul>
   <li class="{% if page.overview %}current{% endif %}">
-    <a href="/">Home</a>
+    <a href="/">首页</a>
   </li>
   <li class="{% if page.url contains '/archive/' %}current{% endif %}">
-    <a href="/archive">Archive</a>
+    <a href="/archive">文章</a>
   </li>
   <li class="{% if page.url contains '/read/' %}current{% endif %}">
-    <a href="/read">Read</a>
+    <a href="/read">阅读</a>
+  </li>
+  <li class="{% if page.url contains '/front-end-web/' %}current{% endif %}">
+    <a href="/front-end-web">Web前端</a>
   </li>
   <li class="{% if page.url contains '/about/' %}current{% endif %}">
-    <a href="/about">About</a>
+    <a href="/about">关于我</a>
   </li>
 </ul>
