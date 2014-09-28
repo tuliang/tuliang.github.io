@@ -47,7 +47,7 @@ Robert J. Shiller是Yale大学Arthur M. Okun经济学讲座教授和Yale大学�
 
 <a href="/yale-financial-market-lesson-13" title="耶鲁：《金融市场》第13课" target="_blank">[第13集]银行业:成功和失败</a> - Banking: Successes and Failures
 
-[第14集]安德鲁•雷德利夫的客座演讲 - Guest Lecture by Andrew Redleaf
+<a href="/yale-financial-market-lesson-14" title="耶鲁：《金融市场》第14课" target="_blank">[第14集]安德鲁•雷德利夫的客座演讲</a> - Guest Lecture by Andrew Redleaf
 
 [第15集]卡尔•伊坎的客座演讲 - Guest Lecture by Carl Icahn
 

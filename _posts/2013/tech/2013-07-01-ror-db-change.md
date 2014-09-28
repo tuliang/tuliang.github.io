@@ -59,7 +59,7 @@ Active Record 支持的数据类型包括：
 *  time
 *  timestamp
 
-更多信息请查看<a href="http://guides.ruby-china.org/migrations.html" target="_blank">RailsGuides-Migrations</a>
+更多信息请查看<a href="http://guides.ruby-china.org/active_record_migrations.html" target="_blank">RailsGuides-Migrations</a>
 
 之后别忘了更新
 
