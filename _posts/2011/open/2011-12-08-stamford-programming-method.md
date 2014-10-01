@@ -372,7 +372,7 @@ Java的acm库Javadoc学生版本
 
 <a href="http://jtf.acm.org/javadoc/student">http://jtf.acm.org/javadoc/student</a>
 
-### 第 10 课：私有变量的重要性
+#### 第 10 课：私有变量的重要性
 
 重写的意思是指子类覆盖父类的方法。方法的名字必须相同，参数也需要完全一样。
 
