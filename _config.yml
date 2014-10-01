@@ -1,4 +1,3 @@
-# Site settings
 title: 涂亮 
 email: info@tuliang.org
 description: "涂亮的个人博客"
@@ -7,12 +6,7 @@ url: "tuliang.org"
 username: 'tuliang'
 repository: "https://github.com/tuliang"
 paginate: 10
-
-# Build settings
 markdown: kramdown
 permalink: :title
 pygments: true
 safe: true
-
-# chart_apis
-chart_apis: http://chart.apis.google.com/chart?cht=tx&chl=
