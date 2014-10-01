@@ -11,7 +11,7 @@ paginate: 10
 
 # Build settings
 markdown: kramdown
-redcarpet:
+kramdown:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 permalink: :title
 
