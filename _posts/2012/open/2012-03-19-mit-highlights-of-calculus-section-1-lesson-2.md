@@ -11,7 +11,7 @@ category: open
 
 三角函数 (y = sin x) 其导数为 $$dy/dx = cos x$$
 
-指数函数 (y = ex) 其导数为 $${{ site.chart_apis }}dy/dx = e^x$$
+指数函数 (y = ex) 其导数为 $$dy/dx = e^x$$
 
 平均斜率 = y变化量/x变化量 = △y/△x
 
