@@ -59,79 +59,81 @@ Void函数类型，在函数间传递参数，函数的缺陷，类的使用，�
 
 扩展Student类，函数重写，acm.graphics程序包，GCanvas，GObjects中的常用函数，其中的接口与函数，BouncingBall例程序，GLable类中的几何学，GArc类。
 
-<a title="斯坦福《编程方法》第十一课" href="/stamford-programming-method-lesson-11" target="_blank">第 11 课：Gimage类</a>
+[第 11 课：Gimage类](#gimage)
 
 GPolygon类，GCompound类，事件驱动程序，例程序ClickForFace，响应鼠标操作，响应键盘操作，例程序UFO。
 
-<a title="斯坦福《编程方法》第十二课" href="/stamford-programming-method-lesson-12" target="_blank">第 12 课：枚举</a>
+[第 12 课：枚举](#section-9)
 
 字符，Unicode标准下的ASCII码，字符的读取，字符中的数学，基本类型char，字符对象，字符串及其操作。
 
-<a title="斯坦福《编程方法》第十三课" href="/stamford-programming-method-lesson-13" target="_blank">第 13 课：对字符串的处理</a>
+[第 13 课：对字符串的处理](#section-10)
 
 编译器，加密。
 
-<a title="斯坦福《编程方法》第十四课" href="/stamford-programming-method-lesson-14" target="_blank">第 14 课：内存</a>
+[第 14 课：内存](#section-11)
 
 存放不同变量的内存区块，内存分配机制，对指针的看法，指针趣味小视频。
 
-<a title="斯坦福《编程方法》第十五课" href="/stamford-programming-method-lesson-15" target="_blank">第 15 课：指针要点回顾</a>
+[第 15 课：指针要点回顾](#section-12)
 
 为什么要通过引用方式调用类，将封装类作为基本数据类型，文件，打开、读取、关闭文件的函数，异常状况，文件写操作函数。
 
-<a title="斯坦福《编程方法》第十六课" href="/stamford-programming-method-lesson-16" target="_blank">第 16 课：数组</a>
+[第 16 课：数组](#section-13)
 
 创建数组，++操作符，数组的真实长度与有效长度，将数组作为参数，初始化数组，数组列表。
 
-<a title="斯坦福《编程方法》第十七课" href="/stamford-programming-method-lesson-17" target="_blank">第 17 课：多维数组</a>
+[第 17 课：多维数组](#section-14)
 
 类模版，ArrayList类中的函数，使用ArrayList类的例程序，Glable数组列表例程序，例程序GrayImage。
 
-<a title="斯坦福《编程方法》第十八课" href="/stamford-programming-method-lesson-18" target="_blank">第 18 课：多维数组收尾</a>
+[第 18 课：多维数组收尾](#section-15)
 
 数组列表方式，数组列表与数组的优劣分析，调试，程序调试的方法，Eclipse中的调试器。
 
-<a title="斯坦福《编程方法》第十九课" href="/stamford-programming-method-lesson-19" target="_blank">第 19 课：接口</a>
+[第 19 课：接口](#section-16)
 
 如何使用接口，映射，HashMap类，HashMap中的函数，中继器，HashMap例程序。
 
-<a title="斯坦福《编程方法》第二十课" href="/stamford-programming-method-lesson-20" target="_blank">第 20 课：图形用户界面</a>
+[第 20 课：图形用户界面](#section-17)
 
 Java程序中的Interactor，Swing Interactor层次结构，窗口区域，创建Interactor，例程序，探索更多Interactor，例程序InteractorDrawFace。
 
-<a title="斯坦福《编程方法》第二十一课" href="/stamford-programming-method-lesson-21" target="_blank">第 21 课：Interactor与Listener回顾</a>
+[第 21 课：Interactor与Listener回顾](#interactorlistener)
 
 例程序，例程序中应用的两种方法——使用getSouce或getActionCommand函数，例程序TextField，布局设计，温度换算例程序，例程序TextAndGraphics。
 
-<a title="斯坦福《编程方法》第二十二课" href="/stamford-programming-method-lesson-22" target="_blank">第 22 课：NameSurfer概述</a>
+[第 22 课：NameSurfer概述](#namesurfer)
 
 组件与容器，容器的监听器，设计可扩展程序，ComponentListener接口，例程序MusicShop，例程序MusicShopDisplay。
 
-<a title="斯坦福《编程方法》第二十三课" href="/stamford-programming-method-lesson-23" target="_blank">第 23 课：搜索，排序与算法效率分析</a>
+[第 23 课：搜索，排序与算法效率分析](#section-18)
 
 课程材料介绍——搜索，排序及其算法效率分析，搜索，线性搜索，线性搜索的效率分析，二分法搜索，二分法搜索的效率分析，排序，选择排序算法，选择排序效率分析，基数排序算法。
 
-<a title="斯坦福《编程方法》第二十四课" href="/2012/03/07/stamford-programming-method-lesson-24" target="_blank">第 24 课：管理大型数据中的良好软件工程原理</a>
+[第 24 课：管理大型数据中的良好软件工程原理](#section-19)
 
 设计思想，数据搜集层次结构，数据搜集实用函数，例程序：在线音乐商店FlyTunes,定义歌曲类，定义专辑类，鉴证程序运行，对所需数据结构的思考，数据的重复利用，浅拷贝与深拷贝。
 
-<a title="斯坦福《编程方法》第二十五课" href="/2012/03/09/stamford-programming-method-lesson-25" target="_blank">第 25 课：设计实用社交网络</a>
+[第 25 课：设计实用社交网络](#section-20)
 
 思考程序所需功能，分离现象的六种程度，并行性，一个线程，运行接口，创建一个线程，例程序，在线程间共享数据。
 
-<a title="斯坦福《编程方法》第二十六课" href="/2012/03/10/stamford-programming-method-lesson-26" target="_blank">第 26 课：介绍Java标准库</a>
+[第 26 课：介绍Java标准库](#java)
 
 JAR文件介绍，创建JAR文件，创建applet小程序，脱离ACM运行库创建标准Java程序，其他——深入学习Java。
 
-<a title="斯坦福《编程方法》第二十七课" href="/2012/03/11/stamford-programming-method-lesson-27" target="_blank">第 27 课：CS106A后续课程介绍</a>
+[第 27 课：CS106A后续课程介绍](#cs106a)
 
 计算机专业简介，其他专业出路。
 
-<a title="斯坦福《编程方法》第二十八课" href="/2012/03/11/stamford-programming-method-lesson-28" target="_blank">第 28 课：宣布图形比赛结果</a>
+[第 28 课：宣布图形比赛结果](#section-21)
 
 期末复习，例题1，例题2，课程总结。
 
 ## 笔记
+
+---
 
 ### 第 1 课：课程简介
 
