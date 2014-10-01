@@ -10,7 +10,7 @@ repository: "https://github.com/tuliang"
 paginate: 10
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 permalink: :title
