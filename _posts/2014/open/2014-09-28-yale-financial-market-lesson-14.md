@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 耶鲁：《金融市场》第16课
+title: 耶鲁：《金融市场》第14课
 category: open
 ---
 ##安德鲁·雷德利夫的客座演讲
