@@ -6,11 +6,10 @@ permalink: /about/
 涂亮，男，1989年在武汉出生，现就职于杭州阿里巴巴。
 
 * Email：info@tuliang.org
-* Telephone：18907121591
 * QQ：331431214
 * Github：[https://github.com/tuliang](https://github.com/tuliang)
-* Blog：[http://www.tuliang.org](http://www.tuliang.org)
-* 豆瓣：[http://www.douban.com/people/43902568](http://www.douban.com/people/43902568)
+* Blog：[http://tuliang.org](http://tuliang.org)
+* 豆瓣：[http://douban.com/people/43902568](http://douban.com/people/43902568)
 
 技能
 
@@ -27,8 +26,8 @@ permalink: /about/
 
 经历
 
-* 2014 年 6 月 - 至今 就职于 [阿里巴巴](http://www.alibabagroup.com/cn/global/home)。
-* 2013 年 4 月 - 2014 年 6 月在 [PathSource](http://www.pathsource.com) 从事 Ruby on Rails 产品开发，主要负责视频部分的前端至后端的开发。负责学习平台以及网站后台部分的前端开发。负责网站平时的维护工作，主要在 Heroku 和 Amazon web services 上。
+* 2014 年 6 月 - 至今 就职于 [阿里巴巴](http://www.alibabagroup.com/cn/global/home) 从事 [酷盘](http://kanbox.com/) 相关开发。
+* 2013 年 4 月 - 2014 年 6 月在 [PathSource](http://www.pathsource.com) 从事 Ruby on Rails 产品开发。主要负责视频部分的前端至后端的开发，学习平台以及网站后台部分的前端开发。同时负责网站平时的维护工作，主要在 Heroku 和 Amazon web services 上。
 * 2011 年 6 月 - 2013 年 4 月在 [伊锐数码](http://www.evebit.com) 从事对欧美和少数国内 PHP 项目开发，负责网站从前端至后端的开发和部署。帮助百纳信息-海豚浏览器开发维护 Web 方面的一些项目，使用 Ruby on Rails 和 Amazon web services。
 
 兴趣爱好
