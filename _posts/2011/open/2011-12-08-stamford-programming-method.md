@@ -23,11 +23,11 @@ Mehran Sahami刚加入斯坦福大学计算机系时任副教授，本科教育
 
 欢迎来到CS106A，授课人员，为什么称之为编程方法？，你真的适合学习这门课程吗？课程常规，作业与评分，课外拓展，期中期末考试，成绩评定细则，行为准则，为何要从Karel学起？
 
-[第 2 课：欢迎来到Karel的世界](#section-2)
+[第 2 课：欢迎来到 Karel 的世界](#section-2)
 
 讲义相关，注册讨论小组，Karel基本命令，算法与程序孰轻孰重，Karel程序语法，运行一个Karel程序，创建函数的方法，超级Karel，For循环，While循环，Karel条件语句，If条件语句，综述。
 
-[第 3 课：Karel与Java](#section-3)
+[第 3 课：Karel 与 Java](#section-3)
 
 Karel 与Java，常见的错误，注释，前提条件和后续条件，分解，例程序DoubleBeeper，养成良好编程习惯重要性，正确的分解，例程序CleanUpKarel。
 
@@ -144,13 +144,8 @@ JAR文件介绍，创建JAR文件，创建applet小程序，脱离ACM运行库�
 
 教科书：
 
-课程导论：《卡雷尔机器人学Java》Karel the Robot Learns Java
-
-作者：埃里克·罗伯茨Eric Roberts
-
-课本：《Java语言的科学与艺术》The Art and Science of Java
-
-作者：埃里克·罗伯茨Eric Roberts
+*  课程导论：《卡雷尔机器人学Java》Karel the Robot Learns Java
+*  课本：《Java语言的科学与艺术》The Art and Science of Java
 
 很多学习计算机的同学会走入误区，仅仅学习语言本身特性，认为只要学好了语言，就能成为一个好的软件工程师。他们过于关注语言本身细节，对程序设计却没有宏观把握。写一个好程序或者学习如何编程跟学习成为作家差不多。关键在于光靠套公式，套模板是写不出好文章的。
 
@@ -166,7 +161,7 @@ JAR文件介绍，创建JAR文件，创建applet小程序，脱离ACM运行库�
 
 考虑程序的通用性，这点非常重要。你不会只想让程序，在一种情况下正确运行吧。除非是明确指出只需在某种情况下运行。你得使程序通用化，根据通用原则来设计，使其在满足基本规则的情况下都能正确运行。
 
-### 第 3 课：Karel与Java
+### 第 3 课：Karel 与 Java
 
 常见错误：
 
