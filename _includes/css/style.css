@@ -21,6 +21,10 @@ article img {
   background: #fff;
 }
 
+#disqus_thread {
+  margin: 20px 10px;
+}
+
 .clear {
   display: block;
 }
