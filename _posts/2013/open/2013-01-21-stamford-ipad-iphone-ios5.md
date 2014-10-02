@@ -68,9 +68,9 @@ storyboard是iOS5新增的功能，它的基本功能允许你同时在屏幕上
 
 NSLog是格式化输出。例如
 
-{% highlight c %}
+~~~ c
 NSLog(@"digit pressed = %@", digit);
-{% endhighlight %}
+~~~
 
 在上述代码中，digit变量的值会在%@所在的位置输出。
 
