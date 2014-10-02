@@ -104,11 +104,11 @@ NSLog(@"digit pressed = %@", digit);
 
 iOS中的协议最重要的两个用处是委托（delegates）和数据源（data sources）。
 
-~~~ c
+{% highlight c %}
 #define PI 3.14
-~~~
+{% endhighlight %}
 
-~ #define ~关键字用来设定常量。例如设定常量PI的值为3.14：
+`#define`关键字用来设定常量。例如设定常量PI的值为3.14：
 
 shouldAutorotateToInterfaceOrientation在iOS6中被弃用了，现在iOS6默认允许屏幕旋转。
 
