@@ -33,29 +33,29 @@ Craig Wright从1973年开始在耶鲁大学任教，目前是the Henry L. and Lu
 
 课程安排：
 
-[第 1 课 导言 - Introduction]()
+[第 1 课 导言 - Introduction](#introduction)
 
-[第 2 课 介绍乐器和音乐风格 - Introduction to Instruments and Musical Genres]()
+[第 2 课 介绍乐器和音乐风格 - Introduction to Instruments and Musical Genres](#introduction-to-instruments-and-musical-genres)
 
-[第 3 课 节奏：音乐的基础 - Rhythm: Fundamentals]()
+[第 3 课 节奏：音乐的基础 - Rhythm: Fundamentals](#rhythm-fundamentals)
 
-[第 4 课 节奏：爵士 流行和古典 - Rhythm: Jazz, Pop and Classical]()
+[第 4 课 节奏：爵士 流行和古典 - Rhythm: Jazz, Pop and Classical](#rhythm-jazz-pop-and-classical)
 
-[第 5 课 旋律：音符，音节，基本细节 - Melody: Notes, Scales, Nuts and Bolts]()
+[第 5 课 旋律：音符，音节，基本细节 - Melody: Notes, Scales, Nuts and Bolts](#melody-notes-scales-nuts-and-bolts)
 
-[第 6 课 旋律：莫扎特和瓦格纳 - Melody: Mozart and Wagner]()
+[第 6 课 旋律：莫扎特和瓦格纳 - Melody: Mozart and Wagner](#melody-mozart-and-wagner)
 
-[第 7 课 和声：和弦和如何创建主题 - Harmony: Chords and How to Build Them]()
+[第 7 课 和声：和弦和如何创建主题 - Harmony: Chords and How to Build Them](#harmony-chords-and-how-to-build-them)
 
-[第 8 课 贝斯风格：布鲁斯和摇滚 - Bass Patterns: Blues and Rock]()
+[第 8 课 贝斯风格：布鲁斯和摇滚 - Bass Patterns: Blues and Rock](#bass-patterns-blues-and-rock)
 
-[第 9 课 奏鸣曲式：莫扎特和贝多芬 - Sonata-Allegro Form: Mozart and Beethoven]()
+[第 9 课 奏鸣曲式：莫扎特和贝多芬 - Sonata-Allegro Form: Mozart and Beethoven](#sonata-allegro-form-mozart-and-beethoven)
 
-[第 10 课 奏鸣曲式和主题以及主题变奏 - Sonata-Allegro and Theme and Variations]()
+[第 10 课 奏鸣曲式和主题以及主题变奏 - Sonata-Allegro and Theme and Variations](#sonata-allegro-and-theme-and-variations)
 
-[第 11 课 曲式：回旋曲式，奏鸣曲式，主题变奏曲 - Form: Rondo, Sonata-Allegro and Theme and Variations (cont.)]()
+[第 11 课 曲式：回旋曲式，奏鸣曲式，主题变奏曲 - Form: Rondo, Sonata-Allegro and Theme and Variations (cont.)](#form-rondo-sonata-allegro-and-theme-and-variations-cont)
 
-[第 12 课 客席指挥：布鲁克青年交响乐团 - Guest Conductor: Saybrook Youth Orchestra]()
+[第 12 课 客席指挥：布鲁克青年交响乐团 - Guest Conductor: Saybrook Youth Orchestra](#guest-conductor-saybrook-youth-orchestra)
 
 [第 13 课 赋格：巴赫，比才和伯恩斯坦 - Fugue: Bach, Bizet and Bernstein]
 
