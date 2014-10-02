@@ -1,64 +1,108 @@
 ---
 layout: post
-title: 斯坦福：iPhone开发教程2010年冬
+title: 斯坦福《iPhone开发教程2010年冬》
 category: open
 ---
 课程介绍
 
 如果你对iPhone Development有兴趣，以下是入门门槛供参考：首先你要有一台Mac电脑（因为 iPhone App 使用 Mac 平台内建的 Xcode 开发工具），网上也有在Windows下搭设开发环境的教程，请大家自行GOOGLE一下,接著下载 iPhone SDK 安装，然后最基本的是你要熟悉C语言，再来你得学习开发iPhone所使用的Objective-C语言，接著是Cocoa。
 
-<a title="斯坦福：iPhone开发教程2010年冬-[第1集] 基础入门" href="/stamford-iphone-2010-winter-lesson-1" target="_blank">[第1集] 基础入门</a>
+[第 1 集：基础入门](#section-1)
 
-<a title="斯坦福：iPhone开发教程2010年冬-[第2集] 各种基础的类,功能,对象和实例的介绍" href="/stamford-iphone-2010-winter-lesson-2" target="_blank">[第2集] 各种基础的类,功能,对象和实例的介绍</a>
+[第 2 集：各种基础的类,功能,对象和实例的介绍](#section-2)
 
-[第3集] 如何创建你自己的定制类
+第 3 集：如何创建你自己的定制类
 
-[第4集] 创建应用程序
+第 4 集：创建应用程序
 
-[第5集] 文档资料以及调试
+第 5 集：文档资料以及调试
 
-[第6集] 视图,绘画与动画
+第 6 集：视图,绘画与动画
 
-[第7集] MVC及视图控制器
+第 7 集：MVC及视图控制器
 
-[第8集] 导航及标签栏控制器
+第 8 集：导航及标签栏控制器
 
-[第9集] 滚轴视图和表格视图
+第 9 集：滚轴视图和表格视图
 
-[第10集] iPhone应用程序的数据
+第 10 集：iPhone应用程序的数据
 
-[第11集] 性能及其优化
+第 11 集：性能及其优化
 
-[第12集] 文本输入及模式地展现内容
+第 12 集：文本输入及模式地展现内容
 
-[第13集] Yelp的Monocle应用
+第 13 集：Yelp的Monocle应用
 
-[第14集] Yelp的Monocle应用
+第 14 集：Yelp的Monocle应用
 
-[第15集] iPad设计
+第 15 集：iPad设计
 
-[第16集] 地址薄
+第 16 集：地址薄
 
-[第17集] 触摸及多点触摸技术
+第 17 集：触摸及多点触摸技术
 
-[第18集] iPhone设备API-位置、加速度计以及摄像头；电源管理和电池寿命
+第 18 集：iPhone设备API-位置、加速度计以及摄像头；电源管理和电池寿命
 
-[第19集] Evernote软件及其经营理念
+第 19 集：Evernote软件及其经营理念
 
-[第20集] Bump
+第 20 集：Bump
 
-[第21集] Audio.APIs,.Video.Playback,.Settings
+第 21 集：Audio.APIs,.Video.Playback,.Settings
 
-[第22集] Bonjour,.NSStream,.GameKit
+第 22 集：Bonjour,.NSStream,.GameKit
 
-[第23集] Unit.Testing;.Fun.with.Objective-C;.Localization
+第 23 集：Unit.Testing;.Fun.with.Objective-C;.Localization
 
-[第24集] Publishing.on.the.App.Store
+第 24 集：Publishing.on.the.App.Store
 
-[第25集] OpenGL.ES.Basics
+第 25 集：OpenGL.ES.Basics
 
-[第26集] From.Student.to.Startup;.Lessons.from.a.CS193P.Alumnus
+第 26 集：From.Student.to.Startup;.Lessons.from.a.CS193P.Alumnus
 
-[第27集] LinkedIn;.Important.Life.Lessons.on.CoreData.&.GameKit
+第 27 集：LinkedIn;.Important.Life.Lessons.on.CoreData.&.GameKit
 
-[第28集] Student.iPhone.App.Presentations
+第 28 集：Student.iPhone.App.Presentations
+
+## 笔记
+
+---
+
+### 第 1 课：基础入门
+
+教授提到会在课程中讲授一些设计模式。不会涉及数据库设计理论，不会涉及图形概念。
+
+Tools
+
+*  Xcode是开发环境，同时也是编辑器。
+*  Interface Builder是建造用户界面的图形化工具。
+
+
+Frameworks
+
+*  Foundation（基础）是字符串，数组和类。
+*  Ulkit框架，iPhone SDK的用户界面框架。可以提供按键和滑动界面等。
+
+
+Language
+
+*  Objective-C，一种严格的C扩展集，所有以C写的东西，都能在Objective-C里编译和运行，并增加了其他的扩展性。
+
+---
+
+### 第 2 课：各种基础的类,功能,对象和实例的介绍
+
+你在Xcode的文本编辑器上工作时，遇到了一个API，想知道多一些相关的信息。你可以按下command键，然后双击那个API，它会带你到特定API的文档里。
+
+Objective-C只支持单一继承。
+
+Objective-C中有一个动态运行库，所以它比C++要更动态一些，可以算作动态语言。基本上，所有功能（method）的分派是懈怠的（done lazily）。功能并没有绑定编译时间。
+
+Objective-C是弱类型的语言，同时它也是强类型，即两种类型它都支持。
+
+id是一个隐形指针，它实际并不需要星号。如果你把星号放上去，这最后会变成一个指针指向一个指针。因此不要加星号，除非真的想要这样做。
+
+Objective-C只提供了编译时类型检查，而不是运行时类型检查。在运行时，它不会验证你要发送的信息是否会到达你在编译时，想要到达的对象那里。在运行时是没有验证的，唯一的会验证的情况是，如果你发送信息到的对象并没有实现功能，这样会造成崩溃。所有的类型检查都在编译时完成。
+
+Objective-C使用nil表示空值对象。
+
+Objective-C使用description和NSLog来debug。
