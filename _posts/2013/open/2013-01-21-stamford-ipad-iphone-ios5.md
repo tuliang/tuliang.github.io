@@ -13,27 +13,29 @@ category: open
 
 课程介绍
 
-最新更新课程，适用于iOS 5。本课程介绍了使用iPhone SDK(软件开发包)建造iPhone平台上的应用程序所需的工具和应用程序接口；使用多点触控技术，为手机等终端设计用户互交界面等技术进行面向对象的设计。其他主题包括：内核动画、bonjour网络、移动终端电量管理和性能测评。预备知识：抽象编程水平的C语言和编程经验。
+最新更新课程，适用于iOS 5。本课程介绍了使用iPhone SDK(软件开发包)建造iPhone平台上的应用程序所需的工具和应用程序接口；使用多点触控技术，为手机等终端设计用户互交界面等技术进行面向对象的设计。其他主题包括：内核动画、bonjour网络、移动终端电量管理和性能测评。
 
-[第 1 集：MVC 和 Objective-C 介绍]()
+预备知识：抽象编程水平的C语言和编程经验。
 
-[第 2 集：我的第 一个苹果操作系统iOS]()
+[第 1 集：MVC 和 Objective-C 介绍](#mvc--objective-c-)
 
-[第 3 集：Objective-C]()
+[第 2 集：我的第 一个苹果操作系统iOS](#ios)
 
-[第 4 集：视图]()
+[第 3 集：Objective-C](#objective-c)
 
-[第 5 集：协议与手势]()
+[第 4 集：视图](#section-1)
 
-[第 6 集：多个MVC和延续符]()
+[第 5 集：协议与手势](#section-2)
 
-[第 7 集：iPad+Apps]()
+[第 6 集：多个MVC和延续符](#mvc)
 
-[第 8 集：视图控制器生命周期-图象视图、滚动视图、网络视图]()
+[第 7 集：iPad+Apps](#ipadapps)
 
-[第 9 集：Table Views]()
+[第 8 集：视图控制器生命周期-图象视图、滚动视图、网络视图](#section-3)
 
-[第 10 集：数据块和多线程]()
+[第 9 集：Table Views](#table-views)
+
+[第 10 集：数据块和多线程](#section-4)
 
 ## 笔记
 
@@ -106,7 +108,7 @@ iOS中的协议最重要的两个用处是委托（delegates）和数据源（da
 #define PI 3.14
 {% endhighlight %}
 
-#define关键字用来设定常量。例如设定常量PI的值为3.14：
+{% highlight c %}#define{% endhighlight %}关键字用来设定常量。例如设定常量PI的值为3.14：
 
 shouldAutorotateToInterfaceOrientation在iOS6中被弃用了，现在iOS6默认允许屏幕旋转。
 
