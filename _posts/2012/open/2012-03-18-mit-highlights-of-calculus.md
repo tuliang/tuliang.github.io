@@ -20,13 +20,13 @@ category: open
 
 ### 第一部分：微积分重点
 
-[课程简介 - Gil Strang's Introduction to Highlights of Calculus]()
+[课程简介 - Gil Strang's Introduction to Highlights of Calculus](#gil-strangs-introduction-to-highlights-of-calculus)
 
-[第 1 课 微积分总览 - Big Picture of Calculus]()
+[第 1 课 微积分总览 - Big Picture of Calculus](#big-picture-of-calculus)
 
-[第 2 课 导数总览 - Big Picture: Derivatives]()
+[第 2 课 导数总览 - Big Picture: Derivatives](#big-picture-derivatives)
 
-[第 3 课 极值和二阶导数 - Max and Min and Second Derivative]()
+[第 3 课 极值和二阶导数 - Max and Min and Second Derivative](#max-and-min-and-second-derivative)
 
 第 4 课 指数函数 - The Exponential Function
 
