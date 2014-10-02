@@ -17,31 +17,31 @@ category: open
 
 预备知识：抽象编程水平的C语言和编程经验。
 
-[第 1 集：MVC 和 Objective-C 介绍](#mvc--objective-c-)
+[第 1 课 MVC 和 Objective-C 介绍](#mvc--objective-c-)
 
-[第 2 集：我的第 一个苹果操作系统iOS](#ios)
+[第 2 课 我的第 一个苹果操作系统iOS](#ios)
 
-[第 3 集：Objective-C](#objective-c)
+[第 3 课 Objective-C](#objective-c)
 
-[第 4 集：视图](#section-1)
+[第 4 课 视图](#section-1)
 
-[第 5 集：协议与手势](#section-2)
+[第 5 课 协议与手势](#section-2)
 
-[第 6 集：多个MVC和延续符](#mvc)
+[第 6 课 多个MVC和延续符](#mvc)
 
-[第 7 集：iPad+Apps](#ipadapps)
+[第 7 课 iPad+Apps](#ipadapps)
 
-[第 8 集：视图控制器生命周期-图象视图、滚动视图、网络视图](#section-3)
+[第 8 课 视图控制器生命周期-图象视图、滚动视图、网络视图](#section-3)
 
-[第 9 集：Table Views](#table-views)
+[第 9 课 Table Views](#table-views)
 
-[第 10 集：数据块和多线程](#section-4)
+[第 10 课 数据块和多线程](#section-4)
 
 ## 笔记
 
 ---
 
-### 第 1 课：MVC 和 Objective-C 介绍
+### 第 1 课 MVC 和 Objective-C 介绍
 
 你会在本课程上学习数据库（databases），计算机网络设计（networking），多媒体程式设计（multimedia programming），多线程（multithreading），动画（animation）。
 
@@ -60,7 +60,7 @@ Objective-C中的实现文件是m后缀名的文件。
 
 ---
 
-### 第 2 课：我的第一个苹果操作系统iOS
+### 第 2 课 我的第一个苹果操作系统iOS
 
 storyboard是iOS5新增的功能，它的基本功能允许你同时在屏幕上显示所有MVC的关系。使用它，你能够看到MVC是怎么交互作用的。
 
@@ -76,7 +76,7 @@ NSLog(@"digit pressed = %@", digit);
 
 ---
 
-### 第 3 课：Objective-C
+### 第 3 课 Objective-C
 
 类名称（Class Name），结构体（structs）、枚举类型（enumerated types）使用大写，其他不要用大写。
 
@@ -90,7 +90,7 @@ NSLog(@"digit pressed = %@", digit);
 
 ---
 
-### 第 4 课：视图
+### 第 4 课 视图
 
 在Oc中，方法分为类方法和实例方法。
 
@@ -100,7 +100,7 @@ NSLog(@"digit pressed = %@", digit);
 
 ---
 
-### 第 5 课：协议与手势
+### 第 5 课 协议与手势
 
 iOS中的协议最重要的两个用处是委托（delegates）和数据源（data sources）。
 
@@ -116,7 +116,7 @@ shouldAutorotateToInterfaceOrientation在iOS6中被弃用了，现在iOS6默认�
 
 ---
 
-### 第 6 课：多个MVC和延续符
+### 第 6 课 多个MVC和延续符
 
 如果前面的代码需要调用后面才声明的类，这个时候就需要使用类的前向引用。即在文件开头用@class关键字声明：
 
@@ -137,7 +137,7 @@ segue是一个MVC跳转到另一个MVC的东西，它的作用是push，即把�
 
 ---
 
-### 第 7 课：iPad+Apps
+### 第 7 课 iPad+Apps
 
 iPad上有两大独有的用户界面元素，一个是分屏视图，另一个是弹出窗口。
 
@@ -145,7 +145,7 @@ iOS5使用springs and struts模式来布局，iOS6则默认使用自动布局。
 
 ---
 
-### 第 8 课：视图控制器生命周期-图象视图、滚动视图、网络视图
+### 第 8 课 视图控制器生命周期-图象视图、滚动视图、网络视图
 
 覆盖指定初始化里的事项，大部分在viewDidLoad完成。
 
@@ -159,13 +159,13 @@ Transform是一种仿射变换，基本上就是缩放、平移和旋转。
 
 ---
 
-### 第 9 课：Table Views
+### 第 9 课 Table Views
 
 Table Views是iOS中显示列表的视图，它有四种基本的单元格类型，还可以自定义单元格。第一种是Subtitle，它是粗体显示，底下带一行灰色副标题。Basic类型下方则没有东西。Right Detail和Subtitle一样，只是里面的内容安放方式不一样，它是蓝色字体，在右边而不是显示在下方。Left Detail也一样，不过方向对调了。
 
 ---
 
-### 第 10 课：数据块和多线程
+### 第 10 课 数据块和多线程
 
 在iOS里面使用block来操作多线程。
 

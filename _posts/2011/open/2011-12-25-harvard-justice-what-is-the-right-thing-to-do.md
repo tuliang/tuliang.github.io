@@ -35,7 +35,7 @@ category: open
 
 以下分课内容简介来自 <a href="http://article.yeeyan.org/view/100584/80057" target="_blank">译言网</a> ，由 <a href="http://space.yeeyan.org/u/100584" target="_blank">terrell</a> 网友翻译。特此致谢！
 
-<a title="哈佛《公正：该如何做是好？》第一课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-1" target="_blank">第一课：谋杀的道德侧面 / 同类相残案</a>
+<a title="哈佛《公正：该如何做是好？》第一课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-1" target="_blank">第一课 谋杀的道德侧面 / 同类相残案</a>
 
 2009 年 9 月 13 日
 
@@ -47,7 +47,7 @@ category: open
 
 Sandel 介绍了功利主义哲学家 Jeremy Bentham （杰瑞米 · 边沁）与 19 世纪的一个著名案例，此案涉及到的人是 4 个失事轮船的船员。他们在海上迷失了 19 天之后，船长决定杀死机舱男孩，他 是 4 个人中最弱小的，这样他们就可以靠他的血液和躯体维持生命。案件引发了学生们对提倡幸福最大化的功利论的辩论，功利论的口号是 “ 绝大多数人的最大利 益 ” 。
 
-<a title="哈佛《公正：该如何做是好？》第二课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-2" target="_blank">第二课：给 生命一个价格标签 / 如何衡量快乐</a>
+<a title="哈佛《公正：该如何做是好？》第二课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-2" target="_blank">第二课 给 生命一个价格标签 / 如何衡量快乐</a>
 
 2009 年 9 月 20 日
 
@@ -59,7 +59,7 @@ Jeremy Bentham （杰瑞米 · 边沁）在 18 世纪后期提出的的功利主
 
 Sandel 介绍另一位功利主义哲学家 J.S. Mill （穆勒，也译作 “ 密尔 ” ）。他认为，所有人类的体验都可以量化，但某些快乐是更值得拥有，更有价值的。穆勒认为，如果社会重视更大程度的欢乐和公 正，那么长远来说，社会整体终会有所进步。 Sandel 的检验这个理论的方法是， 在课堂上播放了 3 个视频剪辑《辛普森 》 ，真人秀《勇敢者的游戏》，以及莎士比亚的《哈姆雷特》 - 然后要求学生辩论：这三个体验里的哪一个应该被定为 “ 最大程度 ” 的快乐。
 
-<a title="哈佛《公正：该如何做是好？》第三课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-3" target="_blank">第三课：自由选择 / 我属于谁？</a>
+<a title="哈佛《公正：该如何做是好？》第三课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-3" target="_blank">第三课 自由选择 / 我属于谁？</a>
 
 2009 年 9 月 27 日
 
@@ -71,7 +71,7 @@ Sandel 介绍另一位功利主义哲学家 J.S. Mill （穆勒，也译作 “ 
 
 自由主义哲学家 Robert Nozick 举出了一个向富人征税的例子 — 房屋税，医疗保健，穷人的教育 - 这是一种强制。学生们首先讨论了支持重新分配税收的观点。如果你在一个具有税收 制度较为进步的社会系统中，你是不是被强制交税？穷人到底需不需要那些他们已经获得的社会服务吗？他们值得享受那些服务么 ? 富人们是不是经常通过侥幸或家 庭财产获得财富？在这个讲座里，一组学生（名为 “ 自由意志队 ” ）被要求为自由意志的反对意见辩护。
 
-<a title="哈佛《公正：该如何做是好？》第四课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-4" target="_blank">第四课：我的地盘我做主 / 满合法年龄的成年人</a>
+<a title="哈佛《公正：该如何做是好？》第四课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-4" target="_blank">第四课 我的地盘我做主 / 满合法年龄的成年人</a>
 
 2009 年 10 月 4 日
 
@@ -83,7 +83,7 @@ Sandel 介绍另一位功利主义哲学家 J.S. Mill （穆勒，也译作 “ 
 
 洛克谈到税收和同意的问题，他是如何面对 以下两个问题的困扰： 1 ）他认为个人的生命，自由，财产具有不可剥夺的权利 2 ）政府通过大多数的条例 - - 未经个体同意，就可以向他们征税？难道这不等于未经他 / 她的同意，掠取他的个人财产？洛克的答案是，我们正在通过社会生活对税收法律做 “ 默认同意 ” ，因 此，税收是合法的。而且，只要政府不是特意对某一群体征税 - 如果不是武断专横的 - 那么税收并没有侵犯个人的基本权利。
 
-<a title="哈佛《公正：该如何做是好？》第五课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-5" target="_blank">第五课：雇枪？ / 出售母亲</a>
+<a title="哈佛《公正：该如何做是好？》第五课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-5" target="_blank">第五课 雇枪？ / 出售母亲</a>
 
 2009 年 10 月 11 日
 
@@ -95,7 +95,7 @@ Sandel 介绍另一位功利主义哲学家 J.S. Mill （穆勒，也译作 “ 
 
 Sandel 教授把自由市场交易运用到当代颇具争议的新领域：生殖权利。 Sandel 描述了现代的 “ 精子和卵子捐赠 ” 交易中那些奇怪的父母。紧接着 Sandel 把辩论 引向深入，他讲到了 “Baby M” 事件，此著名案例曾引发 “ 孩子是谁的？ ” 的问题和矛盾。事情是这样： 80 年代中期， Mary Beth Whitehead 和一对新泽西的夫妇签订了一项合约，同意为他们做 “ 代孕母亲 ” ，条件是支付给她一大笔的费用。但分娩之后 24 小时， whitehead 决定留下这个孩子，于是双方不得不对簿公堂。学生们讨论了出售生命的道德问题，争论点围绕承诺，契约和母亲的权利。
 
-<a title="哈佛《公正：该如何做是好？》第六课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-6" target="_blank">第六课：考虑你的动机 / 道德的最高准则</a>
+<a title="哈佛《公正：该如何做是好？》第六课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-6" target="_blank">第六课 考虑你的动机 / 道德的最高准则</a>
 
 2009 年 10 月 18 日
 
@@ -107,7 +107,7 @@ Sandel 教授在课程中这样介绍康 德：最具挑战性和最有难度的
 
 康德说，就我们的行为的道德价值而 言，赋予它道德价值的是我们超越自身利益和偏好，将责任付诸行动的能力。 Sandel 讲述了一个真实的故事：一名 13 岁的男孩赢得一项拼字比赛的冠军，但 随后他向法官承认，其实他把最后一个单词评错了。用这个故事和其他的故事， Sandel 解释了用康德的理论如何来确定一项行动在道义上是否正确：在作出决 定时，想象一下，你的行为背后的道德原则，是否能成为每个人都必须遵照的普遍法律。这个准则，是否能作为一个普遍规律，让所有人都受益？
 
-<a title="哈佛《公正：该如何做是好？》第七课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-7" target="_blank">第七课：谎言的教训 / 协议就是协议</a>
+<a title="哈佛《公正：该如何做是好？》第七课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-7" target="_blank">第七课 谎言的教训 / 协议就是协议</a>
 
 2009 年 10 月 25 日
 
@@ -119,7 +119,7 @@ Sandel 教授在课程中这样介绍康 德：最具挑战性和最有难度的
 
 Sandel 介绍了现代哲学家 John Rawls 和他的 “ 假定契约 ” 理论。 Rawls 认为，实现最公正和公平的治理的唯一途径是，如果所有立法者都平等的站到谈判桌前。试想，如果他们都在 “ 无 知的面纱 ” 之后 – 在他们的个人身份信息暂时不公开（他们的种族，阶级，个人兴趣）的时候，他们必须就一系列法律达成共识。 Rawls 认为，只有这样，治理机构才能商定真 正公平公正的原则。
 
-<a title="哈佛《公正：该如何做是好？》第八课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-8" target="_blank">第八课：什么是公平的起点？ / 我们该得到什么？</a>
+<a title="哈佛《公正：该如何做是好？》第八课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-8" target="_blank">第八课 什么是公平的起点？ / 我们该得到什么？</a>
 
 2009 年 11 月 1 日
 
@@ -131,7 +131,7 @@ John Rawls 把他的 “ 无知的面纱 ” 理论运用到社会和经济平�
 
 Sandel 教授重述了三种不同的理论，涉及如何在生活中分配收入，财富和机会。他总结了自由主义，精英制度系统和平等主义理论，引起了对当今社会薪酬差别的公正性的 讨论。 Sandel 比较了美国联邦最高法院 O’connor 大法官（ 200 000 美元）和法官 Judy （ 2,500 万美元）的工资。 Sandel 问大家，这是否公平？如果不是，原因何在？ Sandel 解释了 John Rawls 的观点 - 他认为，个人的 “ 成功 ” 往往是和荣誉无关的随机结果：运气，继承的财富，积极的家庭环境。但是，对于付出更多努力和更长时间去获得成功 的个体 - 如何来衡量他 / 她付出的努力呢？
 
-<a title="哈佛《公正：该如何做是好？》第九课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-9" target="_blank">第九课：讨论反歧视行动 / 目的是什么？</a>
+<a title="哈佛《公正：该如何做是好？》第九课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-9" target="_blank">第九课 讨论反歧视行动 / 目的是什么？</a>
 
 2009 年 11 月 8 日
 
@@ -143,7 +143,7 @@ Sandel 教授重述了三种不同的理论，涉及如何在生活中分配收�
 
 Sandel 介绍亚里士多德关于公平和正义的理论，简单地说，是告诉人们他们该付出什么，该得到什么。亚里士多德认为，一个人在考虑分配问题的时候，必须考虑分配的目 标，终点和目的。对他来说，这是关于一个人找到合适的位置来发挥他的美德的事情。
 
-<a title="哈佛《公正：该如何做是好？》第十课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-10" target="_blank">第十课：好市民 / 自由与适应</a>
+<a title="哈佛《公正：该如何做是好？》第十课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-10" target="_blank">第十课 好市民 / 自由与适应</a>
 
 2009 年 11 月 15 日
 
@@ -155,7 +155,7 @@ Sandel 介绍亚里士多德关于公平和正义的理论，简单地说，是�
 
 Sandel 指出了对亚里士多德关于自由 的观点最突出的反对声音 — 他为奴隶制的辩护。学生讨论对亚里士多德理论的其他反对意见，并辩论他的哲学是否限制了个人自由。
 
-<a title="哈佛《公正：该如何做是好？》第十一课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-11" target="_blank">第十一课：社会的需求 / 我们的忠诚在哪里</a>
+<a title="哈佛《公正：该如何做是好？》第十一课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-11" target="_blank">第十一课 社会的需求 / 我们的忠诚在哪里</a>
 
 2009 年 11 月 22 日
 
@@ -167,7 +167,7 @@ Sandel 教授介绍康德和 John Rawl 对亚里士多德理论的反对意见�
 
 Sandel 教授发起了一个讨论：在各种社会群体中，小到家庭这样的群体，大到社会，我们是否有团结协作的义务和成员的义务。针对不同的事件，学生们辩论忠诚是否比责 任更重要，何时更重要。
 
-<a title="哈佛《公正：该如何做是好？》第十二课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-12" target="_blank">第十二课：辩论同性婚姻 / 美好生活</a>
+<a title="哈佛《公正：该如何做是好？》第十二课" href="/harvard-justice-what-is-the-right-thing-to-do-lesson-12" target="_blank">第十二课 辩论同性婚姻 / 美好生活</a>
 
 2009 年 11 月 29 日
 
