@@ -21,57 +21,57 @@ Robert J. Shiller是Yale大学Arthur M. Okun经济学讲座教授和Yale大学�
 
 课程目录：
 
-[第 1 集 金融和保险在我们经济和社会中的强大作用 - Finance and Insurance as Powerful Forces in Our Economy and Society](#finance-and-insurance-as-powerful-forces-in-our-economy-and-society)
+[第 1 课 金融和保险在我们经济和社会中的强大作用 - Finance and Insurance as Powerful Forces in Our Economy and Society](#finance-and-insurance-as-powerful-forces-in-our-economy-and-society)
 
-[第 2 集 风险管理中的普遍原理:风险聚集和对冲 - The Universal Principle of Risk Management: Pooling and the Hedging of Risks](#the-universal-principle-of-risk-management-pooling-and-the-hedging-of-risks)
+[第 2 课 风险管理中的普遍原理:风险聚集和对冲 - The Universal Principle of Risk Management: Pooling and the Hedging of Risks](#the-universal-principle-of-risk-management-pooling-and-the-hedging-of-risks)
 
-[第 3 集 金融中的科技与发明 - Technology and Invention in Finance](#technology-and-invention-in-finance)
+[第 3 课 金融中的科技与发明 - Technology and Invention in Finance](#technology-and-invention-in-finance)
 
-[第 4 集 投资组合多元化和辅助性的金融机构(资本资产定价模型) - Portfolio Diversification and Supporting Financial Institutions (CAPM Model)](#portfolio-diversification-and-supporting-financial-institutions-capm-model)
+[第 4 课 投资组合多元化和辅助性的金融机构(资本资产定价模型) - Portfolio Diversification and Supporting Financial Institutions (CAPM Model)](#portfolio-diversification-and-supporting-financial-institutions-capm-model)
 
-[第 5 集 保险：典型的风险管理制度 - Insurance: The Archetypal Risk Management Institution](#insurance-the-archetypal-risk-management-institution)
+[第 5 课 保险：典型的风险管理制度 - Insurance: The Archetypal Risk Management Institution](#insurance-the-archetypal-risk-management-institution)
 
-[第 6 集 有效市场与过度波动之争 - Efficient Markets vs. Excess Volatility](#efficient-markets-vs-excess-volatility)
+[第 6 课 有效市场与过度波动之争 - Efficient Markets vs. Excess Volatility](#efficient-markets-vs-excess-volatility)
 
-[第 7 集 行为金融学：心理的作用 - Behavioral Finance: The Role of Psychology](#behavioral-finance-the-role-of-psychology)
+[第 7 课 行为金融学：心理的作用 - Behavioral Finance: The Role of Psychology](#behavioral-finance-the-role-of-psychology)
 
-[第 8 集 人性弱点，欺诈，操纵与管制 - Human Foibles, Fraud, Manipulation, and Regulation](#human-foibles-fraud-manipulation-and-regulation)
+[第 8 课 人性弱点，欺诈，操纵与管制 - Human Foibles, Fraud, Manipulation, and Regulation](#human-foibles-fraud-manipulation-and-regulation)
 
-[第 9 集 大卫•斯文森的客座演讲 - Guest Lecture by David Swensen](#guest-lecture-by-david-swensen)
+[第 9 课 大卫•斯文森的客座演讲 - Guest Lecture by David Swensen](#guest-lecture-by-david-swensen)
 
-[第 10 集 债券市场：期限结构 - Debt Markets: Term Structure](#debt-markets-term-structure)
+[第 10 课 债券市场：期限结构 - Debt Markets: Term Structure](#debt-markets-term-structure)
 
-[第 11 集 股票 - Stocks](#stocks)
+[第 11 课 股票 - Stocks](#stocks)
 
-[第 12 集 房地产金融和其易受危机影响的脆弱性 - Real Estate Finance and Its Vulnerability to Crisis](#real-estate-finance-and-its-vulnerability-to-crisis)
+[第 12 课 房地产金融和其易受危机影响的脆弱性 - Real Estate Finance and Its Vulnerability to Crisis](#real-estate-finance-and-its-vulnerability-to-crisis)
 
-[第 13 集 银行业：成功和失败 - Banking: Successes and Failures](#banking-successes-and-failures)
+[第 13 课 银行业：成功和失败 - Banking: Successes and Failures](#banking-successes-and-failures)
 
-[第 14 集 安德鲁•雷德利夫的客座演讲 - Guest Lecture by Andrew Redleaf](#guest-lecture-by-andrew-redleaf)
+[第 14 课 安德鲁•雷德利夫的客座演讲 - Guest Lecture by Andrew Redleaf](#guest-lecture-by-andrew-redleaf)
 
-[第 15 集 卡尔•伊坎的客座演讲 - Guest Lecture by Carl Icahn](#guest-lecture-by-carl-icahn)
+[第 15 课 卡尔•伊坎的客座演讲 - Guest Lecture by Carl Icahn](#guest-lecture-by-carl-icahn)
 
-[第 16 集 货币政策的进化和完善 - The Evolution and Perfection of Monetary Policy]
+[第 16 课 货币政策的进化和完善 - The Evolution and Perfection of Monetary Policy]
 
-[第 17 集 投资银行和二级市场 - Investment Banking and Secondary Markets]
+[第 17 课 投资银行和二级市场 - Investment Banking and Secondary Markets]
 
-[第 18 集 职业财富管理者和他们的影响 - Professional Money Managers and Their Influence]
+[第 18 课 职业财富管理者和他们的影响 - Professional Money Managers and Their Influence]
 
-[第 19 集 经纪业务，电子交易系统，等等 - Brokerage, ECNs, etc.]
+[第 19 课 经纪业务，电子交易系统，等等 - Brokerage, ECNs, etc.]
 
-[第 20 集 斯蒂芬•施瓦茨曼的客座演讲 - Guest Lecture by Stephen Schwarzman]
+[第 20 课 斯蒂芬•施瓦茨曼的客座演讲 - Guest Lecture by Stephen Schwarzman]
 
-[第 21 集 远期合约和期货 - Forwards and Futures]
+[第 21 课 远期合约和期货 - Forwards and Futures]
 
-[第 22 集 股指，石油和其他期货市场 - Stock Index, Oil and Other Futures Markets]
+[第 22 课 股指，石油和其他期货市场 - Stock Index, Oil and Other Futures Markets]
 
-[第 23 集 期权市场 - Options Markets]
+[第 23 课 期权市场 - Options Markets]
 
-[第 24 集 让金融为大众所用：金融民主化 - Making It Work for Real People: The Democratization of Finance]
+[第 24 课 让金融为大众所用：金融民主化 - Making It Work for Real People: The Democratization of Finance]
 
-[第 25 集 劳伦斯•萨默斯 应对金融危机并从中学习 第一部分 - Learning from and Responding to Financial Crisis, Part I (Guest Lecture by Lawrence Summers)]
+[第 25 课 劳伦斯•萨默斯 应对金融危机并从中学习 第一部分 - Learning from and Responding to Financial Crisis, Part I (Guest Lecture by Lawrence Summers)]
 
-[第 26 集 劳伦斯•萨默斯 应对金融危机并从中学习 第二部分 - Learning from and Responding to Financial Crisis, Part II (Guest Lecture by Lawrence Summers)]
+[第 26 课 劳伦斯•萨默斯 应对金融危机并从中学习 第二部分 - Learning from and Responding to Financial Crisis, Part II (Guest Lecture by Lawrence Summers)]
 
 <a href="http://book.douban.com/doulist/1922499/" target="_blank">参考书</a>：
 
