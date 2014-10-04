@@ -55,7 +55,7 @@ Robert J. Shiller是Yale大学Arthur M. Okun经济学讲座教授和Yale大学�
 
 [第 17 课 投资银行和二级市场 - Investment Banking and Secondary Markets](#investment-banking-and-secondary-markets)
 
-[第 18 课 职业财富管理者和他们的影响 - Professional Money Managers and Their Influence]
+[第 18 课 职业财富管理者和他们的影响 - Professional Money Managers and Their Influence](#professional-money-managers-and-their-influence)
 
 [第 19 课 经纪业务，电子交易系统，等等 - Brokerage, ECNs, etc.]
 
