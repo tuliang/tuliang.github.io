@@ -51,9 +51,9 @@ Robert J. Shiller是Yale大学Arthur M. Okun经济学讲座教授和Yale大学�
 
 [第 15 课 卡尔•伊坎的客座演讲 - Guest Lecture by Carl Icahn](#guest-lecture-by-carl-icahn)
 
-[第 16 课 货币政策的进化和完善 - The Evolution and Perfection of Monetary Policy]()
+[第 16 课 货币政策的进化和完善 - The Evolution and Perfection of Monetary Policy](#the-evolution-and-perfection-of-monetary-policy)
 
-[第 17 课 投资银行和二级市场 - Investment Banking and Secondary Markets]()
+[第 17 课 投资银行和二级市场 - Investment Banking and Secondary Markets](#investment-banking-and-secondary-markets)
 
 [第 18 课 职业财富管理者和他们的影响 - Professional Money Managers and Their Influence]
 
