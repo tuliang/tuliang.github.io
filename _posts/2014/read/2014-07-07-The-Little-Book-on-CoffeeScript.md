@@ -21,9 +21,9 @@ ISBN：9781449321055
 
 你还可以使用参数槽（splats）接收多个参数，使用...表示：
 
-```javascript
+{% highlight javascript %}
 sum = (nums...) ->
   result = 0
   nums.forEach (n) -> result += n
   result 
-```
+{% endhighlight %}

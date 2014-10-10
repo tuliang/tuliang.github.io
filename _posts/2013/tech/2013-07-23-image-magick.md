@@ -9,15 +9,15 @@ category: tech
 
 我们首先安装这个gem
 
-```ruby
+{% highlight ruby %}
 gem install image_optim
-```
+{% endhighlight %}
 
 然后安装依赖（[Linux请参考官方说明](https://github.com/toy/image_optim)）
 
-```ruby
+{% highlight ruby %}
 brew install advancecomp gifsicle jpegoptim jpeg optipng pngcrush
-```
+{% endhighlight %}
 
 如果你缺少XQuartz，需要去[下载](http://xquartz.macosforge.org/landing/)安装。
 
@@ -29,14 +29,14 @@ brew install advancecomp gifsicle jpegoptim jpeg optipng pngcrush
 
 运行`image_optim`命令将blog下的图片进行优化：
 
-```ruby
+{% highlight ruby %}
 image_optim -r images/*
-```
+{% endhighlight %}
 
 如果报出类似这种错误：
 
-```ruby
+{% highlight ruby %}
 image_optim.rb:187:in `resolve_bin!': `pngout` not found (ImageOptim::BinNotFoundError)
-```
+{% endhighlight %}
 
 其实是你缺少pngout，需要去[下载](http://www.jonof.id.au/kenutils)，然后将pngout放到/user/bin/目录下。

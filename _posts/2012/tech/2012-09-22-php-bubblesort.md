@@ -5,7 +5,7 @@ category: tech
 ---
 PHP冒泡排序
 
-```php
+{% highlight php %}
 <?php
 //产生10个1到100的随机数
 for ($i = 0; $i < 10; $i++){
@@ -38,17 +38,18 @@ function bubblesort($array, $count){
 $count = count($array);
 $new_array = bubblesort($array, $count);
 var_dump($new_array);
-```
+{% endhighlight %}
+
 PHP递归时需要return，如下述代码中
 
-```php
+{% highlight php %}
 return bubblesort($array, $count-1);
-```
+{% endhighlight %}
 
 改为
 
-```php
+{% highlight php %}
 bubblesort($array, $count-1);
-```
+{% endhighlight %}
 
 $new_array就接不到值，即结果为null

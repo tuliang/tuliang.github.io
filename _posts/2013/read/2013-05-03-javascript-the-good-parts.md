@@ -27,11 +27,11 @@ JavaScript的函数是（主要）基于语法作用域（lexical scoping）的�
 
 避免使用/* */注释。在JavaScript中，这些字符可能出现在正则表达式中，所以块注释对于被注释的代码块来说是不安全的。例如：
 
-```javascript
+{% highlight javascript %}
 /*
 var rm_a = /a*/.match(s);
 */
-```
+{% endhighlight %}
 
 使用forin语句循环时，属性名出现的顺序是不确定的。如果你想要确保属性以特定的顺序出现，最好的办法就是完全避免使用for in语句，而是创建一个数组，在其中以正确的顺序包含属性名。
 
@@ -41,12 +41,12 @@ var rm_a = /a*/.match(s);
 
 JavaScript允许给语言的基本类型增加方法。举例来说，我们可以通过给Function.prototype增加方法来使得该方法对所有函数可用：
 
-```javascript
+{% highlight javascript %}
 Function.protoype.method = function (name, func) {
   this.prototype(name) = fund;
   return this;
 };
-```
+{% endhighlight %}
 
 通过给Function.protoype增加一个method方法，我们就不必键入prototype这个属性名。
 通过给基本类型增加方法，我们可以大大提高语言的表现力。因为JavaScript原型继承的动态本质，新的方法立刻被赋予到所有的值（对象实例）上，哪怕值（对象实例）是在方法被创建之前就创建好了。
@@ -57,7 +57,7 @@ Function.protoype.method = function (name, func) {
 
 使用模块模式就可以摒弃全局变量的使用。它促进了信息隐藏和其他优秀的设计实践。对与应用程序的封装，或者构造其他单例对象。假如我们想要构造一个用来产生序列号的对象：
 
-```javascript
+{% highlight javascript %}
 var serial_maker = function () {
   var prefix = '';
   var seq = 0;
@@ -80,4 +80,4 @@ var seqer = serial_maker();
 seqer.set_prefix('Q');
 seqer.set_seq(1000);
 var unique = seqer.gensym();
-```
+{% endhighlight %}

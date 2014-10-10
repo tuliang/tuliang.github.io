@@ -5,7 +5,7 @@ category: tech
 ---
 今天在做页面的时候遇到CSS3圆角无效的情况，实例代码：
 
-```html
+{% highlight html %}
 <style type="text/css">
   .category-menu {
     -webkit-border-radius: 14px;
@@ -28,17 +28,17 @@ category: tech
     <a href="newest">Newest Videos</a>
   </div>
 </div>
-```
+{% endhighlight %}
 
 <img src="/images/2013/11/QQ20131107-1.png" />  
 
 你会发现圆角居然没有出现！让我们加上边框看看发生了什么：
 
-```css
+{% highlight css %}
 .category-menu {
   border: 3px solid #BADA55;
 }
-```
+{% endhighlight %}
 
 <img src="/images/2013/11/QQ20131107-2.png" />
 
@@ -52,7 +52,7 @@ category: tech
 
 天无绝人之路，只要给第一个设置左上和右上圆角，最后一个div设置左下和右下圆角，就可以完美解决这个问题了。
 
-```html
+{% highlight html %}
 <style type="text/css">
   .category {
     background: #fff;
@@ -85,4 +85,4 @@ category: tech
     <a href="newest">Newest Videos</a>
   </div>
 </div>
-```
+{% endhighlight %}

@@ -21,9 +21,9 @@ ISBN：9787111374046
 
 生成控制器和该控制器的动作名称
 
-```ruby
+{% highlight ruby %}
 rails generate controller Say hello goodbye
-```
+{% endhighlight %}
 
 上述代码生成名为Say的控制器，以及该控制器下的两个动作：hello和goodbye。
 
@@ -34,7 +34,7 @@ rake stats可以统计你编写的代码
 
 Rails的Active Record模块，它定义了20个回调方法。有了这些回调，可以完成复杂有效性验证，甚至可以阻止完成某些操作，事务功能非常强大。
 
-```ruby
+{% highlight ruby %}
 def show
   respond_to do |format|
     format.html
@@ -42,7 +42,7 @@ def show
     format.yaml { render :text=> @product.to_yaml }
   end
 end
-```
+{% endhighlight %}
 
 对于/show/1或者/show/1.html的请求将返回HTML的内容；
 /show/1.xml将返回XML；/show/1.yaml将返回YAML。

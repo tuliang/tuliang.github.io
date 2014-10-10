@@ -5,7 +5,7 @@ category: tech
 ---
 装饰者模式（Decorator Pattern），动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更有弹性的替代方案。
 
-```php
+{% highlight php %}
 <?php
 /*
  * 装饰者模式
@@ -90,7 +90,7 @@ echo '<br/>Cost:'.$beverage2->cost().'<br/>';
 $beverage2 = new Mocha($beverage2);
 echo 'Description:'.$beverage2->getDescription();
 echo '<br/>Cost:'.$beverage2->cost().'<br/>';
-```
+{% endhighlight %}
 
 输出：  
 Description:Espresso   

@@ -5,12 +5,12 @@ category: tech
 ---
 今天在开发过程中，遇到两种分号的神奇问题，特此记录。
 
-```php
+{% highlight php %}
 <?php
 echo '我是正常的分号';
 echo '我是神奇的分号';
 ?>
-```
+{% endhighlight %}
 
 如果你使用win平台，上面两条语句都可以运行。但是如果你是unix或是linux则是语法错误。
 
@@ -18,7 +18,7 @@ echo '我是神奇的分号';
 
 使用下面这段代码就可以证明我们的猜想：
 
-```php
+{% highlight php %}
 <?php
 if (';' == ';'){
   echo '相等';
@@ -26,4 +26,4 @@ if (';' == ';'){
   echo '不相等';
 }
 ?>
-```
+{% endhighlight %}

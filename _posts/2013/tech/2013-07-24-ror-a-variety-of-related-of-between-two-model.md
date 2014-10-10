@@ -11,22 +11,22 @@ category: tech
 
 它们两个的数据结构是一样的：
 
-```ruby
+{% highlight ruby %}
 t.integer "career_id"
 t.integer "educational_path_id"
-```
+{% endhighlight %}
 
 Model中的代码也是相同的：
 
-```ruby
+{% highlight ruby %}
 attr_accessible :career_id, :educational_path_id
 belongs_to :career
 belongs_to :educational_path
-```
+{% endhighlight %}
 
 然后在`career`这个Model中加上
 
-```ruby
+{% highlight ruby %}
 has_many :required_educational_paths
 has_many :required_educationals, :source => 'educational_path', 
   :through => :required_educational_paths
@@ -36,13 +36,13 @@ has_many :recommended_educational_paths
 has_many :recommended_educationals, :source => 'educational_path', 
   :through => :recommended_educational_paths
 attr_accessible :recommended_educationals, :recommended_educational_ids
-```
+{% endhighlight %}
 
 可以看到我们使用了`required_educationals`和`recommended_educationals`两个虚拟的Model来让`career`关联`educational_path`，同时它们通过之前建立的`required_educational_paths`和`recommended_educational_paths`保存关联的数据。
 
 同理，在`educational_path`这个Model中加上
 
-```ruby
+{% highlight ruby %}
 has_many :required_educational_paths
 has_many :required_careers, :source => 'careers', 
   :through => :required_educational_paths
@@ -52,6 +52,6 @@ has_many :recommended_educational_paths
 has_many :recommended_careers, :source => 'careers', 
   :through => :recommended_educational_paths
 attr_accessible :recommended_careers, :recommended_career_ids
-```
+{% endhighlight %}
 
 到此为止整个关联就算是完成了。使用起来也是非常的简单。你可以使用`career.required_educationals`和`career.recommended_educationals` 或者 `career.required_educational_ids`和`career.recommended_educational_ids`，同理在`educational_path`也可以使用这两种不同的关联。

@@ -41,7 +41,7 @@ P63
 
 该页面绘制箭头代码错误，正确的代码应为：
 
-```javascript
+{% highlight javascript %}
 // 开始一个新路径
 c.beginPath();
 // x轴
@@ -66,7 +66,7 @@ c.moveTo(60, 375);
 c.lineTo(55, 370);
 c.strokeStyle = "#000";
 c.stroke();// 绘制
-```
+{% endhighlight %}
 
 专家发言中：  
 所胡HTML5浏览器中  

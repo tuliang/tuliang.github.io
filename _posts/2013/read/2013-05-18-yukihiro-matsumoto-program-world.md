@@ -34,7 +34,7 @@ Ruby支持Min-in，Min-in可以称为模块（module）。模块拥有两个特�
 
 实例代码：
 
-```ruby
+{% highlight ruby %}
 class Stream < Object
 end
 
@@ -48,7 +48,7 @@ class ReadStream < Stream
 #包含Readable模块
 include Readable
 end
-```
+{% endhighlight %}
 
 Ruby利用Min-in，即模块功能，实现了多重继承的问题。
 
@@ -62,22 +62,22 @@ Ruby中我们不必在乎它是不是某种对象，而需要确定它是否有�
 
 为了避免文件异常，导致没有被关闭。我们经常需要使用异常来处理，例如：
 
-```ruby
+{% highlight ruby %}
 f = open(path)
 begin
 …
 ensure
 f.close
 end
-```
+{% endhighlight %}
 
 而这种情况可以使用Ruby的程序块来解决：
 
-```ruby
+{% highlight ruby %}
 open(path) { |f|
 ...
 }
-```
+{% endhighlight %}
 
 如果给open方法传递了块，那么在结束时文件即可以自动关闭。
 

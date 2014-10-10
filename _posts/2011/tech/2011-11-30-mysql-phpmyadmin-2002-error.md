@@ -9,15 +9,15 @@ category: tech
 
 要将 phpmyadmin的配置文件config.inc.php 中
 
-```php
+{% highlight php %}
 $cfg['Servers'][$i]['host'] = ’localhost’;
-```
+{% endhighlight %}
 
 改成
 
-```php
+{% highlight php %}
 $cfg['Servers'][$i]['host'] = ’127.0.0.1′;
-```
+{% endhighlight %}
 
 就可以连接了。
 
@@ -25,16 +25,16 @@ $cfg['Servers'][$i]['host'] = ’127.0.0.1′;
 
 >BEWARE, If you set this:
 >
->```php
+>{% highlight php %}
 >$cfg['Servers'][$i]['host'] = 'localhost';
->```
+>{% endhighlight %}
 >
 >Then PhpMyAdmin will IGNORE your settings for: 'port', 'socket', and 'connect_type'. It will simply connect to the default socket.
 >
 >If your database is on the localhost, use the IP instead:
 >
->```php
+>{% highlight php %}
 >$cfg['Servers'][$i]['host'] = '127.0.0.1';
->```
+>{% endhighlight %}
 >
 >Then 'port', 'socket', and 'connect_type' will work exactly as expected.

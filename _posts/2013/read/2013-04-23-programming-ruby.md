@@ -29,11 +29,11 @@ Ruby中单引号和双引号对字符串处理和PHP类似，单引号一般会�
 
 Ruby是使用end关键字来表明程序体的结束，并不是像其他语言使用花括号。例如：
 
-```ruby
+{% highlight ruby %}
 while line = gets
     puts line.downcase
 end
-```
+{% endhighlight %}
 
 initialize方法是Ruby的构造函数。
 
@@ -43,7 +43,7 @@ Ruby中使用大括号（`<`）表示继承，例如：
 
 用斐波那契数列的例子说明并行赋值：
 
-```ruby
+{% highlight ruby %}
 def fib_up_to(max)
   i1, i2 = 1, 1
   while i1 <= max
@@ -54,7 +54,7 @@ def fib_up_to(max)
 end
 
 fib_up_to(1000) {|f| print f, " " }
-```
+{% endhighlight %}
 
 Ruby中方法参数的括号是可选的，一般的惯例是，当方法有参数时则使用括号，否则即忽略它们。
 
@@ -68,11 +68,11 @@ Ruby对真值的定义很简单：任何不适nil或者常量false的值都为�
 
 switch在Ruby中被case替代，而case被then替代，default则被else替代，例如：
 
-```ruby
+{% highlight ruby %}
 case year
   when 1850..1889: "Blues"
   when 1890..1909: "Ragtime"
   when 1910..1929: "New Orleans Jazz"
   else
 end
-```
+{% endhighlight %}

@@ -5,7 +5,7 @@ category: tech
 ---
 命令模式（Command Pattern），将“请求”封装成对象，以便使用不同的请求、队列或者日志来参数化其他对象。命令模式也支持可撤销的操作。
 
-```php
+{% highlight php %}
 <?php
 /*
  * 命令模式
@@ -185,7 +185,7 @@ $RemoteControl->offButtonWasPushed(0);
 $RemoteControl->onButtonWasPushed(1);
 $RemoteControl->offButtonWasPushed(1);
 $RemoteControl->undoButtonWasPushed();
-```
+{% endhighlight %}
 
 输出：  
 开灯  

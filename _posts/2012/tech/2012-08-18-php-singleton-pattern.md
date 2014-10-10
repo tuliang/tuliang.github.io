@@ -5,7 +5,7 @@ category: tech
 ---
 单件模式（Singleton Pattern），确保一个类只有一个实例，并提供一个全局访问点。
 
-```php
+{% highlight php %}
 <?php
 /*
  * 单件模式
@@ -33,7 +33,7 @@ $MyObj = MyClass::getObj();
 var_dump($MyObj);
 $MyObj = MyClass::getObj();
 var_dump($MyObj);
-```
+{% endhighlight %}
 
 输出：
 

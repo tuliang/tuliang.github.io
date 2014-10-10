@@ -9,25 +9,25 @@ category: tech
 
 写法是：
 
-```ruby
+{% highlight ruby %}
 rails generate migration add_role_to_model role:string
-```
+{% endhighlight %}
 
 删除的写法是：
 
-```ruby
+{% highlight ruby %}
 rails generate migration remove_role_from_model role:string
-```
+{% endhighlight %}
 
 打开刚刚生成的文件：
 
-```ruby
+{% highlight ruby %}
 class AddRoleToModel < ActiveRecord::Migration
   def change
     add_column :models, :role, :string
   end
 end
-```
+{% endhighlight %}
 
 通常来说，这些自动生成的迁移任务只是用来初始化，我们接下来可以直接修改文件直到我们满意。
 
@@ -63,6 +63,6 @@ Active Record 支持的数据类型包括：
 
 之后别忘了更新
 
-```ruby
+{% highlight ruby %}
 rake db:migrate 
-```
+{% endhighlight %}

@@ -7,41 +7,41 @@ ROR中用户权限控制一般使用cancan
 
 打开Gemfile文件，加入
 
-```ruby
+{% highlight ruby %}
 gem 'cancan'
-```
+{% endhighlight %}
 
 然后在命令行中输入
 
-```ruby
+{% highlight ruby %}
 bundle install
-```
+{% endhighlight %}
 
 继续在命令行中输入，来创建模型
 
-```ruby
+{% highlight ruby %}
 rails g cancan:ability
-```
+{% endhighlight %}
 
 为了和devise整合起来
 
 我们需要在app/models/user.rb中加入
 
-```ruby
+{% highlight ruby %}
 ROLES = %w[admin moderator author banned]
-```
+{% endhighlight %}
 
 然后在命令行中输入下面的代码来给user表添加一个名为role的字段
 
-```ruby
+{% highlight ruby %}
 rails generate migration addroleto_users role:string
-```
+{% endhighlight %}
 
 更新数据库
 
-```ruby
+{% highlight ruby %}
 rake db:migrate
-```
+{% endhighlight %}
 
 
 打开app/models/ability.rb将代码改为
@@ -52,28 +52,28 @@ rake db:migrate
 
 同时更新控制器，加入
 
-```ruby
+{% highlight ruby %}
 loadandauthorize_resource
-```
+{% endhighlight %}
 
 此时普通用户已经无法进行编辑、删除的操作了，但是会抛出异常
 
 我们来处理这个，使程序对用户友好一些，在控制器中加入
 
-```ruby
+{% highlight ruby %}
 rescuefrom CanCan::AccessDenied do |exception|
   flash[:error] = "访问被拒绝。"
   redirectto root_url
 end
-```
+{% endhighlight %}
 
 在最后，我们直接让普通用户无法看到编辑和删除的链接
 
 打开相应的视图文件，在需要控制的地方加上 
 
-```ruby
+{% highlight ruby %}
 if can?
-```
+{% endhighlight %}
 
 例如：
 

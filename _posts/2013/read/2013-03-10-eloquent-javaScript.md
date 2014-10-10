@@ -29,7 +29,7 @@ JavaSctipt不会限制传入函数的参数数目。如果传入的参数过多�
 
 书中对拼接字符串建议使用join方法，我编写了代码在Chrome25、FF19和IE10下进行测试，原始的+和join并没有太大差别。现代浏览器竞争这么激烈，已经将这种情况进行优化了，这样特意拼接字符串意义不大。除非你有大量的字符串需要拼接，并且运行环境在IE的低版本或是国产的各种套壳浏览器。附上测试代码：
 
-```javascript
+{% highlight javascript %}
 var tStart = new Date();
 var str = "" ;
 for(var i=0;i<1000000;i++){
@@ -48,7 +48,7 @@ for(var i=0;i<1000000;i++) {
 str = array.join("");
 tEnd = new Date();
 document.write("<br/>join 拼接1000000个字符串 花费时间：" +(tEnd.getTime()-tStart.getTime())+"毫秒");
-```
+{% endhighlight %}
 
 勘错：
 P38    

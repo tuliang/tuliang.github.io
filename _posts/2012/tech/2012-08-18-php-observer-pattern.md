@@ -5,7 +5,7 @@ category: tech
 ---
 观察者模式（Observer Pattern），定义了对象之间的一对多依赖，这样一来，当一个对象改变状态时，它的所有依赖者都会收到通知并自动更新。
 
-```php
+{% highlight php %}
 <?php
 /*
  * 观察者模式
@@ -114,7 +114,7 @@ $obj->sendMessage('wow');
 echo '<br />';
 $obj->remove(new Observer1);
 $obj->sendMessage('lol');
-```
+{% endhighlight %}
 
 输出：  
 2ppp  

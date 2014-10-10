@@ -11,9 +11,9 @@ mysql 5.5.28
 
 首先新建一个项目，项目名称为blog并且使用mysql数据库
 
-```ruby
+{% highlight ruby %}
 rails new blog -d mysql
-```
+{% endhighlight %}
 
 <img src="/images/2012/11/2-300x222.png" alt="" title="2" width="300" height="222" class="alignnone size-medium wp-image-2039" />
 
@@ -23,15 +23,15 @@ rails new blog -d mysql
 
 我们还没有创建数据库，所以现在再创建一个数据库
 
-```ruby
+{% highlight ruby %}
 rake db:create
-```
+{% endhighlight %}
 
 数据库建立完毕后，我们需要建立一个MVC的结构，在rails中这个很简单
 
-```ruby
+{% highlight ruby %}
 rails g scaffold post title:string content:text
-```
+{% endhighlight %}
 
 这样我们就建立了一个名为post的结构，它拥有title和content两个字段
 
@@ -49,9 +49,9 @@ rails g scaffold post title:string content:text
 
 在rails中，是不需要这么做的，我们只需要执行
 
-```ruby
+{% highlight ruby %}
 rake db:migrate
-```
+{% endhighlight %}
 
 这个命令就可以更新数据库
 
@@ -59,9 +59,9 @@ rake db:migrate
 
 我们现在其实上已经把一个最简单的博客系统做完了，使用
 
-```ruby
+{% highlight ruby %}
 rails s
-```
+{% endhighlight %}
 
 命令开启服务器后
 

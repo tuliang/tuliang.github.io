@@ -54,18 +54,18 @@ Class类是Module类的子类，因此一个类只不过是一个增强的Module
 Object类包含了Kernel模块，因此Kernel就进入了每个对象的祖先链。这样在某个对象中可以随意调用Kernel模块的方法。这使得`print`看起来像是一个语言的关键字，其实它不过是一个方法而已。
 你也可以利用这种技术，如果给Kernel模块增加一个方法，这个内核方法（Kernel Method）就对所以对象可用。RubyGems是Ruby的包管理器，它有一个`gem()`方法，用来激活给定版本的gem：
 
-```ruby
+{% highlight ruby %}
 require 'rubygems'
 gem 'rails', '= 2.3.2'
-```
+{% endhighlight %}
 
 因为`gem()`方法是内核方法（Kernel Method）中的方法，所以可以在任何地方调用它。这点可以从RubyGems的源代码中得以验证：
 
-```ruby
+{% highlight ruby %}
 module Kernel
 def gem(gem_name, version_requirements)
 #...
-```
+{% endhighlight %}
 
 静态语言会强迫你写很多无趣和重复的代码，即所谓的样板法（boilerplate method），而这些仅仅是为了让编译器开心而已。
 
@@ -83,7 +83,7 @@ def gem(gem_name, version_requirements)
 
 示例代码：
 
-```ruby
+{% highlight ruby %}
 my_var = "Success"
 
 MyClass = Class.new do
@@ -116,11 +116,11 @@ define_methods
 counter # => 0
 inc(4)
 counter # => 4
-```
+{% endhighlight %}
 
 上下文探针：`instance_eval()`方法，它像是一个深入到对象中的代码片段，对其进行操作。示例代码：
 
-```ruby
+{% highlight ruby %}
 class MyClass
   def initialize
     @v = 1
@@ -133,11 +133,11 @@ obj.instance_eval do
 
   @v # => 1
 end
-```
+{% endhighlight %}
 
 Ruby中引入了一个名为`instance_exec()`的方法，它和`instance_eval()`方法相似，但它允许对块传入参数：
 
-```ruby
+{% highlight ruby %}
 class C
   def initialize
     @x, @y = 1, 2
@@ -145,21 +145,21 @@ class C
 end
 
 C.new.instance_exec(3) {|arg| (@x + @y) * arg}  # => 9
-```
+{% endhighlight %}
 
 使用`class`关键字创建类
 
-```ruby
+{% highlight ruby %}
 class MyClass < Array
   def my_method
     'Hello!'
   end
 end
-```
+{% endhighlight %}
 
 不使用`class`关键字创建类（这种方式也很像JS）
 
-```ruby
+{% highlight ruby %}
 c = Class.new(Array) do
   def my_method
     'Hello!'
@@ -168,11 +168,11 @@ end
 
 MyClass = c
 c.name # => "MyClass"
-```
+{% endhighlight %}
 
 引入单件方法，Ruby允许给单个对象增加一个方法。例如，下面演示了怎样给一个特定的字符串添加一个`title?()`方法（JS也能做这个功能吗？经过测试是可以的：<a title="JavaScript单件方法" href="/images/2013/05/23/js-singleton-methods.html" target="_blank">JavaScript单件方法</a>）
 
-```ruby
+{% highlight ruby %}
 str = "just a regular string"
 
 def str.title?
@@ -182,13 +182,13 @@ end
 str.title? # => false
 str.methods.grep(/title?/) # => [:title?]
 str.singleton_methods # => [:title?]
-```
+{% endhighlight %}
 
 类方法的实质就是：它们是一个类的单件方法。
 
 类扩展
 
-```ruby
+{% highlight ruby %}
 module MyModule
   def my_method
    'hello'
@@ -202,11 +202,11 @@ class MyClass
 end
 
 MyClass.my_method # => "hello"
-```
+{% endhighlight %}
 
 同理，对象扩展
 
-```ruby
+{% highlight ruby %}
 module MyModule
   def my_method
    'hello'
@@ -220,11 +220,11 @@ end
 
 obj.my_method # => "hello"
 obj.singleton_methods # => [:my_method]
-```
+{% endhighlight %}
 
 类扩展和对象扩展的应用非常普遍，因此Ruby为它们专门提供了一个叫做`Object#extend()`的方法：
 
-```ruby
+{% highlight ruby %}
 module MyModule
   def my_method 
     'hello' 
@@ -239,7 +239,7 @@ class MyClass
   extend MyModule
 end
 MyClass.my_method # => "hello"
-```
+{% endhighlight %}
 
 利用`alias`关键字和`alias_method`方法，可以使用一种技巧：环绕别名
 
@@ -256,7 +256,7 @@ MyClass.my_method # => "hello"
 
 例子：
 
-```ruby
+{% highlight ruby %}
 module MyMixin
   def self.included(base)
     base.extend(ClassMethods)
@@ -273,7 +273,7 @@ Class Xxxx
   include MyMixin
   # ...
 end
-```
+{% endhighlight %}
 
 在Ruby世界里，私有方法通常被认为是一种建议，而非一种约定。这是Ruby哲学的主题：规则是存在的，但是，如果确切知道你要做的是什么，则可以打破它们（绝大部分）。正如Matz（Ruby的作者）所说，Ruby把你视为一个成熟的开发者。
 
@@ -287,7 +287,7 @@ end
 
 在Ruby无法知道想给一个局部变量赋值还是调用一个拟态方法的时候，会默认选择第一种方法。
 
-```ruby
+{% highlight ruby %}
 class MyClass
   attr_accessor :my_attr
 
@@ -298,11 +298,11 @@ end
 obj = MyClass.new
 obj.initialize_attributes
 obj.my_attr  # => nil
-```
+{% endhighlight %}
 
 为了避免这个问题，给当前对象的属性赋值时，应该总是显式使用`self`：
 
-```ruby
+{% highlight ruby %}
 class MyClass
   attr_accessor :my_attr
 
@@ -314,41 +314,41 @@ end
 obj = MyClass.new
 obj.initialize_attributes
 obj.my_attr  # => 10
-```
+{% endhighlight %}
 
 我们经常看到类似这种用法：
 
-```ruby 
+{% highlight ruby %} 
 a ||= []
-```
+{% endhighlight %}
 
 `||=`实际上是下面语句的快捷写法：
 
-```ruby 
+{% highlight ruby %} 
 a = a || []
-```
+{% endhighlight %}
 
 也等同于：
 
-```ruby 
+{% highlight ruby %} 
 if a != nil
   a = a
 else
   a = []
 end
-```
+{% endhighlight %}
 
 这种惯用法被称为空指针保护。
 
 `*`操作符可以把多个参数收集到一个数组中：
 
-```ruby 
+{% highlight ruby %} 
 def my_method(*args)
   args
 end
 
 my_method(1, '2', 'three')  # => [1, '2', 'three']
-```
+{% endhighlight %}
 
 这种惯用法称为参数数组。注意一个方法只能有一个参数数组。
 

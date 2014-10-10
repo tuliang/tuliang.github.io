@@ -7,33 +7,33 @@ Carrierwave的主要功能是用于上传文件或者图片的Gem，功能非常
 
 创建uploader
 
-```ruby
+{% highlight ruby %}
 rails g uploader Video
-```
+{% endhighlight %}
 
 创建字段存储文件信息
 
-```ruby
+{% highlight ruby %}
 rails g migration AddFileToVideos file:string 
-```
+{% endhighlight %}
 
 file字段使用与存储上传文件的地址字段。
 
 然后在Video的model中加入调用carrierwave的信息：
 
-```ruby
+{% highlight ruby %}
 class Video < ActiveRecord::Base
   mount_uploader :file, VideoUploader
-```
+{% endhighlight %}
 
 最后在Model中加入upload方法
 
-```ruby
+{% highlight ruby %}
 def upload video_url
   self.file.download! video_url
   self.file.store! 
   self.save
 end
-```
+{% endhighlight %}
 
 这样我们就完成了储存远程文件的功能。

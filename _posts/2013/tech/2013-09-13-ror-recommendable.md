@@ -33,10 +33,10 @@ https://github.com/tka/recommender-demo
 
 在Gemfile中加入：
 
-```ruby
+{% highlight ruby %}
 gem 'sidekiq'
 gem 'recommendable'
-```
+{% endhighlight %}
 
 安装gem
 
@@ -46,7 +46,7 @@ bundle install
 
 新增`config/initializers/recommendable.rb`
 
-```ruby
+{% highlight ruby %}
 require 'redis'
 
 Recommendable.configure do |config|
@@ -89,17 +89,17 @@ Recommendable.configure do |config|
   # Default: 100
   config.recommendations_to_store = 100
 end
-```
+{% endhighlight %}
 
 在你的model中加入类似这种代码：
 
-```ruby
+{% highlight ruby %}
 class Video < ActiveRecord::Base
   recommends :video_tags, :career
 
   # ...
 end
-```
+{% endhighlight %}
 
 启动顺序：
 
@@ -110,7 +110,7 @@ sidekiq -q recommendable
 
 编写命令：
 
-```ruby
+{% highlight ruby %}
 task :videos_to_recommendable => :environment do
   Video.last(10).each do |v|
     puts "video: #{v.id}"
@@ -122,10 +122,10 @@ task :videos_to_recommendable => :environment do
     end
   end
 end
-```
+{% endhighlight %}
 
 执行命令：
 
-```ruby
+{% highlight ruby %}
 rake videos_to_recommendable
-```
+{% endhighlight %}

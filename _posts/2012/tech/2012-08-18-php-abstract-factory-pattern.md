@@ -5,7 +5,7 @@ category: tech
 ---
 抽象工厂模式（Abstract Factory Pattern），提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。
 
-```php
+{% highlight php %}
 <?php
 /*
  * 抽象工厂模式
@@ -185,7 +185,7 @@ $ChicagoPizzaStore = new ChicagoPizzaStore();
 
 $NYPizzaStore->orderPizza('cheese');
 $ChicagoPizzaStore->orderPizza('clam');
-```
+{% endhighlight %}
 
 输出：  
 NY createDough  

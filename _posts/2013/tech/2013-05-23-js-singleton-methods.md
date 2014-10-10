@@ -5,7 +5,7 @@ category: tech
 ---
 最近在看《Ruby元编程》发觉动态语言的强大。同时越看越觉得Ruby和JavaScript在一些方面是非常像的，可以说它们有些原理是类似的，这些原因使它们很多时候编程方式可以互相借鉴。看到Ruby比较厉害的单件方法，我觉得使用JavaScript也是可以部分实现的。例如：
 
-```javascript
+{% highlight javascript %}
 str = function() {
   this.name = 'just a regular string';
   this.showName = function() {
@@ -25,7 +25,7 @@ str1.setName = function(name) {
 str1.setName('new Name');
 str1.showName();
 str2.showName();
-```
+{% endhighlight %}
 
 运行结果：
 

@@ -29,7 +29,7 @@ ISBN：9787115316578
 
 级联技术非常有用，因为它让我们不费吹灰之力就能定义异步任务的分化逻辑。
 
-```javascript
+{% highlight javascript %}
 var step1 = $.post('/step1', data1);
 var step2 = step1.pipe(function(){
   return $.post('/step2', data2);
@@ -37,7 +37,7 @@ var step2 = step1.pipe(function(){
 var lastStep = step2.pipe(function(){
   return $.post('/step3', data3);
 });
-```
+{% endhighlight %}
 
 这里的lastStep对象当且仅当所有这3个Ajax调用都成功完成时才执行，其中任意一个Ajax调用未能完成，lastStep均被拒绝。
 

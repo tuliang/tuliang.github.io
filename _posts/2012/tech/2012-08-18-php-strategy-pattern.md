@@ -5,7 +5,7 @@ category: tech
 ---
 策略模式（Strategy Pattern），定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。
 
-```php
+{% highlight php %}
 <?php
 /*
  * 策略模式
@@ -60,7 +60,7 @@ $obj = new Test();
 $obj->run();
 $obj->setSuanfa(new Suanfa2());
 $obj->run();
-```
+{% endhighlight %}
 
 输出：  
 1  

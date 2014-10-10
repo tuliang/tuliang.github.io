@@ -20,7 +20,7 @@ PhoneGap下载地址：<a href="http://phonegap.com/download/" target="_blank">h
 
 在/assets/www下建立index.html文件，代码如下
 
-```html
+{% highlight html %}
 <!DOCTYPE HTML>
 <html>
     <head >
@@ -32,14 +32,14 @@ PhoneGap下载地址：<a href="http://phonegap.com/download/" target="_blank">h
     </body >
 
 </html>
-```
+{% endhighlight %}
 
 对文档AndroiMainifest.xml进行修改
 <a href="/images/2013/01/3.3.png"><img class="alignnone size-full wp-image-2249" alt="3.3" src="/images/2013/01/3.3.png" width="212" height="255" /></a>
 
 将以下代码放到uses-sdk 和 application之间
 
-```xml
+{% highlight xml %}
 <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"
@@ -62,13 +62,13 @@ PhoneGap下载地址：<a href="http://phonegap.com/download/" target="_blank">h
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
-```
+{% endhighlight %}
 
 在activity标签中添加：
 
-```xml
+{% highlight xml %}
 android:configChanges="orientation|keyboardHidden"
-```
+{% endhighlight %}
 
 修改完后，文件应该是这样的
 <a href="/images/2013/01/3.4.png"><img class="alignnone size-large wp-image-2250" alt="3.4" src="/images/2013/01/3.4-1024x486.png" width="625" height="296" /></a>

@@ -5,47 +5,47 @@ category: tech
 ---
 今天我们给博客加上用户系统，首先输入如下命令来建立用户模型
 
-```ruby
+{% highlight ruby %}
 rails g model user login:string hashed_password:string salt:string
-```
+{% endhighlight %}
 
 和以前一样，更新数据库
 
-```ruby
+{% highlight ruby %}
 rake db:migrate
-```
+{% endhighlight %}
 
 更新完数据库后
 
 在命令行中敲入rails c，进入console，在console中输入
 
-```ruby
+{% highlight ruby %}
 User.create(:login => "admin", :password => "123456")
-```
+{% endhighlight %}
 
 如果出现`ActiveModel::MassAssignmentSecurity::Error: Can't mass-assign protected attributes: password`错误，说明你没有将`password`加入`attr_accessible`
 
 用户做好了，我们就可以开始做用户登录，输入exit从console中退出，在命令行中敲入
 
-```ruby
+{% highlight ruby %}
 rails g controller sessions
-```
+{% endhighlight %}
 
 然后我们打开路由文件config/routes.rb，加上
 
-```ruby
+{% highlight ruby %}
 resources :sessions
-```
+{% endhighlight %}
 
 修改完毕后，在命令行中输入
 
-```ruby
+{% highlight ruby %}
 touch app/views/sessions/new.html.erb
-```
+{% endhighlight %}
 
 然后打开刚刚建立的这个文件，修改为
 
-```ruby
+{% highlight ruby %}
 <h1>Admin Login</h1>
 <%= form_tag sessions_path do -%>
   <label for="login">Login</label>
@@ -55,11 +55,11 @@ touch app/views/sessions/new.html.erb
 
   <%= submit_tag "Login"%>
 <% end %>
-```
+{% endhighlight %}
 
 打开app/controllers/sessions_controller.rb，修改代码
 
-```ruby
+{% highlight ruby %}
 class SessionsController < ApplicationController
   def create
     @user = User.authentication(parame[:login], parame[:password])
@@ -74,11 +74,11 @@ class SessionsController < ApplicationController
     end
   end
 end
-```
+{% endhighlight %}
 
 最后我们将提示信息加上，打开app/views/layouts/application.html.erb进行修改
 
-```ruby
+{% highlight ruby %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -90,7 +90,7 @@ end
   <%= yield %>
 </body>
 </html>
-```
+{% endhighlight %}
 
 在浏览器中输入127.0.0.1:3000/sessions/new，我们发现这个页面已经出来了
 

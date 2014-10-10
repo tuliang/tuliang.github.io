@@ -5,7 +5,7 @@ category: tech
 ---
 简单工厂其实不是一个设计模式，反而比较像是一种编程习惯。有些开发人员的确是把这个编程习惯误认为是“工厂模式”。
 
-```php
+{% highlight php %}
 <?php
 /*
  * 简单工厂
@@ -48,11 +48,11 @@ class SimplePizzaFactory{
 		return $Pizza;
 	}	
 }
-```
+{% endhighlight %}
 
 工厂方法模式（Factory Method Pattern），定义了一个创建对象的接口，但由子类决定要实例化的是哪一个。工厂方法让类把实例化推迟到子类。
 
-```php
+{% highlight php %}
 /*
  * 工厂方法模式
  * 定义了一个创建对象的接口，
@@ -234,7 +234,7 @@ $ChicagoPizzaStore = new ChicagoPizzaStore();
 
 $NYPizzaStore->orderPizza('cheese');
 $ChicagoPizzaStore->orderPizza('pepperoni');
-```
+{% endhighlight %}
 
 输出：  
 NYCheesePizza prepare  
