@@ -5,9 +5,9 @@ category: tech
 ---
 在使用`gem thinking-sphinx`的时候会遇到
 
-{% endhighlight %}
+```
 Can't connect to MySQL server on '127.0.0.1' (61)
-{% endhighlight %}
+```
 
 这个其实是本地sphinx服务没有启动，运行一下
 
