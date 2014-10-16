@@ -135,3 +135,7 @@ $$f = {(s_0 + s_t) * t}/{2}$$
 拐点（inflection point）是弯曲的方向发生了变化，二阶导数在这一点变号。它就是二阶导数为0的点（Inflecion Point: Where the second derivative is zero），即 $$y'' = 0$$ 下x的值。
 
 链式法则（chain rule）,对于求复合函数的导数来说相当有用。以后会有关于链式法则的讨论。
+
+---
+
+### 第 4 课 指数函数 - The Exponential Function
