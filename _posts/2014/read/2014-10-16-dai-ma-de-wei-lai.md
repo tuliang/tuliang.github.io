@@ -67,13 +67,13 @@ f.call(); // val=2
 
 Ruby 和 JavaScript 的行为是有很大差异的。
 
-{% highlight %}
+{% highlight ruby %}
 obj.m
 {% endhighlight %}
 
 在 Ruby 中，这行代码表示对 m 方法进行无参数调用，而在 JavaScript 中则表示返回实现 m 方法的函数对象，而如果要进行无参数调用的话，括号是不能省略的，如：
 
-{% highlight %}
+{% highlight ruby %}
 obj.m()
 {% endhighlight %}
 
@@ -81,7 +81,7 @@ obj.m()
 
 另一方面，Ruby 中圆点所引导的访问只不过是对方法的调用而已，加不加括号，是不影响方法调用这一行为的。在 Ruby 中，如果要获取实现该方法的过程对象，则需要使用 method 方法。
 
-{% highlight %}
+{% highlight ruby %}
 obj.method(:m)
 {% endhighlight %}
 
