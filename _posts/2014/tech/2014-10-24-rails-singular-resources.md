@@ -5,7 +5,7 @@ category: tech
 ---
 Rails 中 Controller 如果不是复数，写 path 或 url 的时候就必须加上 index，这样看上去就很 low。
 
-{% highlight ruby %}
+{% highlight rails %}
 resources :photo do  
   collection do    
     get 'search'  
@@ -17,7 +17,7 @@ search_photo_index GET    /photo/search(.:format)
 
 我们去查看 [参考文档](http://guides.rubyonrails.org/routing.html#singular-resources)，发现可以这样做：
 
-{% highlight ruby %}
+{% highlight rails %}
 resource :photo, controller: photo do  
   collection do    
     get 'search'  
