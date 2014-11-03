@@ -3,7 +3,7 @@ layout: post
 title: 代码的未来
 category: read
 ---
-<img class="cover" src="/images/2014/10/9787115317513.jpg" />
+<img class="cover" src="/images/2014/11/9787115317513.jpg" />
 
 ISBN：9787115317513
 
