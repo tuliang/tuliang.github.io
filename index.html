@@ -1,39 +1,16 @@
 ---
 layout: post
-title: 涂亮的个人博客
+title: 涂亮^^
 ---
 
 <div class="home">
 
   <ul class="posts">
-    {% for post in paginator.posts %}
+    {% for post in site.posts %}
       <li>
         <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>
-
-  <div id="post-pagination" class="pagination section-nav">
-    <div class="left align-right">
-      {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-          <a class="prev" href="/">Back</a>
-        {% else %}
-          <a class="prev" href="{{ paginator.previous_page_path }}">Back</a>
-        {% endif %}
-      {% else %}
-        <span class="prev disabled">Back</span>
-      {% endif %}
-    </div>
-
-    <div class="right align-left">
-      {% if paginator.next_page %}
-        <a class="next" href="{{ paginator.next_page_path }}">Next</a>
-      {% else %}
-        <span class="next disabled">Next</span>
-      {% endif %}
-    </div>
-
-  </div>
 </div>
