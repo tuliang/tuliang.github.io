@@ -57,9 +57,9 @@ Robert J. Shiller是Yale大学Arthur M. Okun经济学讲座教授和Yale大学�
 
 [第 18 课 职业财富管理者和他们的影响 - Professional Money Managers and Their Influence](#professional-money-managers-and-their-influence)
 
-[第 19 课 经纪业务，电子交易系统，等等 - Brokerage, ECNs, etc.]
+[第 19 课 经纪业务，电子交易系统，等等 - Brokerage, ECNs, etc.](#brokerage-ecns-etc)
 
-[第 20 课 斯蒂芬•施瓦茨曼的客座演讲 - Guest Lecture by Stephen Schwarzman]
+[第 20 课 斯蒂芬•施瓦茨曼的客座演讲 - Guest Lecture by Stephen Schwarzman](#guest-lecture-by-stephen-schwarzman)
 
 [第 21 课 远期合约和期货 - Forwards and Futures]
 
@@ -374,3 +374,17 @@ IF by Rudyard Kipling
 一般来说首付大约是房价的25%，有时候需要20%，而次级抵押贷款有时候只需要首付3%，有时候根本不需要首付一分钱。
 
 投入资金，推动公司发展，打牢基础使公司成长。在历史中的160项投资只有2个项目是赔钱的。
+
+---
+
+### 第 21 课 远期合约和期货 - Forwards and Futures
+
+在美国，最大的期货交易所是芝加哥商品交易所，它刚刚和芝加哥期货交易所合并，成立了芝加哥商品交易所集团。
+
+一份远期合约就是双方为在将来某个时点交易货物交易价格由现在确定而签订的合约。
+
+期货市场所做的和仓库市场所做的不同之处在于后者设定了一个标准价格和一个流动市场。期货市场所做的和仓库市场所做的不同之处在于后者设定了一个标准价格和一个流动市场。于是，人们可以通过期货市场去锁定价格或者规避价格风险。
+
+远期和期货间有很大的不同，因为期货市场不存在对手方风险，除非你担心交易所本身存在风险。
+
+基差是用期货价格减去现货价格。
