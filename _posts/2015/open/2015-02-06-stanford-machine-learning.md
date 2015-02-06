@@ -23,7 +23,7 @@ category: open
 
 课程网站：cs229.stanford.edu
 
-[第 1 课 机器学习的动机与应用]()
+[第 1 课 机器学习的动机与应用](#section-1)
 
 ## 笔记
 
@@ -35,17 +35,17 @@ category: open
 
 学习型算法已经使数据挖掘领域的研究取得了重要的进展。
 
-三个目标：
-* 理解到机器学习的令人兴奋的地方
-* 应用最新的机器学习算法到感兴趣的任何问题中
+三个目标：    
+* 理解到机器学习的令人兴奋的地方  
+* 应用最新的机器学习算法到感兴趣的任何问题中  
 * 有能力开始进行机器学习的研究
 
 Arthur Samuel（1959）：在不直接针对问题进行编程的情况下赋予计算机学习能力的一个研究领域。
 Tom Mitchell（1998）：对于一个计算机程序来说，给它一个任务T和一个性能测量方法P，如果在经验E的影响下，P对T的测量结果得到了改进，那么就说该程序从E中学习。
 
-监督学习（supervised learning）
+* 监督学习（supervised learning）
   * 回归问题
   * 分类问题
-学习理论（learning theory）
-无监督学习（unsupervised learning）
-强化学习（reinforcement learning）
+* 学习理论（learning theory）
+* 无监督学习（unsupervised learning）
+* 强化学习（reinforcement learning）
