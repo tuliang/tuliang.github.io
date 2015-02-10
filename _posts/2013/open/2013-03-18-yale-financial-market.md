@@ -392,3 +392,25 @@ IF by Rudyard Kipling
 ---
 
 ### 第 22 课 股指，石油和其他期货市场 - Stock Index, Oil and Other Futures Markets
+
+期货市场是由许多标准化合约构成的市场。
+
+第一只股指期货是标准普尔500股指期货，首次在芝加哥商业交易所挂牌交易。
+
+期货市场的目的不是赌博，而是套期保值。
+
+---
+
+### 第 23 课 期权市场 - Options Markets
+
+---
+
+### 第 24 课 让金融为大众所用：金融民主化 - Making It Work for Real People: The Democratization of Finance
+
+---
+
+### 第 25 课 劳伦斯•萨默斯 应对金融危机并从中学习 第一部分 - Learning from and Responding to Financial Crisis, Part I (Guest Lecture by Lawrence Summers)
+
+---
+
+### 第 26 课 劳伦斯•萨默斯 应对金融危机并从中学习 第二部分 - Learning from and Responding to Financial Crisis, Part II (Guest Lecture by Lawrence Summers)
