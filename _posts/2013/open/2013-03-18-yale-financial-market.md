@@ -435,6 +435,10 @@ IF by Rudyard Kipling
 
 ### 第 25 课 劳伦斯•萨默斯 应对金融危机并从中学习 第一部分 - Learning from and Responding to Financial Crisis, Part I (Guest Lecture by Lawrence Summers)
 
+你应该试着去解决一些大问题，因为有解决小问题的时间，你同样可以解决大问题并把它写成论文。
+
+研究经济问题，而不是研究经济文献。
+
 ---
 
 ### 第 26 课 劳伦斯•萨默斯 应对金融危机并从中学习 第二部分 - Learning from and Responding to Financial Crisis, Part II (Guest Lecture by Lawrence Summers)
