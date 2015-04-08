@@ -13,15 +13,14 @@ permalink: /about/
 
 技能
 
-* 3 年以上的互联网行业 Web 开发经验
+* 4 年以上的互联网行业 Web 开发经验
 * 2 年 Ruby on Rails，2 年 PHP
-* 3 年 Javascript，熟悉 jQuery、CoffeeScript
-* 3 年 HTML、CSS，熟悉 SASS、HTML5/CSS3、SEO
+* 4 年 Javascript，熟悉 jQuery、CoffeeScript
+* 4 年 HTML、CSS，熟悉 SASS、HTML5/CSS3、SEO
 * 3 年 Linux 服务器维护经验，2 年 Heroku 和 Amazon web services
-* 熟悉 Mac，Linux 环境下开发
+* 熟悉 Mac、Linux 环境下开发
 * 熟悉 MySQL 和 PgSQL 数据库
-* 熟悉 Git、SVN
-* 熟悉 Sublime Text、Emacs
+* 熟悉 Git、SVN、Sublime Text 和 Docker
 * 会一些 Java、Python
 
 经历
