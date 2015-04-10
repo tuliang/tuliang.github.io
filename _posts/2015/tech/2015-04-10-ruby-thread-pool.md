@@ -38,6 +38,7 @@ end
 {% endhighlight %}
 
 使用 Benchmark 对比，和我们设想的完全一样。
+
 ```
 Rehearsal -------------------------------------------------
 normal        ab
