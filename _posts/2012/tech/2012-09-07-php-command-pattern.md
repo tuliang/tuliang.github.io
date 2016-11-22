@@ -187,7 +187,7 @@ $RemoteControl->offButtonWasPushed(1);
 $RemoteControl->undoButtonWasPushed();
 {% endhighlight %}
 
-输出：  
+输出:   
 开灯  
 关灯  
 开音响  

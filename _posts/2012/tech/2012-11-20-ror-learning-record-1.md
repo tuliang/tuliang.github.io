@@ -3,7 +3,7 @@ layout: post
 title: ROR学习记录1
 category: tech
 ---
-现在开始做一个最简单的博客系统，系统运行环境如下：  
+现在开始做一个最简单的博客系统，系统运行环境如下:   
 Ubuntu 12.04  
 ruby 1.93  
 rails 3.28  

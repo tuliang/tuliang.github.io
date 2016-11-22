@@ -3,22 +3,22 @@ layout: post
 title: 麻省理工《微积分重点》
 category: open
 ---
-课程介绍：
+课程介绍: 
 
 微积分的介绍，面向高中生和大学新生，主要是一个入门。除了视频，还有幻灯片和实例。本课程的目的是从错综复杂的微积分课本和习题中跳出来，以一种总览（Big Picture）的简洁形式重新审视微积分。
 课程第二部分微积分重点之微分学，于2011年MIT新推发布。这部分课程的研究对象是“微积分”中的“微分学”，更深入地挖掘微分和导数的内涵和实质
 
-课程类型：数学
+课程类型: 数学
 
 <img class="cover" title="Gilbert-Strang" alt="Gilbert Strang" src="/images/2012/03/Gilbert-Strang-225x300.jpg" width="225" height="300" />
 
-课程主课人：吉尔伯特-斯特朗（Gilbert Strang）
+课程主课人: 吉尔伯特-斯特朗（Gilbert Strang）
 
-吉尔伯特-斯特朗：1934年11月27日出生，是美国享有盛誉的数学家，在有限元理论、变分法、小波分析及线性代数方面均有所建树。他对教育的贡献 尤为卓著，包括所著有的七部经典数学教材及一部专著。斯特朗自1962年至今担任麻省理工学院教授，其所授课程《线性代数导论》、《计算科学与工程》均在 MIT开放课程软件（MIT OpenCourseWare）中收录，获得广泛好评。
+吉尔伯特-斯特朗: 1934年11月27日出生，是美国享有盛誉的数学家，在有限元理论、变分法、小波分析及线性代数方面均有所建树。他对教育的贡献 尤为卓著，包括所著有的七部经典数学教材及一部专著。斯特朗自1962年至今担任麻省理工学院教授，其所授课程《线性代数导论》、《计算科学与工程》均在 MIT开放课程软件（MIT OpenCourseWare）中收录，获得广泛好评。
 
-课程简介：
+课程简介: 
 
-### 第一部分：微积分重点
+### 第一部分: 微积分重点
 
 [课程简介 - Gil Strang's Introduction to Highlights of Calculus](#gil-strangs-introduction-to-highlights-of-calculus)
 
@@ -32,7 +32,7 @@ category: open
 
 第 5 课 积分总览 - Big Picture: Integrals
 
-### 第二部分：微分学
+### 第二部分: 微分学
 
 第 1 课 sinx和cosx的导数 - Derivative of sin x and cos x
 
@@ -78,7 +78,7 @@ category: open
 
 设时间为t，初始速度为 $$s = 0$$，加速度为 a，距离为 f，求在时间 t 时的距离 f 的值。
 
-解：
+解: 
 
 在时间为 0 时，速度 $$s_0 = 0 + 0 * a$$
 
@@ -94,7 +94,7 @@ $$f = {(s_0 + s_t) * t}/{2}$$
 
 ### 第 2 课 导数总览 - Big Picture: Derivatives
 
-微积分中三个重要的函数：
+微积分中三个重要的函数: 
 
 幕函数 (y = xn) 其导数为 $$dy/dx = nx^{n - 1}$$
 
@@ -108,7 +108,7 @@ $$f = {(s_0 + s_t) * t}/{2}$$
 
 求 y = x2 的导数。
 
-解：
+解: 
 
 <img title="mit-highlights-of-calculus-section-1-lesson-2-1" src="/images/2012/03/mit-highlights-of-calculus-section-1-lesson-2-1.gif" alt="" width="245" height="108" />
 
@@ -124,11 +124,11 @@ $$f = {(s_0 + s_t) * t}/{2}$$
 
 ### 第 3 课 极值和二阶导数 - Max and Min and Second Derivative
 
-1. 二阶导数：导数的导数（The Second Derivative The derivative of the derivative）
+1. 二阶导数: 导数的导数（The Second Derivative The derivative of the derivative）
 2. 二阶导数的例子（Examples of Second Derivatives）
 3. 凸函数和凹函数（Convex and Concave Curves）
 4. 寻找极值点和拐点（Locating the Maximum and Minimum and the Infection Point）
-5. 应用：上班的最短时间（求最小值）（Application: Driving to Work Finding the Minimum time）
+5. 应用: 上班的最短时间（求最小值）（Application: Driving to Work Finding the Minimum time）
 
 国外统一定义 $$f'' > 0$$ 为凸，表示向上弯曲；相对的凹为 $$f'' < 0$$
 

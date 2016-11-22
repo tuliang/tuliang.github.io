@@ -92,7 +92,7 @@ echo 'Description:'.$beverage2->getDescription();
 echo '<br/>Cost:'.$beverage2->cost().'<br/>';
 {% endhighlight %}
 
-输出：  
+输出:   
 Description:Espresso   
 Cost:1.99   
 Description:House Blend Coffee, Mocha  

@@ -3,7 +3,7 @@ layout: post
 title: JavaScript单件方法
 category: tech
 ---
-最近在看《Ruby元编程》发觉动态语言的强大。同时越看越觉得Ruby和JavaScript在一些方面是非常像的，可以说它们有些原理是类似的，这些原因使它们很多时候编程方式可以互相借鉴。看到Ruby比较厉害的单件方法，我觉得使用JavaScript也是可以部分实现的。例如：
+最近在看《Ruby元编程》发觉动态语言的强大。同时越看越觉得Ruby和JavaScript在一些方面是非常像的，可以说它们有些原理是类似的，这些原因使它们很多时候编程方式可以互相借鉴。看到Ruby比较厉害的单件方法，我觉得使用JavaScript也是可以部分实现的。例如: 
 
 {% highlight javascript %}
 str = function() {
@@ -27,7 +27,7 @@ str1.showName();
 str2.showName();
 {% endhighlight %}
 
-运行结果：
+运行结果: 
 
 <img src="/images/2013/05/20130523221959.png">
 

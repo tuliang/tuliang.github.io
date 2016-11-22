@@ -116,7 +116,7 @@ $obj->remove(new Observer1);
 $obj->sendMessage('lol');
 {% endhighlight %}
 
-输出：  
+输出:   
 2ppp  
 
 2wow  

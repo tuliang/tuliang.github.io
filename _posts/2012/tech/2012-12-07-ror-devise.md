@@ -23,7 +23,7 @@ bundle install
 rails generate devise:install
 {% endhighlight %}
 
-generator会安装一个初始化程序。这个初始化程序会描述Devise所有的配置选项，请仔细查看。这些都做好以后，你就可以用generator把Devise添加到你的任何一个模型（model）里：
+generator会安装一个初始化程序。这个初始化程序会描述Devise所有的配置选项，请仔细查看。这些都做好以后，你就可以用generator把Devise添加到你的任何一个模型（model）里: 
 
 {% highlight ruby %}
 rails generate devise MODEL

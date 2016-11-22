@@ -3,29 +3,29 @@ layout: post
 title: Ruby on Rails kaminari
 category: tech
 ---
-常用的分页Gem分为：will_paginate 和 kaminari
+常用的分页Gem分为: will_paginate 和 kaminari
 
 其中 will_paginate比较老,应用案例较多, kaminari 更新,性能和兼容性更好
 
 今天来说明一下kaminari如何使用
 
-###安装：
+###安装: 
 
-在Gemfile文件中加入：
+在Gemfile文件中加入: 
 
 {% highlight ruby %}
 gem 'kaminari'
 {% endhighlight %}
 
-然后在命令行中输入：
+然后在命令行中输入: 
 
 {% highlight ruby %}
 bundle install
 {% endhighlight %}
 
-###使用：
+###使用: 
 
-kaminari的大部分方法是scope，例如将`User`Model以20条每页进行分页：
+kaminari的大部分方法是scope，例如将`User`Model以20条每页进行分页: 
 
 在Controller
 
@@ -39,19 +39,19 @@ kaminari的大部分方法是scope，例如将`User`Model以20条每页进行分
 <%= paginate @users %>
 {% endhighlight %}
 
-###自定义：
+###自定义: 
 
 很多时候我们是使用Bootstrap来hold住前端的样式
 
 如何将kaminari的样式修改成适合Bootstrap的呢？
 
-首先我们需要新建一个kaminari的自定义模板，在命令行中输入：
+首先我们需要新建一个kaminari的自定义模板，在命令行中输入: 
 
 {% highlight ruby %}
 rails g kaminari:views default
 {% endhighlight %}
 
-修改模板中的样式，就可以任意改变分页的样式。一个完整的例子：
+修改模板中的样式，就可以任意改变分页的样式。一个完整的例子: 
 
 `_first_page.html.erb`文件
 
@@ -112,7 +112,7 @@ rails g kaminari:views default
   <%= link_to_unless current_page.first?, raw(t 'views.pagination.previous'), url, :rel => 'prev', :remote => remote %>
 </li>
 {% endhighlight %}
-因为kaminari在当前页和...是没有a标签的，需要将很多a标签的css转移到li上，所以在CSS中加上：
+因为kaminari在当前页和...是没有a标签的，需要将很多a标签的css转移到li上，所以在CSS中加上: 
 
 {% highlight css %}
 .pagination ul > li.current,
@@ -140,6 +140,6 @@ rails g kaminari:views default
 }
 {% endhighlight %}
 
-更多资料请参考：
+更多资料请参考: 
 
 *  [kaminari Github Helper](https://github.com/amatsuda/kaminari)

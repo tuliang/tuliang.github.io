@@ -7,7 +7,7 @@ category: open
 
 讲师介绍
 
-姓名：李尚志
+姓名: 李尚志
 
 课程介绍
 
@@ -31,9 +31,9 @@ category: open
 
 ### 第 1 课 数学爱我们
 
-教学对象：主要是文科研究生（数学基础比较差的），其实大学生都可以。
+教学对象: 主要是文科研究生（数学基础比较差的），其实大学生都可以。
 
-教学目标：
+教学目标: 
 
 *  引起对数学的兴趣（减少对数学的仇恨）
 *  对数学的<strong>思想（idea）</strong>有所了解
@@ -89,9 +89,9 @@ f→1（do），2f→（do）,3f→？
 
 1,5,2,6,3,7→<img class="size-full wp-image-1798 alignnone" title="buaa-shuxuedaguan-lesson-3-1" src="/images/2012/07/buaa-shuxuedaguan-lesson-3-1.gif" alt="" width="161" height="41" />
 
-分为五音：{1,2,3,5,6}={宫，商，角，微，羽}
+分为五音: {1,2,3,5,6}={宫，商，角，微，羽}
 
-五音的间隔比较大，五度相生：<img class="size-full wp-image-1799 alignnone" title="buaa-shuxuedaguan-lesson-3-2" src="/images/2012/07/buaa-shuxuedaguan-lesson-3-2.gif" alt="" width="155" height="41" />
+五音的间隔比较大，五度相生: <img class="size-full wp-image-1799 alignnone" title="buaa-shuxuedaguan-lesson-3-2" src="/images/2012/07/buaa-shuxuedaguan-lesson-3-2.gif" alt="" width="155" height="41" />
 
 所以现代音乐中将每一个8度音阶分为12平均律
 
@@ -107,7 +107,7 @@ f→1（do），2f→（do）,3f→？
 
 <img class="alignnone size-full wp-image-1805" title="buaa-shuxuedaguan-lesson-4-2" src="/images/2012/07/buaa-shuxuedaguan-lesson-4-2.gif" alt="" width="231" height="38" />
 
-推广：当<img class="alignnone size-full wp-image-1807" title="buaa-shuxuedaguan-lesson-4-4" src="/images/2012/07/buaa-shuxuedaguan-lesson-4-4.gif" alt="" width="56" height="11" />时
+推广: 当<img class="alignnone size-full wp-image-1807" title="buaa-shuxuedaguan-lesson-4-4" src="/images/2012/07/buaa-shuxuedaguan-lesson-4-4.gif" alt="" width="56" height="11" />时
 
 <img class="alignnone size-full wp-image-1806" title="buaa-shuxuedaguan-lesson-4-3" src="/images/2012/07/buaa-shuxuedaguan-lesson-4-3.gif" alt="" width="281" height="37" />
 

@@ -3,7 +3,7 @@ layout: post
 title: PhoneGap-Android开发环境搭建3-使用PhoneGap开发安卓应用
 category: tech
 ---
-PhoneGap下载地址：<a href="http://phonegap.com/download/" target="_blank">http://phonegap.com/download/</a>
+PhoneGap下载地址: <a href="http://phonegap.com/download/" target="_blank">http://phonegap.com/download/</a>
 
 <a href="/images/2013/01/3.1.png"><img class="alignnone size-full wp-image-2247" alt="3.1" src="/images/2013/01/3.1.png" width="261" height="149" /></a>
 
@@ -64,7 +64,7 @@ PhoneGap下载地址：<a href="http://phonegap.com/download/" target="_blank">h
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
 {% endhighlight %}
 
-在activity标签中添加：
+在activity标签中添加: 
 
 {% highlight xml %}
 android:configChanges="orientation|keyboardHidden"

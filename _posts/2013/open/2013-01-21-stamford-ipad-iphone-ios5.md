@@ -7,15 +7,15 @@ category: open
 
 讲师介绍
 
-讲师：Paul Hegarty
+讲师: Paul Hegarty
 
-介绍：斯坦福大学软件工程学教授，主要教授iOS应用的开发、编程。
+介绍: 斯坦福大学软件工程学教授，主要教授iOS应用的开发、编程。
 
 课程介绍
 
-最新更新课程，适用于iOS 5。本课程介绍了使用iPhone SDK(软件开发包)建造iPhone平台上的应用程序所需的工具和应用程序接口；使用多点触控技术，为手机等终端设计用户互交界面等技术进行面向对象的设计。其他主题包括：内核动画、bonjour网络、移动终端电量管理和性能测评。
+最新更新课程，适用于iOS 5。本课程介绍了使用iPhone SDK(软件开发包)建造iPhone平台上的应用程序所需的工具和应用程序接口；使用多点触控技术，为手机等终端设计用户互交界面等技术进行面向对象的设计。其他主题包括: 内核动画、bonjour网络、移动终端电量管理和性能测评。
 
-预备知识：抽象编程水平的C语言和编程经验。
+预备知识: 抽象编程水平的C语言和编程经验。
 
 [第 1 课 MVC 和 Objective-C 介绍](#mvc--objective-c-)
 
@@ -47,7 +47,7 @@ category: open
 
 iOS是基于unix的系统。
 
-iOS可以分为下面4层：
+iOS可以分为下面4层: 
 
 * Cocoa Touch
 * Media
@@ -108,7 +108,7 @@ iOS中的协议最重要的两个用处是委托（delegates）和数据源（da
 #define PI 3.14
 {% endhighlight %}
 
-`#define`关键字用来设定常量。例如设定常量PI的值为3.14：
+`#define`关键字用来设定常量。例如设定常量PI的值为3.14: 
 
 shouldAutorotateToInterfaceOrientation在iOS6中被弃用了，现在iOS6默认允许屏幕旋转。
 
@@ -118,7 +118,7 @@ shouldAutorotateToInterfaceOrientation在iOS6中被弃用了，现在iOS6默认�
 
 ### 第 6 课 多个MVC和延续符
 
-如果前面的代码需要调用后面才声明的类，这个时候就需要使用类的前向引用。即在文件开头用@class关键字声明：
+如果前面的代码需要调用后面才声明的类，这个时候就需要使用类的前向引用。即在文件开头用@class关键字声明: 
 
 {% highlight c %}
 @class ClassName;

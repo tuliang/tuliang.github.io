@@ -19,7 +19,7 @@ rails g migration AddFileToVideos file:string
 
 file字段使用与存储上传文件的地址字段。
 
-然后在Video的model中加入调用carrierwave的信息：
+然后在Video的model中加入调用carrierwave的信息: 
 
 {% highlight ruby %}
 class Video < ActiveRecord::Base

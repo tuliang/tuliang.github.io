@@ -5,27 +5,27 @@ category: read
 ---
 <img class="cover" src="/images/2015/9787121109560.jpg" />
 
-原作名：JavaScript Web Applications
+原作名: JavaScript Web Applications
 
-ISBN：9787121109560
+ISBN: 9787121109560
 
-作者：麦卡劳(Alex MacCaw)   
+作者: 麦卡劳(Alex MacCaw)   
 
-译者：李晶 / 张散集   
+译者: 李晶 / 张散集   
 
-出版社：电子工业出版社
+出版社: 电子工业出版社
 
-出版时间：2012-5
+出版时间: 2012-5
 
-评价：☆☆☆☆
+评价: ☆☆☆☆
 
 第 9 章有部分页面错位，阅读的时候要注意（2012年5月 第一版）。本书提到的一些库和后面三章讲的 Spine 、Backbone 和 JavaScriptMVC 有一定程度的落伍，简略的看一下就好了，毕竟是2011年写的书。
 
-jQuery 的作者 John Resig 在博客中讲解如果实现经典的类继承：http://ejohn.org/blog/simple-javascript-inheritance/
+jQuery 的作者 John Resig 在博客中讲解如果实现经典的类继承: http://ejohn.org/blog/simple-javascript-inheritance/
 
 事件捕捉，从顶层的父节点开始触发事件，从外到内传播。事件冒泡，从最内层的节点开始触发事件，逐级冒泡知道顶层节点，从内向外传播。你可以自行选择要注册的事件处理程序的调用类型，捕捉或冒泡，通过给 addEventListener() 传人第三个参数 useCapture 来设置。如果是 true，事件处理程序以捕捉方式触发；如果是 false，事件处理程序以冒泡模式触发。
 
-发布 / 订阅（Pub / Sub）是一种消息模式，它有两个参与者：发布者和订阅者。发布者向某个信道（channel）发布一条消息，订阅者绑定这个信道，当有消息发布至信道时就会接收到一个通知。最重要的一点是，发布者和订阅者是完全解耦的，彼此并不知晓对方的存在。两者仅仅共享一个信道名称。
+发布 / 订阅（Pub / Sub）是一种消息模式，它有两个参与者: 发布者和订阅者。发布者向某个信道（channel）发布一条消息，订阅者绑定这个信道，当有消息发布至信道时就会接收到一个通知。最重要的一点是，发布者和订阅者是完全解耦的，彼此并不知晓对方的存在。两者仅仅共享一个信道名称。
 
 Peter Michaux 的博客，其中有一个关于命名空间专题的文章（http://goo.gl/FOnPL），非常不错。
 

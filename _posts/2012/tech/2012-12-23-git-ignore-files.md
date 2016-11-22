@@ -8,7 +8,7 @@ category: tech
 
 然后加入需要忽略文件的文件名就可以了
 
-例如：
+例如: 
 
 ```
 .project

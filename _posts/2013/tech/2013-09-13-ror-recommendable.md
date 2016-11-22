@@ -5,33 +5,33 @@ category: tech
 ---
 Rails的推荐系统中recommendable算是比较好的一个。
 
-gem：
+gem: 
 
 ```
 https://github.com/davidcelis/recommendable
 ```
 
-demo：
+demo: 
 
 ```
 https://github.com/tka/recommender-demo
 ```
 
-###安装 Redis：
+###安装 Redis: 
 
-  Mac OS X下：
+  Mac OS X下: 
 
   ```
   brew install redis
   ```
 
-  Linux下：
+  Linux下: 
 
   ```
   sudo apt-get install redis-server
   ```
 
-在Gemfile中加入：
+在Gemfile中加入: 
 
 {% highlight ruby %}
 gem 'sidekiq'
@@ -91,7 +91,7 @@ Recommendable.configure do |config|
 end
 {% endhighlight %}
 
-在你的model中加入类似这种代码：
+在你的model中加入类似这种代码: 
 
 {% highlight ruby %}
 class Video < ActiveRecord::Base
@@ -101,14 +101,14 @@ class Video < ActiveRecord::Base
 end
 {% endhighlight %}
 
-启动顺序：
+启动顺序: 
 
 ```
 redis-server
 sidekiq -q recommendable
 ```
 
-编写命令：
+编写命令: 
 
 {% highlight ruby %}
 task :videos_to_recommendable => :environment do
@@ -124,7 +124,7 @@ task :videos_to_recommendable => :environment do
 end
 {% endhighlight %}
 
-执行命令：
+执行命令: 
 
 {% highlight ruby %}
 rake videos_to_recommendable

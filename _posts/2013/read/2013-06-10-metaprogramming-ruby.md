@@ -5,27 +5,27 @@ category: read
 ---
 <img class="cover" src="/images/2013/06/9787560974583-242x300.jpg" width="242" height="300" />
 
-原作名：Metaprogramming Ruby
+原作名: Metaprogramming Ruby
 
-ISBN：9787560974583
+ISBN: 9787560974583
 
-作者：[意] Paolo Perrotta
+作者: [意] Paolo Perrotta
 
-译者：廖志刚 / 陈睿杰
+译者: 廖志刚 / 陈睿杰
 
-出版社：华中科技大学出版社
+出版社: 华中科技大学出版社
 
-出版时间：2012-1
+出版时间: 2012-1
 
-评价：☆☆☆☆☆
+评价: ☆☆☆☆☆
 
 绝对五星好书，就算是你不会Ruby和Rails，我也建议你花几个小时了解Ruby语法后来看这本书。它不仅仅可以使你Ruby和Rails的水平大幅上升，同时有触类旁通的功效。
 
-编程的定义：元编程是编写在运行时操纵语言构件的代码。
+编程的定义: 元编程是编写在运行时操纵语言构件的代码。
 
 Ruby中你总是可以重新打开已经存在的类并对它进行动态修改，即使是像String或Array这样标准库中的类也不例外。这种技术可以简单称之为打开类（Open Class）技术。
 
-打开类技术的隐患：如果你粗心地为某个类添加了某些功能，可能覆盖了旧的功能，结果导致各种BUG。一些人对这种修订类的鲁莽方式深感不悦，他们给这种方式起了一个不太好听的名字：猴子补丁（Monkeypatch）。
+打开类技术的隐患: 如果你粗心地为某个类添加了某些功能，可能覆盖了旧的功能，结果导致各种BUG。一些人对这种修订类的鲁莽方式深感不悦，他们给这种方式起了一个不太好听的名字: 猴子补丁（Monkeypatch）。
 
 从某种意义上说，Ruby的class关键字更像是一个作用域操作符而不是类型声明语句。
 
@@ -37,11 +37,11 @@ Class类是Module类的子类，因此一个类只不过是一个增强的Module
 
 任何以大写字母开头的引用（包括类名和模块名），都是常量。
 
-同时拥有模块和类的主要原因在于清晰性：通过审慎地选择使用类或模块，能够使代码更加清晰。通常，希望它应该在别处被包含（`include`）时（或者当成命名空间时），应该选择使用模块；当希望它被实例化或者继承时，应该选择使用类。因此，在很多情况下尽管类和模块可以互换，当还是最好根据自己的目的来选择是使用类还是使用模块，以明确表明你的意图。
+同时拥有模块和类的主要原因在于清晰性: 通过审慎地选择使用类或模块，能够使代码更加清晰。通常，希望它应该在别处被包含（`include`）时（或者当成命名空间时），应该选择使用模块；当希望它被实例化或者继承时，应该选择使用类。因此，在很多情况下尽管类和模块可以互换，当还是最好根据自己的目的来选择是使用类还是使用模块，以明确表明你的意图。
 
 `require()`方法与`load()`方法颇为相似，但是它的目的不同。通过`load()`方法可以执行代码，而require()则是用来导入（`import`）类库。这就是`require()`方法没有第二个可选参数的原因。在这些类库中的类名通常是你导入这些库时所希望得到的，因此没有理由在加载后销毁它们。
 
-当调用一个方法时，Ruby会做两件事：
+当调用一个方法时，Ruby会做两件事: 
 找到这个方法。这个方法称为方法查找。
 执行这个方法。为了做到这点，Ruby需要一个叫做`self`的东西。
 
@@ -52,14 +52,14 @@ Class类是Module类的子类，因此一个类只不过是一个增强的Module
 当你在一个类（甚至可以是另外一个模块）中包含（`include`）一个模块时，Ruby耍了些小花招。Ruby创建了一个封装该模块的匿名类，并把这个匿名类插入到祖先链中，其在链中的位置正好在包含它的类上方。
 
 Object类包含了Kernel模块，因此Kernel就进入了每个对象的祖先链。这样在某个对象中可以随意调用Kernel模块的方法。这使得`print`看起来像是一个语言的关键字，其实它不过是一个方法而已。
-你也可以利用这种技术，如果给Kernel模块增加一个方法，这个内核方法（Kernel Method）就对所以对象可用。RubyGems是Ruby的包管理器，它有一个`gem()`方法，用来激活给定版本的gem：
+你也可以利用这种技术，如果给Kernel模块增加一个方法，这个内核方法（Kernel Method）就对所以对象可用。RubyGems是Ruby的包管理器，它有一个`gem()`方法，用来激活给定版本的gem: 
 
 {% highlight ruby %}
 require 'rubygems'
 gem 'rails', '= 2.3.2'
 {% endhighlight %}
 
-因为`gem()`方法是内核方法（Kernel Method）中的方法，所以可以在任何地方调用它。这点可以从RubyGems的源代码中得以验证：
+因为`gem()`方法是内核方法（Kernel Method）中的方法，所以可以在任何地方调用它。这点可以从RubyGems的源代码中得以验证: 
 
 {% highlight ruby %}
 module Kernel
@@ -77,11 +77,11 @@ def gem(gem_name, version_requirements)
 
 一个捕获幽灵方法调用并把它们转发给另外一个对象的对象（有时也会在转发前后包装一些自己的逻辑），称为动态代理（Dynamic Proxy）。
 
-动态代理技术的通病：当一个幽灵方法和一个真实方法发生名字冲突时，后者会胜出。如果不需要那个继承来的方法（真实方法），则可以通过删除它来解决这个问题。为了安全起见，你应该在代理类中删除绝大多数继承来的方法。这就是所谓的白板（Blank Slate）类，它所拥有的方法比Object类还要少。从Ruby1.9开始，白板技术被集成到语言自身中。默认情况下，类还是会从Object继承，从BesicObject类继承来的类会自动成为白板类。
+动态代理技术的通病: 当一个幽灵方法和一个真实方法发生名字冲突时，后者会胜出。如果不需要那个继承来的方法（真实方法），则可以通过删除它来解决这个问题。为了安全起见，你应该在代理类中删除绝大多数继承来的方法。这就是所谓的白板（Blank Slate）类，它所拥有的方法比Object类还要少。从Ruby1.9开始，白板技术被集成到语言自身中。默认情况下，类还是会从Object继承，从BesicObject类继承来的类会自动成为白板类。
 
-这方面超像JS。（P82）每个Ruby作用域包含一组绑定，并且不同的作用域之间被作用域门分隔开来：`class`、`module`和`def`。如果要让一两个绑定穿越作用域门，那么可以用方法来替代作用域门：用一个闭包获取当前的绑定，并把这个闭包传递给该方法。你可以使用`Class.new()`方法代替`class`，使用`Module.new`代替`module`，以及使用`Module#define_method()`代替`def`。这就形成了一个扁平作用域，它是闭包中的一个基本概念。如果在一个扁平作用域中定义了多个方法，则这些方法可以用一个作用域门进行保护，并共享绑定，这种技术称为共享作用域。
+这方面超像JS。（P82）每个Ruby作用域包含一组绑定，并且不同的作用域之间被作用域门分隔开来: `class`、`module`和`def`。如果要让一两个绑定穿越作用域门，那么可以用方法来替代作用域门: 用一个闭包获取当前的绑定，并把这个闭包传递给该方法。你可以使用`Class.new()`方法代替`class`，使用`Module.new`代替`module`，以及使用`Module#define_method()`代替`def`。这就形成了一个扁平作用域，它是闭包中的一个基本概念。如果在一个扁平作用域中定义了多个方法，则这些方法可以用一个作用域门进行保护，并共享绑定，这种技术称为共享作用域。
 
-示例代码：
+示例代码: 
 
 {% highlight ruby %}
 my_var = "Success"
@@ -118,7 +118,7 @@ inc(4)
 counter # => 4
 {% endhighlight %}
 
-上下文探针：`instance_eval()`方法，它像是一个深入到对象中的代码片段，对其进行操作。示例代码：
+上下文探针: `instance_eval()`方法，它像是一个深入到对象中的代码片段，对其进行操作。示例代码: 
 
 {% highlight ruby %}
 class MyClass
@@ -135,7 +135,7 @@ obj.instance_eval do
 end
 {% endhighlight %}
 
-Ruby中引入了一个名为`instance_exec()`的方法，它和`instance_eval()`方法相似，但它允许对块传入参数：
+Ruby中引入了一个名为`instance_exec()`的方法，它和`instance_eval()`方法相似，但它允许对块传入参数: 
 
 {% highlight ruby %}
 class C
@@ -170,7 +170,7 @@ MyClass = c
 c.name # => "MyClass"
 {% endhighlight %}
 
-引入单件方法，Ruby允许给单个对象增加一个方法。例如，下面演示了怎样给一个特定的字符串添加一个`title?()`方法（JS也能做这个功能吗？经过测试是可以的：<a title="JavaScript单件方法" href="/images/2013/05/23/js-singleton-methods.html" target="_blank">JavaScript单件方法</a>）
+引入单件方法，Ruby允许给单个对象增加一个方法。例如，下面演示了怎样给一个特定的字符串添加一个`title?()`方法（JS也能做这个功能吗？经过测试是可以的: <a title="JavaScript单件方法" href="/images/2013/05/23/js-singleton-methods.html" target="_blank">JavaScript单件方法</a>）
 
 {% highlight ruby %}
 str = "just a regular string"
@@ -184,7 +184,7 @@ str.methods.grep(/title?/) # => [:title?]
 str.singleton_methods # => [:title?]
 {% endhighlight %}
 
-类方法的实质就是：它们是一个类的单件方法。
+类方法的实质就是: 它们是一个类的单件方法。
 
 类扩展
 
@@ -222,7 +222,7 @@ obj.my_method # => "hello"
 obj.singleton_methods # => [:my_method]
 {% endhighlight %}
 
-类扩展和对象扩展的应用非常普遍，因此Ruby为它们专门提供了一个叫做`Object#extend()`的方法：
+类扩展和对象扩展的应用非常普遍，因此Ruby为它们专门提供了一个叫做`Object#extend()`的方法: 
 
 {% highlight ruby %}
 module MyModule
@@ -241,7 +241,7 @@ end
 MyClass.my_method # => "hello"
 {% endhighlight %}
 
-利用`alias`关键字和`alias_method`方法，可以使用一种技巧：环绕别名
+利用`alias`关键字和`alias_method`方法，可以使用一种技巧: 环绕别名
 
 1. 给方法定义一个别名
 2. 重新定义这个方法
@@ -254,7 +254,7 @@ MyClass.my_method # => "hello"
 3. 覆写`MyMixin#included()`方法来用ClassMethods扩展包含者（使用`extend()`方法）
 4. 在需要调用的类或模块中使用`include`关键字引入
 
-例子：
+例子: 
 
 {% highlight ruby %}
 module MyMixin
@@ -275,7 +275,7 @@ Class Xxxx
 end
 {% endhighlight %}
 
-在Ruby世界里，私有方法通常被认为是一种建议，而非一种约定。这是Ruby哲学的主题：规则是存在的，但是，如果确切知道你要做的是什么，则可以打破它们（绝大部分）。正如Matz（Ruby的作者）所说，Ruby把你视为一个成熟的开发者。
+在Ruby世界里，私有方法通常被认为是一种建议，而非一种约定。这是Ruby哲学的主题: 规则是存在的，但是，如果确切知道你要做的是什么，则可以打破它们（绝大部分）。正如Matz（Ruby的作者）所说，Ruby把你视为一个成熟的开发者。
 
 为了避免处处重复环绕别名机制，Rails提供了一种通用的元编程方法来帮助你快速实现它。其名字叫`Module#alias_method_chain()`方法，由ActiveSupport库提供。
 
@@ -300,7 +300,7 @@ obj.initialize_attributes
 obj.my_attr  # => nil
 {% endhighlight %}
 
-为了避免这个问题，给当前对象的属性赋值时，应该总是显式使用`self`：
+为了避免这个问题，给当前对象的属性赋值时，应该总是显式使用`self`: 
 
 {% highlight ruby %}
 class MyClass
@@ -316,19 +316,19 @@ obj.initialize_attributes
 obj.my_attr  # => 10
 {% endhighlight %}
 
-我们经常看到类似这种用法：
+我们经常看到类似这种用法: 
 
 {% highlight ruby %} 
 a ||= []
 {% endhighlight %}
 
-`||=`实际上是下面语句的快捷写法：
+`||=`实际上是下面语句的快捷写法: 
 
 {% highlight ruby %} 
 a = a || []
 {% endhighlight %}
 
-也等同于：
+也等同于: 
 
 {% highlight ruby %} 
 if a != nil
@@ -340,7 +340,7 @@ end
 
 这种惯用法被称为空指针保护。
 
-`*`操作符可以把多个参数收集到一个数组中：
+`*`操作符可以把多个参数收集到一个数组中: 
 
 {% highlight ruby %} 
 def my_method(*args)

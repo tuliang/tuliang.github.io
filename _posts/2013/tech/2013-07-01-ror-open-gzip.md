@@ -20,7 +20,7 @@ use Rack::Deflater
 run App::Application
 {% endhighlight %}
 
-然后打开`config/environments/production.rb`，在文件中加入一行代码：
+然后打开`config/environments/production.rb`，在文件中加入一行代码: 
 
 {% highlight ruby %}
 config.static_cache_control = "public, max-age=3600"

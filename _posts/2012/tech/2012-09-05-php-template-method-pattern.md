@@ -55,21 +55,21 @@ class Coffee extends CaffeineBeverage{
 	}
 }
 
-echo '茶：<br/>';
+echo '茶: <br/>';
 $Tea = new Tea;
 $Tea->prepareRecipe();
-echo '咖啡：<br/>';
+echo '咖啡: <br/>';
 $Coffee = new Coffee;
 $Coffee->prepareRecipe();
 {% endhighlight %}
 
-输出：  
-茶：  
+输出:   
+茶:   
 Boiling water  
 Steeping the tea  
 Pouring into cup  
 Adding Lemon  
-咖啡：  
+咖啡:   
 Boiling water  
 Dripping Coffee through filter  
 Pouring into cup  

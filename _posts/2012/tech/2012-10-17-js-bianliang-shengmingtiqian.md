@@ -3,7 +3,7 @@ layout: post
 title: JS变量声明提前
 category: tech
 ---
-JS使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。到底是什么意思呢？我们来看下面这段代码：
+JS使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。到底是什么意思呢？我们来看下面这段代码: 
 
 {% highlight javascript %}
 var scope = 'global';
@@ -15,15 +15,15 @@ function f(){
 f();
 {% endhighlight %}
 
-你可能认为输出是：
+你可能认为输出是: 
 global  
 local  
 
-但是运行一下你就会发现实际结果是：
+但是运行一下你就会发现实际结果是: 
 undefined  
 local  
 
-深入研究你会发现就算是你使用传递参数：
+深入研究你会发现就算是你使用传递参数: 
 
 {% highlight javascript %}
 var scope = 'global';
@@ -35,11 +35,11 @@ function f(scope){
 f();
 {% endhighlight %}
 
-实际结果依然是：  
+实际结果依然是:   
 undefined  
 local  
 
-或者代码改写为：
+或者代码改写为: 
 
 {% highlight javascript %}
 var scope = 'global';
@@ -52,10 +52,10 @@ function f(){
 f();
 {% endhighlight %}
 
-实际结果仍然是：  
+实际结果仍然是:   
 undefined  
 
-为什么，后面的代码能够影响到前面的代码？照成这种结果的原因的就是前面提到的函数作用域，在JS中上面的代码实际上是这样的：
+为什么，后面的代码能够影响到前面的代码？照成这种结果的原因的就是前面提到的函数作用域，在JS中上面的代码实际上是这样的: 
 
 {% highlight javascript %}
 var scope = 'global';

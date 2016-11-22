@@ -35,7 +35,7 @@ $MyObj = MyClass::getObj();
 var_dump($MyObj);
 {% endhighlight %}
 
-输出：
+输出: 
 
 object(MyClass)[1]
 

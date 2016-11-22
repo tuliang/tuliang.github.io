@@ -3,20 +3,20 @@ layout: post
 title: Ruby on Rails 两个Model有多种多对多关联
 category: tech
 ---
-两个Model进行关联在Rails中是很常见的。一对一、多对多和一对多，都非常简单。有时候Model之间会有多种关联，比如某种岗位会有必要的要求，也有一些加分项。这个时候就是两种多对多的关联了，研究了一下Rails的关联机制，可以发现：利用`:source`和`:through`是可以实现这种需求的。
+两个Model进行关联在Rails中是很常见的。一对一、多对多和一对多，都非常简单。有时候Model之间会有多种关联，比如某种岗位会有必要的要求，也有一些加分项。这个时候就是两种多对多的关联了，研究了一下Rails的关联机制，可以发现: 利用`:source`和`:through`是可以实现这种需求的。
 
-例如，我们有`career`和`educational_path`两个Model，对它们要进行两种多对多的关联，可以这么做：
+例如，我们有`career`和`educational_path`两个Model，对它们要进行两种多对多的关联，可以这么做: 
 
 首先我们创立`required_educational_paths`和`recommended_educational_paths`这两个Model来支持这两种关联。
 
-它们两个的数据结构是一样的：
+它们两个的数据结构是一样的: 
 
 {% highlight ruby %}
 t.integer "career_id"
 t.integer "educational_path_id"
 {% endhighlight %}
 
-Model中的代码也是相同的：
+Model中的代码也是相同的: 
 
 {% highlight ruby %}
 attr_accessible :career_id, :educational_path_id

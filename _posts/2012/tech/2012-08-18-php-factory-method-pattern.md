@@ -236,7 +236,7 @@ $NYPizzaStore->orderPizza('cheese');
 $ChicagoPizzaStore->orderPizza('pepperoni');
 {% endhighlight %}
 
-输出：  
+输出:   
 NYCheesePizza prepare  
 NYCheesePizza bake  
 NYCheesePizza cut  

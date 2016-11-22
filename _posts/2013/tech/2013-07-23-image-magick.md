@@ -27,13 +27,13 @@ brew install advancecomp gifsicle jpegoptim jpeg optipng pngcrush
 
 <img src="/images/2013/07/20130723-1.png" />
 
-运行`image_optim`命令将blog下的图片进行优化：
+运行`image_optim`命令将blog下的图片进行优化: 
 
 {% highlight ruby %}
 image_optim -r images/*
 {% endhighlight %}
 
-如果报出类似这种错误：
+如果报出类似这种错误: 
 
 {% highlight ruby %}
 image_optim.rb:187:in `resolve_bin!': `pngout` not found (ImageOptim::BinNotFoundError)

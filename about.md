@@ -5,11 +5,11 @@ permalink: /about/
 ---
 涂亮，男，1989年在武汉出生，现就职于杭州阿里巴巴。
 
-* Email：info@tuliang.org
-* QQ：331431214
-* Github：[https://github.com/tuliang](https://github.com/tuliang)
-* Blog：[http://tuliang.org](http://tuliang.org)
-* 豆瓣：[http://douban.com/people/43902568](http://douban.com/people/43902568)
+* Email: info@tuliang.org
+* QQ: 331431214
+* Github: [https://github.com/tuliang](https://github.com/tuliang)
+* Blog: [http://tuliang.org](http://tuliang.org)
+* 豆瓣: [http://douban.com/people/43902568](http://douban.com/people/43902568)
 
 技能
 

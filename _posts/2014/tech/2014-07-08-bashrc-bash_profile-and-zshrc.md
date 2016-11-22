@@ -9,4 +9,4 @@ category: tech
 
 突然记起来我用了[oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)，检查根目录，果然有一个文件叫`.zshrc`，赶紧将设置纷纷移到里面，整个世界仿佛瞬间变得美好了。
 
-参考资料：[https://wido.me/sunteya/understand-bashrc-and-profile](https://wido.me/sunteya/understand-bashrc-and-profile)
+参考资料: [https://wido.me/sunteya/understand-bashrc-and-profile](https://wido.me/sunteya/understand-bashrc-and-profile)

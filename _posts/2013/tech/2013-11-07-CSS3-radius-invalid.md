@@ -3,7 +3,7 @@ layout: post
 title: CSS3 圆角 无效
 category: tech
 ---
-今天在做页面的时候遇到CSS3圆角无效的情况，实例代码：
+今天在做页面的时候遇到CSS3圆角无效的情况，实例代码: 
 
 {% highlight html %}
 <style type="text/css">
@@ -32,7 +32,7 @@ category: tech
 
 <img src="/images/2013/11/QQ20131107-1.png" />  
 
-你会发现圆角居然没有出现！让我们加上边框看看发生了什么：
+你会发现圆角居然没有出现！让我们加上边框看看发生了什么: 
 
 {% highlight css %}
 .category-menu {

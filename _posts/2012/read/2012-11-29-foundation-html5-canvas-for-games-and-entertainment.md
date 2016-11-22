@@ -5,19 +5,19 @@ category: read
 ---
 <img src="/images/2012/11/9787115271013-238x300.jpg" alt="HTML5 Canvas基础教程" title="9787115271013" width="238" height="300" class="cover" />
 
-原作名：Foundation HTML5 Canvas: For Games and Entertainment
+原作名: Foundation HTML5 Canvas: For Games and Entertainment
 
-ISBN：9787115271013
+ISBN: 9787115271013
 
-作者： Rob Hawkes 
+作者:  Rob Hawkes 
 
-译者：周广新 / 曾少宁 / 盛海艳　等  
+译者: 周广新 / 曾少宁 / 盛海艳　等  
 
-出版社：人民邮电出版社
+出版社: 人民邮电出版社
 
-出版时间：2012-1
+出版时间: 2012-1
 
-评价：☆☆☆☆
+评价: ☆☆☆☆
 
 在画布中绘制图像后，我们就可以对它执行所有的2D渲染上下文方法。也就是说在画布中可以进行的平移、旋转、缩放和翻转等功能都是可以使用的。
 
@@ -27,5 +27,5 @@ ISBN：9787115271013
 
 Canvas正在经历多年前Flash所经历的发展阶段，JavaScript开发人员可以借鉴Flash开发人员的经验。
 
-推荐阅读书籍：
+推荐阅读书籍: 
 Keith Peters《<a href="http://book.douban.com/subject/3016575/" target="_blank">Flash ActionScript3.0动画教程</a>》

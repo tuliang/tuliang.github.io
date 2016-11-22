@@ -75,6 +75,6 @@ end
 if can?
 {% endhighlight %}
 
-例如：
+例如: 
 
 <img src="/images/2012/12/Image1.png" alt="" title="Image" class="alignnone size-medium wp-image-2118" />

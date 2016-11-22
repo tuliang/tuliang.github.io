@@ -15,7 +15,7 @@ end
 search_photo_index GET    /photo/search(.:format)
 {% endhighlight %}
 
-我们去查看 [参考文档](http://guides.rubyonrails.org/routing.html#singular-resources)，发现可以这样做：
+我们去查看 [参考文档](http://guides.rubyonrails.org/routing.html#singular-resources)，发现可以这样做: 
 
 {% highlight ruby %}
 resource :photo, controller: photo do  

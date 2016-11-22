@@ -5,13 +5,13 @@ category: tech
 ---
 安装好JDK后，开始安装安卓开发环境
 
-安卓开发环境下载地址：<a href="http://developer.android.com/sdk/index.html" target="_blank">http://developer.android.com/sdk/index.html</a>
+安卓开发环境下载地址: <a href="http://developer.android.com/sdk/index.html" target="_blank">http://developer.android.com/sdk/index.html</a>
 <a href="/images/2013/01/2.1.png"><img class="alignnone size-full wp-image-2238" alt="2.1" src="/images/2013/01/2.1.png" width="348" height="355" /></a>
 
 点击下载后，将其解压到某个目录
 
 然后我们继续修改环境变量，我的电脑->属性->高级->环境变量->系统变量中添加以下环境变量
-在系统变量中增加PATH，PATH值为（刚才解压的目录）：
+在系统变量中增加PATH，PATH值为（刚才解压的目录）: 
 
 ```
 D:\adt-bundle-windows-x86_64\sdk\tools

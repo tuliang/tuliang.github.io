@@ -187,7 +187,7 @@ $NYPizzaStore->orderPizza('cheese');
 $ChicagoPizzaStore->orderPizza('clam');
 {% endhighlight %}
 
-输出：  
+输出:   
 NY createDough  
 NY createSauce  
 NY createCheese  

@@ -62,6 +62,6 @@ $obj->setSuanfa(new Suanfa2());
 $obj->run();
 {% endhighlight %}
 
-输出：  
+输出:   
 1  
 2  

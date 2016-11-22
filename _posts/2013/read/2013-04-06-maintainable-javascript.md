@@ -5,23 +5,23 @@ category: read
 ---
 <img src="/images/2013/04/9787115310088-228x300.jpg" alt="9787115310088" width="228" height="300" class="cover" />
 
-原作名：Maintainable JavaScript
+原作名: Maintainable JavaScript
 
-ISBN： 9787115310088
+ISBN:  9787115310088
 
-作者：Nicholas C. Zakas
+作者: Nicholas C. Zakas
 
-译者：李晶 / 郭凯 / 张散集
+译者: 李晶 / 郭凯 / 张散集
 
-出版社：人民邮电出版社
+出版社: 人民邮电出版社
 
-出版时间：2013-3
+出版时间: 2013-3
 
-评价：☆☆☆☆
+评价: ☆☆☆☆
  
 很薄的一本书，淘宝的翻译一般般，不过在国内翻译的作品中算是不错了。这本书，虽然主讲团队合作，对单打独斗的人也有些益处。第一、二部分其中有些章节很仔细的看了，将的还是挺不错的。其他部分，特别是第三部分——自动化，只是过了一下。这些工具需要抽时间研究一下，虽然现在大部分时候是单打独斗的。能自动化的，最好还是自动化，省心省力，也适合我这种喜欢偷懒的人:-D。
 
-JS工具箱：JSLint/JSHint（验证工具）、Handlebars（页面模板）、RequireJS（模块加载器）。
+JS工具箱: JSLint/JSHint（验证工具）、Handlebars（页面模板）、RequireJS（模块加载器）。
 
 不赞成使用Object、Array来创建对象和数组，最好使用大括号{ }与中括号[ ]。后一种写法可以高效地完成前一种写法相同的任务，后一种写法简洁，前一种写法更复杂。
  
@@ -33,6 +33,6 @@ JS工具箱：JSLint/JSHint（验证工具）、Handlebars（页面模板）、R
 
 不要使用JS改变style属性，使用className。（P59）将CSS从JavaScript中抽离意味着所有的样式信息都应当保持在CSS中。当需要通过JavaScript来修改元素样式的时候，最佳方法是操作CSS的className.
 
-勘错：
+勘错: 
 P6  
 “2个空格表示一个缩进”出现了两次，其中应该有一个为“4个空格表示一个缩进”

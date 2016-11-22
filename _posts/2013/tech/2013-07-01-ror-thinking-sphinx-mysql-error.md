@@ -17,7 +17,7 @@ rake ts:rebuild
 
 这个命令让sphinx重新建立索引并且启动服务，很弱智的问题哈哈。
 
-注意：
+注意: 
 
 {% highlight ruby %}
 rake ts:index  
