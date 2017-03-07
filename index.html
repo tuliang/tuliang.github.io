@@ -1,16 +1,163 @@
----
-layout: post
-title: 涂亮^^
----
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>小明基金</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width:1080px;height:360px;"></div>
+    <script type="text/javascript">
+    function splitData(rawData) {
+        var categoryData = [];
+        var values = [];
+        for (var i = 0; i < rawData.length; i++) {
+            categoryData.push(rawData[i].splice(0, 1)[0]);
+            values.push(rawData[i]);
+        }
+        return {
+            categoryData: categoryData,
+            values: values
+        };
+    }
 
-<div class="home">
+    $.get('data.json', function (rawData) {
+        var data = splitData(rawData);
+        console.log(data);
+    });
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+        
+
+
+
+
+
+        var legend = ['小明基金','上证指数','恒生指数'];
+        var date = [
+            '2017/2/1',
+            '2017/2/2',
+            '2017/2/3',
+            '2017/2/4',
+            '2017/2/5',
+            '2017/2/6',
+            '2017/2/7',
+        ];
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = option = {
+            title: {
+                text: '净值走势'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data: legend
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    boundaryGap : false,
+                    data : date
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'小明基金',
+                    type:'line',
+                    data:[120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name:'上证指数',
+                    type:'line',
+                    data:[220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name:'恒生指数',
+                    type:'line',
+                    data:[150, 232, 201, 154, 190, 330, 410]
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main2" style="width:1080px;height:360px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart2 = echarts.init(document.getElementById('main2'));
+
+        // 指定图表的配置项和数据
+        var option2 = option = {
+            title: {
+                text: '每日涨跌'
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data: legend
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : date
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'小明基金',
+                    type:'bar',
+                    data:[120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name:'上证指数',
+                    type:'bar',
+                    data:[220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name:'恒生指数',
+                    type:'bar',
+                    data:[150, 232, 201, 154, 190, 330, 410]
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart2.setOption(option2);
+    </script>
+</body>
+</html>
