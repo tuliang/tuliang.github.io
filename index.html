@@ -10,47 +10,60 @@
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div id="main" style="width:1080px;height:360px;"></div>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main2" style="width:1080px;height:360px;"></div>
+
     <script type="text/javascript">
+    var legend = ['小明基金','上证指数','恒生指数'];
+
     function splitData(rawData) {
         var categoryData = [];
         var values = [];
+        var values2 = [];
+        var values3 = [];
+        var values4 = [];
+        var values5 = [];
+        var values6 = [];
         for (var i = 0; i < rawData.length; i++) {
             categoryData.push(rawData[i].splice(0, 1)[0]);
-            values.push(rawData[i]);
+
+            values.push(rawData[i][0].toFixed(4));
+            values2.push((rawData[i][1] / rawData[0][1]).toFixed(4));
+            values3.push((rawData[i][2] / rawData[0][2]).toFixed(4));
+
+            var prev = i-1;
+            if (prev < 0) {
+              prev = 0;
+            }
+
+            values4.push(buildData(rawData[i][0], rawData[prev][0]));
+            values5.push(buildData(rawData[i][1], rawData[prev][1]));
+            values6.push(buildData(rawData[i][2], rawData[prev][2]));
         }
         return {
             categoryData: categoryData,
-            values: values
+            values: values,
+            values2: values2,
+            values3: values3,
+            values4: values4,
+            values5: values5,
+            values6: values6
         };
+    }
+
+    function buildData(next, prev) {
+      return ((next / prev - 1) * 100).toFixed(2);
     }
 
     $.get('data.json', function (rawData) {
         var data = splitData(rawData);
         console.log(data);
-    });
-
-        
-
-
-
-
-
-        var legend = ['小明基金','上证指数','恒生指数'];
-        var date = [
-            '2017/2/1',
-            '2017/2/2',
-            '2017/2/3',
-            '2017/2/4',
-            '2017/2/5',
-            '2017/2/6',
-            '2017/2/7',
-        ];
 
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
 
         // 指定图表的配置项和数据
-        var option = option = {
+        var option = {
             title: {
                 text: '净值走势'
             },
@@ -70,29 +83,30 @@
                 {
                     type : 'category',
                     boundaryGap : false,
-                    data : date
+                    data : data.categoryData
                 }
             ],
             yAxis : [
                 {
-                    type : 'value'
+                    type : 'value',
+                    min: 0.9
                 }
             ],
             series : [
                 {
                     name:'小明基金',
                     type:'line',
-                    data:[120, 132, 101, 134, 90, 230, 210]
+                    data: data.values
                 },
                 {
                     name:'上证指数',
                     type:'line',
-                    data:[220, 182, 191, 234, 290, 330, 310]
+                    data: data.values2
                 },
                 {
                     name:'恒生指数',
                     type:'line',
-                    data:[150, 232, 201, 154, 190, 330, 410]
+                    data: data.values3
                 }
             ]
         };
@@ -100,21 +114,18 @@
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
-    </script>
 
-    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main2" style="width:1080px;height:360px;"></div>
-    <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart2 = echarts.init(document.getElementById('main2'));
 
         // 指定图表的配置项和数据
-        var option2 = option = {
+        var option2 = {
             title: {
                 text: '每日涨跌'
             },
             tooltip : {
-                trigger: 'axis'
+                trigger: 'axis',
+                formatter: '{a0}: {c0}%<br />{a1}: {c1}%<br />{a2}: {c2}%'
             },
             legend: {
                 data: legend
@@ -128,36 +139,42 @@
             xAxis : [
                 {
                     type : 'category',
-                    data : date
+                    data : data.categoryData
                 }
             ],
             yAxis : [
                 {
-                    type : 'value'
+                    type : 'value',
+                    axisLabel: {
+                        formatter: '{value} %'
+                    }
                 }
             ],
             series : [
                 {
                     name:'小明基金',
                     type:'bar',
-                    data:[120, 132, 101, 134, 90, 230, 210]
+                    data: data.values4
                 },
                 {
                     name:'上证指数',
                     type:'bar',
-                    data:[220, 182, 191, 234, 290, 330, 310]
+                    data: data.values5
                 },
                 {
                     name:'恒生指数',
                     type:'bar',
-                    data:[150, 232, 201, 154, 190, 330, 410]
+                    data: data.values6
                 }
             ]
         };
 
+        console.log(data.values6);
+
 
         // 使用刚指定的配置项和数据显示图表。
         myChart2.setOption(option2);
+    });
     </script>
 </body>
 </html>
