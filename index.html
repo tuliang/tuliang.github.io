@@ -57,7 +57,6 @@
 
     $.get('data.json', function (rawData) {
         var data = splitData(rawData);
-        console.log(data);
 
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
@@ -111,9 +110,10 @@
             ]
         };
 
-
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+
+
 
         // 基于准备好的dom，初始化echarts实例
         var myChart2 = echarts.init(document.getElementById('main2'));
@@ -168,9 +168,6 @@
                 }
             ]
         };
-
-        console.log(data.values6);
-
 
         // 使用刚指定的配置项和数据显示图表。
         myChart2.setOption(option2);
