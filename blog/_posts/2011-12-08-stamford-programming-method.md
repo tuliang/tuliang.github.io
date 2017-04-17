@@ -1,8 +1,5 @@
----
-layout: post
-title: 斯坦福《编程方法》
-category: open
----
+# 斯坦福《编程方法》
+
 课程介绍: 
 
 「编程方法」本课程是最大的编程入门课程，也是斯坦福大学主要课程之一。介绍了当代程序设计基本思想: 面向对象，模块化，封装，抽象化与测试。《编程方法》将良好的编程思想连同广泛应用的Java语言一同讲授。着重教授良好的编程风格和Java语言的特色。这门同样课适合文科，主修社会科学的同学和编程爱好者学习观看。其实每年都有很多非工程系同学选修这门课。
@@ -11,129 +8,125 @@ category: open
 
 课程类型: 计算机
 
-<img class="cover" title="Mehran Sahami" src="/images/2011/12/Mehran-Sahami.jpg" alt="Mehran Sahami" width="149" height="209" />
-
 课程主讲人: Mehran Sahami教授
 
 Mehran Sahami刚加入斯坦福大学计算机系时任副教授，本科教育附主任和教务处主任三职。2001年至2006年，任斯坦福大学计算机系讲师。2002至 2007年，任谷歌公司的高级研究员，目前依然是研究团队的顾问。Mehran Sahami的研究方向主要有计算机科学教育，机器学习和网络信息挖掘。 在此之前，Mehran Sahami是Epiphany公司的高级工程经理。去Epiphany工作前，他在斯坦福大学的计算机系拿到了博士学位。他曾今也是斯坦福大学的本科 生，一直深爱着这方土地，至今不愿离去。工作之余，喜欢跟家人团聚，喜欢弹吉他，喜欢户外旅行，还喜欢睡觉（虽然最近睡的越来越少）。
 
 课程简介: 
 
-[第 1 课 课程简介](#section-1)
+第 1 课 课程简介
 
 欢迎来到CS106A，授课人员，为什么称之为编程方法？，你真的适合学习这门课程吗？课程常规，作业与评分，课外拓展，期中期末考试，成绩评定细则，行为准则，为何要从Karel学起？
 
-[第 2 课 欢迎来到 Karel 的世界](#karel-)
+第 2 课 欢迎来到 Karel 的世界
 
 讲义相关，注册讨论小组，Karel基本命令，算法与程序孰轻孰重，Karel程序语法，运行一个Karel程序，创建函数的方法，超级Karel，For循环，While循环，Karel条件语句，If条件语句，综述。
 
-[第 3 课 Karel 与 Java](#karel--java)
+第 3 课 Karel 与 Java
 
 Karel 与Java，常见的错误，注释，前提条件和后续条件，分解，例程序DoubleBeeper，养成良好编程习惯重要性，正确的分解，例程序CleanUpKarel。
 
-[第 4 课 计算科学发展史](#section-2)
+第 4 课 计算科学发展史
 
 计算机科学与程序设计的千丝万缕，电脑懂什么，编译过程，Java-面向对象的程序设计语言，继承，类，acm.program层次结构，第一个Java程序，例程序ConsoleProgram，图形化界面，例程序Sending-Messages-to-a-GLabel。
 
-[第 5 课 变量](#section-3)
+第 5 课 变量
 
 变量的数据类型，调用变量相关语法，类的类型，对象变量，调用类成员函数的方法，图形坐标，对类GObject以及其子类的操作，描画几何对象，例程序FunGraphics，表达式与操作符。
 
-[第 6 课 操作符](#section-4)
+第 6 课 操作符
 
 readInt() 和 readDouble()函数，整形与浮点数的除法运算操作符，操作符优先级，类型转换，常量，布尔数据类型，值的比较，布尔表达式，短路求值，语句块，变量的作用域，if套嵌，switch语句，for循环语句，while循环语句。
 
-[第 7 课 循环与“一半”问题](#section-5)
+第 7 课 循环与“一半”问题
 
 For循环与While循环的对比，例程序CheckerBoad，在Java中创建函数，创建函数举例，FactorialExample程序，用函数返回对象。
 
-[第 8 课 信息隐藏](#section-6)
+第 8 课 信息隐藏
 
 Void函数类型，在函数间传递参数，函数的缺陷，类的使用，整体变量与局部变量，例程序RandomGenerator，例程序RollDice，setseed()函数。
 
-[第 9 课 字符串](#section-7)
+第 9 课 字符串
 
 写一个类，公有和私有的区别，构造函数，this关键词，类的使用，对象的调用需要使用引用方式，将类作为变量，Javadoc技术，例程序Student。
 
-[第 10 课 私有变量的重要性](#section-8)
+第 10 课 私有变量的重要性
 
 扩展Student类，函数重写，acm.graphics程序包，GCanvas，GObjects中的常用函数，其中的接口与函数，BouncingBall例程序，GLable类中的几何学，GArc类。
 
-[第 11 课 Gimage类](#gimage)
+第 11 课 Gimage类
 
 GPolygon类，GCompound类，事件驱动程序，例程序ClickForFace，响应鼠标操作，响应键盘操作，例程序UFO。
 
-[第 12 课 枚举](#section-9)
+第 12 课 枚举
 
 字符，Unicode标准下的ASCII码，字符的读取，字符中的数学，基本类型char，字符对象，字符串及其操作。
 
-[第 13 课 对字符串的处理](#section-10)
+第 13 课 对字符串的处理
 
 编译器，加密。
 
-[第 14 课 内存](#section-11)
+第 14 课 内存
 
 存放不同变量的内存区块，内存分配机制，对指针的看法，指针趣味小视频。
 
-[第 15 课 指针要点回顾](#section-12)
+第 15 课 指针要点回顾
 
 为什么要通过引用方式调用类，将封装类作为基本数据类型，文件，打开、读取、关闭文件的函数，异常状况，文件写操作函数。
 
-[第 16 课 数组](#section-13)
+第 16 课 数组
 
 创建数组，++操作符，数组的真实长度与有效长度，将数组作为参数，初始化数组，数组列表。
 
-[第 17 课 多维数组](#section-14)
+第 17 课 多维数组
 
 类模版，ArrayList类中的函数，使用ArrayList类的例程序，Glable数组列表例程序，例程序GrayImage。
 
-[第 18 课 多维数组收尾](#section-15)
+第 18 课 多维数组收尾
 
 数组列表方式，数组列表与数组的优劣分析，调试，程序调试的方法，Eclipse中的调试器。
 
-[第 19 课 接口](#section-16)
+第 19 课 接口
 
 如何使用接口，映射，HashMap类，HashMap中的函数，中继器，HashMap例程序。
 
-[第 20 课 图形用户界面](#section-17)
+第 20 课 图形用户界面
 
 Java程序中的Interactor，Swing Interactor层次结构，窗口区域，创建Interactor，例程序，探索更多Interactor，例程序InteractorDrawFace。
 
-[第 21 课 Interactor与Listener回顾](#interactorlistener)
+第 21 课 Interactor与Listener回顾
 
 例程序，例程序中应用的两种方法——使用getSouce或getActionCommand函数，例程序TextField，布局设计，温度换算例程序，例程序TextAndGraphics。
 
-[第 22 课 NameSurfer概述](#namesurfer)
+第 22 课 NameSurfer概述
 
 组件与容器，容器的监听器，设计可扩展程序，ComponentListener接口，例程序MusicShop，例程序MusicShopDisplay。
 
-[第 23 课 搜索，排序与算法效率分析](#section-18)
+第 23 课 搜索，排序与算法效率分析
 
 课程材料介绍——搜索，排序及其算法效率分析，搜索，线性搜索，线性搜索的效率分析，二分法搜索，二分法搜索的效率分析，排序，选择排序算法，选择排序效率分析，基数排序算法。
 
-[第 24 课 管理大型数据中的良好软件工程原理](#section-19)
+第 24 课 管理大型数据中的良好软件工程原理
 
 设计思想，数据搜集层次结构，数据搜集实用函数，例程序: 在线音乐商店FlyTunes,定义歌曲类，定义专辑类，鉴证程序运行，对所需数据结构的思考，数据的重复利用，浅拷贝与深拷贝。
 
-[第 25 课 设计实用社交网络](#section-20)
+第 25 课 设计实用社交网络
 
 思考程序所需功能，分离现象的六种程度，并行性，一个线程，运行接口，创建一个线程，例程序，在线程间共享数据。
 
-[第 26 课 介绍Java标准库](#java)
+第 26 课 介绍Java标准库
 
 JAR文件介绍，创建JAR文件，创建applet小程序，脱离ACM运行库创建标准Java程序，其他——深入学习Java。
 
-[第 27 课 CS106A后续课程介绍](#cs106a)
+第 27 课 CS106A后续课程介绍
 
 计算机专业简介，其他专业出路。
 
-[第 28 课 宣布图形比赛结果](#section-21)
+第 28 课 宣布图形比赛结果
 
 期末复习，例题1，例题2，课程总结。
 
 ## 笔记
-
----
 
 ### 第 1 课 课程简介
 
@@ -224,17 +217,17 @@ JAR文件介绍，创建JAR文件，创建applet小程序，脱离ACM运行库�
 
 例: 不论x取任何值，P都为真，这是一个典型的漏洞。
 
-{% highlight java %}
+```java
 P = (x != 1) || (x != 2);
-{% endhighlight %}
+```
 
 短路计算，在不同情况下他们很是有用的。例如避免除数为0的情况出现
 
 例: 如果x等于0，直接判断为假，不用处理后面的语句。这样你就永远不会有除数为0的情况。
 
-{% highlight java %}
+```java
 P = (x == 0) && ((y/x) == 0);
-{% endhighlight %}
+```
 
 switch条件必须是整数值，不可以是双精度类型。
 
@@ -248,7 +241,7 @@ switch条件必须是整数值，不可以是双精度类型。
 
 例: 从用户那读入一连串数字，直到用户输入0才停止读入，然后计算这些数字的和。
 
-{% highlight java %}
+```java
 public class Add extends ConsoleProgram {
   private static final int SENTINEL = 0;//哨兵
   public void run(){
@@ -258,10 +251,11 @@ public class Add extends ConsoleProgram {
       total += val;
       val = readInt("Enter val:");
     }
-  println("Total = " + total);
+    
+    println("Total = " + total);
   }
 }
-{% endhighlight %}
+```
 
 循环会判断如果你给的值不是哨兵值，就不会停止。
 
@@ -269,20 +263,20 @@ public class Add extends ConsoleProgram {
 
 例: 从用户那读入一连串数字，直到用户输入0才停止读入，然后计算这些数字的和。
 
-{% highlight java %}
+```java
 public class Add extends ConsoleProgram {
   private static final int SENTINEL = 0;//哨兵
   public void run(){
-  int total = 0;//输入值总和
-  while(true){
-    int val = readInt("Enter val:");//输入值
-    if(val == SENTINEL) break;//如果输入值等于哨兵就跳出循环
-    total += val;
-  }
+    int total = 0;//输入值总和
+    while(true){
+      int val = readInt("Enter val:");//输入值
+      if(val == SENTINEL) break;//如果输入值等于哨兵就跳出循环
+      total += val;
+    }
     println("Total = " + total);
   }
 }
-{% endhighlight %}
+```
 
 循环会判断循环条件永远为真，看起来很奇怪。你会担心它不是一个无限循环吗？只有一种情况会被终止，我们会向用户询问数值，判断这个值是否为哨兵值。如果是，跳出循环。
 
@@ -294,21 +288,21 @@ break语句的作用就是它会跳出围绕代码最里面的那层循环。实
 
 例: 当i+y的值为偶数时执行，为奇数时不执行。
 
-{% highlight java %}
+```java
 sq.setFilled(((i + y) % 2) != 0);
-{% endhighlight %}
+```
 
 多数情况下，return会出现在方法的结尾。但它并不只会出现在结尾，运行return时，正在执行的方法会马上停止，并且返回语句中的值或对象。
 
 例: 比较2个数字的大小，并且返回比较大的那个数。
 
-{% highlight java %}
+```java
 if(x > y){
   return x;
 }else{
   return y;
 }
-{% endhighlight %}
+```
 
 ---
 
@@ -322,7 +316,7 @@ if(x > y){
 
 例: x输出值为3，AddFive方法只修改了x的拷贝，变量x的值并没有改变。
 
-{% highlight java %}
+```java
 private void AddFive(int x){  
   x += 5;//修改的是x的拷贝  
 }  
@@ -332,11 +326,11 @@ public void run(){
   AddFive(x);  
   println("x = " + x);  
 }
-{% endhighlight %}
+```
 
 例: x输出值为8，AddFive方法修改了x的拷贝，然后将拷贝修改后的值返回，最后将返回的拷贝x的值赋值给变量x。
 
-{% highlight java %}
+```java
 private int AddFive(int x){  
   x += 5;//修改的是x的拷贝  
   return x;//返回拷贝修改后的值  
@@ -347,7 +341,7 @@ public void run(){
   x = AddFive(x);//将返回的拷贝x的值赋值给变量x  
   println("x = " + x);  
 }
-{% endhighlight %}
+```
 
 当调用类的时候，分别有类的客户（client）和类的实现者（implementor）这两个概念。类的客户指类的使用者，当你调用ACM库里面的类使用时，你就是客户。而当你自己编写类，设定类的用途，那你就是实现者。
 
