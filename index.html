@@ -9,9 +9,9 @@
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="width:1080px;height:360px;"></div>
+    <div id="main" style="width:100%;height:360px;margin:0 auto;"></div>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main2" style="width:1080px;height:360px;"></div>
+    <div id="main2" style="width:100%;height:360px;margin:0 auto;"></div>
 
     <script type="text/javascript">
     var legend = ['小明基金','上证指数','恒生指数'];
@@ -55,7 +55,7 @@
       return ((next / prev - 1) * 100).toFixed(2);
     }
 
-    $.get('data.json', function (rawData) {
+    $.get('http://www.tuliang.org/data.json', function (rawData) {
         var data = splitData(rawData);
 
         // 基于准备好的dom，初始化echarts实例
@@ -76,9 +76,9 @@
                 data: legend
             },
             grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
+                left: 50,
+                right: 80,
+                bottom: 50,
                 containLabel: true
             },
             xAxis : [
@@ -110,6 +110,15 @@
                     type:'line',
                     data: data.values3
                 }
+            ],
+            dataZoom: [
+                {
+                    id: 'dataZoomX',
+                    type: 'slider',
+                    xAxisIndex: [0],
+                    filterMode: 'filter',
+                    startValue: '2017-02-01'
+                }
             ]
         };
 
@@ -123,6 +132,9 @@
 
         // 指定图表的配置项和数据
         var option2 = {
+            textStyle: {
+                fontFamily: 'Microsoft YaHei, 微软雅黑, Arial, Verdana, sans-serif'
+            },
             title: {
                 text: '每日涨跌'
             },
@@ -134,9 +146,9 @@
                 data: legend
             },
             grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
+                left: 50,
+                right: 80,
+                bottom: 50,
                 containLabel: true
             },
             xAxis : [
@@ -168,6 +180,15 @@
                     name:'恒生指数',
                     type:'bar',
                     data: data.values6
+                }
+            ],
+            dataZoom: [
+                {
+                    id: 'dataZoomX',
+                    type: 'slider',
+                    xAxisIndex: [0],
+                    filterMode: 'filter',
+                    startValue: '2017-02-01'
                 }
             ]
         };
