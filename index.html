@@ -59,9 +59,9 @@
     $.get('http://www.tuliang.org/data.json', function (rawData) {
         var data = splitData(rawData);
         
-        var title = "单位净值（"+data.categoryData[data.categoryData.length-1]+"更新): " 
+        var title = data.categoryData[data.categoryData.length-1]+"单位净值: " 
             + data.values[data.values.length-1] 
-            + " 日涨幅: " + data.values4[data.values4.length-1] + "%");
+            + " 日涨幅: " + data.values4[data.values4.length-1] + "%";
 
         console.log(title);
         
