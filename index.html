@@ -8,6 +8,7 @@
     <script src="http://gallerybox.echartsjs.com/dep/echarts/latest/echarts.min.js"></script>
 </head>
 <body>
+    <div id="title" style="width:100%;height:360px;margin:0 auto;font-size: 24px;"></div>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div id="main" style="width:100%;height:360px;margin:0 auto;"></div>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
@@ -57,7 +58,15 @@
 
     $.get('http://www.tuliang.org/data.json', function (rawData) {
         var data = splitData(rawData);
+        
+        var title = "单位净值（"+data.categoryData[data.categoryData.length-1]+"更新): " 
+            + data.values[data.values.length-1] 
+            + " 日涨幅: " + data.values4[data.values4.length-1] + "%");
 
+        console.log(title);
+        
+        $('#title').text(title)
+        
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
 
