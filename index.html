@@ -65,17 +65,17 @@
         var title = data.categoryData[data.categoryData.length-1]+"更新 单位净值: " 
             + data.values[data.values.length-1] 
             + " 日涨幅: " + data.values4[data.values4.length-1] + "%";
-
-        console.log(title);
         
         $('#title').text(title)
 
         var year = "今年收益: " 
-            + buildData(data.values[data.values.length-1], 2.0475) + "%"
-            + " 上证指数: " + buildData(data.values2[data.values2.length-1], 3307.17) + "%"
-            + " 恒生指数: " + buildData(data.values3[data.values3.length-1], 29919.15) + "%";
+            + buildData(data.values[data.values.length-1], data.values[231]) + "%"
+            + " 上证指数: " + buildData(data.values2[data.values2.length-1], data.values2[231]) + "%"
+            + " 恒生指数: " + buildData(data.values3[data.values3.length-1], data.values3[231]) + "%";
 
-        console.log(year);
+        console.log(data.values[231]);
+        console.log(data.values2[231]);
+        console.log(data.values3[231]);
         
         $('#year').text(year)
         
