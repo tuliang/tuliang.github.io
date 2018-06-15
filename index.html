@@ -71,9 +71,9 @@
         $('#title').text(title)
 
         var year = "今年收益: " 
-            + data.values[data.values.length-1] / 2.0475 + "%"
-            + " 上证指数: " + data.values2[data.values2.length-1] / 3307.17 + "%"
-            + " 恒生指数: " + data.values3[data.values3.length-1] / 29919.15 + "%";
+            + buildData(data.values[data.values.length-1], 2.0475) + "%"
+            + " 上证指数: " + buildData(data.values2[data.values2.length-1], 3307.17) + "%"
+            + " 恒生指数: " + buildData(data.values3[data.values3.length-1], 29919.15) + "%";
 
         console.log(year);
         
