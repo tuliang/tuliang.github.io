@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>小明基金</title>
-    <script src="http://gallery.echartsjs.com/dep/jquery/jquery.min.js"></script>
+    <script src="https://gallery.echartsjs.com/dep/jquery/jquery.min.js"></script>
     <!-- 引入 echarts.js -->
-    <script src="http://gallerybox.echartsjs.com/dep/echarts/latest/echarts.min.js"></script>
+    <script src="https://gallerybox.echartsjs.com/dep/echarts/latest/echarts.min.js"></script>
 </head>
 <body>
     <div id="title" style="width:100%;margin:0 auto;font-size: 24px;"></div>
@@ -59,7 +59,7 @@
       return ((next / prev - 1) * 100).toFixed(2);
     }
 
-    $.get('http://www.tuliang.org/data.json', function (rawData) {
+    $.get('https://www.tuliang.org/data.json', function (rawData) {
         var data = splitData(rawData);
         
         var title = data.categoryData[data.categoryData.length-1]+"更新 单位净值: " 
