@@ -59,7 +59,7 @@
       return ((next / prev - 1) * 100).toFixed(2);
     }
 
-    $.get('https://www.tuliang.org/data.json', function (rawData) {
+    $.get('https://www.tuliang.org/data-2018-10-22.json', function (rawData) {
         var data = splitData(rawData);
         
         var title = data.categoryData[data.categoryData.length-1]+"更新 单位净值: " 
