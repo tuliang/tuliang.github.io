@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>不做咸鱼的小明</title>
+  
+  <subtitle>不做咸鱼的小明</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://tuliang.org/"/>
+  <updated>2018-10-31T08:22:01.731Z</updated>
+  <id>https://tuliang.org/</id>
+  
+  <author>
+    <name>涂亮</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>推荐使用 Struct 而非 Hash 存储结构化数据</title>
+    <link href="https://tuliang.org/tui-jian-shi-yong-struct-er-fei-hash-cun-chu-jie-gou-hua-shu-ju/"/>
+    <id>https://tuliang.org/tui-jian-shi-yong-struct-er-fei-hash-cun-chu-jie-gou-hua-shu-ju/</id>
+    <published>2018-10-31T08:21:14.000Z</published>
+    <updated>2018-10-31T08:22:01.731Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;在处理结构化数据时，如果创建一个新类不那么合适时，推荐使用 &lt;code&gt;Struct&lt;/code&gt; 而非 &lt;code&gt;Hash&lt;/code&gt; &lt;/p&gt;
+&lt;p&gt;将 &lt;code&gt;Struct::new&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>留神，常量是可变的</title>
+    <link href="https://tuliang.org/liu-shen-chang-liang-shi-ke-bian-de/"/>
+    <id>https://tuliang.org/liu-shen-chang-liang-shi-ke-bian-de/</id>
+    <published>2018-10-31T07:16:49.000Z</published>
+    <updated>2018-10-31T08:13:28.272Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;总是将常量冻结 &lt;code&gt;freeze&lt;/code&gt;，从而防止其被改变。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不使用 &lt;code&gt;freeze&lt;/code&gt; ，常量可以修改。&lt;/p&gt;
+&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ruby thread pool</title>
+    <link href="https://tuliang.org/ruby-thread-pool/"/>
+    <id>https://tuliang.org/ruby-thread-pool/</id>
+    <published>2015-04-10T08:54:08.000Z</published>
+    <updated>2018-10-31T09:13:30.036Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;有时候会遇到一个情况需要在多个远程服务获取数据。例如服务 a 需要 2 秒，服务 b 需要 5 秒，按照正常处理总共就需要 2+5 总共 7 秒了。如果 a 和 b 之间并没有相互依赖关系，我们可以使用 thread pool 来并发获取数据，将总体耗时由 a + b
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ruby synchronized</title>
+    <link href="https://tuliang.org/ruby-synchronized/"/>
+    <id>https://tuliang.org/ruby-synchronized/</id>
+    <published>2015-04-09T08:31:48.000Z</published>
+    <updated>2018-10-31T09:14:42.716Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近学习 &lt;code&gt;Java&lt;/code&gt; 的时候了解到在 &lt;code&gt;Java&lt;/code&gt; 中 &lt;code&gt;synchronized&lt;/code&gt; 关键字可以保证代码块的串行执行。&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;ruby&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 忽略文件</title>
+    <link href="https://tuliang.org/git-hu-lue-wen-jian/"/>
+    <id>https://tuliang.org/git-hu-lue-wen-jian/</id>
+    <published>2012-12-23T09:27:55.000Z</published>
+    <updated>2018-10-31T09:32:13.649Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;使用 &lt;code&gt;git&lt;/code&gt; 时，经常需要忽略一些文件，比如一些 &lt;code&gt;IDE&lt;/code&gt; 生成的配置文件&lt;br&gt;在项目目录加上 &lt;code&gt;.gitignore&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="https://tuliang.org/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 变量声明提前</title>
+    <link href="https://tuliang.org/javascript-bian-liang-sheng-ming-ti-qian/"/>
+    <id>https://tuliang.org/javascript-bian-liang-sheng-ming-ti-qian/</id>
+    <published>2012-10-17T09:12:48.000Z</published>
+    <updated>2018-10-31T09:20:15.621Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;code&gt;JavaScript&lt;/code&gt; 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。到底是什么意思呢？我们来看下面这段代码: &lt;/p&gt;
+&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="https://tuliang.org/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://tuliang.org/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP 抽象工厂模式</title>
+    <link href="https://tuliang.org/php-chou-xiang-gong-han-mo-shi/"/>
+    <id>https://tuliang.org/php-chou-xiang-gong-han-mo-shi/</id>
+    <published>2012-08-18T09:08:30.000Z</published>
+    <updated>2018-10-31T09:13:17.292Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;抽象工厂模式 &lt;code&gt;Abstract Factory Pattern&lt;/code&gt;，提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。&lt;/p&gt;
+&lt;pre class=&quot; language-php&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
+    
+  </entry>
+  
+</feed>
