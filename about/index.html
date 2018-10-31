@@ -386,7 +386,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         },
         xAxis: {
             type: 'category',
-            data: ["2017-10","2017-11","2017-12","2018-01","2018-02","2018-03","2018-04","2018-05","2018-06","2018-07","2018-08","2018-09","2018-10"]
+            data: ["2017-11","2017-12","2018-01","2018-02","2018-03","2018-04","2018-05","2018-06","2018-07","2018-08","2018-09","2018-10","2018-11"]
         },
         yAxis: {
             type: 'value',
@@ -396,7 +396,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,2],
+                data: [0,0,0,0,0,0,0,0,0,0,0,2,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -438,7 +438,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"后端","value":10},{"name":"前端","value":2},{"name":"工具","value":3},{"name":"网络","value":1}],
+                data: [{"name":"前端","value":2},{"name":"后端","value":10},{"name":"工具","value":3},{"name":"网络","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -462,7 +462,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         xAxis: [
             {
                 type: 'category',
-                data: ["Ruby","PHP","设计模式","并发编程","JavaScript","Git","Rails","Siege","HTTP","HTML5"]
+                data: ["Ruby","PHP","设计模式","并发编程","Git","JavaScript","Rails","算法","Siege","HTTP"]
             }
         ],
         yAxis: [
@@ -608,16 +608,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/Rails/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Rails</span>
+            <a href="/tags/PHP/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">PHP</span>
             </a>
             
             
             
-            
-            
-            <a href="/tags/PHP/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">PHP</span>
+            <a href="/tags/算法/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">算法</span>
             </a>
             
             
@@ -628,8 +626,16 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
+            
+            
             <a href="/tags/并发编程/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">并发编程</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Rails/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Rails</span>
             </a>
             
             
@@ -651,12 +657,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             </a>
             
             
-            
-            
-            
-            <a href="/tags/算法/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">算法</span>
-            </a>
             
             
         </div>
