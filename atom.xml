@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-10-31T08:22:01.731Z</updated>
+  <updated>2018-10-31T18:13:05.138Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker 中 NGINX 挂载应用的静态文件</title>
+    <link href="https://tuliang.org/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/"/>
+    <id>https://tuliang.org/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/</id>
+    <published>2018-10-31T18:10:13.000Z</published>
+    <updated>2018-10-31T18:13:05.138Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在 &lt;code&gt;Docker&lt;/code&gt; 中 &lt;code&gt;NGINX&lt;/code&gt; 如何获得应用的静态文件呢？&lt;/p&gt;
+&lt;p&gt;一般来说这种共享文件的需求，我们需要使用 &lt;code&gt;volumes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;假如静态文件的地址是
+        
+      
+    
+    </summary>
+    
+      <category term="容器" scheme="https://tuliang.org/categories/%E5%AE%B9%E5%99%A8/"/>
+    
+    
+      <category term="Docker" scheme="https://tuliang.org/tags/Docker/"/>
+    
+      <category term="Docker Compose" scheme="https://tuliang.org/tags/Docker-Compose/"/>
+    
+      <category term="NGINX" scheme="https://tuliang.org/tags/NGINX/"/>
+    
+  </entry>
   
   <entry>
     <title>推荐使用 Struct 而非 Hash 存储结构化数据</title>

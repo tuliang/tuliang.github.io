@@ -5,13 +5,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="推荐使用 Struct 而非 Hash 存储结构化数据, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="
-在处理结构化数据时，如果创建一个新类不那么合适时，推荐使用 Struct 而非 Hash 
-将 Struct::new 的返回值赋给常量，并像类一样使用它。
-
-# Hash
-reading = { date: &#34;2018-10-30&#34;, ">
+    <meta name="keywords" content="Docker 中 NGINX 挂载应用的静态文件, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="在 Docker 中 NGINX 如何获得应用的静态文件呢？
+一般来说这种共享文件的需求，我们需要使用 volumes
+假如静态文件的地址是 /home/app/app_name/public
+那么我们在中 docker-compose.y">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +17,7 @@ reading = { date: &#34;2018-10-30&#34;, ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>推荐使用 Struct 而非 Hash 存储结构化数据 | 不做咸鱼的小明</title>
+    <title>Docker 中 NGINX 挂载应用的静态文件 | 不做咸鱼的小明</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -212,13 +210,13 @@ reading = { date: &#34;2018-10-30&#34;, ">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        推荐使用 Struct 而非 Hash 存储结构化数据
+                        Docker 中 NGINX 挂载应用的静态文件
                     </div>
                 </div>
             </div>
@@ -329,8 +327,16 @@ reading = { date: &#34;2018-10-30&#34;, ">
             
             <div class="article-tag">
                 
-                <a href="/tags/Ruby/" target="_blank">
-                    <span class="chip bg-color">Ruby</span>
+                <a href="/tags/Docker/" target="_blank">
+                    <span class="chip bg-color">Docker</span>
+                </a>
+                
+                <a href="/tags/Docker-Compose/" target="_blank">
+                    <span class="chip bg-color">Docker Compose</span>
+                </a>
+                
+                <a href="/tags/NGINX/" target="_blank">
+                    <span class="chip bg-color">NGINX</span>
                 </a>
                 
             </div>
@@ -340,43 +346,48 @@ reading = { date: &#34;2018-10-30&#34;, ">
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/后端/" class="post-category" target="_blank">
-                        后端
+                    <a href="/categories/容器/" class="post-category" target="_blank">
+                        容器
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-10-31
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-01
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>在处理结构化数据时，如果创建一个新类不那么合适时，推荐使用 <code>Struct</code> 而非 <code>Hash</code> </p>
-<p>将 <code>Struct::new</code> 的返回值赋给常量，并像类一样使用它。</p>
-</blockquote>
-<pre class=" language-ruby"><code class="language-ruby"><span class="token comment" spellcheck="true"># Hash</span>
-reading <span class="token operator">=</span> <span class="token punctuation">{</span> date<span class="token punctuation">:</span> <span class="token string">"2018-10-30"</span><span class="token punctuation">,</span> high<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span> low<span class="token punctuation">:</span> <span class="token number">20</span> <span class="token punctuation">}</span>
+                <p>在 <code>Docker</code> 中 <code>NGINX</code> 如何获得应用的静态文件呢？</p>
+<p>一般来说这种共享文件的需求，我们需要使用 <code>volumes</code></p>
+<p>假如静态文件的地址是 <code>/home/app/app_name/public</code></p>
+<p>那么我们在中 <code>docker-compose.yml</code> 中设置 <code>volumes</code></p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>  
+  <span class="token key atrule">public</span><span class="token punctuation">:</span> 
+<span class="token key atrule">services</span><span class="token punctuation">:</span>  
+  <span class="token key atrule">app</span><span class="token punctuation">:</span>    
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>      
+       <span class="token punctuation">-</span> public<span class="token punctuation">:</span>/home/app/app_name/public
 
-<span class="token keyword">def</span> <span class="token function">mean</span><span class="token punctuation">(</span>reading<span class="token punctuation">)</span>
-  <span class="token punctuation">(</span>reading<span class="token punctuation">[</span><span class="token symbol">:high</span><span class="token punctuation">]</span> <span class="token operator">+</span> reading<span class="token punctuation">[</span><span class="token symbol">:low</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.0</span>
-<span class="token keyword">end</span>
-
-<span class="token function">mean</span><span class="token punctuation">(</span>reading<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#=> 25.0</span>
-
-<span class="token comment" spellcheck="true"># Struct</span>
-<span class="token constant">Reading</span> <span class="token operator">=</span> <span class="token builtin">Struct</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token symbol">:date</span><span class="token punctuation">,</span> <span class="token symbol">:high</span><span class="token punctuation">,</span> <span class="token symbol">:low</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
-  <span class="token keyword">def</span> <span class="token function">mean</span>
-    <span class="token punctuation">(</span>high <span class="token operator">+</span> low<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.0</span>
-  <span class="token keyword">end</span>
-<span class="token keyword">end</span>
-
-<span class="token constant">Reading</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">"2018-10-30"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean <span class="token comment" spellcheck="true">#=> 25.0</span>
+  <span class="token key atrule">web</span><span class="token punctuation">:</span>    
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>      
+       <span class="token punctuation">-</span> public<span class="token punctuation">:</span>/home/app/app_name/public
 </code></pre>
+<p>记得在 <code>nginx.conf</code> 设置 <code>root</code></p>
+<pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">server</span> <span class="token punctuation">{</span>  
+   <span class="token comment" spellcheck="true"># define the public application root  </span>
+   <span class="token keyword">root</span>  <span class="token operator">/</span>home<span class="token operator">/</span>app<span class="token operator">/</span>app_name<span class="token operator">/</span>public<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h4><ul>
+<li><a href="https://docs.docker.com/compose/compose-file/#volumes" target="_blank" rel="noopener">Compose file version 3 reference</a></li>
+<li><a href="https://docs.docker.com/storage/volumes/#start-a-container-with-a-volume" target="_blank" rel="noopener">Use volumes</a></li>
+<li><a href="https://stackoverflow.com/questions/42232051/docker-compose-volumes-from-equivalent-with-version-3" target="_blank" rel="noopener">docker-compose volumes_from equivalent with version 3</a></li>
+</ul>
 
             </div>
             <hr>
@@ -400,9 +411,9 @@ reading <span class="token operator">=</span> <span class="token punctuation">{<
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tuliang.org/tui-jian-shi-yong-struct-er-fei-hash-cun-chu-jie-gou-hua-shu-ju/';
-        this.page.identifier = '/tui-jian-shi-yong-struct-er-fei-hash-cun-chu-jie-gou-hua-shu-ju/';
-        this.page.title = '推荐使用 Struct 而非 Hash 存储结构化数据';
+        this.page.url = 'https://tuliang.org/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/';
+        this.page.identifier = '/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/';
+        this.page.title = 'Docker 中 NGINX 挂载应用的静态文件';
     };
     let disqus_shortname = 'tuliang';
 
@@ -424,7 +435,7 @@ reading <span class="token operator">=</span> <span class="token punctuation">{<
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/">
                     <div class="card-image">
@@ -441,9 +452,9 @@ reading <span class="token operator">=</span> <span class="token punctuation">{<
 假如静态文件的地址是 /home/app/app_name/public
 那么我们在中 docker-compose.y</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -456,6 +467,7 @@ reading <span class="token operator">=</span> <span class="token punctuation">{<
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -480,23 +492,22 @@ reading <span class="token operator">=</span> <span class="token punctuation">{<
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/liu-shen-chang-liang-shi-ke-bian-de/">
+                <a href="/tui-jian-shi-yong-struct-er-fei-hash-cun-chu-jie-gou-hua-shu-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="留神，常量是可变的">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="推荐使用 Struct 而非 Hash 存储结构化数据">
                         
-                        <span class="card-title">留神，常量是可变的</span>
+                        <span class="card-title">推荐使用 Struct 而非 Hash 存储结构化数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">
-总是将常量冻结 freeze，从而防止其被改变。
+在处理结构化数据时，如果创建一个新类不那么合适时，推荐使用 Struct 而非 Hash 
+将 Struct::new 的返回值赋给常量，并像类一样使用它。
 
-不使用 freeze ，常量可以修改。
-MY_CONSTANT = "foo"
-MY_CONSTANT &lt;&lt; "bar"
-puts MY_CONSTANT #=> "foob</div>
+# Hash
+reading = { date: "2018-10-30", </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-31

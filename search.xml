@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>Docker 中 NGINX 挂载应用的静态文件</title>
+      <link href="/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/"/>
+      <url>/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/</url>
+      
+        <content type="html"><![CDATA[<p>在 <code>Docker</code> 中 <code>NGINX</code> 如何获得应用的静态文件呢？</p><p>一般来说这种共享文件的需求，我们需要使用 <code>volumes</code></p><p>假如静态文件的地址是 <code>/home/app/app_name/public</code></p><p>那么我们在中 <code>docker-compose.yml</code> 中设置 <code>volumes</code></p><pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span><span class="token key atrule">volumes</span><span class="token punctuation">:</span>    <span class="token key atrule">public</span><span class="token punctuation">:</span> <span class="token key atrule">services</span><span class="token punctuation">:</span>    <span class="token key atrule">app</span><span class="token punctuation">:</span>        <span class="token key atrule">volumes</span><span class="token punctuation">:</span>             <span class="token punctuation">-</span> public<span class="token punctuation">:</span>/home/app/app_name/public  <span class="token key atrule">web</span><span class="token punctuation">:</span>        <span class="token key atrule">volumes</span><span class="token punctuation">:</span>             <span class="token punctuation">-</span> public<span class="token punctuation">:</span>/home/app/app_name/public</code></pre><p>记得在 <code>nginx.conf</code> 设置 <code>root</code></p><pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">server</span> <span class="token punctuation">{</span>     <span class="token comment" spellcheck="true"># define the public application root  </span>   <span class="token keyword">root</span>  <span class="token operator">/</span>home<span class="token operator">/</span>app<span class="token operator">/</span>app_name<span class="token operator">/</span>public<span class="token punctuation">;</span> <span class="token punctuation">}</span></code></pre><h4 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h4><ul><li><a href="https://docs.docker.com/compose/compose-file/#volumes" target="_blank" rel="noopener">Compose file version 3 reference</a></li><li><a href="https://docs.docker.com/storage/volumes/#start-a-container-with-a-volume" target="_blank" rel="noopener">Use volumes</a></li><li><a href="https://stackoverflow.com/questions/42232051/docker-compose-volumes-from-equivalent-with-version-3" target="_blank" rel="noopener">docker-compose volumes_from equivalent with version 3</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 容器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+            <tag> Docker Compose </tag>
+            
+            <tag> NGINX </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>推荐使用 Struct 而非 Hash 存储结构化数据</title>
       <link href="/tui-jian-shi-yong-struct-er-fei-hash-cun-chu-jie-gou-hua-shu-ju/"/>
       <url>/tui-jian-shi-yong-struct-er-fei-hash-cun-chu-jie-gou-hua-shu-ju/</url>
