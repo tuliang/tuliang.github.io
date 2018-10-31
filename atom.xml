@@ -128,11 +128,42 @@
   </entry>
   
   <entry>
+    <title>Web 文件下载和查看</title>
+    <link href="https://tuliang.org/web-wen-jian-xia-zai-he-cha-kan/"/>
+    <id>https://tuliang.org/web-wen-jian-xia-zai-he-cha-kan/</id>
+    <published>2014-06-11T10:48:43.000Z</published>
+    <updated>2018-10-31T11:00:48.821Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。&lt;br&gt;其实浏览器的行为是可以人为控制的，最简单的方法是使用 &lt;code&gt;HTML5 download Attribute&lt;/code&gt;。&lt;/p&gt;
+&lt;pre class=&quot; language-html&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="基础" scheme="https://tuliang.org/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+      <category term="HTTP" scheme="https://tuliang.org/tags/HTTP/"/>
+    
+      <category term="HTML5" scheme="https://tuliang.org/tags/HTML5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Git 忽略文件</title>
     <link href="https://tuliang.org/git-hu-lue-wen-jian/"/>
     <id>https://tuliang.org/git-hu-lue-wen-jian/</id>
     <published>2012-12-23T09:27:55.000Z</published>
-    <updated>2018-10-31T09:32:13.649Z</updated>
+    <updated>2018-10-31T11:01:46.541Z</updated>
     
     <summary type="html">
     
@@ -158,7 +189,7 @@
     <link href="https://tuliang.org/javascript-bian-liang-sheng-ming-ti-qian/"/>
     <id>https://tuliang.org/javascript-bian-liang-sheng-ming-ti-qian/</id>
     <published>2012-10-17T09:12:48.000Z</published>
-    <updated>2018-10-31T09:20:15.621Z</updated>
+    <updated>2018-10-31T10:43:46.724Z</updated>
     
     <summary type="html">
     
@@ -166,7 +197,7 @@
       
         
         
-          &lt;p&gt;&lt;code&gt;JavaScript&lt;/code&gt; 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。到底是什么意思呢？我们来看下面这段代码: &lt;/p&gt;
+          &lt;p&gt;&lt;code&gt;JavaScript&lt;/code&gt; 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。&lt;br&gt;到底是什么意思呢？我们来看下面这段代码&lt;/p&gt;
 &lt;pre class=&quot; language-javascript&quot;&gt;&lt;code
         
       

@@ -5,10 +5,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Git 忽略文件, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="使用 git 时，经常需要忽略一些文件，比如一些 IDE 生成的配置文件在项目目录加上 .gitignore 文件然后加入需要忽略文件的文件名就可以了
-.project
-需要注意的是，如果需要忽略 .gitignore 文件，那么文件中就要">
+    <meta name="keywords" content="Web 文件下载和查看, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用 HTML5 download Attribute。
+&amp;lt;!-- will download as &#34;expenses.pdf&#34;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Git 忽略文件 | 不做咸鱼的小明</title>
+    <title>Web 文件下载和查看 | 不做咸鱼的小明</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -209,13 +208,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Git 忽略文件
+                        Web 文件下载和查看
                     </div>
                 </div>
             </div>
@@ -235,8 +234,16 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/Git/" target="_blank">
-                    <span class="chip bg-color">Git</span>
+                <a href="/tags/Ruby/" target="_blank">
+                    <span class="chip bg-color">Ruby</span>
+                </a>
+                
+                <a href="/tags/HTTP/" target="_blank">
+                    <span class="chip bg-color">HTTP</span>
+                </a>
+                
+                <a href="/tags/HTML5/" target="_blank">
+                    <span class="chip bg-color">HTML5</span>
                 </a>
                 
             </div>
@@ -246,27 +253,37 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/工具/" class="post-category" target="_blank">
-                        工具
+                    <a href="/categories/基础/" class="post-category" target="_blank">
+                        基础
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2012-12-23
+                    <i class="fa fa-clock-o fa-fw"></i>2014-06-11
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>使用 <code>git</code> 时，经常需要忽略一些文件，比如一些 <code>IDE</code> 生成的配置文件<br>在项目目录加上 <code>.gitignore</code> 文件<br>然后加入需要忽略文件的文件名就可以了</p>
-<pre><code>.project
-</code></pre><p>需要注意的是，如果需要忽略 <code>.gitignore</code> 文件，那么文件中就要加上 <code>.gitignore</code></p>
-<pre><code>.project
-.gitignore
+                <p>在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。<br>其实浏览器的行为是可以人为控制的，最简单的方法是使用 <code>HTML5 download Attribute</code>。</p>
+<pre class=" language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- will download as "expenses.pdf" --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/files/expenses.pdf<span class="token punctuation">"</span></span> <span class="token attr-name">download</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>expenses.pdf<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Download Your Expense Report<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre>
+<p>这种方式虽然简单，但是兼容性不太好。查看<a href="http://caniuse.com/download" target="_blank" rel="noopener">http://caniuse.com/download</a>，我们可以发现很多版本都不支持这个属性。</p>
+<p>浏览器行为是由 <code>HTTP Head</code> 中的 <code>Content-Disposition</code> 来控制的，例如</p>
+<pre><code>Content-Disposition: attachment; filename=&quot;fname.txt&quot;
+</code></pre><p>它的意思是将该文件作为附件，并且下载的文件名是 <code>fname.txt</code>。</p>
+<p>如果使用 <code>S3</code> 下载文件，使用 <code>AWS</code> 的 <code>api</code> 可以生成下载的 <code>url</code>:</p>
+<pre class=" language-ruby"><code class="language-ruby">url <span class="token operator">=</span> object<span class="token punctuation">.</span><span class="token function">url_for</span><span class="token punctuation">(</span><span class="token symbol">:read</span><span class="token punctuation">,</span> response_content_disposition<span class="token punctuation">:</span> <span class="token string">"attachment; filename=\"<span class="token interpolation"><span class="token delimiter tag">#{</span>filename<span class="token delimiter tag">}</span></span>\""</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h4><ul>
+<li><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html" target="_blank" rel="noopener">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html</a></li>
+<li><a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/S3/S3Object.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/S3/S3Object.html</a></li>
+</ul>
+
             </div>
             <hr>
 
@@ -289,9 +306,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tuliang.org/git-hu-lue-wen-jian/';
-        this.page.identifier = '/git-hu-lue-wen-jian/';
-        this.page.title = 'Git 忽略文件';
+        this.page.url = 'https://tuliang.org/web-wen-jian-xia-zai-he-cha-kan/';
+        this.page.identifier = '/web-wen-jian-xia-zai-he-cha-kan/';
+        this.page.title = 'Web 文件下载和查看';
     };
     let disqus_shortname = 'tuliang';
 
@@ -315,28 +332,28 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/web-wen-jian-xia-zai-he-cha-kan/">
+                <a href="/ruby-synchronized/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Web 文件下载和查看">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Ruby synchronized">
                         
-                        <span class="card-title">Web 文件下载和查看</span>
+                        <span class="card-title">Ruby synchronized</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用 HTML5 download Attribute。
-&lt;!-- will download as "expenses.pdf"</div>
+                    <div class="summary">最近学习 Java 的时候了解到在 Java 中 synchronized 关键字可以保证代码块的串行执行。
+在 ruby 开发中往往使用第三方来保证，比如使用数据库或文件系统。其实 ruby 也有类似的方式来保证代码块的串行执行，它就是 </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2014-06-11
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2015-04-09
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/基础/" class="post-category" target="_blank">
-                                    基础
+                            <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
                                 </a>
                             
                             
@@ -350,14 +367,6 @@
                         <span class="chip bg-color">Ruby</span>
                     </a>
                     
-                    <a href="/tags/HTTP/" target="_blank">
-                        <span class="chip bg-color">HTTP</span>
-                    </a>
-                    
-                    <a href="/tags/HTML5/" target="_blank">
-                        <span class="chip bg-color">HTML5</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -367,30 +376,29 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/javascript-bian-liang-sheng-ming-ti-qian/">
+                <a href="/git-hu-lue-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="JavaScript 变量声明提前">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Git 忽略文件">
                         
-                        <span class="card-title">JavaScript 变量声明提前</span>
+                        <span class="card-title">Git 忽略文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">JavaScript 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。到底是什么意思呢？我们来看下面这段代码
-var scope = 'global';
-function f(){
-  console.</div>
+                    <div class="summary">使用 git 时，经常需要忽略一些文件，比如一些 IDE 生成的配置文件在项目目录加上 .gitignore 文件然后加入需要忽略文件的文件名就可以了
+.project
+需要注意的是，如果需要忽略 .gitignore 文件，那么文件中就要</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2012-10-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2012-12-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/工具/" class="post-category" target="_blank">
+                                    工具
                                 </a>
                             
                             
@@ -400,8 +408,8 @@ function f(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/Git/" target="_blank">
+                        <span class="chip bg-color">Git</span>
                     </a>
                     
                 </div>
