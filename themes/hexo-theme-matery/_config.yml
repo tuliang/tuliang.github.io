@@ -2,22 +2,22 @@
 # 配置菜单导航的名称、路径和图标icon.
 menu:
   首页:
-    url: //www.tuliang.org/
+    url: /
     icon: fa-home
   标签:
-    url: //www.tuliang.org/tags
+    url: /tags
     icon: fa-tags
   分类:
-    url: //www.tuliang.org/categories
+    url: /categories
     icon: fa-bookmark
   归档:
-    url: //www.tuliang.org/archives
+    url: /archives
     icon: fa-archive
   关于:
-    url: //www.tuliang.org/about
+    url: /about
     icon: fa-user-circle-o
   基金:
-    url: //www.tuliang.org/fund
+    url: /fund
     icon: fa-bar-chart
 
 # index page dream text,
