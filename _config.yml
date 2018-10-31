@@ -85,7 +85,7 @@ theme: hexo-theme-matery
 deploy:
   type: git
   repo: git@github.com:tuliang/tuliang.github.io.git
-  branch: gh-pages
+  branch: master
 
 search:
   path: search.xml
