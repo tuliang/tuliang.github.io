@@ -83,7 +83,9 @@ theme: hexo-theme-matery
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:tuliang/tuliang.github.io.git
+  branch: gh-pages
 
 search:
   path: search.xml
