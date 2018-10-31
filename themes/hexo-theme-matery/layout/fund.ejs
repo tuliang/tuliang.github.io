@@ -11,29 +11,23 @@
   <div id="artDetail">
       <div class="card">
           <div class="card-content article-info">
-              <% if (page.tags && page.tags.length) { %>
+
               <div class="article-tag">
-                  <% page.tags.each(function(tag) { %>
-                  <a href="<%- url_for(tag.path) %>" target="_blank">
-                      <span class="chip bg-color"><%= tag.name %></span>
-                  </a>
-                  <% }); %>
+                  
+
+                <span class="chip bg-color"></span>
+
+
               </div>
-              <% } %>
+
               <div class="post-info">
-                  <% if (page.categories && page.categories.length > 0) { %>
+
                   <span class="post-cate">
                       <i class="fa fa-bookmark fa-fw icon-category"></i>
-                      <% page.categories.forEach(category => { %>
-                      <a href="<%- url_for(category.path) %>" class="post-category" target="_blank">
-                          <%- category.name %>
-                      </a>
-                      <% }); %>
                   </span>
-                  <% } %>
 
                   <span class="post-date">
-                      <i class="fa fa-clock-o fa-fw"></i><%- date(page.date, 'YYYY-MM-DD') %>
+                      <i class="fa fa-clock-o fa-fw"></i>
                   </span>
               </div>
           </div>
