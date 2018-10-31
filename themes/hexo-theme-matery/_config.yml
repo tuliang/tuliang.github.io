@@ -63,7 +63,7 @@ reward:
 profile:
   avatar: /medias/avatar.jpg
   career: 软件工程师
-  introduction: We shall never surrender
+  introduction: 
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
@@ -86,16 +86,16 @@ mySkills:
     Ruby:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
       percent: 80%
-    Docker:
+    Rails:
       background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
-      percent: 60%
-    JavaScript:
+      percent: 80%
+    Docker:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
       percent: 60%
-    HTML5:
+    JavaScript:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
       percent: 60%
-    CSS:
+    HTML & CSS:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
       percent: 60%
     SQL:
