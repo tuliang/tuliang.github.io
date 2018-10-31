@@ -3,7 +3,6 @@ title: Rails Singular Resources
 date: 2014-10-24 23:25:53
 categories: 后端
 tags:
-  - Ruby
   - Rails
 ---
 `Rails` 中 `Controller` 如果不是复数，写 `path` 或 `url` 的时候就必须加上 `index`，这样看上去就很 `low`。
