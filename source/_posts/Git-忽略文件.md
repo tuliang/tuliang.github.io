@@ -15,7 +15,6 @@ tags:
 
 需要注意的是，如果需要忽略 `.gitignore` 文件，那么文件中就要加上 `.gitignore`
 
-
 ```
 .project
 .gitignore
