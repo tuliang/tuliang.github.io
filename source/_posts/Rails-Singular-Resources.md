@@ -1,0 +1,33 @@
+---
+title: Rails Singular Resources
+date: 2014-10-24 23:25:53
+categories: 后端
+tags:
+  - Ruby
+  - Rails
+---
+`Rails` 中 `Controller` 如果不是复数，写 `path` 或 `url` 的时候就必须加上 `index`，这样看上去就很 `low`。
+
+```ruby
+resources :photo do  
+  collection do    
+    get 'search'  
+  end
+end
+
+# search_photo_index GET    /photo/search(.:format)
+```
+
+我们查看 [文档](http://guides.rubyonrails.org/routing.html#singular-resources)，发现可以这样做
+
+```ruby
+resource :photo, controller: photo do  
+  collection do    
+    get 'search'  
+  end
+end
+
+# search_photo GET    /photo/search(.:format)
+```
+
+需要注意的是经过这样修改后，访问 `/photo` 不再调用 `index action` 而是调用 `show action`。
