@@ -8,11 +8,10 @@
     <meta name="keywords" content="PHP 抽象工厂模式, 不做咸鱼的小明, 涂亮, tuliang">
     <meta name="description" content="抽象工厂模式 Abstract Factory Pattern，提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。
 &amp;lt;?php
-/*
- * 抽象工厂模式
- * 提供一个接口，
- * 用于创建相关或依赖对象的家族，
- ">
+//定义比萨商店
+abstract class PizzaStore{
+
+  publi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -229,10 +228,101 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -241,6 +331,10 @@
                 
                 <a href="/tags/PHP/" target="_blank">
                     <span class="chip bg-color">PHP</span>
+                </a>
+                
+                <a href="/tags/设计模式/" target="_blank">
+                    <span class="chip bg-color">设计模式</span>
                 </a>
                 
             </div>
@@ -267,13 +361,6 @@
             <div id="articleContent">
                 <p>抽象工厂模式 <code>Abstract Factory Pattern</code>，提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。</p>
 <pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
-<span class="token comment" spellcheck="true">/*
- * 抽象工厂模式
- * 提供一个接口，
- * 用于创建相关或依赖对象的家族，
- * 而不需要明确指定具体类。
- */</span>
-
 <span class="token comment" spellcheck="true">//定义比萨商店</span>
 <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">PizzaStore</span><span class="token punctuation">{</span>
 
@@ -446,7 +533,7 @@
 <span class="token variable">$NYPizzaStore</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">orderPizza</span><span class="token punctuation">(</span><span class="token string">'cheese'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token variable">$ChicagoPizzaStore</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">orderPizza</span><span class="token punctuation">(</span><span class="token string">'clam'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>输出:  </p>
+<p>输出</p>
 <pre><code>NY createDough  
 NY createSauce  
 NY createCheese  
@@ -509,30 +596,32 @@ box
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/javascript-bian-liang-sheng-ming-ti-qian/">
+                <a href="/php-zhuang-shi-zhe-mo-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="JavaScript 变量声明提前">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="PHP 装饰者模式">
                         
-                        <span class="card-title">JavaScript 变量声明提前</span>
+                        <span class="card-title">PHP 装饰者模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">JavaScript 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。到底是什么意思呢？我们来看下面这段代码
-var scope = 'global';
-function f(){
-  console.</div>
+                    <div class="summary">装饰者模式 Decorator Pattern ，动态地将责任附加到对象上。
+若要扩展功能，装饰者提供了比继承更有弹性的替代方案。
+&lt;?php
+//饮料抽象类
+abstract class Beverage{
+  public $de</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2012-10-17
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2012-08-18
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
                                 </a>
                             
                             
@@ -542,8 +631,12 @@ function f(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/PHP/" target="_blank">
+                        <span class="chip bg-color">PHP</span>
+                    </a>
+                    
+                    <a href="/tags/设计模式/" target="_blank">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -567,11 +660,10 @@ function f(){
                 <div class="card-content article-content">
                     <div class="summary">抽象工厂模式 Abstract Factory Pattern，提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。
 &lt;?php
-/*
- * 抽象工厂模式
- * 提供一个接口，
- * 用于创建相关或依赖对象的家族，
- </div>
+//定义比萨商店
+abstract class PizzaStore{
+
+  publi</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2012-08-18
@@ -596,6 +688,10 @@ function f(){
                         <span class="chip bg-color">PHP</span>
                     </a>
                     
+                    <a href="/tags/设计模式/" target="_blank">
+                        <span class="chip bg-color">设计模式</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -604,6 +700,53 @@ function f(){
     </div>
 </article>
 </div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
     
 
 </main>

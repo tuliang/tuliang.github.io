@@ -79,7 +79,7 @@
     <link href="https://tuliang.org/ruby-thread-pool/"/>
     <id>https://tuliang.org/ruby-thread-pool/</id>
     <published>2015-04-10T08:54:08.000Z</published>
-    <updated>2018-10-31T09:13:30.036Z</updated>
+    <updated>2018-10-31T14:38:42.677Z</updated>
     
     <summary type="html">
     
@@ -87,7 +87,8 @@
       
         
         
-          &lt;p&gt;有时候会遇到一个情况需要在多个远程服务获取数据。例如服务 a 需要 2 秒，服务 b 需要 5 秒，按照正常处理总共就需要 2+5 总共 7 秒了。如果 a 和 b 之间并没有相互依赖关系，我们可以使用 thread pool 来并发获取数据，将总体耗时由 a + b
+          &lt;p&gt;有时候会遇到一个情况需要在多个远程服务获取数据。&lt;/p&gt;
+&lt;p&gt;例如服务 &lt;code&gt;a&lt;/code&gt; 需要 &lt;code&gt;2&lt;/code&gt; 秒，服务 &lt;code&gt;b&lt;/code&gt; 需要 &lt;code&gt;5&lt;/code&gt; 秒，按照正常处理总共就需要
         
       
     
@@ -98,6 +99,8 @@
     
       <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
     
+      <category term="并发编程" scheme="https://tuliang.org/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
   </entry>
   
   <entry>
@@ -105,7 +108,7 @@
     <link href="https://tuliang.org/ruby-synchronized/"/>
     <id>https://tuliang.org/ruby-synchronized/</id>
     <published>2015-04-09T08:31:48.000Z</published>
-    <updated>2018-10-31T09:14:42.716Z</updated>
+    <updated>2018-10-31T14:24:45.149Z</updated>
     
     <summary type="html">
     
@@ -125,6 +128,34 @@
     
       <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
     
+      <category term="并发编程" scheme="https://tuliang.org/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rails Singular Resources</title>
+    <link href="https://tuliang.org/rails-singular-resources/"/>
+    <id>https://tuliang.org/rails-singular-resources/</id>
+    <published>2014-10-24T15:25:53.000Z</published>
+    <updated>2018-10-31T15:38:22.398Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;code&gt;Rails&lt;/code&gt; 中 &lt;code&gt;Controller&lt;/code&gt; 如果不是复数，写 &lt;code&gt;path&lt;/code&gt; 或 &lt;code&gt;url&lt;/code&gt; 的时候就必须加上 &lt;code&gt;index&lt;/code&gt;，这样看上去就很
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Rails" scheme="https://tuliang.org/tags/Rails/"/>
+    
   </entry>
   
   <entry>
@@ -132,7 +163,7 @@
     <link href="https://tuliang.org/web-wen-jian-xia-zai-he-cha-kan/"/>
     <id>https://tuliang.org/web-wen-jian-xia-zai-he-cha-kan/</id>
     <published>2014-06-11T10:48:43.000Z</published>
-    <updated>2018-10-31T11:00:48.821Z</updated>
+    <updated>2018-10-31T14:44:06.306Z</updated>
     
     <summary type="html">
     
@@ -147,7 +178,7 @@
     
     </summary>
     
-      <category term="基础" scheme="https://tuliang.org/categories/%E5%9F%BA%E7%A1%80/"/>
+      <category term="网络" scheme="https://tuliang.org/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
       <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
@@ -159,11 +190,11 @@
   </entry>
   
   <entry>
-    <title>Git 忽略文件</title>
-    <link href="https://tuliang.org/git-hu-lue-wen-jian/"/>
-    <id>https://tuliang.org/git-hu-lue-wen-jian/</id>
-    <published>2012-12-23T09:27:55.000Z</published>
-    <updated>2018-10-31T11:01:46.541Z</updated>
+    <title>Siege</title>
+    <link href="https://tuliang.org/siege/"/>
+    <id>https://tuliang.org/siege/</id>
+    <published>2013-08-27T15:03:04.000Z</published>
+    <updated>2018-10-31T15:07:42.095Z</updated>
     
     <summary type="html">
     
@@ -171,7 +202,117 @@
       
         
         
-          &lt;p&gt;使用 &lt;code&gt;git&lt;/code&gt; 时，经常需要忽略一些文件，比如一些 &lt;code&gt;IDE&lt;/code&gt; 生成的配置文件&lt;br&gt;在项目目录加上 &lt;code&gt;.gitignore&lt;/code&gt;
+          &lt;p&gt;&lt;code&gt;siege&lt;/code&gt; 围攻是一个压力测试和评测工具，设计用于 &lt;code&gt;web&lt;/code&gt; 开发这评估应用在压力下的承受能力。&lt;/p&gt;
+&lt;p&gt;可以模拟对一个 &lt;code&gt;web&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Siege" scheme="https://tuliang.org/tags/Siege/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 彻底删除文件</title>
+    <link href="https://tuliang.org/git-che-di-shan-chu-wen-jian/"/>
+    <id>https://tuliang.org/git-che-di-shan-chu-wen-jian/</id>
+    <published>2013-08-13T14:58:34.000Z</published>
+    <updated>2018-10-31T15:01:11.685Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一般 &lt;code&gt;git&lt;/code&gt; 删除文件使用 &lt;code&gt;git rm&lt;/code&gt; 就可以了，但是有时候某些文件你甚至不想让它出现在 &lt;code&gt;git&lt;/code&gt; 的 &lt;code&gt;log&lt;/code&gt;中。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;github&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="https://tuliang.org/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP 神奇的分号</title>
+    <link href="https://tuliang.org/php-shen-qi-de-fen-hao/"/>
+    <id>https://tuliang.org/php-shen-qi-de-fen-hao/</id>
+    <published>2013-03-01T14:52:35.000Z</published>
+    <updated>2018-10-31T14:57:14.566Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天在开发过程中，遇到两种分号的神奇问题，特此记录。&lt;/p&gt;
+&lt;pre class=&quot; language-php&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;&lt;span class=&quot;token delimiter&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决 JavaScript 指向不明</title>
+    <link href="https://tuliang.org/jie-jue-javascript-zhi-xiang-bu-ming/"/>
+    <id>https://tuliang.org/jie-jue-javascript-zhi-xiang-bu-ming/</id>
+    <published>2012-12-23T14:33:02.000Z</published>
+    <updated>2018-10-31T14:35:50.759Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;用面向对象的方式编写 &lt;code&gt;JavaScript&lt;/code&gt; 时，在类中经常会出现 &lt;code&gt;this&lt;/code&gt; 指向不明的问题。&lt;/p&gt;
+&lt;p&gt;解决这个问题很简单，在对象中将 &lt;code&gt;this&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="https://tuliang.org/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://tuliang.org/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 忽略文件</title>
+    <link href="https://tuliang.org/git-hu-lue-wen-jian/"/>
+    <id>https://tuliang.org/git-hu-lue-wen-jian/</id>
+    <published>2012-12-23T09:27:55.000Z</published>
+    <updated>2018-10-31T14:36:46.212Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;使用 &lt;code&gt;git&lt;/code&gt; 时，经常需要忽略一些文件，比如一些 &lt;code&gt;IDE&lt;/code&gt; 生成的配置文件。&lt;/p&gt;
+&lt;p&gt;在项目目录加上 &lt;code&gt;.gitignore&lt;/code&gt;
         
       
     
@@ -189,7 +330,7 @@
     <link href="https://tuliang.org/javascript-bian-liang-sheng-ming-ti-qian/"/>
     <id>https://tuliang.org/javascript-bian-liang-sheng-ming-ti-qian/</id>
     <published>2012-10-17T09:12:48.000Z</published>
-    <updated>2018-10-31T10:43:46.724Z</updated>
+    <updated>2018-10-31T14:41:00.705Z</updated>
     
     <summary type="html">
     
@@ -197,8 +338,9 @@
       
         
         
-          &lt;p&gt;&lt;code&gt;JavaScript&lt;/code&gt; 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。&lt;br&gt;到底是什么意思呢？我们来看下面这段代码&lt;/p&gt;
-&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code
+          &lt;p&gt;&lt;code&gt;JavaScript&lt;/code&gt; 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。&lt;/p&gt;
+&lt;p&gt;到底是什么意思呢？我们来看下面这段代码&lt;/p&gt;
+&lt;pre class=&quot;
         
       
     
@@ -212,11 +354,101 @@
   </entry>
   
   <entry>
+    <title>PHP 冒泡排序</title>
+    <link href="https://tuliang.org/php-mou-pao-pai-xu/"/>
+    <id>https://tuliang.org/php-mou-pao-pai-xu/</id>
+    <published>2012-09-22T14:42:14.000Z</published>
+    <updated>2018-10-31T14:50:58.324Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;使用递归实现冒泡排序&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;PHP&lt;/code&gt; 多递归时需要 &lt;code&gt;return&lt;/code&gt;，如下述代码中&lt;/p&gt;
+&lt;pre class=&quot; language-php&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
+    
+      <category term="算法" scheme="https://tuliang.org/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP 工厂方法模式</title>
+    <link href="https://tuliang.org/php-gong-han-fang-fa-mo-shi/"/>
+    <id>https://tuliang.org/php-gong-han-fang-fa-mo-shi/</id>
+    <published>2012-08-18T14:29:18.000Z</published>
+    <updated>2018-10-31T15:22:19.121Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;简单工厂其实不是一个设计模式，反而比较像是一种编程习惯。&lt;/p&gt;
+&lt;p&gt;有些开发人员的确是把这个编程习惯误认为是工厂模式。&lt;/p&gt;
+&lt;pre class=&quot; language-php&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
+    
+      <category term="设计模式" scheme="https://tuliang.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP 装饰者模式</title>
+    <link href="https://tuliang.org/php-zhuang-shi-zhe-mo-shi/"/>
+    <id>https://tuliang.org/php-zhuang-shi-zhe-mo-shi/</id>
+    <published>2012-08-18T14:26:07.000Z</published>
+    <updated>2018-10-31T15:23:22.146Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;装饰者模式 &lt;code&gt;Decorator Pattern&lt;/code&gt; ，动态地将责任附加到对象上。&lt;/p&gt;
+&lt;p&gt;若要扩展功能，装饰者提供了比继承更有弹性的替代方案。&lt;/p&gt;
+&lt;pre class=&quot; language-php&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
+    
+      <category term="设计模式" scheme="https://tuliang.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>PHP 抽象工厂模式</title>
     <link href="https://tuliang.org/php-chou-xiang-gong-han-mo-shi/"/>
     <id>https://tuliang.org/php-chou-xiang-gong-han-mo-shi/</id>
     <published>2012-08-18T09:08:30.000Z</published>
-    <updated>2018-10-31T09:13:17.292Z</updated>
+    <updated>2018-10-31T15:24:01.013Z</updated>
     
     <summary type="html">
     
@@ -235,6 +467,8 @@
     
     
       <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
+    
+      <category term="设计模式" scheme="https://tuliang.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   

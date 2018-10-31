@@ -6,10 +6,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="JavaScript 变量声明提前, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="JavaScript 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。到底是什么意思呢？我们来看下面这段代码
+    <meta name="description" content="JavaScript 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。
+到底是什么意思呢？我们来看下面这段代码
 var scope = &#39;global&#39;;
 function f(){
-  console.">
+  console">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -226,10 +227,101 @@ function f(){
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -262,7 +354,8 @@ function f(){
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><code>JavaScript</code> 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。<br>到底是什么意思呢？我们来看下面这段代码</p>
+                <p><code>JavaScript</code> 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。</p>
+<p>到底是什么意思呢？我们来看下面这段代码</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">'global'</span><span class="token punctuation">;</span>
 <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>scope<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -271,13 +364,13 @@ function f(){
 <span class="token punctuation">}</span>
 <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>你可能认为输出是: </p>
+<p>你可能认为输出是</p>
 <pre><code>global  
 local  
-</code></pre><p>但是运行一下你就会发现实际结果是: </p>
+</code></pre><p>但是运行一下你就会发现实际结果是</p>
 <pre><code>undefined  
 local  
-</code></pre><p>深入研究你会发现就算是你使用传递参数: </p>
+</code></pre><p>深入研究你会发现就算是你使用传递参数</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">'global'</span><span class="token punctuation">;</span>
 <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>scope<span class="token punctuation">)</span><span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>scope<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -286,10 +379,10 @@ local
 <span class="token punctuation">}</span>
 <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>实际结果依然是:   </p>
+<p>实际结果依然是</p>
 <pre><code>undefined  
 local  
-</code></pre><p>或者代码改写为: </p>
+</code></pre><p>或者代码改写为</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">'global'</span><span class="token punctuation">;</span>
 <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>scope<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -299,9 +392,10 @@ local
 <span class="token punctuation">}</span>
 <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>实际结果仍然是:   </p>
+<p>实际结果仍然是</p>
 <pre><code>undefined  
-</code></pre><p>为什么，后面的代码能够影响到前面的代码？照成这种结果的原因的就是前面提到的函数作用域，在JS中上面的代码实际上是这样的: </p>
+</code></pre><p>为什么，后面的代码能够影响到前面的代码？</p>
+<p>照成这种结果的原因的就是前面提到的函数作用域，在 <code>JavaScript</code> 中上面的代码实际上是这样的</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">'global'</span><span class="token punctuation">;</span>
 <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">var</span> scope<span class="token punctuation">;</span>
@@ -311,7 +405,9 @@ local
 <span class="token punctuation">}</span>
 <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><code>JavaScript</code> 这个特性被非正式地称为声明提前，即函数里声明的所有变量都被提前至函数体的顶部，但是这个声明提前至声明却不赋值。<br>由于拥有这种特性，在编写代码时一些程序员特意将变量声明放在函数体的顶部，而不是像其他语言中让变量声明和使用变量的代码尽量靠近。<br>所以在函数体中使用到 <code>var</code> 来声明变量时，记得将声明和赋值语句放在函数体的顶部，避免因为这种特性造成变量值为 <code>undefined</code> 的 <code>BUG</code>。</p>
+<p><code>JavaScript</code> 这个特性被非正式地称为声明提前，即函数里声明的所有变量都被提前至函数体的顶部，但是这个声明提前至声明却不赋值。</p>
+<p>由于拥有这种特性，在编写代码时一些程序员特意将变量声明放在函数体的顶部，而不是像其他语言中让变量声明和使用变量的代码尽量靠近。</p>
+<p>所以在函数体中使用到 <code>var</code> 来声明变量时，记得将声明和赋值语句放在函数体的顶部，避免因为这种特性造成变量值为 <code>undefined</code> 的 <code>BUG</code>。</p>
 
             </div>
             <hr>
@@ -371,9 +467,10 @@ local
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">使用 git 时，经常需要忽略一些文件，比如一些 IDE 生成的配置文件在项目目录加上 .gitignore 文件然后加入需要忽略文件的文件名就可以了
+                    <div class="summary">使用 git 时，经常需要忽略一些文件，比如一些 IDE 生成的配置文件。
+在项目目录加上 .gitignore 文件，然后加入需要忽略文件的文件名就可以了。
 .project
-需要注意的是，如果需要忽略 .gitignore 文件，那么文件中就要</div>
+需要注意的是，如果需要忽略 .gitignore 文件，那么文</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2012-12-23
@@ -406,26 +503,27 @@ local
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/php-chou-xiang-gong-han-mo-shi/">
+                <a href="/php-mou-pao-pai-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="PHP 抽象工厂模式">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="PHP 冒泡排序">
                         
-                        <span class="card-title">PHP 抽象工厂模式</span>
+                        <span class="card-title">PHP 冒泡排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">抽象工厂模式 Abstract Factory Pattern，提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。
-&lt;?php
-/*
- * 抽象工厂模式
- * 提供一个接口，
- * 用于创建相关或依赖对象的家族，
- </div>
+                    <div class="summary">使用递归实现冒泡排序
+PHP 多递归时需要 return，如下述代码中
+return bubblesort($array, $count-1);
+
+如果改为
+bubblesort($array, $count-1);
+
+上层就接不到值，即结</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2012-08-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2012-09-22
                             </span>
                         <span class="publish-author">
                             
@@ -446,6 +544,10 @@ local
                         <span class="chip bg-color">PHP</span>
                     </a>
                     
+                    <a href="/tags/算法/" target="_blank">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -454,6 +556,53 @@ local
     </div>
 </article>
 </div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
     
 
 </main>

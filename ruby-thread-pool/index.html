@@ -6,7 +6,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Ruby thread pool, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="有时候会遇到一个情况需要在多个远程服务获取数据。例如服务 a 需要 2 秒，服务 b 需要 5 秒，按照正常处理总共就需要 2+5 总共 7 秒了。如果 a 和 b 之间并没有相互依赖关系，我们可以使用 thread pool 来并发获取数">
+    <meta name="description" content="有时候会遇到一个情况需要在多个远程服务获取数据。
+例如服务 a 需要 2 秒，服务 b 需要 5 秒，按照正常处理总共就需要 2+5 总共 7 秒了。
+如果 a 和 b 之间并没有相互依赖关系，我们可以使用 thread pool 来并发获">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -223,10 +225,101 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -235,6 +328,10 @@
                 
                 <a href="/tags/Ruby/" target="_blank">
                     <span class="chip bg-color">Ruby</span>
+                </a>
+                
+                <a href="/tags/并发编程/" target="_blank">
+                    <span class="chip bg-color">并发编程</span>
                 </a>
                 
             </div>
@@ -259,7 +356,9 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>有时候会遇到一个情况需要在多个远程服务获取数据。例如服务 a 需要 2 秒，服务 b 需要 5 秒，按照正常处理总共就需要 2+5 总共 7 秒了。如果 a 和 b 之间并没有相互依赖关系，我们可以使用 thread pool 来并发获取数据，将总体耗时由 a + b 变为 a、b两者中的最大值。</p>
+                <p>有时候会遇到一个情况需要在多个远程服务获取数据。</p>
+<p>例如服务 <code>a</code> 需要 <code>2</code> 秒，服务 <code>b</code> 需要 <code>5</code> 秒，按照正常处理总共就需要 <code>2+5</code> 总共 <code>7</code> 秒了。</p>
+<p>如果 <code>a</code> 和 <code>b</code> 之间并没有相互依赖关系，我们可以使用 <code>thread pool</code> 来并发获取数据，将总体耗时由 <code>a + b</code> 降低到 <code>a、b</code> 两者中的最大值。</p>
 <pre class=" language-ruby"><code class="language-ruby"><span class="token keyword">require</span> <span class="token string">'thread/pool'</span>
 <span class="token keyword">require</span> <span class="token string">'thread/future'</span>
 <span class="token keyword">require</span> <span class="token string">'benchmark'</span>
@@ -436,6 +535,10 @@ puts MY_CONSTANT #=> "foob</div>
                         <span class="chip bg-color">Ruby</span>
                     </a>
                     
+                    <a href="/tags/并发编程/" target="_blank">
+                        <span class="chip bg-color">并发编程</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -444,6 +547,53 @@ puts MY_CONSTANT #=> "foob</div>
     </div>
 </article>
 </div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
     
 
 </main>

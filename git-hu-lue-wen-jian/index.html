@@ -6,9 +6,10 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Git 忽略文件, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="使用 git 时，经常需要忽略一些文件，比如一些 IDE 生成的配置文件在项目目录加上 .gitignore 文件然后加入需要忽略文件的文件名就可以了
+    <meta name="description" content="使用 git 时，经常需要忽略一些文件，比如一些 IDE 生成的配置文件。
+在项目目录加上 .gitignore 文件，然后加入需要忽略文件的文件名就可以了。
 .project
-需要注意的是，如果需要忽略 .gitignore 文件，那么文件中就要">
+需要注意的是，如果需要忽略 .gitignore 文件，那么文">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -225,10 +226,101 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -261,7 +353,8 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>使用 <code>git</code> 时，经常需要忽略一些文件，比如一些 <code>IDE</code> 生成的配置文件<br>在项目目录加上 <code>.gitignore</code> 文件<br>然后加入需要忽略文件的文件名就可以了</p>
+                <p>使用 <code>git</code> 时，经常需要忽略一些文件，比如一些 <code>IDE</code> 生成的配置文件。</p>
+<p>在项目目录加上 <code>.gitignore</code> 文件，然后加入需要忽略文件的文件名就可以了。</p>
 <pre><code>.project
 </code></pre><p>需要注意的是，如果需要忽略 <code>.gitignore</code> 文件，那么文件中就要加上 <code>.gitignore</code></p>
 <pre><code>.project
@@ -315,28 +408,30 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/web-wen-jian-xia-zai-he-cha-kan/">
+                <a href="/jie-jue-javascript-zhi-xiang-bu-ming/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Web 文件下载和查看">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="解决 JavaScript 指向不明">
                         
-                        <span class="card-title">Web 文件下载和查看</span>
+                        <span class="card-title">解决 JavaScript 指向不明</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用 HTML5 download Attribute。
-&lt;!-- will download as "expenses.pdf"</div>
+                    <div class="summary">用面向对象的方式编写 JavaScript 时，在类中经常会出现 this 指向不明的问题。
+解决这个问题很简单，在对象中将 this 指定给一个变量，然后都使用这个对象就可以了。
+例如在类文件的最开始加上下述代码
+var self = t</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2014-06-11
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2012-12-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/基础/" class="post-category" target="_blank">
-                                    基础
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                    前端
                                 </a>
                             
                             
@@ -346,16 +441,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Ruby/" target="_blank">
-                        <span class="chip bg-color">Ruby</span>
-                    </a>
-                    
-                    <a href="/tags/HTTP/" target="_blank">
-                        <span class="chip bg-color">HTTP</span>
-                    </a>
-                    
-                    <a href="/tags/HTML5/" target="_blank">
-                        <span class="chip bg-color">HTML5</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -377,10 +464,11 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">JavaScript 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。到底是什么意思呢？我们来看下面这段代码
+                    <div class="summary">JavaScript 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。
+到底是什么意思呢？我们来看下面这段代码
 var scope = 'global';
 function f(){
-  console.</div>
+  console</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2012-10-17
@@ -412,6 +500,53 @@ function f(){
     </div>
 </article>
 </div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
     
 
 </main>
