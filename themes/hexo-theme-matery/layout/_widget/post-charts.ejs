@@ -83,22 +83,7 @@
                 data: <%- monthValueArr %>,
                 markPoint: {
                     symbolSize: 45,
-                    color: ['#fa755a','#3ecf8e','#82d3f4'],
-                    data: [{
-                        type: 'max',
-                        itemStyle: {color: ['#3ecf8e']},
-                        name: '<%- __("maximum")  %>'
-                    }, {
-                        type: 'min',
-                        itemStyle: {color: ['#fa755a']},
-                        name: '<%- __("minimum")  %>'
-                    }]
-                },
-                markLine: {
-                    itemStyle: {color: ['#ab47bc']},
-                    data: [
-                        {type: 'average', name: '<%- __("average")  %>'}
-                    ]
+                    color: ['#fa755a','#3ecf8e','#82d3f4']
                 }
             }
         ]
@@ -188,22 +173,7 @@
                 barWidth : 18,
                 data: <%- tagCountArrJson %>,
                 markPoint: {
-                    symbolSize: 45,
-                    data: [{
-                        type: 'max',
-                        itemStyle: {color: ['#3ecf8e']},
-                        name: '<%- __("maximum")  %>'
-                    }, {
-                        type: 'min',
-                        itemStyle: {color: ['#fa755a']},
-                        name: '<%- __("minimum")  %>'
-                    }],
-                },
-                markLine: {
-                    itemStyle: {color: ['#ab47bc']},
-                    data: [
-                        {type: 'average', name: '<%- __("average")  %>'}
-                    ]
+                    symbolSize: 45
                 }
             }
         ]
