@@ -1,22 +1,22 @@
 # main menu navigation url and icon
 # 配置菜单导航的名称、路径和图标icon.
 menu:
-  Index:
+  首页:
     url: /
     icon: fa-home
-  Tags:
+  标签:
     url: /tags
     icon: fa-tags
-  Categories:
+  分类:
     url: /categories
     icon: fa-bookmark
-  Archives:
+  归档:
     url: /archives
     icon: fa-archive
-  About:
+  关于:
     url: /about
     icon: fa-user-circle-o
-  Fund:
+  基金:
     url: /fund
     icon: fa-bar-chart
 
