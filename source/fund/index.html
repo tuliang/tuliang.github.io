@@ -1,153 +1,148 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>小明基金</title>
-    <script src="https://gallery.echartsjs.com/dep/jquery/jquery.min.js"></script>
-    <!-- 引入 echarts.js -->
-    <script src="https://gallerybox.echartsjs.com/dep/echarts/latest/echarts.min.js"></script>
-</head>
-<body>
-    <div id="title" style="width:100%;margin:0 auto;font-size: 24px;"></div>
-    <br />
-    <div id="year" style="width:100%;margin:0 auto;font-size: 24px;"></div>
-    <br />
-    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="width:100%;height:360px;margin:0 auto;"></div>
+---
+layout: "fund"
+---
+<script src="https://gallery.echartsjs.com/dep/jquery/jquery.min.js"></script>
+<!-- 引入 echarts.js -->
+<script src="https://gallerybox.echartsjs.com/dep/echarts/latest/echarts.min.js"></script>
 
-    <script type="text/javascript">
-    var legend = ['小明基金','上证指数','恒生指数'];
+<div id="title" style="width:100%;margin:0 auto;font-size: 24px;"></div>
+<br />
+<div id="year" style="width:100%;margin:0 auto;font-size: 24px;"></div>
+<br />
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width:100%;height:360px;margin:0 auto;"></div>
 
-    function splitData(rawData) {
-        var categoryData = [];
-        var values = [];
-        var values2 = [];
-        var values3 = [];
-        var values4 = [];
-        var values5 = [];
-        var values6 = [];
-        for (var i = 0; i < rawData.length; i++) {
-            categoryData.push(rawData[i].splice(0, 1)[0]);
+<script type="text/javascript">
+var legend = ['小明基金','上证指数','恒生指数'];
 
-            values.push(rawData[i][0].toFixed(4));
-            values2.push((rawData[i][1] / rawData[0][1]).toFixed(4));
-            values3.push((rawData[i][2] / rawData[0][2]).toFixed(4));
+function splitData(rawData) {
+    var categoryData = [];
+    var values = [];
+    var values2 = [];
+    var values3 = [];
+    var values4 = [];
+    var values5 = [];
+    var values6 = [];
+    for (var i = 0; i < rawData.length; i++) {
+        categoryData.push(rawData[i].splice(0, 1)[0]);
 
-            var prev = i-1;
-            if (prev < 0) {
-              prev = 0;
-            }
+        values.push(rawData[i][0].toFixed(4));
+        values2.push((rawData[i][1] / rawData[0][1]).toFixed(4));
+        values3.push((rawData[i][2] / rawData[0][2]).toFixed(4));
 
-            values4.push(buildData(rawData[i][0], rawData[prev][0]));
-            values5.push(buildData(rawData[i][1], rawData[prev][1]));
-            values6.push(buildData(rawData[i][2], rawData[prev][2]));
+        var prev = i-1;
+        if (prev < 0) {
+          prev = 0;
         }
-        return {
-            categoryData: categoryData,
-            values: values,
-            values2: values2,
-            values3: values3,
-            values4: values4,
-            values5: values5,
-            values6: values6
-        };
+
+        values4.push(buildData(rawData[i][0], rawData[prev][0]));
+        values5.push(buildData(rawData[i][1], rawData[prev][1]));
+        values6.push(buildData(rawData[i][2], rawData[prev][2]));
     }
-
-    function buildData(next, prev) {
-      return ((next / prev - 1) * 100).toFixed(2);
-    }
-
-    var rawData = [
-      ["2018-10-19", 1, 2550.47, 25561.40],
-      ["2018-10-22", 1.0184, 2654.88, 26153.15],
-      ["2018-10-23", 0.9835, 2594.83, 25346.55],
-      ["2018-10-24", 0.9815, 2603.30, 25249.78],
-      ["2018-10-25", 1.0172, 2603.80, 24994.46],
-      ["2018-10-26", 1.0165, 2598.85, 24717.63],
-      ["2018-10-29", 0.9925, 2542.10, 24812.04],
-      ["2018-10-30", 0.9917, 2568.05, 24585.53],
-      ["2018-10-31", 1.0095, 2602.78, 24979.69]
-    ]
-
-    var data = splitData(rawData);
-    
-    var title = data.categoryData[data.categoryData.length-1]+"更新 单位净值: " 
-        + data.values[data.values.length-1] 
-        + " 当天涨幅: " + data.values4[data.values4.length-1] + "%";
-    
-    $('#title').text(title)
-
-    var year = "今年收益: " 
-        + buildData(data.values[data.values.length-1], data.values[0]) + "%"
-        + " 上证指数: " + buildData(data.values2[data.values2.length-1], data.values2[0]) + "%"
-        + " 恒生指数: " + buildData(data.values3[data.values3.length-1], data.values3[0]) + "%";
-    
-    $('#year').text(year)
-    
-    // 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(document.getElementById('main'));
-
-    // 指定图表的配置项和数据
-    var option = {
-        textStyle: {
-            fontFamily: 'Microsoft YaHei, 微软雅黑, Arial, Verdana, sans-serif'
-        },
-        title: {
-            text: '净值走势'
-        },
-        tooltip : {
-            trigger: 'axis'
-        },
-        legend: {
-            data: legend
-        },
-        grid: {
-            left: 50,
-            right: 80,
-            bottom: 50,
-            containLabel: true
-        },
-        xAxis : [
-            {
-                type : 'category',
-                boundaryGap : false,
-                data : data.categoryData
-            }
-        ],
-        yAxis : [
-            {
-                type : 'value'
-            }
-        ],
-        series : [
-            {
-                name:'小明基金',
-                type:'line',
-                data: data.values
-            },
-            {
-                name:'上证指数',
-                type:'line',
-                data: data.values2
-            },
-            {
-                name:'恒生指数',
-                type:'line',
-                data: data.values3
-            }
-        ],
-        dataZoom: [
-            {
-                id: 'dataZoomX',
-                type: 'slider',
-                xAxisIndex: [0],
-                filterMode: 'filter'
-            }
-        ]
+    return {
+        categoryData: categoryData,
+        values: values,
+        values2: values2,
+        values3: values3,
+        values4: values4,
+        values5: values5,
+        values6: values6
     };
+}
 
-    // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
-    </script>
-</body>
-</html>
+function buildData(next, prev) {
+  return ((next / prev - 1) * 100).toFixed(2);
+}
+
+var rawData = [
+  ["2018-10-19", 1, 2550.47, 25561.40],
+  ["2018-10-22", 1.0184, 2654.88, 26153.15],
+  ["2018-10-23", 0.9835, 2594.83, 25346.55],
+  ["2018-10-24", 0.9815, 2603.30, 25249.78],
+  ["2018-10-25", 1.0172, 2603.80, 24994.46],
+  ["2018-10-26", 1.0165, 2598.85, 24717.63],
+  ["2018-10-29", 0.9925, 2542.10, 24812.04],
+  ["2018-10-30", 0.9917, 2568.05, 24585.53],
+  ["2018-10-31", 1.0095, 2602.78, 24979.69]
+]
+
+var data = splitData(rawData);
+
+var title = data.categoryData[data.categoryData.length-1]+"更新 单位净值: " 
+    + data.values[data.values.length-1] 
+    + " 当天涨幅: " + data.values4[data.values4.length-1] + "%";
+
+$('#title').text(title)
+
+var year = "今年收益: " 
+    + buildData(data.values[data.values.length-1], data.values[0]) + "%"
+    + " 上证指数: " + buildData(data.values2[data.values2.length-1], data.values2[0]) + "%"
+    + " 恒生指数: " + buildData(data.values3[data.values3.length-1], data.values3[0]) + "%";
+
+$('#year').text(year)
+
+// 基于准备好的dom，初始化echarts实例
+var myChart = echarts.init(document.getElementById('main'));
+
+// 指定图表的配置项和数据
+var option = {
+    textStyle: {
+        fontFamily: 'Microsoft YaHei, 微软雅黑, Arial, Verdana, sans-serif'
+    },
+    title: {
+        text: '净值走势'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data: legend
+    },
+    grid: {
+        left: 50,
+        right: 80,
+        bottom: 50,
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : data.categoryData
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'小明基金',
+            type:'line',
+            data: data.values
+        },
+        {
+            name:'上证指数',
+            type:'line',
+            data: data.values2
+        },
+        {
+            name:'恒生指数',
+            type:'line',
+            data: data.values3
+        }
+    ],
+    dataZoom: [
+        {
+            id: 'dataZoomX',
+            type: 'slider',
+            xAxisIndex: [0],
+            filterMode: 'filter'
+        }
+    ]
+};
+
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+</script>
