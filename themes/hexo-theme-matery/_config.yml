@@ -17,7 +17,7 @@ menu:
     url: /about
     icon: fa-user-circle-o
   Fund:
-    url: /fund.html
+    url: /fund
     icon: fa-bar-chart
 
 # index page dream text,
@@ -140,8 +140,8 @@ gitment:
 # disqus config, default disabled
 # Disqus评论模块的配置，默认为不激活
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: tuliang
 
 # Livere comment configuration, the default is not activated
 # Livere 来必力评论模块的配置，默认为不激活
