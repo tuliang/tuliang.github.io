@@ -296,7 +296,9 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <div class="card-content article-content">
                         <div class="summary">
 Ruby 中参数是按引用传递的，而不是值传递。这个规则有一个例外值得注意：它不适用于 Fixnum 对象。
-在改变集合之前先复制它们。</div>
+在改变集合之前先复制它们。
+
+Ruby 语言自带了</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-01
@@ -341,7 +343,7 @@ Ruby 中参数是按引用传递的，而不是值传递。这个规则有一个
                     <div class="card-content article-content">
                         <div class="summary">在 Docker 中 NGINX 如何获得应用的静态文件呢？
 一般来说这种共享文件的需求，我们需要使用 volumes
-假如静态文件的地</div>
+假如静态文件的地址是 /home/app</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-01
@@ -394,7 +396,8 @@ Ruby 中参数是按引用传递的，而不是值传递。这个规则有一个
                     <div class="card-content article-content">
                         <div class="summary">
 在处理结构化数据时，如果创建一个新类不那么合适时，推荐使用 Struct 而非 Hash 
-将 Struct::new 的返回值赋给常</div>
+将 Struct::new 的返回值赋给常量，并像类一样使用它。
+</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-31
@@ -442,7 +445,7 @@ Ruby 中参数是按引用传递的，而不是值传递。这个规则有一个
 
 不使用 freeze ，常量可以修改。
 MY_CONSTANT = "foo"
-M</div>
+MY_CONSTANT &</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-31
@@ -486,7 +489,8 @@ M</div>
 
                     <div class="card-content article-content">
                         <div class="summary">有时候会遇到一个情况需要在多个远程服务获取数据。
-例如服务 a 需要 2 秒，服务 b 需要 5 秒，按照正常处理总共就需要 2+5 总</div>
+例如服务 a 需要 2 秒，服务 b 需要 5 秒，按照正常处理总共就需要 2+5 总共 7 秒了。
+如果 a</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2015-04-10
@@ -534,7 +538,7 @@ M</div>
 
                     <div class="card-content article-content">
                         <div class="summary">最近学习 Java 的时候了解到在 Java 中 synchronized 关键字可以保证代码块的串行执行。
-在 ruby 开发中往往使</div>
+在 ruby 开发中往往使用第三方来保证，比如使用</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2015-04-09
@@ -582,7 +586,7 @@ M</div>
 
                     <div class="card-content article-content">
                         <div class="summary">Rails 中 Controller 如果不是复数，写 path 或 url 的时候就必须加上 index，这样看上去就很 low。
-r</div>
+resources :ph</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2014-10-24
@@ -625,7 +629,7 @@ r</div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用 HTML5 downloa</div>
+                        <div class="summary">在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用 HTML5 download Attribute。</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2014-06-11
@@ -677,7 +681,7 @@ r</div>
 
                     <div class="card-content article-content">
                         <div class="summary">siege 围攻是一个压力测试和评测工具，设计用于 web 开发这评估应用在压力下的承受能力。
-可以模拟对一个 web 站点进行多用户的</div>
+可以模拟对一个 web 站点进行多用户的并发访问，记录每个用户所</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2013-08-27
@@ -721,7 +725,7 @@ r</div>
 
                     <div class="card-content article-content">
                         <div class="summary">一般 git 删除文件使用 git rm 就可以了，但是有时候某些文件你甚至不想让它出现在 git 的 log中。
-github 有一篇</div>
+github 有一篇文章详细说明了如何操作，</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2013-08-13
@@ -768,7 +772,9 @@ github 有一篇</div>
 &lt;?php
 echo '我是正常的分号';
 echo '我是神奇的分号';
-</div>
+?>
+
+用肉眼无法分辨两</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2013-03-01
@@ -812,7 +818,7 @@ echo '我是神奇的分号';
 
                     <div class="card-content article-content">
                         <div class="summary">用面向对象的方式编写 JavaScript 时，在类中经常会出现 this 指向不明的问题。
-解决这个问题很简单，在对象中将 this </div>
+解决这个问题很简单，在对象中将 this 指定给一个变量，然后都使</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2012-12-23
