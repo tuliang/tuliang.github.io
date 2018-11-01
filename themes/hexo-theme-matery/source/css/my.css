@@ -1,1 +1,4 @@
 /* Here is your custom css styles. */
+#articles .article .summary {
+  height: 90px;
+}
