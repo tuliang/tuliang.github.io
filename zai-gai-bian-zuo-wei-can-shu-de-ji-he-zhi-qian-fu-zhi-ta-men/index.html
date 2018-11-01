@@ -5,11 +5,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Docker 中 NGINX 挂载应用的静态文件, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="在 Docker 中 NGINX 如何获得应用的静态文件呢？
-一般来说这种共享文件的需求，我们需要使用 volumes
-假如静态文件的地址是 /home/app/app_name/public
-那么我们在中 docker-compose.y">
+    <meta name="keywords" content="在改变作为参数的集合之前复制它们, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="
+Ruby 中参数是按引用传递的，而不是值传递。这个规则有一个例外值得注意：它不适用于 Fixnum 对象。
+在改变集合之前先复制它们。
+
+Ruby 语言自带了两个用来复制对象的方法：dup 和 clone。它们都会基于接收者创建新的对象，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Docker 中 NGINX 挂载应用的静态文件 | 不做咸鱼的小明</title>
+    <title>在改变作为参数的集合之前复制它们 | 不做咸鱼的小明</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -210,13 +211,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Docker 中 NGINX 挂载应用的静态文件
+                        在改变作为参数的集合之前复制它们
                     </div>
                 </div>
             </div>
@@ -327,16 +328,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/Docker/" target="_blank">
-                    <span class="chip bg-color">Docker</span>
-                </a>
-                
-                <a href="/tags/Docker-Compose/" target="_blank">
-                    <span class="chip bg-color">Docker Compose</span>
-                </a>
-                
-                <a href="/tags/NGINX/" target="_blank">
-                    <span class="chip bg-color">NGINX</span>
+                <a href="/tags/Ruby/" target="_blank">
+                    <span class="chip bg-color">Ruby</span>
                 </a>
                 
             </div>
@@ -346,8 +339,8 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/容器/" class="post-category" target="_blank">
-                        容器
+                    <a href="/categories/后端/" class="post-category" target="_blank">
+                        后端
                     </a>
                     
                 </span>
@@ -361,33 +354,47 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在 <code>Docker</code> 中 <code>NGINX</code> 如何获得应用的静态文件呢？</p>
-<p>一般来说这种共享文件的需求，我们需要使用 <code>volumes</code></p>
-<p>假如静态文件的地址是 <code>/home/app/app_name/public</code></p>
-<p>那么我们在中 <code>docker-compose.yml</code> 中设置 <code>volumes</code></p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
-<span class="token key atrule">volumes</span><span class="token punctuation">:</span>  
-  <span class="token key atrule">public</span><span class="token punctuation">:</span> 
-<span class="token key atrule">services</span><span class="token punctuation">:</span>  
-  <span class="token key atrule">app</span><span class="token punctuation">:</span>    
-    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>      
-       <span class="token punctuation">-</span> public<span class="token punctuation">:</span>/home/app/app_name/public
+                <blockquote>
+<p><code>Ruby</code> 中参数是按引用传递的，而不是值传递。这个规则有一个例外值得注意：它不适用于 <code>Fixnum</code> 对象。</p>
+<p>在改变集合之前先复制它们。</p>
+</blockquote>
+<p><code>Ruby</code> 语言自带了两个用来复制对象的方法：<code>dup</code> 和 <code>clone</code>。它们都会基于接收者创建新的对象，但是与 <code>dup</code> 方法不同的是，<code>clone</code> 方法会保留原始对象的两个附加特性。</p>
+<p>首先，<code>clone</code> 方法会保留接收者的冻结状态。如果原始对象的状态是冻结的，那么生成的副本也是冻结的。而 <code>dup</code> 方法就不同了，它永远不会返回冻结的对象。</p>
+<p>其次，如果接收者中存在单例方法，使用 <code>clone</code> 方法也会复制单例类。由于 <code>dup</code> 方法不会这样做，所以当使用 <code>dup</code> 方法时，原始对象和使用 <code>dup</code> 方法创建的副本对于相同消息的响应可能是不同的。</p>
+<p>多数情况下应使用 <code>dup</code> 方法而不是 <code>clone</code> 方法，特别是当你希望修改结果对象时。冻结对象时无法修改或是解冻的，所以 <code>clone</code> 方法可能会返回一个不可变的对象。由于我们要去对新对象进行修改，因此 <code>dup</code> 方法显然是更合适的选择。</p>
+<blockquote>
+<p><code>dup</code> 方法和 <code>clone</code> 方法只会进行浅拷贝。</p>
+</blockquote>
+<p>复制传入集合是一种常见的模式。但要小心，使用这样的方法存在潜在的危险。你要知道 <code>dup</code> 方法和 <code>clone</code> 方法返回的是浅拷贝对象。对于像 <code>Array</code> 一样的集合，这意味着仅仅复制了容器本身而没有复制其中的元素。</p>
+<p>可以在不影响原始集合的情况下增添或移除其中的元素，但修改元素本身则是有影响的。原始集合及其副本引用了相同的元素对象。修改任一元素都会影响到集合本身，同样也会影响到任何引用这一元素的对象。</p>
+<pre class=" language-ruby"><code class="language-ruby">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Polar"</span><span class="token punctuation">]</span>
 
-  <span class="token key atrule">web</span><span class="token punctuation">:</span>    
-    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>      
-       <span class="token punctuation">-</span> public<span class="token punctuation">:</span>/home/app/app_name/public
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>dup <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token string">"Bear"</span>
+<span class="token comment" spellcheck="true">#=> ["Polar", "Bear"]</span>
+
+b<span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token punctuation">{</span><span class="token operator">|</span>x<span class="token operator">|</span> x<span class="token punctuation">.</span>sub<span class="token operator">!</span><span class="token punctuation">(</span><span class="token string">'lar'</span><span class="token punctuation">,</span> <span class="token string">'oh'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">#=> ["Pooh", "Bear"]</span>
+
+a
+<span class="token comment" spellcheck="true">#=> ["Pooh"]</span>
 </code></pre>
-<p>记得在 <code>nginx.conf</code> 设置 <code>root</code></p>
-<pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">server</span> <span class="token punctuation">{</span>  
-   <span class="token comment" spellcheck="true"># define the public application root  </span>
-   <span class="token keyword">root</span>  <span class="token operator">/</span>home<span class="token operator">/</span>app<span class="token operator">/</span>app_name<span class="token operator">/</span>public<span class="token punctuation">;</span> 
-<span class="token punctuation">}</span>
+<blockquote>
+<p>对于多数对象来说，可以使用 <code>Marshal</code> 来完成深拷贝。</p>
+</blockquote>
+<p>可以使用 <code>Marshal</code> 类将一个集合及其所持有的元素序列化，然后再反序列化：</p>
+<pre class=" language-ruby"><code class="language-ruby">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Monkey"</span><span class="token punctuation">,</span> <span class="token string">"Brains"</span><span class="token punctuation">]</span>
+
+b <span class="token operator">=</span> <span class="token constant">Marshal</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token constant">Marshal</span><span class="token punctuation">.</span><span class="token function">dump</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#=> ["Monkey", "Brains"]</span>
+
+b<span class="token punctuation">.</span><span class="token keyword">each</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token symbol">:upcase!</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#=> ["MONKEY", "BRAINS"]</span>
+
+a
+<span class="token comment" spellcheck="true">#=> ["Monkey", "Brains"]</span>
 </code></pre>
-<h4 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h4><ul>
-<li><a href="https://docs.docker.com/compose/compose-file/#volumes" target="_blank" rel="noopener">Compose file version 3 reference</a></li>
-<li><a href="https://docs.docker.com/storage/volumes/#start-a-container-with-a-volume" target="_blank" rel="noopener">Use volumes</a></li>
-<li><a href="https://stackoverflow.com/questions/42232051/docker-compose-volumes-from-equivalent-with-version-3" target="_blank" rel="noopener">docker-compose volumes_from equivalent with version 3</a></li>
-</ul>
+<p>使用 <code>Marshal</code> 来解决这一问题这某种程度上有一定的局限性。抛开对对象序列化和反序列化的时间不说，你还得考虑这一过程中需要的内存。毫无疑问，对象的副本会持有其本身的内存空间，而使用 <code>Marshal::dump</code> 中序列化时创建的字节流也是会占用内存的。转储和加载大对象会使程序消耗大内存更多。</p>
+<p>一个潜在的更加严峻的问题时并非所有对象都可以被 <code>Marshal</code> 序列化。那些持有闭包的对象以及那些具有单例方法的对象时无法被序列化的。<code>Ruby</code> 的一些核心类也是不能被 <code>Marshal</code> 序列化的。这包括 <code>IO</code> 以及 <code>File</code> 等类型。对于所有这样的情形，在使用 <code>Marshal::dump</code> 进行序列化时会抛出一个 <code>TypeError</code> 异常。</p>
 
             </div>
             <hr>
@@ -411,9 +418,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tuliang.org/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/';
-        this.page.identifier = '/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/';
-        this.page.title = 'Docker 中 NGINX 挂载应用的静态文件';
+        this.page.url = 'https://tuliang.org/zai-gai-bian-zuo-wei-can-shu-de-ji-he-zhi-qian-fu-zhi-ta-men/';
+        this.page.identifier = '/zai-gai-bian-zuo-wei-can-shu-de-ji-he-zhi-qian-fu-zhi-ta-men/';
+        this.page.title = '在改变作为参数的集合之前复制它们';
     };
     let disqus_shortname = 'tuliang';
 
@@ -435,7 +442,7 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/zai-gai-bian-zuo-wei-can-shu-de-ji-he-zhi-qian-fu-zhi-ta-men/">
                     <div class="card-image">
@@ -453,9 +460,9 @@ Ruby 中参数是按引用传递的，而不是值传递。这个规则有一个
 
 Ruby 语言自带了两个用来复制对象的方法：dup 和 clone。它们都会基于接收者创建新的对象，</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -468,6 +475,7 @@ Ruby 语言自带了两个用来复制对象的方法：dup 和 clone。它们�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -484,32 +492,30 @@ Ruby 语言自带了两个用来复制对象的方法：dup 和 clone。它们�
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/tui-jian-shi-yong-struct-er-fei-hash-cun-chu-jie-gou-hua-shu-ju/">
+                <a href="/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="推荐使用 Struct 而非 Hash 存储结构化数据">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Docker 中 NGINX 挂载应用的静态文件">
                         
-                        <span class="card-title">推荐使用 Struct 而非 Hash 存储结构化数据</span>
+                        <span class="card-title">Docker 中 NGINX 挂载应用的静态文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-在处理结构化数据时，如果创建一个新类不那么合适时，推荐使用 Struct 而非 Hash 
-将 Struct::new 的返回值赋给常量，并像类一样使用它。
-
-# Hash
-reading = { date: "2018-10-30", </div>
+                    <div class="summary">在 Docker 中 NGINX 如何获得应用的静态文件呢？
+一般来说这种共享文件的需求，我们需要使用 volumes
+假如静态文件的地址是 /home/app/app_name/public
+那么我们在中 docker-compose.y</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/后端/" class="post-category" target="_blank">
-                                    后端
+                            <a href="/categories/容器/" class="post-category" target="_blank">
+                                    容器
                                 </a>
                             
                             
@@ -519,8 +525,16 @@ reading = { date: "2018-10-30", </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Ruby/" target="_blank">
-                        <span class="chip bg-color">Ruby</span>
+                    <a href="/tags/Docker/" target="_blank">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                    <a href="/tags/Docker-Compose/" target="_blank">
+                        <span class="chip bg-color">Docker Compose</span>
+                    </a>
+                    
+                    <a href="/tags/NGINX/" target="_blank">
+                        <span class="chip bg-color">NGINX</span>
                     </a>
                     
                 </div>

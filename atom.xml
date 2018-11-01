@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-10-31T18:13:05.138Z</updated>
+  <updated>2018-11-01T07:59:58.859Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在改变作为参数的集合之前复制它们</title>
+    <link href="https://tuliang.org/zai-gai-bian-zuo-wei-can-shu-de-ji-he-zhi-qian-fu-zhi-ta-men/"/>
+    <id>https://tuliang.org/zai-gai-bian-zuo-wei-can-shu-de-ji-he-zhi-qian-fu-zhi-ta-men/</id>
+    <published>2018-11-01T07:59:22.000Z</published>
+    <updated>2018-11-01T07:59:58.859Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Ruby&lt;/code&gt; 中参数是按引用传递的，而不是值传递。这个规则有一个例外值得注意：它不适用于 &lt;code&gt;Fixnum&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker 中 NGINX 挂载应用的静态文件</title>

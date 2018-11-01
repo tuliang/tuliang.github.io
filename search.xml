@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>在改变作为参数的集合之前复制它们</title>
+      <link href="/zai-gai-bian-zuo-wei-can-shu-de-ji-he-zhi-qian-fu-zhi-ta-men/"/>
+      <url>/zai-gai-bian-zuo-wei-can-shu-de-ji-he-zhi-qian-fu-zhi-ta-men/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><code>Ruby</code> 中参数是按引用传递的，而不是值传递。这个规则有一个例外值得注意：它不适用于 <code>Fixnum</code> 对象。</p><p>在改变集合之前先复制它们。</p></blockquote><p><code>Ruby</code> 语言自带了两个用来复制对象的方法：<code>dup</code> 和 <code>clone</code>。它们都会基于接收者创建新的对象，但是与 <code>dup</code> 方法不同的是，<code>clone</code> 方法会保留原始对象的两个附加特性。</p><p>首先，<code>clone</code> 方法会保留接收者的冻结状态。如果原始对象的状态是冻结的，那么生成的副本也是冻结的。而 <code>dup</code> 方法就不同了，它永远不会返回冻结的对象。</p><p>其次，如果接收者中存在单例方法，使用 <code>clone</code> 方法也会复制单例类。由于 <code>dup</code> 方法不会这样做，所以当使用 <code>dup</code> 方法时，原始对象和使用 <code>dup</code> 方法创建的副本对于相同消息的响应可能是不同的。</p><p>多数情况下应使用 <code>dup</code> 方法而不是 <code>clone</code> 方法，特别是当你希望修改结果对象时。冻结对象时无法修改或是解冻的，所以 <code>clone</code> 方法可能会返回一个不可变的对象。由于我们要去对新对象进行修改，因此 <code>dup</code> 方法显然是更合适的选择。</p><blockquote><p><code>dup</code> 方法和 <code>clone</code> 方法只会进行浅拷贝。</p></blockquote><p>复制传入集合是一种常见的模式。但要小心，使用这样的方法存在潜在的危险。你要知道 <code>dup</code> 方法和 <code>clone</code> 方法返回的是浅拷贝对象。对于像 <code>Array</code> 一样的集合，这意味着仅仅复制了容器本身而没有复制其中的元素。</p><p>可以在不影响原始集合的情况下增添或移除其中的元素，但修改元素本身则是有影响的。原始集合及其副本引用了相同的元素对象。修改任一元素都会影响到集合本身，同样也会影响到任何引用这一元素的对象。</p><pre class=" language-ruby"><code class="language-ruby">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Polar"</span><span class="token punctuation">]</span>b <span class="token operator">=</span> a<span class="token punctuation">.</span>dup <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token string">"Bear"</span><span class="token comment" spellcheck="true">#=> ["Polar", "Bear"]</span>b<span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token punctuation">{</span><span class="token operator">|</span>x<span class="token operator">|</span> x<span class="token punctuation">.</span>sub<span class="token operator">!</span><span class="token punctuation">(</span><span class="token string">'lar'</span><span class="token punctuation">,</span> <span class="token string">'oh'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">#=> ["Pooh", "Bear"]</span>a<span class="token comment" spellcheck="true">#=> ["Pooh"]</span></code></pre><blockquote><p>对于多数对象来说，可以使用 <code>Marshal</code> 来完成深拷贝。</p></blockquote><p>可以使用 <code>Marshal</code> 类将一个集合及其所持有的元素序列化，然后再反序列化：</p><pre class=" language-ruby"><code class="language-ruby">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Monkey"</span><span class="token punctuation">,</span> <span class="token string">"Brains"</span><span class="token punctuation">]</span>b <span class="token operator">=</span> <span class="token constant">Marshal</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token constant">Marshal</span><span class="token punctuation">.</span><span class="token function">dump</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#=> ["Monkey", "Brains"]</span>b<span class="token punctuation">.</span><span class="token keyword">each</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token symbol">:upcase!</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#=> ["MONKEY", "BRAINS"]</span>a<span class="token comment" spellcheck="true">#=> ["Monkey", "Brains"]</span></code></pre><p>使用 <code>Marshal</code> 来解决这一问题这某种程度上有一定的局限性。抛开对对象序列化和反序列化的时间不说，你还得考虑这一过程中需要的内存。毫无疑问，对象的副本会持有其本身的内存空间，而使用 <code>Marshal::dump</code> 中序列化时创建的字节流也是会占用内存的。转储和加载大对象会使程序消耗大内存更多。</p><p>一个潜在的更加严峻的问题时并非所有对象都可以被 <code>Marshal</code> 序列化。那些持有闭包的对象以及那些具有单例方法的对象时无法被序列化的。<code>Ruby</code> 的一些核心类也是不能被 <code>Marshal</code> 序列化的。这包括 <code>IO</code> 以及 <code>File</code> 等类型。对于所有这样的情形，在使用 <code>Marshal::dump</code> 进行序列化时会抛出一个 <code>TypeError</code> 异常。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ruby </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Docker 中 NGINX 挂载应用的静态文件</title>
       <link href="/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/"/>
       <url>/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/</url>
