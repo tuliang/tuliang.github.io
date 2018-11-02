@@ -5,9 +5,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Web 文件下载和查看, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用 HTML5 download Attribute。
-&amp;lt;!-- will download as &#34;expenses.pdf&#34;">
+    <meta name="keywords" content="Mac 更新 Emacs, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="最近买了 hhkb 开始折腾 Emacs。
+Mac 自带 Emacs，但是版本比较老是 Emacs22，Emacs24 是现在最新的，有很多新功能，比如原生支持显示行数。
+升级参考 wikemacs.org: Installing Emac">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Web 文件下载和查看 | 不做咸鱼的小明</title>
+    <title>Mac 更新 Emacs | 不做咸鱼的小明</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -208,13 +209,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Web 文件下载和查看
+                        Mac 更新 Emacs
                     </div>
                 </div>
             </div>
@@ -325,16 +326,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/Ruby/" target="_blank">
-                    <span class="chip bg-color">Ruby</span>
-                </a>
-                
-                <a href="/tags/HTTP/" target="_blank">
-                    <span class="chip bg-color">HTTP</span>
-                </a>
-                
-                <a href="/tags/HTML5/" target="_blank">
-                    <span class="chip bg-color">HTML5</span>
+                <a href="/tags/Emacs/" target="_blank">
+                    <span class="chip bg-color">Emacs</span>
                 </a>
                 
             </div>
@@ -344,36 +337,34 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/网络/" class="post-category" target="_blank">
-                        网络
+                    <a href="/categories/工具/" class="post-category" target="_blank">
+                        工具
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2014-06-11
+                    <i class="fa fa-clock-o fa-fw"></i>2014-03-17
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。<br>其实浏览器的行为是可以人为控制的，最简单的方法是使用 <code>HTML5 download Attribute</code>。</p>
-<pre class=" language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- will download as "expenses.pdf" --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/files/expenses.pdf<span class="token punctuation">"</span></span> <span class="token attr-name">download</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>expenses.pdf<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Download Your Expense Report<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+                <p>最近买了 <code>hhkb</code> 开始折腾 <code>Emacs</code>。</p>
+<p><code>Mac</code> 自带 <code>Emacs</code>，但是版本比较老是 <code>Emacs22</code>，<code>Emacs24</code> 是现在最新的，有很多新功能，比如原生支持显示行数。</p>
+<p>升级参考 wikemacs.org: <a href="http://wikemacs.org/index.php/Installing_Emacs_on_OS_X" target="_blank" rel="noopener">Installing Emacs on OS X</a></p>
+<p>使用 <code>brew</code> 安装 <code>emacs</code></p>
+<pre class=" language-sh"><code class="language-sh">brew update  
+brew install emacs --cocoa  
+ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications  
 </code></pre>
-<p>这种方式虽然简单，但是兼容性不太好。查看<a href="http://caniuse.com/download" target="_blank" rel="noopener">http://caniuse.com/download</a>，我们可以发现很多版本都不支持这个属性。</p>
-<p>浏览器行为是由 <code>HTTP Head</code> 中的 <code>Content-Disposition</code> 来控制的，例如</p>
-<pre><code>Content-Disposition: attachment; filename=&quot;fname.txt&quot;
-</code></pre><p>它的意思是将该文件作为附件，并且下载的文件名是 <code>fname.txt</code>。</p>
-<p>如果使用 <code>S3</code> 下载文件，使用 <code>AWS</code> 的 <code>api</code> 可以生成下载的 <code>url</code>:</p>
-<pre class=" language-ruby"><code class="language-ruby">url <span class="token operator">=</span> object<span class="token punctuation">.</span><span class="token function">url_for</span><span class="token punctuation">(</span><span class="token symbol">:read</span><span class="token punctuation">,</span> response_content_disposition<span class="token punctuation">:</span> <span class="token string">"attachment; filename=\"<span class="token interpolation"><span class="token delimiter tag">#{</span>filename<span class="token delimiter tag">}</span></span>\""</span><span class="token punctuation">)</span>
+<p>删除 <code>Mac</code> 原生的 <code>Emacs</code></p>
+<pre class=" language-sh"><code class="language-sh">sudo rm /usr/bin/emacs  
+sudo rm -rf /usr/share/emacs  
 </code></pre>
-<h4 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h4><ul>
-<li><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html" target="_blank" rel="noopener">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html</a></li>
-<li><a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/S3/S3Object.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/S3/S3Object.html</a></li>
-</ul>
+<p>大功告成~</p>
 
             </div>
             <hr>
@@ -397,9 +388,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tuliang.org/web-wen-jian-xia-zai-he-cha-kan/';
-        this.page.identifier = '/web-wen-jian-xia-zai-he-cha-kan/';
-        this.page.title = 'Web 文件下载和查看';
+        this.page.url = 'https://tuliang.org/mac-geng-xin-emacs/';
+        this.page.identifier = '/mac-geng-xin-emacs/';
+        this.page.title = 'Mac 更新 Emacs';
     };
     let disqus_shortname = 'tuliang';
 
@@ -423,30 +414,28 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/rails-singular-resources/">
+                <a href="/web-wen-jian-xia-zai-he-cha-kan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Rails Singular Resources">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Web 文件下载和查看">
                         
-                        <span class="card-title">Rails Singular Resources</span>
+                        <span class="card-title">Web 文件下载和查看</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Rails 中 Controller 如果不是复数，写 path 或 url 的时候就必须加上 index，这样看上去就很 low。
-resources :photo do  
-  collection do    
-    get 'se</div>
+                    <div class="summary">在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用 HTML5 download Attribute。
+&lt;!-- will download as "expenses.pdf"</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2014-10-24
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2014-06-11
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/后端/" class="post-category" target="_blank">
-                                    后端
+                            <a href="/categories/网络/" class="post-category" target="_blank">
+                                    网络
                                 </a>
                             
                             
@@ -456,8 +445,16 @@ resources :photo do
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Rails/" target="_blank">
-                        <span class="chip bg-color">Rails</span>
+                    <a href="/tags/Ruby/" target="_blank">
+                        <span class="chip bg-color">Ruby</span>
+                    </a>
+                    
+                    <a href="/tags/HTTP/" target="_blank">
+                        <span class="chip bg-color">HTTP</span>
+                    </a>
+                    
+                    <a href="/tags/HTML5/" target="_blank">
+                        <span class="chip bg-color">HTML5</span>
                     </a>
                     
                 </div>
@@ -469,29 +466,31 @@ resources :photo do
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/mac-geng-xin-emacs/">
+                <a href="/css3-yuan-jiao-wu-xiao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Mac 更新 Emacs">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="CSS3 圆角无效">
                         
-                        <span class="card-title">Mac 更新 Emacs</span>
+                        <span class="card-title">CSS3 圆角无效</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">最近买了 hhkb 开始折腾 Emacs。
-Mac 自带 Emacs，但是版本比较老是 Emacs22，Emacs24 是现在最新的，有很多新功能，比如原生支持显示行数。
-升级参考 wikemacs.org: Installing Emac</div>
+                    <div class="summary">今天在做页面的时候遇到 CSS3 圆角无效的情况，实例代码: 
+&lt;style type="text/css">
+  .category-menu {
+    -webkit-border-radius: 14px;
+    -moz-</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2014-03-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2013-11-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/工具/" class="post-category" target="_blank">
-                                    工具
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                    前端
                                 </a>
                             
                             
@@ -501,8 +500,8 @@ Mac 自带 Emacs，但是版本比较老是 Emacs22，Emacs24 是现在最新的
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Emacs/" target="_blank">
-                        <span class="chip bg-color">Emacs</span>
+                    <a href="/tags/CSS3/" target="_blank">
+                        <span class="chip bg-color">CSS3</span>
                     </a>
                     
                 </div>

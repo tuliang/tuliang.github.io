@@ -222,6 +222,29 @@
     </entry>
     
     <entry>
+      <title>Mac 更新 Emacs</title>
+      <link href="/mac-geng-xin-emacs/"/>
+      <url>/mac-geng-xin-emacs/</url>
+      
+        <content type="html"><![CDATA[<p>最近买了 <code>hhkb</code> 开始折腾 <code>Emacs</code>。</p><p><code>Mac</code> 自带 <code>Emacs</code>，但是版本比较老是 <code>Emacs22</code>，<code>Emacs24</code> 是现在最新的，有很多新功能，比如原生支持显示行数。</p><p>升级参考 wikemacs.org: <a href="http://wikemacs.org/index.php/Installing_Emacs_on_OS_X" target="_blank" rel="noopener">Installing Emacs on OS X</a></p><p>使用 <code>brew</code> 安装 <code>emacs</code></p><pre class=" language-sh"><code class="language-sh">brew update  brew install emacs --cocoa  ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications  </code></pre><p>删除 <code>Mac</code> 原生的 <code>Emacs</code></p><pre class=" language-sh"><code class="language-sh">sudo rm /usr/bin/emacs  sudo rm -rf /usr/share/emacs  </code></pre><p>大功告成~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Emacs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>CSS3 圆角无效</title>
       <link href="/css3-yuan-jiao-wu-xiao/"/>
       <url>/css3-yuan-jiao-wu-xiao/</url>

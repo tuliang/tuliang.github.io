@@ -277,6 +277,33 @@
   </entry>
   
   <entry>
+    <title>Mac 更新 Emacs</title>
+    <link href="https://tuliang.org/mac-geng-xin-emacs/"/>
+    <id>https://tuliang.org/mac-geng-xin-emacs/</id>
+    <published>2014-03-17T13:55:11.000Z</published>
+    <updated>2018-11-02T13:57:31.200Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近买了 &lt;code&gt;hhkb&lt;/code&gt; 开始折腾 &lt;code&gt;Emacs&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Mac&lt;/code&gt; 自带 &lt;code&gt;Emacs&lt;/code&gt;，但是版本比较老是
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Emacs" scheme="https://tuliang.org/tags/Emacs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS3 圆角无效</title>
     <link href="https://tuliang.org/css3-yuan-jiao-wu-xiao/"/>
     <id>https://tuliang.org/css3-yuan-jiao-wu-xiao/</id>
@@ -542,35 +569,6 @@
         
           &lt;p&gt;装饰者模式 &lt;code&gt;Decorator Pattern&lt;/code&gt; ，动态地将责任附加到对象上。&lt;/p&gt;
 &lt;p&gt;若要扩展功能，装饰者提供了比继承更有弹性的替代方案。&lt;/p&gt;
-&lt;pre class=&quot; language-php&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
-    
-      <category term="设计模式" scheme="https://tuliang.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP 抽象工厂模式</title>
-    <link href="https://tuliang.org/php-chou-xiang-gong-han-mo-shi/"/>
-    <id>https://tuliang.org/php-chou-xiang-gong-han-mo-shi/</id>
-    <published>2012-08-18T09:08:30.000Z</published>
-    <updated>2018-10-31T15:24:01.013Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;抽象工厂模式 &lt;code&gt;Abstract Factory Pattern&lt;/code&gt;，提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。&lt;/p&gt;
 &lt;pre class=&quot; language-php&quot;&gt;&lt;code
         
       
