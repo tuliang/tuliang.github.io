@@ -281,7 +281,7 @@
     <link href="https://tuliang.org/mac-geng-xin-emacs/"/>
     <id>https://tuliang.org/mac-geng-xin-emacs/</id>
     <published>2014-03-17T13:55:11.000Z</published>
-    <updated>2018-11-02T13:57:31.200Z</updated>
+    <updated>2018-11-02T14:02:06.673Z</updated>
     
     <summary type="html">
     
@@ -413,6 +413,37 @@
   </entry>
   
   <entry>
+    <title>斯坦福-iPad 和 iPhone 应用开发(iOS5)</title>
+    <link href="https://tuliang.org/si-tan-fu-ipad-he-iphone-ying-yong-kai-fa-ios5/"/>
+    <id>https://tuliang.org/si-tan-fu-ipad-he-iphone-ying-yong-kai-fa-ios5/</id>
+    <published>2013-01-21T14:03:21.000Z</published>
+    <updated>2018-11-02T14:14:33.263Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;师介绍&lt;/p&gt;
+&lt;p&gt;讲师: Paul Hegarty&lt;/p&gt;
+&lt;p&gt;介绍: 斯坦福大学软件工程学教授，主要教授iOS应用的开发、编程。&lt;/p&gt;
+&lt;p&gt;课程介绍&lt;/p&gt;
+&lt;p&gt;最新更新课程，适用于 &lt;code&gt;iOS 5&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;本课程介绍了使用
+        
+      
+    
+    </summary>
+    
+      <category term="公开课" scheme="https://tuliang.org/categories/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+    
+      <category term="Objective-C" scheme="https://tuliang.org/tags/Objective-C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>解决 JavaScript 指向不明</title>
     <link href="https://tuliang.org/jie-jue-javascript-zhi-xiang-bu-ming/"/>
     <id>https://tuliang.org/jie-jue-javascript-zhi-xiang-bu-ming/</id>
@@ -540,36 +571,6 @@
           &lt;p&gt;简单工厂其实不是一个设计模式，反而比较像是一种编程习惯。&lt;/p&gt;
 &lt;p&gt;有些开发人员的确是把这个编程习惯误认为是工厂模式。&lt;/p&gt;
 &lt;pre class=&quot; language-php&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
-    
-      <category term="设计模式" scheme="https://tuliang.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP 装饰者模式</title>
-    <link href="https://tuliang.org/php-zhuang-shi-zhe-mo-shi/"/>
-    <id>https://tuliang.org/php-zhuang-shi-zhe-mo-shi/</id>
-    <published>2012-08-18T14:26:07.000Z</published>
-    <updated>2018-10-31T15:23:22.146Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;装饰者模式 &lt;code&gt;Decorator Pattern&lt;/code&gt; ，动态地将责任附加到对象上。&lt;/p&gt;
-&lt;p&gt;若要扩展功能，装饰者提供了比继承更有弹性的替代方案。&lt;/p&gt;
-&lt;pre class=&quot; language-php&quot;&gt;&lt;code
         
       
     
