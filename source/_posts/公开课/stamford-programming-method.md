@@ -1,5 +1,10 @@
-# 斯坦福《编程方法》
-
+---
+title: 斯坦福《编程方法》
+date: 2011-12-08 17:12:48
+categories: 公开课
+tags:
+  - Java
+---
 课程介绍: 
 
 「编程方法」本课程是最大的编程入门课程，也是斯坦福大学主要课程之一。介绍了当代程序设计基本思想: 面向对象，模块化，封装，抽象化与测试。《编程方法》将良好的编程思想连同广泛应用的Java语言一同讲授。着重教授良好的编程风格和Java语言的特色。这门同样课适合文科，主修社会科学的同学和编程爱好者学习观看。其实每年都有很多非工程系同学选修这门课。
@@ -380,10 +385,7 @@ public void run(){
 
 javadoc是java的文件材料系统（documentation system）。在注释中需要加上一个特殊标记使得javadoc系统理解。这个系统可以通过注释解释你的代码内容，同时生成html页面。这样别人在试图理解你的代码内容时，可以通过阅读这个html，而不需要通读你所写的代码。
 
-Java的acm库Javadoc学生版本
-
-<a href="http://jtf.acm.org/javadoc/student">http://jtf.acm.org/javadoc/student</a>
-
+[Java的acm库Javadoc学生版本](http://jtf.acm.org/javadoc/student)
 ---
 
 ### 第 10 课 私有变量的重要性

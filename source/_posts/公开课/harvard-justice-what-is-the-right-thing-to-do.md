@@ -1,5 +1,10 @@
-# 哈佛《公正: 该如何做是好？》
-
+---
+title: 哈佛《公正: 该如何做是好？》
+date: 2011-12-25 17:12:48
+categories: 公开课
+tags:
+  - 哲学
+---
 课程介绍: 
 
 这是关于道德与政治哲学的一个入门系列课程，主要是围绕哈佛大学迈克尔 • 桑德尔教授法学系列课程《公正: 该 如何做是好？》展开评议。
@@ -12,11 +17,11 @@
 
 课程主讲人: Michael J. Sandel 教授
 
-网站: <a href="http://www.justiceharvard.org" target="_blank">http://www.justiceharvard.org</a>
+网站: [http://www.justiceharvard.org](http://www.justiceharvard.org)
 
 内容介绍: 
 
-来自 <a href="http://www.hecaitou.com/blogs/hecaitou/archives/134359.aspx" target="_blank">和菜头</a> 的推荐: 
+来自 [和菜头](http://www.hecaitou.com/blogs/hecaitou/archives/134359.aspx) 的推荐: 
 
 强烈建议各位去观赏一下哈佛法学教授迈克尔 . 桑德尔的公开课《公正: 该如何做是好？》（ Justice: What's the Right Thing to Do?) 。我很清楚地知道，在《槽边往事》的读者中，学生们在学校里正在接受冗长的教育，公司人每年也会接受数量惊人的培训，甚至还有人正在自修。但是， 这里我还是建议你抽一点时间，接受这份额外的课外学习。
 
@@ -28,7 +33,7 @@
 
 3 、大家可以看到什么是真正的 “ 政治学 ” 。《公正: 该如何做是好？》是为法学院学生开设的课程，出发点是谈公正和正义，一共分为 12 堂课。如果你看 过第一堂课，你就会知道，在愚蠢的国内大学教育中，政治学被庸俗化和弱智化到了什么程度，以至于大家会觉得只有乏味已极且心存卑鄙之辈才应该学习，人文学 科也只是纸面上的功夫。通过迈克尔 . 桑德尔的讲授，你可以看到任意结论的导出，后面都有论证的严谨和思考的精深。明白《政治学》并非只是教材上看到的那 套阶级分析的蠢话，而是切实地关心我们的处境，我们的生活，并致力于实现真正的公正。单是看西方思想家的思辨过程，就已经足够性感。
 
-以下分课内容简介来自 <a href="http://article.yeeyan.org/view/100584/80057" target="_blank">译言网</a> ，由 <a href="http://space.yeeyan.org/u/100584" target="_blank">terrell</a> 网友翻译。特此致谢！
+以下分课内容简介来自 [译言网](http://article.yeeyan.org/view/100584/80057) ，由 [terrell](http://space.yeeyan.org/u/100584) 网友翻译。特此致谢！
 
 第 1 课 谋杀的道德侧面 / 同类相残案
 
