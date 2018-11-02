@@ -11,7 +11,7 @@ tags:
 
 升级参考 wikemacs.org: [Installing Emacs on OS X](http://wikemacs.org/index.php/Installing_Emacs_on_OS_X)
 
-使用 `brew` 安装 `emacs`
+使用 `brew` 安装 `Emacs`
 
 ```sh
 brew update  
