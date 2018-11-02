@@ -1,0 +1,801 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="麻省理工《计算机科学及编程导论》, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="课程介绍: 
+这门课程适用于那些拥有很少或没有编程经验的学生,它致力于使学生理解计算机在解决问题中的作用,并且帮助学生，不论其专业，使他们对于能够完成有用的小程序的目标充满信心。这门课程将使用Python语言进行教学。
+课程类型:  计算机">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>麻省理工《计算机科学及编程导论》 | 不做咸鱼的小明</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">不做咸鱼的小明</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/fund" class="waves-effect waves-light">
+            
+            <i class="fa fa-bar-chart"></i>
+            
+            <span>基金</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">不做咸鱼的小明</div>
+        <div class="logo-desc">
+            
+            We shall never surrender
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/fund" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bar-chart"></i>
+                
+                基金
+            </a>
+        </li>
+        
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        麻省理工《计算机科学及编程导论》
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/Python/" target="_blank">
+                    <span class="chip bg-color">Python</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/公开课/" class="post-category" target="_blank">
+                        公开课
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2012-02-03
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>课程介绍: </p>
+<p>这门课程适用于那些拥有很少或没有编程经验的学生,它致力于使学生理解计算机在解决问题中的作用,并且帮助学生，不论其专业，使他们对于能够完成有用的小程序的目标充满信心。这门课程将使用Python语言进行教学。</p>
+<p>课程类型:  计算机</p>
+<p>课程主讲人: Prof. Eric Grimson 教授 Prof. John Guttag 教授</p>
+<p>埃里克格里姆森是美国麻省理工学院计算机科学与工程系的教授，并在麻省理工学院的伯纳德持的戈登医学工程主席。 教授格里姆森在麻省理工学院曾担任教育科学部主任，电气工程和计算机副系主任。 自2005年以来，他一直担任计算机科学和电机工程学系的院长。 在1975年，他获得了里贾纳大数学 （高荣）和学物理学士， 1980年，麻省理工学院数学博士学位。 格里姆森教授是麻省理工学院计算机科学和人工智能实验室成员，他的集团已率先领域和许多其他国家的艺术系统和行为识别活动，对象和人识别，图像数据库索引，图像引导手术，现场模拟计算机视觉。 格里姆森教授协会是IEEE的资深会员，并在麻省理工学院获得了玻色教学卓越奖。</p>
+<p>第 1 课 课程简介及数据类型</p>
+<p>第 2 课 分支、条件和循环</p>
+<p>第 3 课 循环式程序样式</p>
+<p>第 4 课 函数抽象、递归简介</p>
+<p>第 5 课 浮点数和逐次近似</p>
+<p>第 6 课 二分法、牛顿法、列表简介</p>
+<p>第 7 课 列表和可变性、字典、效率简介</p>
+<p>第 8 课 算法复杂度: 对数、线性、二次、指数</p>
+<p>第 9 课 折半搜索、泡沫排序和选择排序</p>
+<p>第 10 课 归并排序、哈希函数、异常处理</p>
+<p>第 11 课 测试和调试</p>
+<p>第 12 课 调试、背包问题、动态规划简介</p>
+<p>第 13 课 动态规划: 重复子问题、最优子结构</p>
+<p>第 14 课 面向对象编程简介</p>
+<p>第 15 课 抽象数据类型、类、方法</p>
+<p>第 16 课 封装、继承、遮蔽</p>
+<p>第 17 课 计算模型: 随机游走模拟</p>
+<p>第 18 课 表示模拟结果、Pylab作图</p>
+<p>第 19 课 有偏随机游走、分布</p>
+<p>第 20 课 蒙特卡洛模拟、估算π</p>
+<p>第 21 课 验证模拟结果、曲线拟合、线性回归</p>
+<p>第 22 课 正态、均匀和指数分布</p>
+<p>第 23 课 股市模拟</p>
+<p>第 24 课 课程总回顾: 按计算机科学家那样思考</p>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><hr>
+<h3 id="第-1-课-课程简介及数据类型"><a href="#第-1-课-课程简介及数据类型" class="headerlink" title="第 1 课 课程简介及数据类型"></a>第 1 课 课程简介及数据类型</h3><p>没有一个问题的提出，是要命的。我们不会用他们来淘汰你们，而是用他们来帮助你们学习。</p>
+<p>我们不会发课件。事实证明学生在自己做笔记的时候学得更好，讽刺的是即使他们永远不看那些笔记。</p>
+<p>我们的目标都是为了帮助你像一个计算机科学家一样思考。换一种说法就是，我们想赋予你一种能力，以让你可以用计算机做你想做的任何事。我们希望每当你要面对一些技术问题的时候，你们的本能之一将会是: “我怎么才能编写一个代码来帮我解决这问题？”</p>
+<p>知识分为两种: 陈述性（declarative）的知识和程序性（imperative）的知识。 陈述性的知识用叙述事实来思考它，它维护了真相。它告诉你怎么才可能去检查一些事儿，但是它没有说怎样检查。而这就是程序性的知识。程序性的知识是对推论过程的描述。</p>
+<p>你在课堂上应该学会如何设计菜谱，如何构建菜谱，如何在Python语言的模式中设计东西，而不是一些细节问题。</p>
+<hr>
+<h3 id="第-2-课-分支、条件和循环"><a href="#第-2-课-分支、条件和循环" class="headerlink" title="第 2 课 分支、条件和循环"></a>第 2 课 分支、条件和循环</h3><p>无论我们创建一种多么复杂的数据结构，都是基于字符串，数字以及布尔类型。</p>
+<p>解释器实际上是机器内置的按照我们描述的规则，来推算出结果值并把值显示出来的一个东西。</p>
+<hr>
+<h3 id="第-3-课-循环式程序样式"><a href="#第-3-课-循环式程序样式" class="headerlink" title="第 3 课 循环式程序样式"></a>第 3 课 循环式程序样式</h3><p>流程图是一种代码结构视觉化的工具。因为它让我们看到了，循环在什么地方、那里初始化变量以及什么时候条件判断等等。它的意义在于，如果你开始按照流程图往下走，你就是将抽象的代码操作给视觉化和直观化，它能帮助构思代码结构以及理清你的思路。</p>
+<p>对于简单分支式程序，运行程序花费的总时间，受限于指令（instructions）的数目，毕竟每个指令最多执行一次。而其他程序，例如一个循环程序，它所花费的时间取决于循环的次数，即指令执行次数取决于循环是次数。</p>
+<p>模拟执行，指的是取一下简单值，过一遍，看看会怎么样。</p>
+<p>对于任何循环，有两点是必须检测的。必须保证程序能够终止并且必须保证结果是合理的。</p>
+<p>防御式编程（defensive programming）必须能够: 保证遍历了代码中所有分支；保证对每个分支，打印或返回的结果有意义；保证所有可能的输入数据都能对应一个分支，并且不会产生错误或无限循环。</p>
+<p>元组（tuple）指的是有序的元素列。它是不可变的（而数组则是可以改变的）。例子: </p>
+<pre class=" language-python"><code class="language-python">test <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<h3 id="第-4-课-函数抽象、递归简介"><a href="#第-4-课-函数抽象、递归简介" class="headerlink" title="第 4 课 函数抽象、递归简介"></a>第 4 课 函数抽象、递归简介</h3><p>到现在为止，我们学习了赋值语句、条件语句、输入/输出、循环结构以及各种数据类型。我们使用这些就可以称为图灵完全（Turing-complete），也就是说，有了这些以后，就可以写出任何程序了。</p>
+<p>农场中有一群猪和一群鸡，有一天农场主看到有x个头和y个脚，求该农场有多少头猪和多少只鸡: </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">solve</span><span class="token punctuation">(</span>numLegs<span class="token punctuation">,</span> numHeads<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">for</span> numChicks <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> numbeads <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    numPigs <span class="token operator">=</span> numHeads <span class="token operator">-</span> numChicks
+    totLegs <span class="token operator">=</span> <span class="token number">4</span><span class="token operator">*</span>numPigs <span class="token operator">+</span> <span class="token number">2</span><span class="token operator">*</span>numChicks
+    <span class="token keyword">if</span> totLegs <span class="token operator">==</span> numLegs
+      <span class="token keyword">return</span> <span class="token punctuation">[</span>numPigs<span class="token punctuation">,</span> numChicks<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>None<span class="token punctuation">,</span> None<span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">barnYard</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  heads <span class="token operator">=</span> int<span class="token punctuation">(</span>raw_input<span class="token punctuation">(</span><span class="token string">'Enter number of heads: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  legs <span class="token operator">=</span>  int<span class="token punctuation">(</span>raw_input<span class="token punctuation">(</span><span class="token string">'Enter number of legs: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  pigs<span class="token punctuation">,</span> chickens <span class="token operator">=</span> solve<span class="token punctuation">(</span>legs<span class="token punctuation">,</span> heads<span class="token punctuation">)</span>
+  <span class="token keyword">if</span> pigs <span class="token operator">==</span> None<span class="token punctuation">:</span>
+    <span class="token keyword">print</span> <span class="token string">'There is no solution'</span>
+  <span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span> <span class="token string">'Number of pigs:'</span><span class="token punctuation">.</span>pigs
+    <span class="token keyword">print</span> <span class="token string">'Number of chickens:'</span><span class="token punctuation">.</span>chickens
+</code></pre>
+<p>递归: 只要基础情况正确，递归步骤正确，就能将问题简化为更简单的相同问题，最终代码收敛并给出答案。<br>斐波那契（Fibonacci）数列，给出两个数，后面产生的数都是在自己之前的两个数的和，即<code>x_3 = x_1 + x_2, x_4 = x_2 + x_3 ...</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">fib</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">or</span> x <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">1</span>
+  <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token keyword">return</span> fib<span class="token punctuation">(</span>x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> fib<span class="token punctuation">(</span>x <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<h3 id="第-5-课-浮点数和逐次近似"><a href="#第-5-课-浮点数和逐次近似" class="headerlink" title="第 5 课 浮点数和逐次近似"></a>第 5 课 浮点数和逐次近似</h3><p>Python与其他语言不同，它有一种“任意精度整数”。也就是说，你想让它有多大，它就能有多大（小数则不行，最多精确到17位）。例如2的1000次方: </p>
+<pre class=" language-python"><code class="language-python"><span class="token number">2</span> <span class="token operator">**</span> <span class="token number">1000</span>
+</code></pre>
+<p>二分法的基本思路: 所有可能的答案构成一个线性排列的空间。若在某处取猜想值，如果答案不正确，我将能够知道正确答案在在猜想值的左侧还是右侧。某种意义上，递归也是这种思路，通过每一步减小问题规模来解决问题。</p>
+<hr>
+<h3 id="第-6-课-二分法、牛顿法、列表简介"><a href="#第-6-课-二分法、牛顿法、列表简介" class="headerlink" title="第 6 课 二分法、牛顿法、列表简介"></a>第 6 课 二分法、牛顿法、列表简介</h3><p>回归测试（regression testing），这个测试就是为了保证来重复检测整个程序是否运行良好。</p>
+<p>收敛速度（speed of convergence）</p>
+<p>牛顿法，先设定一个初始猜测值guess，然后求得该值对应函数的切点斜率。在绝大多数情况下，不是所有的情况，切线在解的附近，是曲线很好的近似。因此，切线在X轴上的截距会比先前更接近正确的解。如果初始guess是最下面这一点，即guess=0，切线与X轴平行并没有相交，后面自然做不下去了。这种情况是数值计算程序中最需要关注的。相对于二分法，牛顿法的效率要高很多。</p>
+<p>计算机的答案不一定正确，毕竟在计算机中终归都是人写的程序。保持疑问是个好习惯。</p>
+<p>列表和字符串有两处不同: 一是它可变，二是其值不一定要由字符组成。</p>
+<hr>
+<h3 id="第-7-课-列表和可变性、字典、效率简介"><a href="#第-7-课-列表和可变性、字典、效率简介" class="headerlink" title="第 7 课 列表和可变性、字典、效率简介"></a>第 7 课 列表和可变性、字典、效率简介</h3><p>除了拼写单词，永远不要使用小写的l，你很难将它和数字1分别开。</p>
+<p>在一般情况下: </p>
+<pre class=" language-python"><code class="language-python">a<span class="token operator">=</span><span class="token number">1</span>
+b<span class="token operator">=</span>a
+a<span class="token operator">=</span><span class="token number">2</span>
+</code></pre>
+<p>最后结果是<code>a=2，b=1</code>。而在列表中赋值是通过不同路径指向同一对象，并不是像上面的a指向了一个新的2，列表会把之前的1修改为2。</p>
+<p>同列表一样，字典类型也是可变的。也具有多样性，但与列表不同的是字典的元素没有顺序。 另外，它包含一般化的索引。列表和字符串只能通过整数获取其元素，而字典里的任意元素都可以考虑为一对键和值，其中键用作索引（字典类型运用到了哈希表（Hash table）技术，其实就是PHP中的数组）。</p>
+<p>效率显然是编写代码需要重点考虑的内容，我们经常首先关注的是代码功能的实现，然后再来找更高效的实现方法。</p>
+<hr>
+<h3 id="第-8-课-算法复杂度-对数、线性、二次、指数"><a href="#第-8-课-算法复杂度-对数、线性、二次、指数" class="headerlink" title="第 8 课 算法复杂度: 对数、线性、二次、指数"></a>第 8 课 算法复杂度: 对数、线性、二次、指数</h3><p>如果你想成为一个好的设计师（designer）就要学会用已学知识处理未知问题。碰到新问题时，你应该想想它和什么最像？以及哪类算法可以应用到这类问题上，然后从这些可能有用的算法中选用什么算法最为合适？</p>
+<p>我们主要关注问题规模变大造成的增长率。</p>
+<p>大O符号,它表示增长的上界，随着输入规模增加，函数增长的上界。</p>
+<p>在各种算法中复杂度分为对数 &lt; 线性 &lt; 二次 &lt; 指数，对数是每次将问题分解成一个小问题（除法），线性是每次将问题减少常数次（加减法），二次是每次将问题增加（乘法） ，线性是每次将问题进行指数性的增加（指数）</p>
+<hr>
+<h3 id="第-9-课-折半搜索、冒泡排序和选择排序"><a href="#第-9-课-折半搜索、冒泡排序和选择排序" class="headerlink" title="第 9 课 折半搜索、冒泡排序和选择排序"></a>第 9 课 折半搜索、冒泡排序和选择排序</h3><p>折半搜索的前提是有一个有序列表<br>一、取中点<br>二、判别中点是否为要找的结果<br>三、如果不是，将问题减半，然后重复<br>本质上，这个模板体现了对数算法（分治算法）</p>
+<p>选择排序又名为单元排序，每一趟从待排序的数据元素中选出最小（或最大）的一个元素，顺序放在已排好序的数列的最后，直到全部待排序的数据元素排完。</p>
+<p>冒泡排序，依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟: 首先比较第1个和第2个数，将小数放前，大数放后。然后比较第2个数和第3个数，将小数放前，大数放后，如此继续，直至比较最后两个数，将小 数放前，大数放后。至此第一趟结束，将最大的数放到了最后。在第二趟: 仍从第一对数开始比较（因为可能由于第2个数和第3个数的交换，使得第1个数不再小 于第2个数），将小数放前，大数放后，一直比较到倒数第二个数（倒数第一的位置上已经是最大的），第二趟结束，在倒数第二的位置上得到一个新的最大数（其 实在整个数列中是第二大的数）。如此下去，重复以上过程，直至最终完成排序。由于在排序过程中总是小数往前放，大数往后放，相当于气泡往上升，所以称作冒泡排序。</p>
+<hr>
+<h3 id="第-10-课-归并排序、哈希函数、异常处理"><a href="#第-10-课-归并排序、哈希函数、异常处理" class="headerlink" title="第 10 课 归并排序、哈希函数、异常处理"></a>第 10 课 归并排序、哈希函数、异常处理</h3><p>归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。</p>
+<p>分治算法如果只是一个劲地分，而不考虑合的复杂性，也许会得不偿失。所以真正好的分治算法，不仅分起来简单，合起来也需要不太复杂。</p>
+<p>有一种搜索算法它甚至比折半搜索还好，它就是哈希（hash或译作“散列”）</p>
+<p>在计算机科学中很多情况下，效率可以通过牺牲空间取得。</p>
+<hr>
+<h3 id="第-11-课-测试和调试"><a href="#第-11-课-测试和调试" class="headerlink" title="第 11 课 测试和调试"></a>第 11 课 测试和调试</h3><p>单元测试，单独确认程序每段代码。<br>集成测试，将整个程序集成后，看是否运行正确。</p>
+<p>首先研究既有数据，你需要用一种怀疑的眼光来看问题。然后形成一种假设，让它与所有数据一致。从而设计并开始一个可重复的实验。</p>
+<hr>
+<h3 id="第-12-课-调试、背包问题、动态规划简介"><a href="#第-12-课-调试、背包问题、动态规划简介" class="headerlink" title="第 12 课 调试、背包问题、动态规划简介"></a>第 12 课 调试、背包问题、动态规划简介</h3><p>大体上说，最优化问题（optimization problem）都差不多。包括两部分，一些你想获得最大或最小值的函数，还必须符合一些约束条件。典型的最优化问题，其中一个最著名的是最短路径问题。另一类的最优化问题是旅行商问题（traveling salesman problem）。装箱问题（bin packing），用大小不同形状不同的东西填装容器。 序列比问题（sequence alignment），例如DNA序列，RNA序列。还有一个最优化问题，背包问题（knapsack problem）。</p>
+<p>背包问题具体来说是，你有一堆东西，东西比较多背包放不下，你需要选择带什么，留下什么。你需要在背包能带东西有限的情况下，最大化你所带东西的价值。</p>
+<p>在贪婪算法中，需要在每一步最大化你的值。不用提前计划，做好当前的事情就好。就像是有些人吃东西时先吃甜点，这样能够保证在吃饱前吃到最好的东西。</p>
+<p>局部的最优化并不能保证全局的最优化。所以，你不能重复的进行局部优化，期望得到全局的最优。</p>
+<p>动态规划（dynamic programming），不要在这个名字上花费精力。这个方法由数学家贝尔曼发明，国防部曾经让他帮忙做一些工作，他不想让他们知道他在做什么，所以他编造了一个与此毫不相关的名字。不幸的是，我们一直沿用至今。所以不要认为，它特指任何动态的东西。它能解决很多表面上是指数增长的问题，关键有两点，一是找到重叠子问题，二是所谓最优子结构。</p>
+<hr>
+<h3 id="第-13-课-动态规划-重复子问题、最优子结构"><a href="#第-13-课-动态规划-重复子问题、最优子结构" class="headerlink" title="第 13 课 动态规划: 重复子问题、最优子结构"></a>第 13 课 动态规划: 重复子问题、最优子结构</h3><p>斐波那契数列</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">global</span> numCalls
+  numCalls <span class="token operator">+=</span><span class="token number">1</span>
+  <span class="token comment" spellcheck="true">#print 'fib调用', n</span>
+  <span class="token keyword">if</span> n<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">1</span>
+  <span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> fib<span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token operator">+</span>fib<span class="token punctuation">(</span>n<span class="token number">-2</span><span class="token punctuation">)</span>
+numCalls <span class="token operator">=</span> <span class="token number">0</span>
+n <span class="token operator">=</span> <span class="token number">6</span>
+res <span class="token operator">=</span> fib<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token string">'fib_'</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> <span class="token string">'='</span><span class="token punctuation">,</span> res<span class="token punctuation">,</span> <span class="token string">'调用次数为'</span><span class="token punctuation">,</span> numCalls
+
+<span class="token keyword">def</span> <span class="token function">fastFib</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> memo<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">global</span> numCalls
+  numCalls <span class="token operator">+=</span><span class="token number">1</span>
+  <span class="token comment" spellcheck="true">#print 'fib1调用', n</span>
+  <span class="token keyword">if</span> <span class="token operator">not</span> n <span class="token keyword">in</span> memo<span class="token punctuation">:</span>
+    memo<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">=</span>fastFib<span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">,</span> memo<span class="token punctuation">)</span> <span class="token operator">+</span> fastFib<span class="token punctuation">(</span>n<span class="token number">-2</span><span class="token punctuation">,</span> memo<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> memo<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">fib1</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  memo <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">}</span>
+  <span class="token keyword">return</span> fastFib<span class="token punctuation">(</span>n<span class="token punctuation">,</span> memo<span class="token punctuation">)</span>
+
+numCalls <span class="token operator">=</span> <span class="token number">0</span>
+n <span class="token operator">=</span> <span class="token number">6</span>
+res <span class="token operator">=</span> fib1<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token string">'fib_'</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span> <span class="token string">'='</span><span class="token punctuation">,</span> res<span class="token punctuation">,</span> <span class="token string">'调用次数为'</span><span class="token punctuation">,</span> numCalls
+</code></pre>
+<p>我们看到加上memo这个缓存后，算法的复杂度减少了不少，根本原因就是我们找到重叠子问题，并且将结果缓存起来，避免重复计算。整个算法的的核心就是: </p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#如果memo中不存在斐波那契数列的第n个数</span>
+<span class="token comment" spellcheck="true">#则计算该数</span>
+<span class="token keyword">if</span> <span class="token operator">not</span> n <span class="token keyword">in</span> memo<span class="token punctuation">:</span>
+  memo<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">=</span>fastFib<span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">,</span> memo<span class="token punctuation">)</span> <span class="token operator">+</span> fastFib<span class="token punctuation">(</span>n<span class="token number">-2</span><span class="token punctuation">,</span> memo<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#如果存在就直接返回该数</span>
+<span class="token keyword">return</span> memo<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+</code></pre>
+<p>把之前解决了的问题作为数据储存起来。依赖表查找查询之前数据，而缓存法是一种特殊情况。表查找是一种常见的方式，当你解决复杂的问题时，保存答案然后供以后使用。看到算法刚开始时间复杂度是1700万，增加缓存后变为1800，是相当令人震惊的。缓存这种方法其实就是我们常说的空间换时间。</p>
+<hr>
+<h3 id="第-14-课-面向对象编程简介"><a href="#第-14-课-面向对象编程简介" class="headerlink" title="第 14 课 面向对象编程简介"></a>第 14 课 面向对象编程简介</h3><p>对象表示一系列的数据和函数。这里关键的思想在于将数据和处理数据的函数当作一体。这样的好处在于把对象传给程序其他部分时，那部分程序也有能力处理这个对象。这种数据及相应处理函数的组合是面向对象编程的本质。</p>
+<hr>
+<h3 id="第-15-课-抽象数据类型、类、方法"><a href="#第-15-课-抽象数据类型、类、方法" class="headerlink" title="第 15 课 抽象数据类型、类、方法"></a>第 15 课 抽象数据类型、类、方法</h3><p>可以将类考虑为创造对象实例的模板。</p>
+<p>Python中的<code>self</code>关键字是其他语言中的<code>this</code>关键字。</p>
+<p>数据隐藏是只能通过定义的方法，来访问实例值。很遗憾，Python没有强制数据隐藏。</p>
+<hr>
+<h3 id="第-16-课-封装、继承、遮蔽"><a href="#第-16-课-封装、继承、遮蔽" class="headerlink" title="第 16 课 封装、继承、遮蔽"></a>第 16 课 封装、继承、遮蔽</h3><p>Python中的<code>__init__</code>是其他语言中的构造函数。</p>
+<p>映射也常常称为重载。</p>
+<hr>
+<h3 id="第-17-课-计算模型-随机游走模拟"><a href="#第-17-课-计算模型-随机游走模拟" class="headerlink" title="第 17 课 计算模型: 随机游走模拟"></a>第 17 课 计算模型: 随机游走模拟</h3><p>从一个不太正式的问题描述去得到一个更加正式的问题。从某种程度上来说，就是我们如何来进行问题优化的。</p>
+<p>创造计算模型。我们几乎写的每个有意义的程序在某种意义上来说都是对真实世界的建模。如果我们要写一个帮助我们决定买还是卖股票的程序，在某种意义上就是在尝试对股票市场进行建模。</p>
+<hr>
+<h3 id="第-18-课-表示模拟结果、Pylab作图"><a href="#第-18-课-表示模拟结果、Pylab作图" class="headerlink" title="第 18 课 表示模拟结果、Pylab作图"></a>第 18 课 表示模拟结果、Pylab作图</h3><p>学会问自己答案是不是合理。是不是违反直觉？是不是和事实相符？</p>
+<hr>
+<h3 id="第-19-课-有偏随机游走、分布"><a href="#第-19-课-有偏随机游走、分布" class="headerlink" title="第 19 课 有偏随机游走、分布"></a>第 19 课 有偏随机游走、分布</h3><p>好设计的关键: 将你程序的各个部分进行独立决策，当你遇到什么不可避免的事情时，你就可以加强代码，或者你发现什么错误时，你所需要的改变都是有限的。（PS: 我们使用的面向对象的那些策略和各种设计模式大多原理中就包含了这个。）</p>
+<hr>
+<h3 id="第-20-课-蒙特卡洛模拟、估算π"><a href="#第-20-课-蒙特卡洛模拟、估算π" class="headerlink" title="第 20 课 蒙特卡洛模拟、估算π"></a>第 20 课 蒙特卡洛模拟、估算π</h3><p>随机模拟程序会有一些有趣的问题，我们要运行多少次才能相信答案是正确的呢？</p>
+<p>蒙特卡洛(Monte Carlo)模拟，某种程度上是演绎统计学的应用。一个随机选择的样例，一般能够体现出它所在分类的一些性质。</p>
+<hr>
+<h3 id="第-21-课-验证模拟结果、曲线拟合、线性回归"><a href="#第-21-课-验证模拟结果、曲线拟合、线性回归" class="headerlink" title="第 21 课 验证模拟结果、曲线拟合、线性回归"></a>第 21 课 验证模拟结果、曲线拟合、线性回归</h3><p>通过取样我们不可能得到完美的精确度，除非你取样是整个群体。无论你取多少样本，除非你判断每个元素，否则你是不可能确定这个样本集合是典型的。没办法确定是否选择了一个不公正的样本，除非查看了整个群体。所以我们不可能知道我们的预测是否正确。</p>
+<p>一个答案是统计可靠地，但并不代表它就是正确答案。这是因为它的一些影响判断的基础假设是错误的。这个时候我们就需要去通过和物理事实相比检查答案的正确性。</p>
+<p>大多数情况都能靠某个模型来解释，而有一些情况不能解释。在那些不能解释的情况中往往是<strong>潜在变量（lurking variable）</strong>在影响结果。当你在建立模型的时候需要去寻找这些潜在变量，在寻找潜在变量时你要小心<strong>过度拟合</strong>。</p>
+<hr>
+<h3 id="第-22-课-正态、均匀和指数分布"><a href="#第-22-课-正态、均匀和指数分布" class="headerlink" title="第 22 课 正态、均匀和指数分布"></a>第 22 课 正态、均匀和指数分布</h3><p>数据滥用</p>
+<ul>
+<li>注意是谁给你的数据，而不是数据本身。</li>
+<li>共存即原因。它的意思是关联性，并不代表因果性 ，你需要寻找潜在变量（lurking variable） 。（即因果关系过度单纯化 ）</li>
+<li>非响应性倾向（non-response bias）。实际上它就是无代表意义的样本。</li>
+<li>数据提升（data enhancement）。它的意思是在数据中读出来超过它原有意义的东西。（即过分解读）</li>
+</ul>
+<hr>
+<h3 id="第-23-课-股市模拟"><a href="#第-23-课-股市模拟" class="headerlink" title="第 23 课 股市模拟"></a>第 23 课 股市模拟</h3><p>泊松（Poisson），人们常常用泊松过程来对事物进行建模，也就是说过去行为的过程，对未来的行为是没有影响的，也就是说它是无记忆性的。</p>
+<hr>
+<h3 id="第-24-课-课程总回顾-按计算机科学家那样思考"><a href="#第-24-课-课程总回顾-按计算机科学家那样思考" class="headerlink" title="第 24 课 课程总回顾: 按计算机科学家那样思考"></a>第 24 课 课程总回顾: 按计算机科学家那样思考</h3><p>首先理解这个问题，然后想一想解决方案的整体架构，然后不考虑怎么实现的前提下去考虑算法。这是个和用Python还是Java或者C++无关的决定。事实上，把一个拥有良好的架构的程序，从一种编程语言转为另外一种是很容易的。</p>
+
+            </div>
+            <hr>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://tuliang.org/ma-sheng-li-gong-ji-suan-ji-ke-xue-ji-bian-cheng-dao-lun/';
+        this.page.identifier = '/ma-sheng-li-gong-ji-suan-ji-ke-xue-ji-bian-cheng-dao-lun/';
+        this.page.title = '麻省理工《计算机科学及编程导论》';
+    };
+    let disqus_shortname = 'tuliang';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/php-chou-xiang-gong-han-mo-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="PHP 抽象工厂模式">
+                        
+                        <span class="card-title">PHP 抽象工厂模式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">抽象工厂模式 Abstract Factory Pattern，提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。
+&lt;?php
+//定义比萨商店
+abstract class PizzaStore{
+
+  publi</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2012-08-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/PHP/" target="_blank">
+                        <span class="chip bg-color">PHP</span>
+                    </a>
+                    
+                    <a href="/tags/设计模式/" target="_blank">
+                        <span class="chip bg-color">设计模式</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/ha-fo-gong-zheng-gai-ru-he-zuo-shi-hao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="哈佛-公正-该如何做是好">
+                        
+                        <span class="card-title">哈佛-公正-该如何做是好</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">课程介绍: 
+这是关于道德与政治哲学的一个入门系列课程，主要是围绕哈佛大学迈克尔 • 桑德尔教授法学系列课程《公正: 该 如何做是好？》展开评议。
+本课程共 12 部分，旨在引导观众一起评判性思考关于公正、平等、民主与公民权利的一些基本问题</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2011-12-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/公开课/" class="post-category" target="_blank">
+                                    公开课
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/哲学/" target="_blank">
+                        <span class="chip bg-color">哲学</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://github.com/tuliang/" target="_blank">涂亮</a> 基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
