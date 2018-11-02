@@ -378,15 +378,15 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
-<p><img src="/images/2013/11/QQ20131107-1.png">  </p>
+<p><img src="/images/2013/QQ20131107-1.png">  </p>
 <p>你会发现圆角居然没有出现！让我们加上边框看看发生了什么: </p>
 <pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.category-menu</span> </span><span class="token punctuation">{</span>
   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">3</span>px solid <span class="token hexcode">#BADA55</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p><img src="/images/2013/11/QQ20131107-2.png"></p>
+<p><img src="/images/2013/QQ20131107-2.png"></p>
 <p>仔细观察可以发现，圆角被类为category的div所设置背景挡住了。将 <code>background: #fff;</code> 注释，我们看到了圆角</p>
-<p><img src="/images/2013/11/QQ20131107-3.png"></p>
+<p><img src="/images/2013/QQ20131107-3.png"></p>
 <p>从此可以得出结论，<code>CSS3</code> 的圆角会被子元素的背景遮挡，从而产生圆角无效的假象。</p>
 <p>问题找到了，但是如果要求鼠标移上类为<code>category</code> 的 <code>div</code> 时，相应的 <code>div</code> 背景变色，那怎么办呢？</p>
 <p>天无绝人之路，只要给第一个设置左上和右上圆角，最后一个 <code>div</code> 设置左下和右下圆角，就可以完美解决这个问题了。</p>
