@@ -561,4 +561,31 @@
     
   </entry>
   
+  <entry>
+    <title>斯坦福《编程方法》</title>
+    <link href="https://tuliang.org/si-tan-fu-bian-cheng-fang-fa/"/>
+    <id>https://tuliang.org/si-tan-fu-bian-cheng-fang-fa/</id>
+    <published>2011-12-08T09:12:48.000Z</published>
+    <updated>2018-11-02T12:55:17.947Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;课程介绍: &lt;/p&gt;
+&lt;p&gt;「编程方法」本课程是最大的编程入门课程，也是斯坦福大学主要课程之一。介绍了当代程序设计基本思想:
+        
+      
+    
+    </summary>
+    
+      <category term="公开课" scheme="https://tuliang.org/categories/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+    
+      <category term="Java" scheme="https://tuliang.org/tags/Java/"/>
+    
+  </entry>
+  
 </feed>

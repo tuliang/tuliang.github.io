@@ -1,0 +1,905 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="斯坦福《编程方法》, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="课程介绍: 
+「编程方法」本课程是最大的编程入门课程，也是斯坦福大学主要课程之一。介绍了当代程序设计基本思想: 面向对象，模块化，封装，抽象化与测试。《编程方法》将良好的编程思想连同广泛应用的Java语言一同讲授。着重教授良好的编程风格和J">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>斯坦福《编程方法》 | 不做咸鱼的小明</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">不做咸鱼的小明</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/fund" class="waves-effect waves-light">
+            
+            <i class="fa fa-bar-chart"></i>
+            
+            <span>基金</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">不做咸鱼的小明</div>
+        <div class="logo-desc">
+            
+            We shall never surrender
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/fund" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bar-chart"></i>
+                
+                基金
+            </a>
+        </li>
+        
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        斯坦福《编程方法》
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/Java/" target="_blank">
+                    <span class="chip bg-color">Java</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/公开课/" class="post-category" target="_blank">
+                        公开课
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2011-12-08
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>课程介绍: </p>
+<p>「编程方法」本课程是最大的编程入门课程，也是斯坦福大学主要课程之一。介绍了当代程序设计基本思想: 面向对象，模块化，封装，抽象化与测试。《编程方法》将良好的编程思想连同广泛应用的Java语言一同讲授。着重教授良好的编程风格和Java语言的特色。这门同样课适合文科，主修社会科学的同学和编程爱好者学习观看。其实每年都有很多非工程系同学选修这门课。</p>
+<p>基本要求: 本课程不要求具备编程基础，但要求多下功夫！</p>
+<p>课程类型: 计算机</p>
+<p>课程主讲人: Mehran Sahami教授</p>
+<p>Mehran Sahami刚加入斯坦福大学计算机系时任副教授，本科教育附主任和教务处主任三职。2001年至2006年，任斯坦福大学计算机系讲师。2002至 2007年，任谷歌公司的高级研究员，目前依然是研究团队的顾问。Mehran Sahami的研究方向主要有计算机科学教育，机器学习和网络信息挖掘。 在此之前，Mehran Sahami是Epiphany公司的高级工程经理。去Epiphany工作前，他在斯坦福大学的计算机系拿到了博士学位。他曾今也是斯坦福大学的本科 生，一直深爱着这方土地，至今不愿离去。工作之余，喜欢跟家人团聚，喜欢弹吉他，喜欢户外旅行，还喜欢睡觉（虽然最近睡的越来越少）。</p>
+<p>课程简介: </p>
+<p>第 1 课 课程简介</p>
+<p>欢迎来到CS106A，授课人员，为什么称之为编程方法？，你真的适合学习这门课程吗？课程常规，作业与评分，课外拓展，期中期末考试，成绩评定细则，行为准则，为何要从Karel学起？</p>
+<p>第 2 课 欢迎来到 Karel 的世界</p>
+<p>讲义相关，注册讨论小组，Karel基本命令，算法与程序孰轻孰重，Karel程序语法，运行一个Karel程序，创建函数的方法，超级Karel，For循环，While循环，Karel条件语句，If条件语句，综述。</p>
+<p>第 3 课 Karel 与 Java</p>
+<p>Karel 与Java，常见的错误，注释，前提条件和后续条件，分解，例程序DoubleBeeper，养成良好编程习惯重要性，正确的分解，例程序CleanUpKarel。</p>
+<p>第 4 课 计算科学发展史</p>
+<p>计算机科学与程序设计的千丝万缕，电脑懂什么，编译过程，Java-面向对象的程序设计语言，继承，类，acm.program层次结构，第一个Java程序，例程序ConsoleProgram，图形化界面，例程序Sending-Messages-to-a-GLabel。</p>
+<p>第 5 课 变量</p>
+<p>变量的数据类型，调用变量相关语法，类的类型，对象变量，调用类成员函数的方法，图形坐标，对类GObject以及其子类的操作，描画几何对象，例程序FunGraphics，表达式与操作符。</p>
+<p>第 6 课 操作符</p>
+<p>readInt() 和 readDouble()函数，整形与浮点数的除法运算操作符，操作符优先级，类型转换，常量，布尔数据类型，值的比较，布尔表达式，短路求值，语句块，变量的作用域，if套嵌，switch语句，for循环语句，while循环语句。</p>
+<p>第 7 课 循环与“一半”问题</p>
+<p>For循环与While循环的对比，例程序CheckerBoad，在Java中创建函数，创建函数举例，FactorialExample程序，用函数返回对象。</p>
+<p>第 8 课 信息隐藏</p>
+<p>Void函数类型，在函数间传递参数，函数的缺陷，类的使用，整体变量与局部变量，例程序RandomGenerator，例程序RollDice，setseed()函数。</p>
+<p>第 9 课 字符串</p>
+<p>写一个类，公有和私有的区别，构造函数，this关键词，类的使用，对象的调用需要使用引用方式，将类作为变量，Javadoc技术，例程序Student。</p>
+<p>第 10 课 私有变量的重要性</p>
+<p>扩展Student类，函数重写，acm.graphics程序包，GCanvas，GObjects中的常用函数，其中的接口与函数，BouncingBall例程序，GLable类中的几何学，GArc类。</p>
+<p>第 11 课 Gimage类</p>
+<p>GPolygon类，GCompound类，事件驱动程序，例程序ClickForFace，响应鼠标操作，响应键盘操作，例程序UFO。</p>
+<p>第 12 课 枚举</p>
+<p>字符，Unicode标准下的ASCII码，字符的读取，字符中的数学，基本类型char，字符对象，字符串及其操作。</p>
+<p>第 13 课 对字符串的处理</p>
+<p>编译器，加密。</p>
+<p>第 14 课 内存</p>
+<p>存放不同变量的内存区块，内存分配机制，对指针的看法，指针趣味小视频。</p>
+<p>第 15 课 指针要点回顾</p>
+<p>为什么要通过引用方式调用类，将封装类作为基本数据类型，文件，打开、读取、关闭文件的函数，异常状况，文件写操作函数。</p>
+<p>第 16 课 数组</p>
+<p>创建数组，++操作符，数组的真实长度与有效长度，将数组作为参数，初始化数组，数组列表。</p>
+<p>第 17 课 多维数组</p>
+<p>类模版，ArrayList类中的函数，使用ArrayList类的例程序，Glable数组列表例程序，例程序GrayImage。</p>
+<p>第 18 课 多维数组收尾</p>
+<p>数组列表方式，数组列表与数组的优劣分析，调试，程序调试的方法，Eclipse中的调试器。</p>
+<p>第 19 课 接口</p>
+<p>如何使用接口，映射，HashMap类，HashMap中的函数，中继器，HashMap例程序。</p>
+<p>第 20 课 图形用户界面</p>
+<p>Java程序中的Interactor，Swing Interactor层次结构，窗口区域，创建Interactor，例程序，探索更多Interactor，例程序InteractorDrawFace。</p>
+<p>第 21 课 Interactor与Listener回顾</p>
+<p>例程序，例程序中应用的两种方法——使用getSouce或getActionCommand函数，例程序TextField，布局设计，温度换算例程序，例程序TextAndGraphics。</p>
+<p>第 22 课 NameSurfer概述</p>
+<p>组件与容器，容器的监听器，设计可扩展程序，ComponentListener接口，例程序MusicShop，例程序MusicShopDisplay。</p>
+<p>第 23 课 搜索，排序与算法效率分析</p>
+<p>课程材料介绍——搜索，排序及其算法效率分析，搜索，线性搜索，线性搜索的效率分析，二分法搜索，二分法搜索的效率分析，排序，选择排序算法，选择排序效率分析，基数排序算法。</p>
+<p>第 24 课 管理大型数据中的良好软件工程原理</p>
+<p>设计思想，数据搜集层次结构，数据搜集实用函数，例程序: 在线音乐商店FlyTunes,定义歌曲类，定义专辑类，鉴证程序运行，对所需数据结构的思考，数据的重复利用，浅拷贝与深拷贝。</p>
+<p>第 25 课 设计实用社交网络</p>
+<p>思考程序所需功能，分离现象的六种程度，并行性，一个线程，运行接口，创建一个线程，例程序，在线程间共享数据。</p>
+<p>第 26 课 介绍Java标准库</p>
+<p>JAR文件介绍，创建JAR文件，创建applet小程序，脱离ACM运行库创建标准Java程序，其他——深入学习Java。</p>
+<p>第 27 课 CS106A后续课程介绍</p>
+<p>计算机专业简介，其他专业出路。</p>
+<p>第 28 课 宣布图形比赛结果</p>
+<p>期末复习，例题1，例题2，课程总结。</p>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><h3 id="第-1-课-课程简介"><a href="#第-1-课-课程简介" class="headerlink" title="第 1 课 课程简介"></a>第 1 课 课程简介</h3><p>为什么这门课叫《编程方法》，为什么不叫做《Java程序设计》？原因在于《编程方法》教授的是良好的软件工程思想，这比单纯的编程范围大得多。有些人找一本教科书，觉得看看书就能学会如何编程。其实，学会的可能只是语言结构，但只是学会语言结构远远不够。学习软件系统，开发中实用的软件工程思想才是重中之重，这正是本门课程要教授的内容。</p>
+<p>想做编程高手，也需要掌握一种语言，无论是 Java，C，还是 C++ 等。但如果只懂得语言，并不能成为优秀的软件工程师，也不会清楚编写好软件需要的思想。除了教授语言之外本门课程将着重讲解良好的编程思想，这才是重中之重。一些坏习惯比零基础更坏。</p>
+<p>课程网站: <a href="http://www.stanford.edu/class/cs106a" target="_blank">www.stanford.edu/class/cs106a</a></p>
+<p>教科书: </p>
+<ul>
+<li>课程导论: 《卡雷尔机器人学Java》Karel the Robot Learns Java</li>
+<li>课本: 《Java语言的科学与艺术》The Art and Science of Java</li>
+</ul>
+<p>很多学习计算机的同学会走入误区，仅仅学习语言本身特性，认为只要学好了语言，就能成为一个好的软件工程师。他们过于关注语言本身细节，对程序设计却没有宏观把握。写一个好程序或者学习如何编程跟学习成为作家差不多。关键在于光靠套公式，套模板是写不出好文章的。</p>
+<p>瑞奇·帕提斯（Rich Pattis）提出教授计算机科学入门课程，先把各种语言的繁杂指令和各种语言的差异放一边，从最简单的教起。以便能更快的学习各种指令，这样就具备了掌握程序设计语言的基本素养，可以把主要精力放在软件工程思想方面。</p>
+<hr>
+<h3 id="第-2-课-欢迎来到-Karel-的世界"><a href="#第-2-课-欢迎来到-Karel-的世界" class="headerlink" title="第 2 课 欢迎来到 Karel 的世界"></a>第 2 课 欢迎来到 Karel 的世界</h3><p>解决问题的方法不止一个，我们只需要选择其中一个，这就是编程的艺术。</p>
+<p>算法和程序二者的区别在于，算法是做事情的步骤，将程序不断分解，分成很多小步骤，逐步求精。程序则必须按照语言规则合法的组织语句。</p>
+<p>编程时重要的一点是，不仅仅要写出计算机能读懂的程序，更要让人读得懂。这是编程风格的重要体现，也是好软件的必备条件。一个虽然能正常运行，但其他人读不懂的程序，是非常糟糕的软件工程产品。让人能读得懂这是软件工程的重要原则。</p>
+<p>考虑程序的通用性，这点非常重要。你不会只想让程序，在一种情况下正确运行吧。除非是明确指出只需在某种情况下运行。你得使程序通用化，根据通用原则来设计，使其在满足基本规则的情况下都能正确运行。</p>
+<hr>
+<h3 id="第-3-课-Karel-与-Java"><a href="#第-3-课-Karel-与-Java" class="headerlink" title="第 3 课 Karel 与 Java"></a>第 3 课 Karel 与 Java</h3><p>常见错误: </p>
+<ul>
+<li>无限循环，即为一个无限的循环。程序的语法是正确有效的，但是程序却没有按照我们所设计的去做。这是在编程时，经常遇到的问题，不同于语法问题。</li>
+<li>差一错误（off by one bug）简称OBOB，意思是你还差一件需要做的事情。尽管按逻辑来讲也不需要做，所以理解OBOB最好的方法是用一个具体的例子来说明。如果你要建造一个100米长的栅栏，其栅栏柱间隔为10米，那么你需要多少根栅栏柱呢？11根或9根都是正确答案，这取决于是否要在栅栏的两端树立栅栏柱，但是10根却是错误的。转换到数学，数字1到数字5一共有几个数字？这里有一个公式 从M到N，一共有 M-N+1 项.</li>
+</ul>
+<p>软件工程中一个重要的原则是，所写的程序不仅要机器明白，人也要能够理解。注释就能使人在读程序时能够阅读并能理解。很明显的问题，需要添加注释，说明程序中不明确的地方。另外，是程序的前提与后置条件。写明前提和后置条件可以让程序员在不知道程序内部具体的运行方式时，可以理解程序要做什么。如果所写的程序很短，哪怕只有一行，也最好加上注释，因为这可以帮助我们。</p>
+<p>把程序具体化，这个过程称之为分解。我们从一个高阶层的描述开始，然后逐步分解，至每一小步，一直分解下去，直到步骤足够清晰明了，将步骤分解到计算机可以理解为止。我们做到了原语（primitives）这个层次时，这个分解过程就结束了，这个过程叫做逐步求精法（stepwise refinement）。</p>
+<p>分解的概念是把事物分成更小的片段，分解成更具体的部分，分解直至原语这个层面。这整个过程称之为自顶向下设计（top-down design）。这与另一个概念相对，就是自底向上设计（bottom-up design）。自底向上设计是指，从原语开始，从低阶层开始。大部分程序员，最开始都是用这种方式。有一个心理研究表明，平均要拥有100小时的编程能力（programming proficiency）才能从自底向上的思维转变为自顶向下的思维。</p>
+<p>分解方法（decomposition methods）: </p>
+<ul>
+<li>每个方法解决一个问题。</li>
+<li>大部分方法应该在1-15行左右，如果是一行，没问题，可以写一行程序调用其他程序。这样做的目的在于可以使用新名称。</li>
+<li>方法名应该能够描述它是做什么的，解决了什么问题。一个好的名字可以解释程序是做什么的.</li>
+<li>方法涉及到分解的，都应该有注释，注释可以更加详细的解释这个方法是做什么的。更详细的说明，最好注明前置和后置条件。</li>
+</ul>
+<p>写编码的时候，你要考虑分解，用逐步求精法和加注释。对整个程序的注释以及对每个方法是注释。</p>
+<hr>
+<h3 id="第-4-课-计算科学发展史"><a href="#第-4-课-计算科学发展史" class="headerlink" title="第 4 课 计算科学发展史"></a>第 4 课 计算科学发展史</h3><p>了解它，学习它，运用它，爱上它（know it，learn it，live it，love it）</p>
+<p>很多人都把计算机科学看做是编程。在编程中到底涉不涉及科学，这两者的不同之处在于，计算机科学简称为CS，是指的科学，也就是用计算机来解决问题。</p>
+<p>计算（Computational），称之为方法（methods）。写的时候只考虑理论上是否可行，却不考虑在计算机硬件上能否操作，证明出那些函数是不可行的或可行的。科学在这里指的是解决问题和解决问题的方法，及分析那种是有效的方法，这个方法是否可以解决问题。</p>
+<p>程序，它是指我们在想出某一解决问题的方法时，用计算机的编程方式来处理问题。它只是整个计算机科学其中的一个过程，而不是全部。有一个名言曾将程序对于计算机科学的意义比喻成望远镜对于天文学的意义。</p>
+<hr>
+<h3 id="第-5-课-变量"><a href="#第-5-课-变量" class="headerlink" title="第 5 课 变量"></a>第 5 课 变量</h3><p>准确的命名是一个良好的软件工程原则，考虑到名称的含义，就是要让名称具有描述性，不产生歧义。</p>
+<p>变量这是一个内容可变的盒子，有三要素。其一，名称用来标识这个盒子。其二，类型指的是盒子里放的是什么东西。其三，值告诉我们盒子里的东西是什么。</p>
+<p>一定要给每个变量赋一个初始值，这才是优秀的软件工程。</p>
+<hr>
+<h3 id="第-6-课-操作符"><a href="#第-6-课-操作符" class="headerlink" title="第 6 课 操作符"></a>第 6 课 操作符</h3><p>常量与变量的不同之处就是它不会改变。全部大写，这是写常量的传统方式，每个单词之间用下划线连接。</p>
+<p>求余运算符只对整数适用，因为求余运算符对实数没有意义。</p>
+<p>除法在整数和双精度上运算方法有点不同。当你在做除法时，如果两个参数均为整数，在这种情况下它会做整数除法，就是做除法后丢掉余数，所有你得到的依然是个整数。例如整数5除以整数2，你会得到结果为整数2，随之的余数1就丢掉了。要是其中有一个是实数的话，比如一个双精度实数，那么这里就会做实数除法并返回实数。所有对于这里的例子5除以2改成5除以2.0的话，结果就会得到2.5这个双精度实数而不是一个整数。</p>
+<p>编写程序的时候如果不考虑清楚逻辑就会出现重大的BUG，而且很容易让人迷惑。</p>
+<p>例: 不论x取任何值，P都为真，这是一个典型的漏洞。</p>
+<pre class=" language-java"><code class="language-java">P <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span>x <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>短路计算，在不同情况下他们很是有用的。例如避免除数为0的情况出现</p>
+<p>例: 如果x等于0，直接判断为假，不用处理后面的语句。这样你就永远不会有除数为0的情况。</p>
+<pre class=" language-java"><code class="language-java">P <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>y<span class="token operator">/</span>x<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>switch条件必须是整数值，不可以是双精度类型。</p>
+<hr>
+<h3 id="第-7-课-循环与“一半”问题"><a href="#第-7-课-循环与“一半”问题" class="headerlink" title="第 7 课 循环与“一半”问题"></a>第 7 课 循环与“一半”问题</h3><p>当不知道具体的循环次数时，使用while循环。你会去计算某些事物的执行次数（for循环），或者会在条件为真时才做某事（while），这就是两种循环的区别。</p>
+<p>哨兵值，我们将会用一个常量去判断用户什么时候想输入数据，什么时候停止输入数据，所以在编程中这个值常被称之为哨兵。</p>
+<p>例: 从用户那读入一连串数字，直到用户输入0才停止读入，然后计算这些数字的和。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Add</span> <span class="token keyword">extends</span> <span class="token class-name">ConsoleProgram</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> SENTINEL <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//哨兵</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//输入值总和</span>
+    <span class="token keyword">int</span> val <span class="token operator">=</span> <span class="token function">readInt</span><span class="token punctuation">(</span><span class="token string">"Enter val:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//输入值</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>val <span class="token operator">!=</span> SENTINEL<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      total <span class="token operator">+=</span> val<span class="token punctuation">;</span>
+      val <span class="token operator">=</span> <span class="token function">readInt</span><span class="token punctuation">(</span><span class="token string">"Enter val:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Total = "</span> <span class="token operator">+</span> total<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>循环会判断如果你给的值不是哨兵值，就不会停止。</p>
+<p>在计算机科学或者计算机编程中，我们很讨厌重复的代码。如果能够避免重复代码，即使只有一行我们都会尽力去消除。向用户询问数值的这个操作至少要执行一次，但是在第一场执行后，我们需要在循环里面重复这个操作，所以我们遇到了难题，如何避免重复的代码呢？</p>
+<p>例: 从用户那读入一连串数字，直到用户输入0才停止读入，然后计算这些数字的和。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Add</span> <span class="token keyword">extends</span> <span class="token class-name">ConsoleProgram</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> SENTINEL <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//哨兵</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//输入值总和</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">int</span> val <span class="token operator">=</span> <span class="token function">readInt</span><span class="token punctuation">(</span><span class="token string">"Enter val:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//输入值</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>val <span class="token operator">==</span> SENTINEL<span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//如果输入值等于哨兵就跳出循环</span>
+      total <span class="token operator">+=</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Total = "</span> <span class="token operator">+</span> total<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>循环会判断循环条件永远为真，看起来很奇怪。你会担心它不是一个无限循环吗？只有一种情况会被终止，我们会向用户询问数值，判断这个值是否为哨兵值。如果是，跳出循环。</p>
+<p>break语句的作用就是它会跳出围绕代码最里面的那层循环。实际上它的用途是在循环内部检查跳出循环的条件，而不是在开头或每次进入循环的时候检查。</p>
+<p>从编程风格来说，一个循环体内有多重终止条件是非常糟糕的。因为这会让程序员很难识别哪个条件为真，才能跳出循环。</p>
+<p>比起用一大堆if语句来判断，稍微运用数学则来得更高明。</p>
+<p>例: 当i+y的值为偶数时执行，为奇数时不执行。</p>
+<pre class=" language-java"><code class="language-java">sq<span class="token punctuation">.</span><span class="token function">setFilled</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i <span class="token operator">+</span> y<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>多数情况下，return会出现在方法的结尾。但它并不只会出现在结尾，运行return时，正在执行的方法会马上停止，并且返回语句中的值或对象。</p>
+<p>例: 比较2个数字的大小，并且返回比较大的那个数。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">></span> y<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> x<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<h3 id="第-8-课-信息隐藏"><a href="#第-8-课-信息隐藏" class="headerlink" title="第 8 课 信息隐藏"></a>第 8 课 信息隐藏</h3><p>信息隐藏，指方法的使用者不需要去关心方法内部结构，懂用就好。当在编写方法时，你应该考虑让一个方法解决一个问题，一个具有普遍意义的问题，而信息隐藏于用户。当用户调用方法时，只要程序注释里清楚解释了程序的用途，列明了参数。用户就可以不需要去看方法的内部结构，不必知道原理，也能知道如何使用此方法。如果你找到一个更加有效的方法来实现这个功能，只需要修改方法的内部结构，而用户则不必在乎方法的改变。</p>
+<p>函数返回值，有时（当返回值为void）函数或方法不一定返回值，也不需要返回值。</p>
+<p>传递参数时，实质上是在传递拷贝，并不是传递变量本身。</p>
+<p>例: x输出值为3，AddFive方法只修改了x的拷贝，变量x的值并没有改变。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">AddFive</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>  
+  x <span class="token operator">+=</span> <span class="token number">5</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//修改的是x的拷贝  </span>
+<span class="token punctuation">}</span>  
+
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+  <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>  
+  <span class="token function">AddFive</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"x = "</span> <span class="token operator">+</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+</code></pre>
+<p>例: x输出值为8，AddFive方法修改了x的拷贝，然后将拷贝修改后的值返回，最后将返回的拷贝x的值赋值给变量x。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">AddFive</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>  
+  x <span class="token operator">+=</span> <span class="token number">5</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//修改的是x的拷贝  </span>
+  <span class="token keyword">return</span> x<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//返回拷贝修改后的值  </span>
+<span class="token punctuation">}</span>  
+
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+  <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>  
+  x <span class="token operator">=</span> <span class="token function">AddFive</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//将返回的拷贝x的值赋值给变量x  </span>
+  <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"x = "</span> <span class="token operator">+</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+</code></pre>
+<p>当调用类的时候，分别有类的客户（client）和类的实现者（implementor）这两个概念。类的客户指类的使用者，当你调用ACM库里面的类使用时，你就是客户。而当你自己编写类，设定类的用途，那你就是实现者。</p>
+<p>如果希望某个对象或变量，都能被整个类中的所有方法共有，就要用到实例变量（instance variable）。实例变量我们简称为ivar，它是一个存在于整个对象中的变量，而令所有方法都能指向这个变量。</p>
+<p>实例变量在类中声明，对类里所有的东西都可见，所有方法都能访问。只要对象存在，实例变量就存在。常量实际上是实例变量的一种，它们是final的实例变量，也就是说它们不会改变。</p>
+<p>局部变量（locals）在方法中声明，只在方法中可视。当方法结束，局部变量也随之结束。</p>
+<p>当你要做的计算只在你使用的方法里有效时（即局部计算）使用局部变量，实例变量是在方法的调用之间存储某些值时使用，你可以把它看成是对象的状态。</p>
+<hr>
+<h3 id="第-9-课-字符串"><a href="#第-9-课-字符串" class="headerlink" title="第 9 课 字符串"></a>第 9 课 字符串</h3><p>字符串（String）是一种类型，意思是字符的有序结合，字符串实际上是一个文本。</p>
+<p>类不具体定义父类，结果就是默认继承类object。</p>
+<p>包的意思是指类的集合，具有相关性类的集合。</p>
+<p>构造函数</p>
+<ul>
+<li>构造函数的名称与类的名称相同。</li>
+<li>构造函数没有返回类型。</li>
+<li>构造函数负责给予我们对象中的初始值。</li>
+<li>构造函数在对象创建的时候被调用</li>
+</ul>
+<p>保持参数的名称不同于局部变量的名称，区分名称的不同。这样就不会产生混淆，这也是一个很好的编程习惯。</p>
+<p>思考在计算机科学中很重要，重要的是要具备一个全局观，不需要过多担心细节。</p>
+<p>当传递对象时，传递的不是对象的拷贝。传递的是对象的引用（reference），可以看做是传递对象本身。我们把它称为引用，实际上是一种指向对象的方式。虽然传递对象时，只是传递引用的拷贝，但是它们指向的是同一个对象。</p>
+<p>类变量（class variable）被所有对象共有，是一个被类中所有对象共有的变量，而实例变量则属于对象私有，每个对象变量都是独有的。例如，圆形的半径都是每个圆形独有的，但是π是所有圆形共有的。类变量也称作静态变量（static variable），它不一定是常量，也不一定是最终值。</p>
+<p>javadoc是java的文件材料系统（documentation system）。在注释中需要加上一个特殊标记使得javadoc系统理解。这个系统可以通过注释解释你的代码内容，同时生成html页面。这样别人在试图理解你的代码内容时，可以通过阅读这个html，而不需要通读你所写的代码。</p>
+<h2 id="Java的acm库Javadoc学生版本"><a href="#Java的acm库Javadoc学生版本" class="headerlink" title="Java的acm库Javadoc学生版本"></a><a href="http://jtf.acm.org/javadoc/student" target="_blank" rel="noopener">Java的acm库Javadoc学生版本</a></h2><h3 id="第-10-课-私有变量的重要性"><a href="#第-10-课-私有变量的重要性" class="headerlink" title="第 10 课 私有变量的重要性"></a>第 10 课 私有变量的重要性</h3><p>重写的意思是指子类覆盖父类的方法。方法的名字必须相同，参数也需要完全一样。</p>
+<p>编写代码需要尝试去做，可以阅读教材，但是真正动手实验才是王道。</p>
+<hr>
+<h3 id="第-11-课-Gimage类"><a href="#第-11-课-Gimage类" class="headerlink" title="第 11 课 Gimage类"></a>第 11 课 Gimage类</h3><p>修改很少的代码就能实现新的功能，这就是面向对象程序的美好之处。</p>
+<p>事件驱动（event-driven）。程序可以检测到某些正在发生的事件，并对它们做出反应。在计算机中监听器（listener）有两种，鼠标监听器和键盘监听器，也就是从鼠标中得到是事件以及从键盘中得到的事件。</p>
+<hr>
+<h3 id="第-12-课-枚举"><a href="#第-12-课-枚举" class="headerlink" title="第 12 课 枚举"></a>第 12 课 枚举</h3><p>枚举是个基本的概念，把它想成一系列相关的项目。通常我们给出一些数字，这样我们就可以追踪它们了。</p>
+<p>Java中重要的是要要记住字符串是无法改变的。当我们对字符串修改时，实际上是创建了一个新的字符串，也就是对之前的字符串的更改版本。</p>
+<hr>
+<h3 id="第-13-课-对字符串的处理"><a href="#第-13-课-对字符串的处理" class="headerlink" title="第 13 课 对字符串的处理"></a>第 13 课 对字符串的处理</h3><p>编译器（tokenizer）是个计算机术语。比如有一个字符串文本，我们像把它们分解成片段，这就叫做编译器。</p>
+<p>加密（encryption）实际上就是传递秘密的信息。</p>
+<hr>
+<h3 id="第-14-课-内存"><a href="#第-14-课-内存" class="headerlink" title="第 14 课 内存"></a>第 14 课 内存</h3><p>说到存储，首先要知道的是RAM内存，全程是随机存取存储器（random access memory）。</p>
+<p>计算机里最简单的存储单位叫做比特，而比特（bit）其实是二进制数字（binary digit）的缩写。比特只包含0或者1这种单一的二进制数字。</p>
+<p>计算机存储是从十六进制出发的，尽管能换算成十进制数值，但是我们还是用十六进制表示。之所以这么做，是因为我们想要区分表示存储位置的数和存储的实际内容。</p>
+<p>凡是使用new的就是动态变量，当调用new的时候，动态变量就存储在叫做堆（heap）里面。堆中的变量不再使用时，计算机把这部分内存收回，这叫做垃圾回收（garbage collection）。</p>
+<p>局部变量存放在一个叫栈（stack）的地方，跟堆区分开来。栈和堆的区别就在于，对栈来说，当函数中有局部变量或者参数时，在栈这个地方会自动为变量分配一些内存。当局部变量不在作用域范围内时，像是函数结束或者是运行的程序退出，导致变量不在存在，不在作用域范围内，栈会自动回收内存（java是这样的，c和c++不会自动回收）。</p>
+<p>每个对象都有地址，计算机内部实际上是通过对象的地址来找到它们的。</p>
+<p>栈上创建了一些存储空间，称之为栈帧（stack frame）。它在栈上记录调用函数，产生帧信息。</p>
+<p>在对某个对象调用函数时，首先存在栈上的是对象的指针（pointer），它就是叫做this的指针。</p>
+<p>函数运行结束，就意味执行函数时，所分配的所有内存，被计算机自动取消分配，称之为出栈（off stack）。</p>
+<hr>
+<h3 id="第-15-课-指针要点回顾"><a href="#第-15-课-指针要点回顾" class="headerlink" title="第 15 课 指针要点回顾"></a>第 15 课 指针要点回顾</h3><p>设两个对象相等，它们就是两个相同的对象，内存中只有其中一个对象被存储，但有两个指针或者两个指向它的指针，一般称之为指针引用。</p>
+<p>解引用（dereference）的意思是不存在值或者随机值，指向内存某处，产生空指针错误（值为null）。</p>
+<p>当把基本类型作为参数传递，得到的是一个基本类型的值的拷贝。当参数是对象时，实际上是在传递对象，或者说是拷贝对对象的引用。</p>
+<p>当一个异常被引发，必然要有捕获异常。如果没有捕获异常，程序将会出错从而停止执行。try只需要包含会出现异常的代码，不要将所有代码包含在try中。</p>
+<hr>
+<h3 id="第-16-课-数组"><a href="#第-16-课-数组" class="headerlink" title="第 16 课 数组"></a>第 16 课 数组</h3><p>数组是一次记录大量信息的一种方法。数组的两个核心概念是: </p>
+<ol>
+<li>数组是有顺序（ordered）的，意思是能基于这些循序利用索引来指向数组中的元素。</li>
+<li>类别统一（homogeneous），存储在数组中的内容都属于一个类型，而且必须是同种类型，所以说它型别统一。</li>
+</ol>
+<p>数组的尺寸分为实际尺寸以及有效尺寸。实际尺寸是指声明的数组尺寸，而有效尺寸是指在程序中真正使用到的尺寸。</p>
+<p>传递数组时，数组是通过引用来传递，得到的是实际数组。用引用而不使用拷贝，这样做是出于效率原因。传递数组的单个元素，如果它们属于基本类型，那么就算它们都是数组中的元素，得到的仍然是拷贝。如果要得到引用，必须先传递整个数组。</p>
+<p>数组表被称为template，它可以自动的增加数组的长度。</p>
+<hr>
+<h3 id="第-17-课-多维数组"><a href="#第-17-课-多维数组" class="headerlink" title="第 17 课 多维数组"></a>第 17 课 多维数组</h3><p>数组表，它是一个对象，它和数组很相似，但它能根据添加元素的方式改变它的尺寸。数组表作为模板，它的类型只能是对象，所以不能有基本类型的数组表。</p>
+<p>对于基本类型，有一个等价的类型，叫做包装类（也叫封装类wrapper class），这些类是不可变对象。数组表要想使用基本类型必须使用包装类。</p>
+<hr>
+<h3 id="第-18-课-多维数组收尾"><a href="#第-18-课-多维数组收尾" class="headerlink" title="第 18 课 多维数组收尾"></a>第 18 课 多维数组收尾</h3><p>多维数组是由数组构成的数组，例如二维数组是数组构成的数组，三维数组是由二维数组构成的数组。</p>
+<p>数组表最大的优点就是动态改变尺寸，如果事先不知道尺寸，就用数组表。另一个优点是，它有相当多的高级方法。缺点是效率低于数组，另一个缺点是它的语法复杂。如果事先知道数组的尺寸，它的尺寸是固定不变的，那就一定要用数组。</p>
+<p>坏值（bad variable），在程序某种有个值，这个值不是你所要求的值。错误逻辑（faulty logic），你本想计算机操作x，但程序却让计算机操作y。这并不是所谓的电脑故障，它所做的一切都是你指示的，只是你并没有给出正确的指示。无根据的假设（unwarranted assumption），我以为值的单位是米，火箭升空前你咋不告诉我是英尺。认真考虑你的假设是什么，当方法被调用，它可以假设什么。这些大体就是调试的本质问题。</p>
+<p>人们总有一种简单问题复杂化的倾向，很多问题本来就是简单的，所以不要认为漏洞的出现必然是一个复杂问题。有时仅仅是因为错误逻辑，或者是不小心改变了某个值，总之就是无心之举。</p>
+<p>调试的几个基本原则: </p>
+<ul>
+<li>要有条理。</li>
+<li>不要依靠直觉自以为自己知道问题在哪。</li>
+<li>严格看待自己的代码。</li>
+<li>相信自己，冷静，慌张于事无补。</li>
+</ul>
+<hr>
+<h3 id="第-19-课-接口"><a href="#第-19-课-接口" class="headerlink" title="第 19 课 接口"></a>第 19 课 接口</h3><p>接口（interface）它就是一套方法，和某些类共用的一套方法，所以它是一套通用的功能，某些特定类中的通用功能。</p>
+<p>迭代器（iterator）它能把一系列值罗列出来，直到数组结束。</p>
+<hr>
+<h3 id="第-20-课-图形用户界面"><a href="#第-20-课-图形用户界面" class="headerlink" title="第 20 课 图形用户界面"></a>第 20 课 图形用户界面</h3><p>GUI指的是图形用户界面。</p>
+<hr>
+<h3 id="第-21-课-Interactor与Listener回顾"><a href="#第-21-课-Interactor与Listener回顾" class="headerlink" title="第 21 课 Interactor与Listener回顾"></a>第 21 课 Interactor与Listener回顾</h3><p>不要忘记在最后添加监听器。</p>
+<hr>
+<h3 id="第-22-课-NameSurfer概述"><a href="#第-22-课-NameSurfer概述" class="headerlink" title="第 22 课 NameSurfer概述"></a>第 22 课 NameSurfer概述</h3><p>无</p>
+<hr>
+<h3 id="第-23-课-搜索，排序与算法效率分析"><a href="#第-23-课-搜索，排序与算法效率分析" class="headerlink" title="第 23 课 搜索，排序与算法效率分析"></a>第 23 课 搜索，排序与算法效率分析</h3><p>一系列信息需要查找，最简单的方法是全部看一遍，这称为线性查找。该方法查找元素所需要的运算次数和元素的个数是成线性比例的。缺点是相当的耗时。</p>
+<p>二分查找，在每个节点都一分为二。</p>
+<p>两个int类型加起来再除以2会产生BUG，int类型最大值大约是40亿，如果两个int的和大于最大值就会产生BUG，所以应该先分别除以2后再相加。</p>
+<hr>
+<h3 id="第-24-课-管理大型数据中的良好软件工程原理"><a href="#第-24-课-管理大型数据中的良好软件工程原理" class="headerlink" title="第 24 课 管理大型数据中的良好软件工程原理"></a>第 24 课 管理大型数据中的良好软件工程原理</h3><p>很多企业成功的原因，就是出色的数据管理。</p>
+<p>你要找出你的应用所在领域的相关名词，很多时候这个名词就是你的类。除了名词，我们还需要找到动词。动词代表着与类相关的方法，某个名词有某个动作，即动词，相当于某个类调用了某个方法。</p>
+<p>唯一标识符，它指的是某条数据的唯一的标识符，它具有唯一性和不可改变性。</p>
+<hr>
+<h3 id="第-25-课-设计实用社交网络"><a href="#第-25-课-设计实用社交网络" class="headerlink" title="第 25 课 设计实用社交网络"></a>第 25 课 设计实用社交网络</h3><p>社交网络基本上就是记录一些人或者个人账户以及他们之间的关系的一种方式，这是最通俗的解释。</p>
+<p>多线程其实是控制器不断的在不同的线程中快速切换。</p>
+<hr>
+<h3 id="第-26-课-介绍Java标准库"><a href="#第-26-课-介绍Java标准库" class="headerlink" title="第 26 课 介绍Java标准库"></a>第 26 课 介绍Java标准库</h3><p>main方法是java类中开始运行的地方。</p>
+<p>jar文件的含义是Java ARchive。它可以包含许多不同的东西（实际上是类似zip的压缩包），大多数时候我们用它来打包java中那些已经编译的类，即“.class”文件。</p>
+<hr>
+<h3 id="第-27-课-CS106A后续课程介绍"><a href="#第-27-课-CS106A后续课程介绍" class="headerlink" title="第 27 课 CS106A后续课程介绍"></a>第 27 课 CS106A后续课程介绍</h3><p>抽象编程，由C++语言讲述。我们一直都在使用一些抽象概念，比如数组表和哈希图等。在这门课中，你需要思考如何实现一个哈希图或数组表、如何让程序运行得更快而尽可能少占用内存、以及更多的编程技巧比如递归。</p>
+<p>离散数学，讲述计算机中的逻辑。图形、社交网络和六度分离等，它们都是离散数学的一部分。</p>
+<p>人工智能，简称AI。它包含很多分支领域，比如机器人技术、计算生物学和数据分析。</p>
+<p>操作系统，它是怎么处理文件系统的、如果有多项任务在同时进行，它是怎么处理的以及计算机内存是如何处理分配的。这些内容在操作系统都会讲到，你将学到很多基础知识。</p>
+<p>数据结构，你将学到各种完成特定任务的数据结构。</p>
+<p>图形，制作3D动画、各种特效和电影图形技术以及处理数码摄影。</p>
+<p>处理大量数据、对网络安全有重大影响的密码学。</p>
+<hr>
+<h3 id="第-28-课-宣布图形比赛结果"><a href="#第-28-课-宣布图形比赛结果" class="headerlink" title="第 28 课 宣布图形比赛结果"></a>第 28 课 宣布图形比赛结果</h3><p>图形比赛，最佳算法奖是一个产生分形图的程序，你可以输入一个数学表达式来产生相应的分形图，而且可以无限放大。最佳艺术将是使用者绘出一个图片，然后可以设定颜色，产生多种颜色的图片，将屏幕铺满，最后在屏幕上每个图片会依次发生一个落下并弹起直到从屏幕上消失的动画效果，直到图片全部消失。最好的还是大众选择奖，经典的塞尔达传说。</p>
+<p>如果程序员能下意识地认为自己是艺术家的话，他们实际上能做的更好。当你把一些东西放到一起的时候，不要认为自己正在做数学验证。能够进行逻辑分析固然很重要，但最后你实际上是把一些本身没有美感的东西，组合到了一起。这也正是计算机科学的美妙之处。</p>
+
+            </div>
+            <hr>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://tuliang.org/si-tan-fu-bian-cheng-fang-fa/';
+        this.page.identifier = '/si-tan-fu-bian-cheng-fang-fa/';
+        this.page.title = '斯坦福《编程方法》';
+    };
+    let disqus_shortname = 'tuliang';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/php-chou-xiang-gong-han-mo-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="PHP 抽象工厂模式">
+                        
+                        <span class="card-title">PHP 抽象工厂模式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">抽象工厂模式 Abstract Factory Pattern，提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。
+&lt;?php
+//定义比萨商店
+abstract class PizzaStore{
+
+  publi</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2012-08-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/PHP/" target="_blank">
+                        <span class="chip bg-color">PHP</span>
+                    </a>
+                    
+                    <a href="/tags/设计模式/" target="_blank">
+                        <span class="chip bg-color">设计模式</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">本篇</div>
+            <div class="card">
+                <a href="/si-tan-fu-bian-cheng-fang-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="斯坦福《编程方法》">
+                        
+                        <span class="card-title">斯坦福《编程方法》</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">课程介绍: 
+「编程方法」本课程是最大的编程入门课程，也是斯坦福大学主要课程之一。介绍了当代程序设计基本思想: 面向对象，模块化，封装，抽象化与测试。《编程方法》将良好的编程思想连同广泛应用的Java语言一同讲授。着重教授良好的编程风格和J</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2011-12-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/公开课/" class="post-category" target="_blank">
+                                    公开课
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://github.com/tuliang/" target="_blank">涂亮</a> 基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
