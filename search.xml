@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>了解如何通过 reduce 方法折叠集合</title>
+      <link href="/liao-jie-ru-he-tong-guo-reduce-fang-fa-zhe-die-ji-he/"/>
+      <url>/liao-jie-ru-he-tong-guo-reduce-fang-fa-zhe-die-ji-he/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>总是要给累加器一个初值。</p><p>给予 <code>reduce</code> 的块总是要返回一个累加器。对当前累加器的修改是可行的，要记住从块中返回。</p></blockquote><p>假设我们有一个存储用户的数组，我们希望从中筛选出那些年龄大于或者等于 <code>21</code> 岁的人群。之后我们希望将这个用户数组转换成一个姓名数组。在没有使用 <code>reduce</code> 的时候，你可能会这样写：</p><pre class=" language-ruby"><code class="language-ruby">users<span class="token punctuation">.</span>select <span class="token punctuation">{</span><span class="token operator">|</span>u<span class="token operator">|</span> u<span class="token punctuation">.</span>age <span class="token operator">>=</span> <span class="token number">21</span><span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token symbol">:name</span><span class="token punctuation">)</span></code></pre><p>当然这么做肯定是可行的，但并不高效。<code>select</code> 方法会遍历整个用户数组并返回新数组。这个新数组之后会再次进行遍历并映射成另一个值只包含名字的新数组。如果我们使用 <code>reduce</code> ，则无需创建或遍历多个数组：</p><pre class=" language-ruby"><code class="language-ruby">users<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token operator">|</span>names<span class="token punctuation">,</span> user<span class="token operator">|</span>  names <span class="token operator">&lt;</span><span class="token operator">&lt;</span> user<span class="token punctuation">.</span>name <span class="token keyword">if</span> user<span class="token punctuation">.</span>age <span class="token operator">>=</span> <span class="token number">21</span>  names<span class="token keyword">end</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ruby </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>在改变作为参数的集合之前复制它们</title>
       <link href="/zai-gai-bian-zuo-wei-can-shu-de-ji-he-zhi-qian-fu-zhi-ta-men/"/>
       <url>/zai-gai-bian-zuo-wei-can-shu-de-ji-he-zhi-qian-fu-zhi-ta-men/</url>
@@ -165,6 +188,8 @@
       
         <tags>
             
+            <tag> Ruby </tag>
+            
             <tag> Rails </tag>
             
         </tags>
@@ -188,11 +213,11 @@
       
         <tags>
             
-            <tag> Ruby </tag>
-            
             <tag> HTTP </tag>
             
             <tag> HTML5 </tag>
+            
+            <tag> Ruby </tag>
             
         </tags>
       

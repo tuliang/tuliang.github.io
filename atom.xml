@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-11-01T07:59:58.859Z</updated>
+  <updated>2018-11-02T12:20:39.581Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>了解如何通过 reduce 方法折叠集合</title>
+    <link href="https://tuliang.org/liao-jie-ru-he-tong-guo-reduce-fang-fa-zhe-die-ji-he/"/>
+    <id>https://tuliang.org/liao-jie-ru-he-tong-guo-reduce-fang-fa-zhe-die-ji-he/</id>
+    <published>2018-11-02T12:19:16.000Z</published>
+    <updated>2018-11-02T12:20:39.581Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;总是要给累加器一个初值。&lt;/p&gt;
+&lt;p&gt;给予 &lt;code&gt;reduce&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+  </entry>
   
   <entry>
     <title>在改变作为参数的集合之前复制它们</title>
@@ -196,7 +224,7 @@
     <link href="https://tuliang.org/rails-singular-resources/"/>
     <id>https://tuliang.org/rails-singular-resources/</id>
     <published>2014-10-24T15:25:53.000Z</published>
-    <updated>2018-10-31T15:38:22.398Z</updated>
+    <updated>2018-11-02T12:19:55.927Z</updated>
     
     <summary type="html">
     
@@ -212,6 +240,8 @@
     
       <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
     
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
     
       <category term="Rails" scheme="https://tuliang.org/tags/Rails/"/>
     
@@ -240,11 +270,11 @@
       <category term="网络" scheme="https://tuliang.org/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
-    
       <category term="HTTP" scheme="https://tuliang.org/tags/HTTP/"/>
     
       <category term="HTML5" scheme="https://tuliang.org/tags/HTML5/"/>
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
     
   </entry>
   

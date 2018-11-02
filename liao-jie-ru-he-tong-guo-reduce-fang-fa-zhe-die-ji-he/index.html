@@ -5,9 +5,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Ruby synchronized, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="最近学习 Java 的时候了解到在 Java 中 synchronized 关键字可以保证代码块的串行执行。
-在 ruby 开发中往往使用第三方来保证，比如使用数据库或文件系统。其实 ruby 也有类似的方式来保证代码块的串行执行，它就是 ">
+    <meta name="keywords" content="了解如何通过 reduce 方法折叠集合, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="
+总是要给累加器一个初值。
+给予 reduce 的块总是要返回一个累加器。对当前累加器的修改是可行的，要记住从块中返回。
+
+假设我们有一个存储用户的数组，我们希望从中筛选出那些年龄大于或者等于 21 岁的人群。之后我们希望将这个用户数组转换">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Ruby synchronized | 不做咸鱼的小明</title>
+    <title>了解如何通过 reduce 方法折叠集合 | 不做咸鱼的小明</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -208,13 +211,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Ruby synchronized
+                        了解如何通过 reduce 方法折叠集合
                     </div>
                 </div>
             </div>
@@ -329,10 +332,6 @@
                     <span class="chip bg-color">Ruby</span>
                 </a>
                 
-                <a href="/tags/并发编程/" target="_blank">
-                    <span class="chip bg-color">并发编程</span>
-                </a>
-                
             </div>
             
             <div class="post-info">
@@ -348,29 +347,25 @@
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2015-04-09
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-02
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>最近学习 <code>Java</code> 的时候了解到在 <code>Java</code> 中 <code>synchronized</code> 关键字可以保证代码块的串行执行。</p>
-<p>在 <code>ruby</code> 开发中往往使用第三方来保证，比如使用数据库或文件系统。其实 <code>ruby</code> 也有类似的方式来保证代码块的串行执行，它就是 <code>Mutex</code> 的 <code>synchronize</code>。</p>
-<pre class=" language-ruby"><code class="language-ruby"><span class="token keyword">require</span> <span class="token string">'thread'</span>
-semaphore <span class="token operator">=</span> <span class="token constant">Mutex</span><span class="token punctuation">.</span><span class="token keyword">new</span>
-
-<span class="token class-name">a</span> <span class="token operator">=</span> <span class="token builtin">Thread</span><span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token punctuation">{</span>
-  semaphore<span class="token punctuation">.</span>synchronize <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true"># access shared resource</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-b <span class="token operator">=</span> <span class="token builtin">Thread</span><span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token punctuation">{</span>
-  semaphore<span class="token punctuation">.</span>synchronize <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true"># access shared resource</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+                <blockquote>
+<p>总是要给累加器一个初值。</p>
+<p>给予 <code>reduce</code> 的块总是要返回一个累加器。对当前累加器的修改是可行的，要记住从块中返回。</p>
+</blockquote>
+<p>假设我们有一个存储用户的数组，我们希望从中筛选出那些年龄大于或者等于 <code>21</code> 岁的人群。之后我们希望将这个用户数组转换成一个姓名数组。在没有使用 <code>reduce</code> 的时候，你可能会这样写：</p>
+<pre class=" language-ruby"><code class="language-ruby">users<span class="token punctuation">.</span>select <span class="token punctuation">{</span><span class="token operator">|</span>u<span class="token operator">|</span> u<span class="token punctuation">.</span>age <span class="token operator">>=</span> <span class="token number">21</span><span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token symbol">:name</span><span class="token punctuation">)</span>
+</code></pre>
+<p>当然这么做肯定是可行的，但并不高效。<code>select</code> 方法会遍历整个用户数组并返回新数组。这个新数组之后会再次进行遍历并映射成另一个值只包含名字的新数组。如果我们使用 <code>reduce</code> ，则无需创建或遍历多个数组：</p>
+<pre class=" language-ruby"><code class="language-ruby">users<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token operator">|</span>names<span class="token punctuation">,</span> user<span class="token operator">|</span>
+  names <span class="token operator">&lt;</span><span class="token operator">&lt;</span> user<span class="token punctuation">.</span>name <span class="token keyword">if</span> user<span class="token punctuation">.</span>age <span class="token operator">>=</span> <span class="token number">21</span>
+  names
+<span class="token keyword">end</span>
 </code></pre>
 
             </div>
@@ -395,9 +390,9 @@ b <span class="token operator">=</span> <span class="token builtin">Thread</span
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tuliang.org/ruby-synchronized/';
-        this.page.identifier = '/ruby-synchronized/';
-        this.page.title = 'Ruby synchronized';
+        this.page.url = 'https://tuliang.org/liao-jie-ru-he-tong-guo-reduce-fang-fa-zhe-die-ji-he/';
+        this.page.identifier = '/liao-jie-ru-he-tong-guo-reduce-fang-fa-zhe-die-ji-he/';
+        this.page.title = '了解如何通过 reduce 方法折叠集合';
     };
     let disqus_shortname = 'tuliang';
 
@@ -419,25 +414,27 @@ b <span class="token operator">=</span> <span class="token builtin">Thread</span
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="/ruby-thread-pool/">
+                <a href="/liao-jie-ru-he-tong-guo-reduce-fang-fa-zhe-die-ji-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Ruby thread pool">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="了解如何通过 reduce 方法折叠集合">
                         
-                        <span class="card-title">Ruby thread pool</span>
+                        <span class="card-title">了解如何通过 reduce 方法折叠集合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">有时候会遇到一个情况需要在多个远程服务获取数据。
-例如服务 a 需要 2 秒，服务 b 需要 5 秒，按照正常处理总共就需要 2+5 总共 7 秒了。
-如果 a 和 b 之间并没有相互依赖关系，我们可以使用 thread pool 来并发获</div>
+                    <div class="summary">
+总是要给累加器一个初值。
+给予 reduce 的块总是要返回一个累加器。对当前累加器的修改是可行的，要记住从块中返回。
+
+假设我们有一个存储用户的数组，我们希望从中筛选出那些年龄大于或者等于 21 岁的人群。之后我们希望将这个用户数组转换</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2015-04-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -450,15 +447,12 @@ b <span class="token operator">=</span> <span class="token builtin">Thread</span
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/Ruby/" target="_blank">
                         <span class="chip bg-color">Ruby</span>
-                    </a>
-                    
-                    <a href="/tags/并发编程/" target="_blank">
-                        <span class="chip bg-color">并发编程</span>
                     </a>
                     
                 </div>
@@ -470,23 +464,24 @@ b <span class="token operator">=</span> <span class="token builtin">Thread</span
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/rails-singular-resources/">
+                <a href="/zai-gai-bian-zuo-wei-can-shu-de-ji-he-zhi-qian-fu-zhi-ta-men/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Rails Singular Resources">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="在改变作为参数的集合之前复制它们">
                         
-                        <span class="card-title">Rails Singular Resources</span>
+                        <span class="card-title">在改变作为参数的集合之前复制它们</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Rails 中 Controller 如果不是复数，写 path 或 url 的时候就必须加上 index，这样看上去就很 low。
-resources :photo do  
-  collection do    
-    get 'se</div>
+                    <div class="summary">
+Ruby 中参数是按引用传递的，而不是值传递。这个规则有一个例外值得注意：它不适用于 Fixnum 对象。
+在改变集合之前先复制它们。
+
+Ruby 语言自带了两个用来复制对象的方法：dup 和 clone。它们都会基于接收者创建新的对象，</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2014-10-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-01
                             </span>
                         <span class="publish-author">
                             
@@ -505,10 +500,6 @@ resources :photo do
                     
                     <a href="/tags/Ruby/" target="_blank">
                         <span class="chip bg-color">Ruby</span>
-                    </a>
-                    
-                    <a href="/tags/Rails/" target="_blank">
-                        <span class="chip bg-color">Rails</span>
                     </a>
                     
                 </div>
