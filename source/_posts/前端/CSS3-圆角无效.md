@@ -32,7 +32,7 @@ tags:
 </div>
 ```
 
-<img src="/images/2013/11/QQ20131107-1.png" />  
+<img src="/images/2013/QQ20131107-1.png" />  
 
 你会发现圆角居然没有出现！让我们加上边框看看发生了什么: 
 
@@ -42,11 +42,11 @@ tags:
 }
 ```
 
-<img src="/images/2013/11/QQ20131107-2.png" />
+<img src="/images/2013/QQ20131107-2.png" />
 
 仔细观察可以发现，圆角被类为category的div所设置背景挡住了。将 `background: #fff;` 注释，我们看到了圆角
 
-<img src="/images/2013/11/QQ20131107-3.png" />
+<img src="/images/2013/QQ20131107-3.png" />
 
 从此可以得出结论，`CSS3` 的圆角会被子元素的背景遮挡，从而产生圆角无效的假象。
 
