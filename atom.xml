@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-11-02T12:20:39.581Z</updated>
+  <updated>2018-11-05T04:28:31.759Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何高效学习</title>
+    <link href="https://tuliang.org/ru-he-gao-xiao-xue-xi/"/>
+    <id>https://tuliang.org/ru-he-gao-xiao-xue-xi/</id>
+    <published>2018-11-05T04:26:33.000Z</published>
+    <updated>2018-11-05T04:28:31.759Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;整体性学习策略强调将信息编织到知识网络中，而不是给自己加上机械记忆的负担，这个策略的基础有以下几方面。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;结构 —— 关于某个学科的知识之间联系的总和，它是你大脑中的城市。&lt;/li&gt;
+&lt;li&gt;模型 ——
+        
+      
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://tuliang.org/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="方法论" scheme="https://tuliang.org/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+      <category term="思维" scheme="https://tuliang.org/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>了解如何通过 reduce 方法折叠集合</title>
@@ -552,36 +583,6 @@
       <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
     
       <category term="算法" scheme="https://tuliang.org/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP 工厂方法模式</title>
-    <link href="https://tuliang.org/php-gong-han-fang-fa-mo-shi/"/>
-    <id>https://tuliang.org/php-gong-han-fang-fa-mo-shi/</id>
-    <published>2012-08-18T14:29:18.000Z</published>
-    <updated>2018-10-31T15:22:19.121Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;简单工厂其实不是一个设计模式，反而比较像是一种编程习惯。&lt;/p&gt;
-&lt;p&gt;有些开发人员的确是把这个编程习惯误认为是工厂模式。&lt;/p&gt;
-&lt;pre class=&quot; language-php&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
-    
-      <category term="设计模式" scheme="https://tuliang.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
