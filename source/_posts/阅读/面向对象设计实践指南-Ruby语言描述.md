@@ -1,20 +1,10 @@
 ---
-layout: post
-title: 面向对象设计实践指南: Ruby语言描述
-category: read
+title: 面向对象设计实践指南-Ruby语言描述
+date: 2014-09-03 21:25:07
+categories: 阅读
+tags:
+  - Ruby
 ---
-<img class="cover" src="/images/2014/9/9787115332455.jpg" />
-
-ISBN: 9787115332455
-
-作者: Sandi Metz
-
-译者: 张雪平 / 彭晓东 
-
-出版时间: 2013-12
-
-评价: ☆☆☆☆☆
-
 设计是保留可变性的艺术，而非达到完美性的行为。
 
 编写出的代码应该具有如下几个特点:   
