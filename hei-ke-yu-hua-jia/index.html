@@ -1,0 +1,654 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="黑客与画家, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="为什么书呆子不受欢迎
+所有东西都在变成软件，印刷机诞生后，人类写过多少个字，未来就有多少家软件公司。
+事实上，大多数会画的人，本身就很喜欢画画，将许许多多时间投入其中，这就是为什么他们擅长画画的原因。同样受欢迎也不是天生的，而是要你自己做出">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>黑客与画家 | 不做咸鱼的小明</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">不做咸鱼的小明</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/fund" class="waves-effect waves-light">
+            
+            <i class="fa fa-bar-chart"></i>
+            
+            <span>基金</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">不做咸鱼的小明</div>
+        <div class="logo-desc">
+            
+            We shall never surrender
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/fund" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bar-chart"></i>
+                
+                基金
+            </a>
+        </li>
+        
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        黑客与画家
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/计算机/" target="_blank">
+                    <span class="chip bg-color">计算机</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/阅读/" class="post-category" target="_blank">
+                        阅读
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2012-01-16
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="为什么书呆子不受欢迎"><a href="#为什么书呆子不受欢迎" class="headerlink" title="为什么书呆子不受欢迎"></a>为什么书呆子不受欢迎</h4><ul>
+<li>所有东西都在变成软件，印刷机诞生后，人类写过多少个字，未来就有多少家软件公司。</li>
+<li>事实上，大多数会画的人，本身就很喜欢画画，将许许多多时间投入其中，这就是为什么他们擅长画画的原因。同样受欢迎也不是天生的，而是要你自己做出来的。</li>
+<li>在任何社会等级制度中，那些对自己没自信的人就会通过虐待他们眼中的下等人来突显自己的身份。我已经意识到，正是因为这个原因，在美国社会中底层白人是对待黑人最残酷的群体。</li>
+<li>校园生活真正的原因是空虚。</li>
+</ul>
+<h4 id="黑客与画家"><a href="#黑客与画家" class="headerlink" title="黑客与画家"></a>黑客与画家</h4><ul>
+<li>计算机科学就像一个大杂烩，由于某些历史意外，很多不相干的领域被强行拼装在一起。这个学科的一端是纯粹的数学家，中间部分是计算机博物学家，另一端则是黑客。所以在计算机科学的名下，数学家、物理学家和建筑家都不得不待在同一个系里。</li>
+<li>黑客就像画家，工作起来是有心理周期的。有时候，你有了一个令人兴奋的新项目，你会愿意为它一天工作16个小时，等过了这一阵，你又会觉得百无聊赖，对所有事情都提不起兴趣。</li>
+<li>普通黑客与优秀黑客的所有区别之中，会不会换位思考可能是最重要的单个因数。有些黑客很聪明，但是完全以自我为中心，根本不会设身处地为用户考虑。这样的人很难设计出优秀软件，因为他们不从用户的角度看待问题。</li>
+<li>在达芬奇的年代，绘画并不是一件很酷的事情。达芬奇用自己的工作推动绘画成为一种伟大的表达方式。同样，编程到底能够有多酷，取决于我们能够用这种新媒介做出怎样的工作。</li>
+</ul>
+<h4 id="不能说的话"><a href="#不能说的话" class="headerlink" title="不能说的话"></a>不能说的话</h4><ul>
+<li>历史上的每一个年代，都会给“异端邪说”贴一些标签，目的是在人们开始思考它们是否为真之前就把它们封杀。“亵渎神明”、“冒犯圣灵”、“异端”都是西方历史上常见的标签，当代的标签则是“有伤风化”、“不得体”、“破坏国家利益”等。</li>
+<li>为什么家长要伪装？因为他们觉得孩子不应该知道成年人的所有内容，只需知道一部分适合儿童的就行了。我们喜欢孩子们看上去天真无邪。</li>
+<li>一旦发现了“不能说的话”，下一步怎么办？我的建议是就是别说，至少也要挑选合适的场合再说，只打那些值得打的仗。与笨蛋辩论，你也会变成笨蛋。</li>
+<li>不管问谁，人们都会说同样的话: “我们心态很开放，愿意接受新思想。”但是实际上，人们脑子里有一根界线，早就认准了什么是对的，什么是错的。换言之，在他们看来，所以观点都是可以讨论的，出来那些错误的观点。</li>
+<li>每当你看到有些话被攻击为出自XX分子或XX主义，这就是一个明确的信号，表明背后有问题。</li>
+<li>如果自己就是潮水的一部分，怎么能看见潮流的方向呢？你只能永远保持质疑。问自己，什么话是我不能说的？为什么？</li>
+</ul>
+<h4 id="良好的坏习惯"><a href="#良好的坏习惯" class="headerlink" title="良好的坏习惯"></a>良好的坏习惯</h4><ul>
+<li>在大众眼里，黑客就是入侵计算机的人。可是，在程序员眼里，黑客指的是优秀的程序员。这两个含义其实是相关的。对于程序员来说，黑客这个词的字面意思主要就是精通，也就是他可以随心所欲地支配计算机。</li>
+</ul>
+<h4 id="另一条路"><a href="#另一条路" class="headerlink" title="另一条路"></a>另一条路</h4><ul>
+<li>互联网软件的发布过程可以分解为一系列的渐进式修改，而不是猛地推出一个大幅变动的版本。一旦采用了这种新模式，你就会知道发布方式对软件开发的影响有多么重大。桌面软件开发之中的许多棘手问题，都是源于它的那么灾难性的发布方式。</li>
+<li>大公司付出的高价之中，很大一部分是商家为了让大公司买下这个商品而付出的费用。（如果国防部花1000美元买一个马桶座圈，部分原因是要让国防部买下它本身就需要花很多钱）</li>
+<li>苹果公司还没有失败,如果它能把iPod升级为手机，并且将网络浏览器包括其中，那么微软就有大麻烦了。（这段话写于2001年9月，现在看来预言成功了）</li>
+</ul>
+<h4 id="如何创造财富"><a href="#如何创造财富" class="headerlink" title="如何创造财富"></a>如何创造财富</h4><ul>
+<li>创造有价值的东西就是创造财富。你最好搞清楚什么是财富。财富与金钱并不是同义词（亚当斯密在《国富论》中提到，许多国家为了保住“财富”，禁止出口白银或者黄金。但是黄金和白银实际上只是一种交换媒介，留住它们并不会让一个国家变得更富有。如果物质财富保持不变，金钱越多，导致的唯一结果就是物价越高，即通货膨胀）。大多数生意的目的是为了创造财富，做出人们真正需要的东西。</li>
+<li>我们很乐意迫使那些又大又慢的竞争对手跟着我们一起走进沼泽地。创业公司就像游击队一样，喜欢选择不易生存的深山老林作为根据地，政府的正规军无法追到那种地方。我还记得创业初期我们是多么筋疲力尽，整体都为一些可怕的技术难题绞尽脑汁。但是，我还是感动相当高兴，因为那些问题连我们都觉得这么困难，那么竞争对手就更会认为是不可能解决的。</li>
+</ul>
+<h4 id="关注贫富分化"><a href="#关注贫富分化" class="headerlink" title="关注贫富分化"></a>关注贫富分化</h4><ul>
+<li>总的来说，你要避免的是绝对贫穷，而不是相对贫穷。</li>
+</ul>
+<h4 id="设计者的品味"><a href="#设计者的品味" class="headerlink" title="设计者的品味"></a>设计者的品味</h4><ul>
+<li>大人教导你说品味只是每个人的偏好而已。但是来到博物馆，他们却对你说，仔细观赏达芬奇的作品，因为他是伟大的艺术家，品味超凡。只要你开始思考这个问题，你就会发现，众多不同学科对“美”的认识有着惊人的相识度。优秀设计的原则是许多学科的共同原则，一再反复出现。</li>
+<li>好设计是简单的设计。装饰品本身不是坏事，只有当它被用来掩盖结构的苍白时，才变成了一件坏事。</li>
+<li>好设计是永不过时的设计。某些大师的作品太过杰出，永不过时，使得后人几乎难以在该领域立足。</li>
+<li>好设计是解决主要问题的设计。</li>
+<li>好设计是启发性的设计。</li>
+<li>好设计通常是有点趣味性的设计。</li>
+<li>好设计是艰苦的设计。并非所有的痛苦都是有益的。你需要的是咬牙向前冲的痛苦，而不是脚被钉子扎破的痛苦。</li>
+<li>好设计是看似容易的设计。在大多领域，看上去容易的事情，背后都需要大量的练习。</li>
+<li>好设计是对称的设计。</li>
+<li>好设计是模仿大自然的设计。</li>
+<li>好设计是一种再设计。很少有人一次就把事情做对。开源软件因为公开承认自己的BUG，反而使得代码的BUG比较少。</li>
+<li>好设计是能够复制的设计。刚入门的新手不知不觉地模仿他人，逐渐熟练之后才可以创作原创性的作品。</li>
+<li>好设计通常是奇特的设计。爱因斯坦并不想让相对论变得很奇特，他只想找出真理，是真理本身显得很奇特。米开朗基罗并没有想过要树立米开朗基罗风格，他只是想画好作品，结果不由自主地创造出了米开朗基罗风格。</li>
+<li>好设计是成批出现的。</li>
+<li>好设计常常是大胆的设计。</li>
+</ul>
+<h4 id="一百年后的编程语言"><a href="#一百年后的编程语言" class="headerlink" title="一百年后的编程语言"></a>一百年后的编程语言</h4><ul>
+<li>效率低下的软件并不等于很烂的软件。一种让程序员做无用功的语言才真正称得上很烂。浪费程序员的时间而不是浪费机器的时间才是真正的无效率。随着计算机速度越来越快，这会变得越来越明显。</li>
+</ul>
+
+            </div>
+            <hr>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://tuliang.org/hei-ke-yu-hua-jia/';
+        this.page.identifier = '/hei-ke-yu-hua-jia/';
+        this.page.title = '黑客与画家';
+    };
+    let disqus_shortname = 'tuliang';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/ren-yue-shen-hua/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="人月神话">
+                        
+                        <span class="card-title">人月神话</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">第一章焦油坑提出了软件工程中乐趣和苦恼，第二章人月神话则讲述了人员数量和时间是无法互换的，并研究了产生这种情况的原因，第三章到第十五章则讨论了解决这种情况的种种方案，到最后得出结论软件工程并没有银弹（即没有万能的方法），只有一些子弹而已。
+</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2012-01-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/阅读/" class="post-category" target="_blank">
+                                    阅读
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/软件工程/" target="_blank">
+                        <span class="chip bg-color">软件工程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/gong-li-zhu-yi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="功利主义">
+                        
+                        <span class="card-title">功利主义</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">穆勒认为，功利主义所谓的“幸福”或“快乐”不是指动物的幸福或快乐，而是指人的幸福或快乐，对于人来说，“理智的快乐，感情和想象的快乐以及道德情感的快乐所具有的价值要远高于单纯感官的快乐。”
+承认某些种类的快乐比其他种类的快乐更值得欲求更有价值</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2011-12-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/阅读/" class="post-category" target="_blank">
+                                    阅读
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/哲学/" target="_blank">
+                        <span class="chip bg-color">哲学</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://github.com/tuliang/" target="_blank">涂亮</a> 基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
