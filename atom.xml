@@ -220,6 +220,37 @@
   </entry>
   
   <entry>
+    <title>大型网站系统与 Java 中间件开发实践</title>
+    <link href="https://tuliang.org/da-xing-wang-zhan-xi-tong-yu-java-zhong-jian-jian-kai-fa-shi-jian/"/>
+    <id>https://tuliang.org/da-xing-wang-zhan-xi-tong-yu-java-zhong-jian-jian-kai-fa-shi-jian/</id>
+    <published>2015-04-17T13:05:48.000Z</published>
+    <updated>2018-11-05T13:13:30.579Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;阿姆达尔定律（Amdahl’s law）告诉我们，程序中可并行代码的比例决定你增加处理器所能带来的速度提升上限，是否能达到这个上限，还取决于很多其他因素。&lt;/p&gt;
+&lt;p&gt;例如，当 P=0.5 时，我们可以计算出速度提升的上限就是 2。而如果
+        
+      
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://tuliang.org/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="Java" scheme="https://tuliang.org/tags/Java/"/>
+    
+      <category term="架构" scheme="https://tuliang.org/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="分布式" scheme="https://tuliang.org/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ruby thread pool</title>
     <link href="https://tuliang.org/ruby-thread-pool/"/>
     <id>https://tuliang.org/ruby-thread-pool/</id>
@@ -300,6 +331,62 @@
     
     
       <category term="Rails" scheme="https://tuliang.org/tags/Rails/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网页渲染数学公式</title>
+    <link href="https://tuliang.org/wang-ye-xuan-ran-shu-xue-gong-shi/"/>
+    <id>https://tuliang.org/wang-ye-xuan-ran-shu-xue-gong-shi/</id>
+    <published>2014-10-01T13:14:41.000Z</published>
+    <updated>2018-11-05T13:23:39.993Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;数学公式一般使用 LaTeX，但是在网页上一般将 LaTeX 渲染成为图片。&lt;/p&gt;
+&lt;p&gt;在一堆文字中放进几个图片难看又麻烦，稍微找了一下发现一个神器: &lt;a href=&quot;http://www.mathjax.org/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="MathJax" scheme="https://tuliang.org/tags/MathJax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面向对象设计实践指南-Ruby语言描述</title>
+    <link href="https://tuliang.org/mian-xiang-dui-xiang-she-ji-shi-jian-zhi-nan-ruby-yu-yan-miao-shu/"/>
+    <id>https://tuliang.org/mian-xiang-dui-xiang-she-ji-shi-jian-zhi-nan-ruby-yu-yan-miao-shu/</id>
+    <published>2014-09-03T13:25:07.000Z</published>
+    <updated>2018-11-05T13:26:37.766Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;设计是保留可变性的艺术，而非达到完美性的行为。&lt;/p&gt;
+&lt;p&gt;编写出的代码应该具有如下几个特点:   &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;透明性（Transportation）: 在所更改的代码，以及在远处依赖于它的代码里，更改所产生的后果应该显而易见。 
+        
+      
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://tuliang.org/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
     
   </entry>
   
@@ -498,88 +585,6 @@
     
     
       <category term="Objective-C" scheme="https://tuliang.org/tags/Objective-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决 JavaScript 指向不明</title>
-    <link href="https://tuliang.org/jie-jue-javascript-zhi-xiang-bu-ming/"/>
-    <id>https://tuliang.org/jie-jue-javascript-zhi-xiang-bu-ming/</id>
-    <published>2012-12-23T14:33:02.000Z</published>
-    <updated>2018-10-31T14:35:50.759Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;用面向对象的方式编写 &lt;code&gt;JavaScript&lt;/code&gt; 时，在类中经常会出现 &lt;code&gt;this&lt;/code&gt; 指向不明的问题。&lt;/p&gt;
-&lt;p&gt;解决这个问题很简单，在对象中将 &lt;code&gt;this&lt;/code&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="https://tuliang.org/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="https://tuliang.org/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 忽略文件</title>
-    <link href="https://tuliang.org/git-hu-lue-wen-jian/"/>
-    <id>https://tuliang.org/git-hu-lue-wen-jian/</id>
-    <published>2012-12-23T09:27:55.000Z</published>
-    <updated>2018-10-31T14:36:46.212Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;使用 &lt;code&gt;git&lt;/code&gt; 时，经常需要忽略一些文件，比如一些 &lt;code&gt;IDE&lt;/code&gt; 生成的配置文件。&lt;/p&gt;
-&lt;p&gt;在项目目录加上 &lt;code&gt;.gitignore&lt;/code&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Git" scheme="https://tuliang.org/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript 变量声明提前</title>
-    <link href="https://tuliang.org/javascript-bian-liang-sheng-ming-ti-qian/"/>
-    <id>https://tuliang.org/javascript-bian-liang-sheng-ming-ti-qian/</id>
-    <published>2012-10-17T09:12:48.000Z</published>
-    <updated>2018-10-31T14:41:00.705Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;code&gt;JavaScript&lt;/code&gt; 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。&lt;/p&gt;
-&lt;p&gt;到底是什么意思呢？我们来看下面这段代码&lt;/p&gt;
-&lt;pre class=&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="https://tuliang.org/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="https://tuliang.org/tags/JavaScript/"/>
     
   </entry>
   

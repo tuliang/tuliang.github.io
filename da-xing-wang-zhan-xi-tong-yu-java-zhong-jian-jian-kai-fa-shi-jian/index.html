@@ -1,0 +1,654 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="大型网站系统与 Java 中间件开发实践, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="阿姆达尔定律（Amdahl’s law）告诉我们，程序中可并行代码的比例决定你增加处理器所能带来的速度提升上限，是否能达到这个上限，还取决于很多其他因素。
+例如，当 P=0.5 时，我们可以计算出速度提升的上限就是 2。而如果 P=0.2，">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>大型网站系统与 Java 中间件开发实践 | 不做咸鱼的小明</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">不做咸鱼的小明</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/fund" class="waves-effect waves-light">
+            
+            <i class="fa fa-bar-chart"></i>
+            
+            <span>基金</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">不做咸鱼的小明</div>
+        <div class="logo-desc">
+            
+            We shall never surrender
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/fund" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bar-chart"></i>
+                
+                基金
+            </a>
+        </li>
+        
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        大型网站系统与 Java 中间件开发实践
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/Java/" target="_blank">
+                    <span class="chip bg-color">Java</span>
+                </a>
+                
+                <a href="/tags/架构/" target="_blank">
+                    <span class="chip bg-color">架构</span>
+                </a>
+                
+                <a href="/tags/分布式/" target="_blank">
+                    <span class="chip bg-color">分布式</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/阅读/" class="post-category" target="_blank">
+                        阅读
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2015-04-17
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>阿姆达尔定律（Amdahl’s law）告诉我们，程序中可并行代码的比例决定你增加处理器所能带来的速度提升上限，是否能达到这个上限，还取决于很多其他因素。</p>
+<p>例如，当 P=0.5 时，我们可以计算出速度提升的上限就是 2。而如果 P=0.2，速度提升的上限就是1.25。可见，在多核的时代，并发程序的开发或者说提升程序的并发性是多么重要。</p>
+<p>$$S(N) = \frac{1}{(1-P)+\frac{P}{N}}$$</p>
+<p>其中，P 指的是程序中科并行部分的程序在单核上执行时间的占比，N 表示处理器的个数（总核心数）。S(N) 是指程序在 N 个处理器相对在单个处理器中的速度提升比。</p>
+<hr>
+<p>对于单机系统来说，我们如果不使用多进程方式的话，基本不会遇到独立的故障。就是说在单机系统上的单进程程序，如果是机器问题、OS问题或者程序自身的问题，基本的结果就是我们的程序整体不能用了，不会出现一些模块不行另一些模块可以的情况。而在分布式系统中，整个系统的一部分有问题而其他部分正常是经常出现的情况，我们称之为故障独立性。我们在实现分布式系统的时候，必须要找到应对和解决故障独立性的办法。</p>
+<hr>
+<p>搜索集群（Search Cluster）的使用方式和读库的使用方式是一样的。只是构建索引的过程基本都是需要我们自己来实现的。可以从两个维度对于搜索系统构建索引的方式进行划分，一种是按照全量/增量划分，一种是按照实时/非实时划分。全量方式用于第一次建立索引（可能是新建，也可能是重建），而增量方式用于在全量的基础上持续更新索引。当然，增量构建索引的挑战非常大，一般会加入每日的全量作为补充。实时/非实时的划分方式则体现在索引更新的时间上了。我们当然更倾向于实时的方式，之所以有非实时方式，主要是考虑到对数据源头的保护。</p>
+<hr>
+<p>在 Java 中，我们主要使用的线程池就是 ThreadPoolExecutor，此外还有定时的线程池 ScheduledThreadPoolExecutor。需要注意的是对于 Executors.newCachedThreadPool() 方法返回的线程池的使用，该方法返回的线程池是没有线程上限的，在使用时一定要当心，因为没有办法控制总体的线程数量，而每个线程都是消耗内存的，这可能会导致过多的内存被占用。建议尽量不要用这个方法返回的线程池，而要使用有固定线程上限的线程池。</p>
+<hr>
+<p>与 synchronized 及 ReentrantLock 等提供的互斥相比，volatile 只是提供了变量的可见性支持。同一个变量线程间的可见性与多个线程中操作互斥是两件事情，操作互斥是提供了操作整体的原子性，千万不要混淆了。</p>
+<p>volatile 可以立刻在其他线程看到新的值，因为 volatile 保证了只有一份主存中的数据。synchronized 调用后必须在修饰的方法或代码块中读取才可以看到最新值，因为 synchronized 不仅会把当前线程修改的变量的本地副本同步给主存，还会从主存读取数据更新本地副本，这样 synchronized 保证了代码块的串行执行。</p>
+<hr>
+<p>服务注册查找中心并不处在调用者和服务提供者之间，服务注册查找中心对于调用者来说，只是提供可用的服务提供者的列表，这有点像日常生活中类似 114 的查号服务。不过处于效率的考虑，我们并不是在每次调用远程服务前都通过这个服务注册查找中心来查找可用地址，而是把地址缓存在调用者本地，当有变化时主动从服务注册查找中心发起通知，告诉调用者可用的服务提供者列表的变化。</p>
+<hr>
+<p>在不靠升级硬件的情况下，能够想到的处理方案就是给现有数据库减压。减压的思路有三个，一是优化应用，看看是否有不必要的压力给了数据库（应用优化）；二是看看有没有其他方法可以降低数据库的压力，例如引入缓存、加搜索引擎等；最后一种思路就是把数据库的数据和访问分到多台数据库上，分开支持，这也是我们的核心思路和逻辑。</p>
+<p>数据库拆分有两种方式，一个是垂直拆分，一个水平拆分。垂直拆分就是把一个数据库中不同业务单元的数据分到不同的数据库里面，水平拆分是根据一定的规则把同一业务单元的数据拆分到多个数据库中。先论是垂直拆分还是水平拆分，最后的结果都是将原来在一个数据库中的数据拆分到了不同的数据库中。所以原来单机数据库可以支持的特性现在就未必支持了。</p>
+<p>垂直拆分会带来如下影响: </p>
+<ul>
+<li>单机的 ACID 保证被打破了。数据到了多机后，原来在单机通过事务来进行处理逻辑会受到很大的影响。我们面临的选择是，要么放弃原来的单机事务，修改实现，要么引入分布式事务。</li>
+<li>一些 join 操作会变得比较困难，因为数据可能已经在两个数据库中了，所以不能很方便地利用数据库本身 join 了，需要应用或者其他方式来解决。</li>
+<li>靠外键去进行约束的场景会受影响。</li>
+</ul>
+<p>水平拆分会带来如下影响: </p>
+<ul>
+<li>同样有可能有 ACID 被打破的情况。</li>
+<li>同样有可能有 join 操作被影响的情况。</li>
+<li>靠外键去进行约束的场景会受影响。</li>
+<li>依赖单库的自增序列生成唯一 ID 会受影响。</li>
+<li>针对单个逻辑意义上的表的查询要跨库了。</li>
+</ul>
+<p>PS: ACID，指数据库事务正确执行的四个基本要素的缩写。包含: 原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）。一个支持事务（Transaction）的，必需要具有这四种特性，否则在事务过程（Transaction processing）当中无法保证数据的正确性，交易过程极可能达不到交易方的要求。</p>
+<hr>
+<p>一致性哈希所带来的最大变化是把节点对应的哈希值变为了一个范围，而不再是离散的。在一致性哈希中，我们会把整个哈希值的范围定义得非常大，然后把这个范围分配给现有的节点。如果有节点加入，那么这个新节点会从原有的某个节点上分管一部分范围的哈希值；如果有节点退出，那么这个节点原来管理的哈希值会给它的下一个节点来管理。</p>
+<p>新增一个节点时，除了新增的节点外，只有一个节点受影响，这个新增节点和受影响的节点的负载是明显比其他节点低的；减少一个节点时，除了减去的节点外，只有一个节点受影响，它要承担自己原来的和减去的节点的工作，压力明显比其他节点要高。这似乎要增加一倍节点或减去一半节点才能保持各个节点的均衡负载。如果真是这样，一致性哈希的优势就不明显了。</p>
+<p>为了应对上述问题，我们引入虚拟节点的概念。即多个物理节点可以变为很多个虚拟节点，每个虚拟节点支持连续的哈希环上的一段。而这时如果加入一个物理节点，就会相应加入很多虚拟节点，这些新的虚拟节点是相对均匀地插入到整个哈希环上的，这样，就可以很好地分担现有物理节点的压力了；如果减少了一个物理节点，对应的很多虚拟节点就会失效，这样就会有很多剩余的虚拟节点来承担之前虚拟节点的工作，但是对于物理节点来说，增加的负载相对是均衡的。所以可以通过一个物理 节点对应非常多的虚拟节点，并且同一个物理节点的虚拟节点尽量均匀分布的方式来解决增加或减少节点时负载不均衡的问题。</p>
+
+            </div>
+            <hr>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://tuliang.org/da-xing-wang-zhan-xi-tong-yu-java-zhong-jian-jian-kai-fa-shi-jian/';
+        this.page.identifier = '/da-xing-wang-zhan-xi-tong-yu-java-zhong-jian-jian-kai-fa-shi-jian/';
+        this.page.title = '大型网站系统与 Java 中间件开发实践';
+    };
+    let disqus_shortname = 'tuliang';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/liu-shen-chang-liang-shi-ke-bian-de/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="留神，常量是可变的">
+                        
+                        <span class="card-title">留神，常量是可变的</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">
+总是将常量冻结 freeze，从而防止其被改变。
+
+不使用 freeze ，常量可以修改。
+MY_CONSTANT = "foo"
+MY_CONSTANT &lt;&lt; "bar"
+puts MY_CONSTANT #=> "foob</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-31
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Ruby/" target="_blank">
+                        <span class="chip bg-color">Ruby</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/ruby-thread-pool/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Ruby thread pool">
+                        
+                        <span class="card-title">Ruby thread pool</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">有时候会遇到一个情况需要在多个远程服务获取数据。
+例如服务 a 需要 2 秒，服务 b 需要 5 秒，按照正常处理总共就需要 2+5 总共 7 秒了。
+如果 a 和 b 之间并没有相互依赖关系，我们可以使用 thread pool 来并发获</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2015-04-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Ruby/" target="_blank">
+                        <span class="chip bg-color">Ruby</span>
+                    </a>
+                    
+                    <a href="/tags/并发编程/" target="_blank">
+                        <span class="chip bg-color">并发编程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://github.com/tuliang/" target="_blank">涂亮</a> 基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

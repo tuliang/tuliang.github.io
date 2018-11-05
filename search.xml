@@ -170,6 +170,33 @@
     </entry>
     
     <entry>
+      <title>大型网站系统与 Java 中间件开发实践</title>
+      <link href="/da-xing-wang-zhan-xi-tong-yu-java-zhong-jian-jian-kai-fa-shi-jian/"/>
+      <url>/da-xing-wang-zhan-xi-tong-yu-java-zhong-jian-jian-kai-fa-shi-jian/</url>
+      
+        <content type="html"><![CDATA[<p>阿姆达尔定律（Amdahl’s law）告诉我们，程序中可并行代码的比例决定你增加处理器所能带来的速度提升上限，是否能达到这个上限，还取决于很多其他因素。</p><p>例如，当 P=0.5 时，我们可以计算出速度提升的上限就是 2。而如果 P=0.2，速度提升的上限就是1.25。可见，在多核的时代，并发程序的开发或者说提升程序的并发性是多么重要。</p><p>$$S(N) = \frac{1}{(1-P)+\frac{P}{N}}$$</p><p>其中，P 指的是程序中科并行部分的程序在单核上执行时间的占比，N 表示处理器的个数（总核心数）。S(N) 是指程序在 N 个处理器相对在单个处理器中的速度提升比。</p><hr><p>对于单机系统来说，我们如果不使用多进程方式的话，基本不会遇到独立的故障。就是说在单机系统上的单进程程序，如果是机器问题、OS问题或者程序自身的问题，基本的结果就是我们的程序整体不能用了，不会出现一些模块不行另一些模块可以的情况。而在分布式系统中，整个系统的一部分有问题而其他部分正常是经常出现的情况，我们称之为故障独立性。我们在实现分布式系统的时候，必须要找到应对和解决故障独立性的办法。</p><hr><p>搜索集群（Search Cluster）的使用方式和读库的使用方式是一样的。只是构建索引的过程基本都是需要我们自己来实现的。可以从两个维度对于搜索系统构建索引的方式进行划分，一种是按照全量/增量划分，一种是按照实时/非实时划分。全量方式用于第一次建立索引（可能是新建，也可能是重建），而增量方式用于在全量的基础上持续更新索引。当然，增量构建索引的挑战非常大，一般会加入每日的全量作为补充。实时/非实时的划分方式则体现在索引更新的时间上了。我们当然更倾向于实时的方式，之所以有非实时方式，主要是考虑到对数据源头的保护。</p><hr><p>在 Java 中，我们主要使用的线程池就是 ThreadPoolExecutor，此外还有定时的线程池 ScheduledThreadPoolExecutor。需要注意的是对于 Executors.newCachedThreadPool() 方法返回的线程池的使用，该方法返回的线程池是没有线程上限的，在使用时一定要当心，因为没有办法控制总体的线程数量，而每个线程都是消耗内存的，这可能会导致过多的内存被占用。建议尽量不要用这个方法返回的线程池，而要使用有固定线程上限的线程池。</p><hr><p>与 synchronized 及 ReentrantLock 等提供的互斥相比，volatile 只是提供了变量的可见性支持。同一个变量线程间的可见性与多个线程中操作互斥是两件事情，操作互斥是提供了操作整体的原子性，千万不要混淆了。</p><p>volatile 可以立刻在其他线程看到新的值，因为 volatile 保证了只有一份主存中的数据。synchronized 调用后必须在修饰的方法或代码块中读取才可以看到最新值，因为 synchronized 不仅会把当前线程修改的变量的本地副本同步给主存，还会从主存读取数据更新本地副本，这样 synchronized 保证了代码块的串行执行。</p><hr><p>服务注册查找中心并不处在调用者和服务提供者之间，服务注册查找中心对于调用者来说，只是提供可用的服务提供者的列表，这有点像日常生活中类似 114 的查号服务。不过处于效率的考虑，我们并不是在每次调用远程服务前都通过这个服务注册查找中心来查找可用地址，而是把地址缓存在调用者本地，当有变化时主动从服务注册查找中心发起通知，告诉调用者可用的服务提供者列表的变化。</p><hr><p>在不靠升级硬件的情况下，能够想到的处理方案就是给现有数据库减压。减压的思路有三个，一是优化应用，看看是否有不必要的压力给了数据库（应用优化）；二是看看有没有其他方法可以降低数据库的压力，例如引入缓存、加搜索引擎等；最后一种思路就是把数据库的数据和访问分到多台数据库上，分开支持，这也是我们的核心思路和逻辑。</p><p>数据库拆分有两种方式，一个是垂直拆分，一个水平拆分。垂直拆分就是把一个数据库中不同业务单元的数据分到不同的数据库里面，水平拆分是根据一定的规则把同一业务单元的数据拆分到多个数据库中。先论是垂直拆分还是水平拆分，最后的结果都是将原来在一个数据库中的数据拆分到了不同的数据库中。所以原来单机数据库可以支持的特性现在就未必支持了。</p><p>垂直拆分会带来如下影响: </p><ul><li>单机的 ACID 保证被打破了。数据到了多机后，原来在单机通过事务来进行处理逻辑会受到很大的影响。我们面临的选择是，要么放弃原来的单机事务，修改实现，要么引入分布式事务。</li><li>一些 join 操作会变得比较困难，因为数据可能已经在两个数据库中了，所以不能很方便地利用数据库本身 join 了，需要应用或者其他方式来解决。</li><li>靠外键去进行约束的场景会受影响。</li></ul><p>水平拆分会带来如下影响: </p><ul><li>同样有可能有 ACID 被打破的情况。</li><li>同样有可能有 join 操作被影响的情况。</li><li>靠外键去进行约束的场景会受影响。</li><li>依赖单库的自增序列生成唯一 ID 会受影响。</li><li>针对单个逻辑意义上的表的查询要跨库了。</li></ul><p>PS: ACID，指数据库事务正确执行的四个基本要素的缩写。包含: 原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）。一个支持事务（Transaction）的，必需要具有这四种特性，否则在事务过程（Transaction processing）当中无法保证数据的正确性，交易过程极可能达不到交易方的要求。</p><hr><p>一致性哈希所带来的最大变化是把节点对应的哈希值变为了一个范围，而不再是离散的。在一致性哈希中，我们会把整个哈希值的范围定义得非常大，然后把这个范围分配给现有的节点。如果有节点加入，那么这个新节点会从原有的某个节点上分管一部分范围的哈希值；如果有节点退出，那么这个节点原来管理的哈希值会给它的下一个节点来管理。</p><p>新增一个节点时，除了新增的节点外，只有一个节点受影响，这个新增节点和受影响的节点的负载是明显比其他节点低的；减少一个节点时，除了减去的节点外，只有一个节点受影响，它要承担自己原来的和减去的节点的工作，压力明显比其他节点要高。这似乎要增加一倍节点或减去一半节点才能保持各个节点的均衡负载。如果真是这样，一致性哈希的优势就不明显了。</p><p>为了应对上述问题，我们引入虚拟节点的概念。即多个物理节点可以变为很多个虚拟节点，每个虚拟节点支持连续的哈希环上的一段。而这时如果加入一个物理节点，就会相应加入很多虚拟节点，这些新的虚拟节点是相对均匀地插入到整个哈希环上的，这样，就可以很好地分担现有物理节点的压力了；如果减少了一个物理节点，对应的很多虚拟节点就会失效，这样就会有很多剩余的虚拟节点来承担之前虚拟节点的工作，但是对于物理节点来说，增加的负载相对是均衡的。所以可以通过一个物理 节点对应非常多的虚拟节点，并且同一个物理节点的虚拟节点尽量均匀分布的方式来解决增加或减少节点时负载不均衡的问题。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 阅读 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 架构 </tag>
+            
+            <tag> 分布式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Ruby thread pool</title>
       <link href="/ruby-thread-pool/"/>
       <url>/ruby-thread-pool/</url>
@@ -237,6 +264,52 @@
         <tags>
             
             <tag> Rails </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>网页渲染数学公式</title>
+      <link href="/wang-ye-xuan-ran-shu-xue-gong-shi/"/>
+      <url>/wang-ye-xuan-ran-shu-xue-gong-shi/</url>
+      
+        <content type="html"><![CDATA[<p>数学公式一般使用 LaTeX，但是在网页上一般将 LaTeX 渲染成为图片。</p><p>在一堆文字中放进几个图片难看又麻烦，稍微找了一下发现一个神器: <a href="http://www.mathjax.org/" target="_blank" rel="noopener">MathJax</a></p><p>使用它很简单: </p><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://cdn.mathjax.org/mathjax/latest/MathJax.js?config<span class="token punctuation">=</span>TeX-AMS-MML_HTMLorMML<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre><p>现在你可以在 <code>$$</code> 和 <code>$$</code> 之间书写 LaTeX 了: </p><pre><code>$$J_\alpha(x) = \sum\limits_{m=0}^\infty \frac{(-1)^m}{m! \, \Gamma(m + \alpha + 1)}{\bigl({\frac{x}{2}}\bigr)}^{2 m + \alpha}$$</code></pre><p>$$<br>J_\alpha(x) = \sum\limits_{m=0}^\infty \frac{(-1)^m}{m! \, \Gamma(m + \alpha + 1)}{\bigl({\frac{x}{2}}\bigr)}^{2 m + \alpha}<br>$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MathJax </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>面向对象设计实践指南-Ruby语言描述</title>
+      <link href="/mian-xiang-dui-xiang-she-ji-shi-jian-zhi-nan-ruby-yu-yan-miao-shu/"/>
+      <url>/mian-xiang-dui-xiang-she-ji-shi-jian-zhi-nan-ruby-yu-yan-miao-shu/</url>
+      
+        <content type="html"><![CDATA[<p>设计是保留可变性的艺术，而非达到完美性的行为。</p><p>编写出的代码应该具有如下几个特点:   </p><ul><li>透明性（Transportation）: 在所更改的代码，以及在远处依赖于它的代码里，更改所产生的后果应该显而易见。  </li><li>合理性（Reasonable）: 任何更改所产生的成本都应该于更改所要带来的效益成正比。  </li><li>可用性（Usable）: 现有代码在新的环境和意想不到的环境里都能使用。  </li><li>典范性（Exemplary）: 代码本身应该鼓励那些为了延续这些特点面对它进行的更改。  </li></ul><p>这四个特点简写为TRUE。</p><p>选择依赖方向:   </p><ul><li>有些类比其他类更容易发生需求变化。  </li><li>具体类比抽象类更容易发生变化。  </li><li>更改拥有许多依赖关系的类会造成广泛的影响。  </li></ul><p>从基于消息的角度比从基于类的角度更能产生出灵活的应用程序。将那个基本设计问题从“我知道我需要这个类，那该怎么办？”转变为“我需要发送这条消息，谁该响应它呢？”<br>你发送消息不是因为你有对象，你有了对象是因为你要发送消息。</p><p>请询问“要什么”，别告知“如何做”。<br>“我知道我需要什么，并且我知道你是怎么做的。” &gt;&gt; “我知道我需要什么，并且我知道你会做什么。” &gt;&gt; “我知道你需要什么，并且我相信你回做好你的本职工作。”<br>这种模式可以不用修改调用者，便能达到扩展它的目的。<br>PS: 感觉这个和做管理是同样的道理，面对新手是第一句，面对胜任者是第二句，面对专家则是第三句。</p><p>子类是其父类的特殊化。子类应该包含父类的一切内容，外加更多内容。任何期待父类的对象都应该能与子类进行交互，完全不需要知道它实际的类。</p><p>有些问题需要在其他不相关的对象之间共享行为。这种公共行为对类来说正交的，它是对象所扮演的角色。这些关系与经典继承要求的子类/父类关系有所不同。许多语言都提供了某种方式，可以一次定义一组命名方法。这些命名方法独立于类，并且可以混入任何对象。在Ruby里，这种混入内容都被称为模块（module）。</p><p>继承和模块的差别在于“是一个”还是“像一个”。</p><p>抽象父类里的所有代码都应该适用于每一个继承它的类。父类不应该包含只适用于部分（而非全部）子类的代码。这个限制也适用于模块: 在模块里的代码必须能够适用于所有使用它的那些类型。</p><p>钩子方法的局限性在于它仅适用于创建浅层结构。为了把自身的钩子和父类的钩子进行组合，子类将被迫改写钩子，并在其内部发送super消息。  </p><ul><li>将继承用于“是什么”关系  </li><li>将鸭子类型用于“表现得像什么”关系  </li><li>将组合用于“有什么”关系  </li></ul><p>保留未使用的代码比删除之后再恢复它们所花费的成本更高。</p><p>测试应该把私有方法隐藏起来，而不应该将它们暴露出来。  </p><ul><li>这种测试有些冗余  </li><li>私有方法不稳定  </li><li>测试私有方法会误导人去使用它们  </li></ul><p>如果你的对象拥有大量私有方法，以至于你必须对它们进行测试，那么请考虑将这些方法提取为新对象。提取出来的方法可以作为这个新对象的责任核心，并因此构成它的公共接口。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 阅读 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ruby </tag>
             
         </tags>
       

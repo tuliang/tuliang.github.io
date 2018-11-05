@@ -1,0 +1,569 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="标签: 架构, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="标签: 架构 | 不做咸鱼的小明">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>标签: 架构 | 不做咸鱼的小明</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">不做咸鱼的小明</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/fund" class="waves-effect waves-light">
+            
+            <i class="fa fa-bar-chart"></i>
+            
+            <span>基金</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">不做咸鱼的小明</div>
+        <div class="logo-desc">
+            
+            We shall never surrender
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/fund" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bar-chart"></i>
+                
+                基金
+            </a>
+        </li>
+        
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+    </nav>
+</header>
+
+<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+                <div class="brand">
+                    <div class="title center-align">
+                    
+                        不做咸鱼的小明
+                    
+                    </div>
+
+                    <div class="description center-align">
+                    
+                        We shall never surrender
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+// Dynamically switch banner pictures every day.
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
+
+<main class="content">
+
+    
+
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">文章标签</div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/CSS3/" title="CSS3: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="CSS3" style="background-color: #F9EBEA;">CSS3
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/JavaScript/" title="JavaScript: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="JavaScript" style="background-color: #F5EEF8;">JavaScript
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Objective-C/" title="Objective-C: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Objective-C" style="background-color: #D5F5E3;">Objective-C
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/PHP/" title="PHP: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="PHP" style="background-color: #E8F8F5;">PHP
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/算法/" title="算法: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="算法" style="background-color: #FEF9E7;">算法
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/设计模式/" title="设计模式: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="设计模式" style="background-color: #F8F9F9;">设计模式
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Rails/" title="Rails: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Rails" style="background-color: #82E0AA;">Rails
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Ruby/" title="Ruby: 8">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Ruby" style="background-color: #D7BDE2;">Ruby
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Docker/" title="Docker: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Docker" style="background-color: #A3E4D7;">Docker
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Docker-Compose/" title="Docker Compose: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Docker Compose" style="background-color: #85C1E9;">Docker Compose
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/NGINX/" title="NGINX: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="NGINX" style="background-color: #F8C471;">NGINX
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Git/" title="Git: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Git" style="background-color: #F9E79F;">Git
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Emacs/" title="Emacs: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Emacs" style="background-color: #F9E79F;">Emacs
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Siege/" title="Siege: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Siege" style="background-color: #A3E4D7;">Siege
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/MathJax/" title="MathJax: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="MathJax" style="background-color: #A3E4D7;">MathJax
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/HTTP/" title="HTTP: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="HTTP" style="background-color: #FEF9E7;">HTTP
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/HTML5/" title="HTML5: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="HTML5" style="background-color: #A3E4D7;">HTML5
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/软件工程/" title="软件工程: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="软件工程" style="background-color: #85C1E9;">软件工程
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/哲学/" title="哲学: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="哲学" style="background-color: #85C1E9;">哲学
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Java/" title="Java: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Java" style="background-color: #FFF;">Java
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/架构/" title="架构: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active " data-tagname="架构" style="background-color: #F9EBEA;">架构
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/分布式/" title="分布式: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="分布式" style="background-color: #E8F8F5;">分布式
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/方法论/" title="方法论: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="方法论" style="background-color: #D5F5E3;">方法论
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/思维/" title="思维: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="思维" style="background-color: #82E0AA;">思维
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/计算机/" title="计算机: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="计算机" style="background-color: #F9EBEA;">计算机
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/并发编程/" title="并发编程: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="并发编程" style="background-color: #F5EEF8;">并发编程
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Python/" title="Python: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Python" style="background-color: #F5EEF8;">Python
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+
+        <article>
+            <div class="row tags-posts">
+                
+                
+                <div class="article tag-post col s12 m6 l4" data-tags="Java, 架构, 分布式" data-aos="fade-up">
+                    <div class="card">
+                        <a href="/da-xing-wang-zhan-xi-tong-yu-java-zhong-jian-jian-kai-fa-shi-jian/">
+                            <div class="card-image tag-image">
+                                
+                                
+                                <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="大型网站系统与 Java 中间件开发实践">
+                                
+                                <span class="card-title">大型网站系统与 Java 中间件开发实践</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2015-04-17
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/阅读/" class="post-category" target="_blank">
+                                    阅读
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </article>
+    </div>
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://github.com/tuliang/" target="_blank">涂亮</a> 基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
