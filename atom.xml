@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-11-05T04:28:31.759Z</updated>
+  <updated>2018-11-05T08:49:33.392Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>容器基础-隔离和限制</title>
+    <link href="https://tuliang.org/rong-qi-ji-chu-ge-chi-he-xian-zhi/"/>
+    <id>https://tuliang.org/rong-qi-ji-chu-ge-chi-he-xian-zhi/</id>
+    <published>2018-11-05T08:48:48.000Z</published>
+    <updated>2018-11-05T08:49:33.392Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;容器技术的核心功能，就是通过修改和约束进程的动态表现，从而为其创造出一个“空间”。&lt;/p&gt;
+&lt;p&gt;对于 &lt;code&gt;Docker&lt;/code&gt; 等大多数 &lt;code&gt;Linux&lt;/code&gt; 容器来说，&lt;code&gt;Namespace&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="容器" scheme="https://tuliang.org/categories/%E5%AE%B9%E5%99%A8/"/>
+    
+    
+      <category term="Docker" scheme="https://tuliang.org/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>如何高效学习</title>
@@ -553,36 +580,6 @@
     
     
       <category term="JavaScript" scheme="https://tuliang.org/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP 冒泡排序</title>
-    <link href="https://tuliang.org/php-mou-pao-pai-xu/"/>
-    <id>https://tuliang.org/php-mou-pao-pai-xu/</id>
-    <published>2012-09-22T14:42:14.000Z</published>
-    <updated>2018-10-31T14:50:58.324Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;使用递归实现冒泡排序&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;PHP&lt;/code&gt; 多递归时需要 &lt;code&gt;return&lt;/code&gt;，如下述代码中&lt;/p&gt;
-&lt;pre class=&quot; language-php&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
-    
-      <category term="算法" scheme="https://tuliang.org/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
