@@ -378,7 +378,7 @@ $ <span class="token function">cat</span> /sys/fs/cgroup/cpu/docker/5d5c9f67d/cp
 <p>这就是意味着这个 <code>Docker</code> 容器，只能使用到 20% 到 <code>CPU</code> 带宽。</p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>通过以上讲述，我们理解了一个 <code>Docker</code> 容器，其实就是一个启用了 <code>Namespace</code> 的进程，而这个进程使用到资源受到 <code>Cgroups</code>  限制。</p>
 <blockquote>
-<p>这是容器技术中一个非常重要的概念，即：容器上一个“单进程”模型。</p>
+<p>这是容器技术中一个非常重要的概念，即：容器是一个“单进程”模型。</p>
 </blockquote>
 <p>这是因为容器本身的设计，就是希望容器和应用能够同生命周期，这个概念对容器编排非常重要。否则，一旦出现类似“容器上正常运行的，但是里面的应用挂了”的情况，编排系统处理起来就非常麻烦了。</p>
 
