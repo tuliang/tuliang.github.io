@@ -5,9 +5,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="容器基础-隔离和限制, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="容器技术的核心功能，就是通过修改和约束进程的动态表现，从而为其创造出一个“空间”。
-对于 Docker 等大多数 Linux 容器来说，Namespace 技术是用来修改进程视图的主要方法，而 Cgroups 技术是用来制造约束的主要手段 ">
+    <meta name="keywords" content="力争代码被有效测试过, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="
+使用模糊测试和属性测试工具，帮助测试代码的快乐路径和异常路径。
+
+在测试中，一个常犯的错误是我们只写快乐路径 happy path 测试。这是刚写完开发代码之后写测试时常见的情况。快乐路径测试，是指被测代码的前提条件都被满足的前提下，仅测">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>容器基础-隔离和限制 | 不做咸鱼的小明</title>
+    <title>力争代码被有效测试过 | 不做咸鱼的小明</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -208,13 +210,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        容器基础-隔离和限制
+                        力争代码被有效测试过
                     </div>
                 </div>
             </div>
@@ -325,8 +327,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/Docker/" target="_blank">
-                    <span class="chip bg-color">Docker</span>
+                <a href="/tags/Ruby/" target="_blank">
+                    <span class="chip bg-color">Ruby</span>
                 </a>
                 
             </div>
@@ -336,51 +338,71 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/容器/" class="post-category" target="_blank">
-                        容器
+                    <a href="/categories/测试/" class="post-category" target="_blank">
+                        测试
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-11-05
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-07
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>容器技术的核心功能，就是通过修改和约束进程的动态表现，从而为其创造出一个“空间”。</p>
-<p>对于 <code>Docker</code> 等大多数 <code>Linux</code> 容器来说，<code>Namespace</code> 技术是用来修改进程视图的主要方法，而 <code>Cgroups</code> 技术是用来制造约束的主要手段 。</p>
-<h4 id="障眼法"><a href="#障眼法" class="headerlink" title="障眼法"></a>障眼法</h4><p>每当我们在主机上运行一个程序，操作系统都会给它分配一个进程编号，比如 <code>PID=100</code>，这个编号是进程的唯一标识。</p>
-<p>而我们通过 <code>Docker</code> 把这个程序运行在一个容器当中时，<code>Docker</code> 就会对这个进程的空间做手脚。使得这些进程只能看到重新计算过的进程编号，比如 <code>PID=1</code>。可实际上，它们在宿主机的操作系统里，还是原来 <code>PID=100</code> 进程。</p>
-<p>这种技术，就是 <code>Linux</code> 里面的 <code>Namespace</code> 机制。</p>
-<p>而除了我们刚刚用到的 <code>PID Namespace</code>，<code>Linux</code> 操作系统还提供了 <code>Mount</code>、<code>UTS</code>、<code>IPC</code>、 <code>Network</code> 和 <code>User</code> 这些 <code>Namespace</code> ，用来对各种不同的进程上下文进行“障眼法”操作。</p>
-<p>比如，<code>Mount Nmaespace</code>，用于 让被隔离进程只看到当前 <code>Namespace</code> 里的挂载点信息；<code>Network Namespace</code>，用于让被隔离进程看到当前 <code>Namespace</code> 里的网络设备和配置。</p>
-<p>这就是 <code>Linux</code> 容器最基本的实现原理。</p>
-<p>所以，<code>Docker</code> 容器这个听起来模糊的概念，实际上是最创建容器进程时，指定了这个进程所需要启用的一组 <code>Namespace</code> 参数。这样，容器就只能“看”到当前 <code>Namespace</code> 所限定的资源、文件、设备、状态、配置等等。而对于宿主机以及其他不相关的程序，它就完全看不到了。</p>
-<blockquote>
-<p>到此，我们明白了。容器，其实是一种特殊的进程而已。</p>
+                <blockquote>
+<p>使用模糊测试和属性测试工具，帮助测试代码的快乐路径和异常路径。</p>
 </blockquote>
-<h4 id="紧箍咒"><a href="#紧箍咒" class="headerlink" title="紧箍咒"></a>紧箍咒</h4><p>上面提到，容器，其实是一种特殊的进程。那么我们使用  <code>Namespace</code>  技术只是让容器进程看不到外界，在宿主机上，它和其他所有进程之间依然是平等的竞争关系。这就是意味着，虽然容器进程表面上被隔离了，但是它依然可以使用宿主机的所有资源，或者是它的资源被宿主机上其他进程抢占。这些情况，显然都不是我们想要的。</p>
-<p><code>Cgroups</code> 就是 <code>Linux</code> 内核中用来为进程设置资源限制的一个重要功能。它的全称是 <code>Linux Control Group</code>，作用就是限制一个进程组能够使用的资源上限，包括 <code>CPU</code>、内存、磁盘、网络带宽等等。此外，它还能够对进程进行优先级设置、审计，以及将进程挂起和恢复等操作。</p>
-<p><code>Cgroups</code> 的设计还是比较易用的，简单地理解呢，它就是一个子系统目录加上一组资源限制文件的组合。具体对于 <code>Docker</code> 来说，只需要在每个子系统下面，为每个容器创建一个控制组，然后在启动容器进程之后，把这个进程的 <code>PID</code> 填写到对应控制组的 <code>tasks</code> 文件中就可以了。</p>
-<p>至于在这些控制组下面的资源文件填上什么值，就靠用户执行 <code>docker run</code> 时的参数指定了，比如这样一条命令：</p>
-<pre class=" language-bash"><code class="language-bash">$ docker run -it --cpu-period<span class="token operator">=</span>100000 --cpu-quota<span class="token operator">=</span>20000 ubuntu /bin/bash
+<p>在测试中，一个常犯的错误是我们只写快乐路径 <code>happy path</code> 测试。这是刚写完开发代码之后写测试时常见的情况。快乐路径测试，是指被测代码的前提条件都被满足的前提下，仅测试有效出入的测试方法。</p>
+<p>有时候我们可能没有验证输入的合法性，而且中数据库中也没有添加不可为空的约束。快乐路径测试是有价值的，但是这不足以帮我们发现所有的 <code>bug</code>，因为制定的测试只测试了我们期望代码该做的事。</p>
+<p>解决这个问题的一种方法是加入异常路径 <code>exception path</code> 测试，输入各种各样的值并保证代码的每一个分支都被执行过。例如模糊测试 <code>fuzz testing</code> 和属性测试 <code>property testing</code>。</p>
+<p>这两种测试既互有联系，但又有不同的目的。基本思想都是，给我们的代码输入大量不同类型的数据，保证我们的代码依然能够正常工作。一般来说，模糊测试主要是应用于安全领域。向一个程序或者特定的方法输入大量随机的数据，是找出程序崩溃或暴露安全漏洞的一种非常好的方法。</p>
+<p>采用模糊测试方法，我们的关注点从测试结果是通过还是失败，转移到是否能找到程序崩溃或者是异常问题上。这个过程通常需要一个随机值的发生器 <code>generator</code> 和我们需要测试的代码片段。举个例子，假如我们想知道 <code>URL::HTTP::build</code> 方法是否会在输入完全随机的无效主机名 <code>host name</code> 后崩溃？针对这个问题我们可以使用 <code>Ruby</code> 模糊测试库中的一个名为 <code>FuzzBert</code> 的 <code>Gem</code>。</p>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'fuzzbert'</span><span class="token punctuation">)</span>
+<span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'uri'</span><span class="token punctuation">)</span>
+
+<span class="token function">fuzz</span><span class="token punctuation">(</span><span class="token string">'URI::HTTP::build'</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token string">"random server names"</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token constant">FuzzBert</span><span class="token punctuation">:</span><span class="token symbol">:Generators</span><span class="token punctuation">.</span>random
+  <span class="token keyword">end</span>
+
+  deploy <span class="token keyword">do</span> <span class="token operator">|</span>data<span class="token operator">|</span>
+    <span class="token constant">URI</span><span class="token punctuation">:</span><span class="token symbol">:HTTP</span><span class="token punctuation">:</span><span class="token symbol">:build</span><span class="token punctuation">(</span>host<span class="token punctuation">:</span> data<span class="token punctuation">,</span> path<span class="token punctuation">:</span> <span class="token string">'/'</span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
 </code></pre>
-<p>在启动这个容器后，我们可以通过查看 <code>Cgroups</code> 文件系统下，<code>CPU</code> 子系统中，<code>docker</code> 这个控制组里面的资源限制文件来确认：</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">cat</span> /sys/fs/cgroup/cpu/docker/5d5c9f67d/cpu.cfs_period_us 
-100000
-$ <span class="token function">cat</span> /sys/fs/cgroup/cpu/docker/5d5c9f67d/cpu.cfs_quota_us 
-20000
+<p>模糊测试虽说非常有趣，但并不适合日常使用。部分原因是，像 <code>FuzzBert</code> 这样的工具会持续不断地运行测试，除非你手动终止。为了让模糊测试更加高效，有时需要它连续运行好几天。<code>FuzzBert</code> 提供了配置选项，允许我们设置模糊测试运行的时间，不过测试运行的时间越长，你将越有信心相信代码里没有让系统崩溃的 <code>bug</code> 存在。</p>
+<p>与模糊测试相似，属性测试也使用随机输入来测试你的代码，但所添加测试的期望是确定的。属性测试相对来说，显得更加实际，因为测试是有限的，而且可以与自动化单元测试一起运行。我们可以使用 <code>MrProper</code> 进行属性测试。</p>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'mrproper'</span><span class="token punctuation">)</span>
+
+<span class="token function">properties</span><span class="token punctuation">(</span><span class="token string">'Version'</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token builtin">Integer</span><span class="token punctuation">,</span> <span class="token builtin">Integer</span><span class="token punctuation">,</span> <span class="token builtin">Integer</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+  <span class="token function">property</span><span class="token punctuation">(</span><span class="token string">"new(str).to_s == str"</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token operator">|</span>data<span class="token operator">|</span>
+    str <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span>
+    <span class="token function">assert_equal</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token constant">Version</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">,</span>to_s<span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
 </code></pre>
-<p>这就是意味着这个 <code>Docker</code> 容器，只能使用到 20% 到 <code>CPU</code> 带宽。</p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>通过以上讲述，我们理解了一个 <code>Docker</code> 容器，其实就是一个启用了 <code>Namespace</code> 的进程，而这个进程使用到资源受到 <code>Cgroups</code>  限制。</p>
 <blockquote>
-<p>这是容器技术中一个非常重要的概念，即：容器是一个“单进程”模型。</p>
+<p>测试覆盖率工具会给你一种虚假的安全感，因为被执行过的代码不代表这行代码是正确的。</p>
 </blockquote>
-<p>这是因为容器本身的设计，就是希望容器和应用能够同生命周期，这个概念对容器编排非常重要。否则，一旦出现类似“容器上正常运行的，但是里面的应用挂了”的情况，编排系统处理起来就非常麻烦了。</p>
+<p>代码覆盖率工具可以生成测试报告，告诉你测试时哪些代码被执行过。<code>SimpleCov</code> 能生成非常详细的 <code>HTML</code> 报告，涵盖工程中所有的源代码。但是它会给你一种虚假的安全感，因为被执行过的代码不代表这行代码是正确的。你仍然需要确保对执行的代码分支编写了有效的测试。</p>
+<blockquote>
+<p>在编写特性的同时就加上测试，会让测试容易很多。</p>
+</blockquote>
+<p>无论使用哪种测试工具，都有一些规则需要你遵守。最重要的一点是，尽早写测试，越早越好。等到接近项目尾声再写为时已晚。一方面，这会让测试脱离现有的项目，成为单独的项目；另一方面，到那时候你可能已经忘了哪些重要的属性需要被测试。所以说，在编写特性的同时就加上测试，会让测试容易很多。</p>
+<blockquote>
+<p>这你开始寻找导致 <code>bug</code> 的根本原因之前，先写一个针对该 <code>bug</code> 的测试。</p>
+</blockquote>
+<p>在寻找导致 <code>bug</code> 的根本原因之前，先写一个能够重现这个 <code>bug</code> 的测试。重现 <code>bug</code> 是修复 <code>bug</code> 的第一步，若有专门针对这个 <code>bug</code> 的测试，就可以保证在我们修复  <code>bug</code> 之后，它不会再次出现。</p>
+<blockquote>
+<p>尽可能多地自动化你的测试。</p>
+</blockquote>
+<p>最后，尽可能多地自动化你的测试。有最好的测试，但不去运行他们，那么这些测试也毫无用处。</p>
 
             </div>
             <hr>
@@ -404,9 +426,9 @@ $ <span class="token function">cat</span> /sys/fs/cgroup/cpu/docker/5d5c9f67d/cp
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tuliang.org/rong-qi-ji-chu-ge-chi-he-xian-zhi/';
-        this.page.identifier = '/rong-qi-ji-chu-ge-chi-he-xian-zhi/';
-        this.page.title = '容器基础-隔离和限制';
+        this.page.url = 'https://tuliang.org/li-zheng-dai-ma-bei-you-xiao-ce-shi-guo/';
+        this.page.identifier = '/li-zheng-dai-ma-bei-you-xiao-ce-shi-guo/';
+        this.page.title = '力争代码被有效测试过';
     };
     let disqus_shortname = 'tuliang';
 
@@ -428,7 +450,7 @@ $ <span class="token function">cat</span> /sys/fs/cgroup/cpu/docker/5d5c9f67d/cp
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/li-zheng-dai-ma-bei-you-xiao-ce-shi-guo/">
                     <div class="card-image">
@@ -445,9 +467,9 @@ $ <span class="token function">cat</span> /sys/fs/cgroup/cpu/docker/5d5c9f67d/cp
 
 在测试中，一个常犯的错误是我们只写快乐路径 happy path 测试。这是刚写完开发代码之后写测试时常见的情况。快乐路径测试，是指被测代码的前提条件都被满足的前提下，仅测</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -460,6 +482,7 @@ $ <span class="token function">cat</span> /sys/fs/cgroup/cpu/docker/5d5c9f67d/cp
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -476,20 +499,18 @@ $ <span class="token function">cat</span> /sys/fs/cgroup/cpu/docker/5d5c9f67d/cp
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/ru-he-gao-xiao-xue-xi/">
+                <a href="/rong-qi-ji-chu-ge-chi-he-xian-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="如何高效学习">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="容器基础-隔离和限制">
                         
-                        <span class="card-title">如何高效学习</span>
+                        <span class="card-title">容器基础-隔离和限制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">整体性学习策略强调将信息编织到知识网络中，而不是给自己加上机械记忆的负担，这个策略的基础有以下几方面。
-
-结构 —— 关于某个学科的知识之间联系的总和，它是你大脑中的城市。
-模型 —— 将信息压缩成最基本的单元，模型是结构的种子。形成模型的</div>
+                    <div class="summary">容器技术的核心功能，就是通过修改和约束进程的动态表现，从而为其创造出一个“空间”。
+对于 Docker 等大多数 Linux 容器来说，Namespace 技术是用来修改进程视图的主要方法，而 Cgroups 技术是用来制造约束的主要手段 </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-05
@@ -498,8 +519,8 @@ $ <span class="token function">cat</span> /sys/fs/cgroup/cpu/docker/5d5c9f67d/cp
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/阅读/" class="post-category" target="_blank">
-                                    阅读
+                            <a href="/categories/容器/" class="post-category" target="_blank">
+                                    容器
                                 </a>
                             
                             
@@ -509,12 +530,8 @@ $ <span class="token function">cat</span> /sys/fs/cgroup/cpu/docker/5d5c9f67d/cp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/方法论/" target="_blank">
-                        <span class="chip bg-color">方法论</span>
-                    </a>
-                    
-                    <a href="/tags/思维/" target="_blank">
-                        <span class="chip bg-color">思维</span>
+                    <a href="/tags/Docker/" target="_blank">
+                        <span class="chip bg-color">Docker</span>
                     </a>
                     
                 </div>
