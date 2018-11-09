@@ -445,33 +445,30 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/liu-shen-chang-liang-shi-ke-bian-de/">
+                <a href="/docker-zhong-nginx-gua-zai-ying-yong-de-jing-tai-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="留神，常量是可变的">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Docker 中 NGINX 挂载应用的静态文件">
                         
-                        <span class="card-title">留神，常量是可变的</span>
+                        <span class="card-title">Docker 中 NGINX 挂载应用的静态文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-总是将常量冻结 freeze，从而防止其被改变。
-
-不使用 freeze ，常量可以修改。
-MY_CONSTANT = "foo"
-MY_CONSTANT &lt;&lt; "bar"
-puts MY_CONSTANT #=> "foob</div>
+                    <div class="summary">在 Docker 中 NGINX 如何获得应用的静态文件呢？
+一般来说这种共享文件的需求，我们需要使用 volumes
+假如静态文件的地址是 /home/app/app_name/public
+那么我们在中 docker-compose.y</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-31
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-01
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/后端/" class="post-category" target="_blank">
-                                    后端
+                            <a href="/categories/工具/" class="post-category" target="_blank">
+                                    工具
                                 </a>
                             
                             
@@ -481,8 +478,16 @@ puts MY_CONSTANT #=> "foob</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Ruby/" target="_blank">
-                        <span class="chip bg-color">Ruby</span>
+                    <a href="/tags/Docker/" target="_blank">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                    <a href="/tags/Docker-Compose/" target="_blank">
+                        <span class="chip bg-color">Docker Compose</span>
+                    </a>
+                    
+                    <a href="/tags/NGINX/" target="_blank">
+                        <span class="chip bg-color">NGINX</span>
                     </a>
                     
                 </div>

@@ -5,11 +5,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="力争代码被有效测试过, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="
-使用模糊测试和属性测试工具，帮助测试代码的快乐路径和异常路径。
+    <meta name="keywords" content="Effective Ruby 改善Ruby程序的48条建议, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="Effective Ruby 改善Ruby程序的48条建议留神，常量是可变的
+总是将常量冻结 freeze，从而防止其被改变。
 
-在测试中，一个常犯的错误是我们只写快乐路径 happy path 测试。这是刚写完开发代码之后写测试时常见的情况。快乐路径测试，是指被测代码的前提条件都被满足的前提下，仅测">
+不使用 freeze ，常量可以修改。
+MY_CONSTANT = &#34;foo&#34;
+MY_CONSTANT &amp;lt">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>力争代码被有效测试过 | 不做咸鱼的小明</title>
+    <title>Effective Ruby 改善Ruby程序的48条建议 | 不做咸鱼的小明</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -210,13 +212,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        力争代码被有效测试过
+                        Effective Ruby 改善Ruby程序的48条建议
                     </div>
                 </div>
             </div>
@@ -338,8 +340,8 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/测试/" class="post-category" target="_blank">
-                        测试
+                    <a href="/categories/阅读/" class="post-category" target="_blank">
+                        阅读
                     </a>
                     
                 </span>
@@ -353,7 +355,131 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
+                <h1 id="Effective-Ruby-改善Ruby程序的48条建议"><a href="#Effective-Ruby-改善Ruby程序的48条建议" class="headerlink" title="Effective Ruby 改善Ruby程序的48条建议"></a>Effective Ruby 改善Ruby程序的48条建议</h1><h2 id="留神，常量是可变的"><a href="#留神，常量是可变的" class="headerlink" title="留神，常量是可变的"></a>留神，常量是可变的</h2><blockquote>
+<p>总是将常量冻结 <code>freeze</code>，从而防止其被改变。</p>
+</blockquote>
+<p>不使用 <code>freeze</code> ，常量可以修改。</p>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token constant">MY_CONSTANT</span> <span class="token operator">=</span> <span class="token string">"foo"</span>
+<span class="token constant">MY_CONSTANT</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token string">"bar"</span>
+puts <span class="token constant">MY_CONSTANT</span> <span class="token comment" spellcheck="true">#=> "foobar"</span>
+</code></pre>
+<p>使用 <code>freeze</code> ，常量无法修改。</p>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token constant">MY_CONSTANT</span> <span class="token operator">=</span> <span class="token string">"foo"</span><span class="token punctuation">.</span>freeze
+<span class="token constant">MY_CONSTANT</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token string">"bar"</span> <span class="token comment" spellcheck="true">#=> FrozenError (can't modify frozen String)</span>
+</code></pre>
+<blockquote>
+<p>如果常量引用了一个集合对象比如数组或散列，那么冻结整个集合及其所有元素。</p>
+</blockquote>
+<p>这个 <code>tip</code> 已经落伍，在 <code>Ruby 2.2</code> 及后续版本会自动冻结整个集合及其所有元素。</p>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token comment" spellcheck="true"># in Ruby >= 2.1</span>
+<span class="token constant">NETWORKS</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"192.168.1"</span><span class="token punctuation">,</span> <span class="token string">"192.168.2"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>freeze
+<span class="token constant">NETWORKS</span> <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token string">"192.168.3"</span> <span class="token comment" spellcheck="true">#=> FrozenError (can't modify frozen Array)</span>
+<span class="token constant">NETWORKS</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"192.168.3"</span> <span class="token comment" spellcheck="true">#=> FrozenError (can't modify frozen Array)</span>
+
+user <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"name"</span> <span class="token punctuation">}</span><span class="token punctuation">.</span>freeze
+user<span class="token punctuation">[</span><span class="token string">"email"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"email"</span> <span class="token comment" spellcheck="true">#=> FrozenError (can't modify frozen Hash)</span>
+user<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"name2"</span> <span class="token comment" spellcheck="true">#=> FrozenError (can't modify frozen Hash)</span>
+</code></pre>
+<blockquote>
+<p>要防止常量被重新赋值，可以冻结定义它的那个模块。</p>
+</blockquote>
+<p>常量使用 <code>freeze</code>，<code>ruby</code> 出现 <code>warning</code> 但是依然能够被重新赋值。</p>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token keyword">module</span> <span class="token constant">Defaults</span>
+  <span class="token constant">TIMEOUT</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">.</span>freeze
+<span class="token keyword">end</span>
+
+<span class="token constant">Defaults</span><span class="token punctuation">:</span><span class="token symbol">:TIMEOUT</span> <span class="token operator">=</span> <span class="token number">6</span> 
+<span class="token comment" spellcheck="true">#=> warning: already initialized constant Defaults::TIMEOUT</span>
+<span class="token comment" spellcheck="true">#=> warning: previous definition of TIMEOUT was here</span>
+
+puts <span class="token constant">Defaults</span><span class="token punctuation">:</span><span class="token symbol">:TIMEOUT</span> <span class="token comment" spellcheck="true">#=> 6</span>
+</code></pre>
+<p>冻结模块后，常量无法赋值。</p>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token keyword">module</span> <span class="token constant">Defaults</span>
+  <span class="token constant">TIMEOUT</span> <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token keyword">end</span>
+
+<span class="token constant">Defaults</span><span class="token punctuation">.</span>freeze
+
+<span class="token constant">Defaults</span><span class="token punctuation">:</span><span class="token symbol">:TIMEOUT</span> <span class="token operator">=</span> <span class="token number">6</span> <span class="token comment" spellcheck="true">#=> FrozenError (can't modify frozen Module)</span>
+</code></pre>
+<h2 id="推荐使用-Struct-而非-Hash-存储结构化数据"><a href="#推荐使用-Struct-而非-Hash-存储结构化数据" class="headerlink" title="推荐使用 Struct 而非 Hash 存储结构化数据"></a>推荐使用 <code>Struct</code> 而非 <code>Hash</code> 存储结构化数据</h2><blockquote>
+<p>在处理结构化数据时，如果创建一个新类不那么合适时，推荐使用 <code>Struct</code> 而非 <code>Hash</code></p>
+<p>将 <code>Struct::new</code> 的返回值赋给常量，并像类一样使用它。</p>
+</blockquote>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token comment" spellcheck="true"># Hash</span>
+reading <span class="token operator">=</span> <span class="token punctuation">{</span> date<span class="token punctuation">:</span> <span class="token string">"2018-10-30"</span><span class="token punctuation">,</span> high<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span> low<span class="token punctuation">:</span> <span class="token number">20</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">def</span> <span class="token function">mean</span><span class="token punctuation">(</span>reading<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>reading<span class="token punctuation">[</span><span class="token symbol">:high</span><span class="token punctuation">]</span> <span class="token operator">+</span> reading<span class="token punctuation">[</span><span class="token symbol">:low</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.0</span>
+<span class="token keyword">end</span>
+
+<span class="token function">mean</span><span class="token punctuation">(</span>reading<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#=> 25.0</span>
+
+<span class="token comment" spellcheck="true"># Struct</span>
+<span class="token constant">Reading</span> <span class="token operator">=</span> <span class="token builtin">Struct</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token symbol">:date</span><span class="token punctuation">,</span> <span class="token symbol">:high</span><span class="token punctuation">,</span> <span class="token symbol">:low</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+  <span class="token keyword">def</span> <span class="token function">mean</span>
+    <span class="token punctuation">(</span>high <span class="token operator">+</span> low<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.0</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token constant">Reading</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">"2018-10-30"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean <span class="token comment" spellcheck="true">#=> 25.0</span>
+</code></pre>
+<h2 id="在改变作为参数的集合之前复制它们"><a href="#在改变作为参数的集合之前复制它们" class="headerlink" title="在改变作为参数的集合之前复制它们"></a>在改变作为参数的集合之前复制它们</h2><blockquote>
+<p><code>Ruby</code> 中参数是按引用传递的，而不是值传递。这个规则有一个例外值得注意：它不适用于 <code>Fixnum</code> 对象。</p>
+<p>在改变集合之前先复制它们。</p>
+</blockquote>
+<p><code>Ruby</code> 语言自带了两个用来复制对象的方法：<code>dup</code> 和 <code>clone</code>。它们都会基于接收者创建新的对象，但是与 <code>dup</code> 方法不同的是，<code>clone</code> 方法会保留原始对象的两个附加特性。</p>
+<p>首先，<code>clone</code> 方法会保留接收者的冻结状态。如果原始对象的状态是冻结的，那么生成的副本也是冻结的。而 <code>dup</code> 方法就不同了，它永远不会返回冻结的对象。</p>
+<p>其次，如果接收者中存在单例方法，使用 <code>clone</code> 方法也会复制单例类。由于 <code>dup</code> 方法不会这样做，所以当使用 <code>dup</code> 方法时，原始对象和使用 <code>dup</code> 方法创建的副本对于相同消息的响应可能是不同的。</p>
+<p>多数情况下应使用 <code>dup</code> 方法而不是 <code>clone</code> 方法，特别是当你希望修改结果对象时。冻结对象时无法修改或是解冻的，所以 <code>clone</code> 方法可能会返回一个不可变的对象。由于我们要去对新对象进行修改，因此 <code>dup</code> 方法显然是更合适的选择。</p>
+<blockquote>
+<p><code>dup</code> 方法和 <code>clone</code> 方法只会进行浅拷贝。</p>
+</blockquote>
+<p>复制传入集合是一种常见的模式。但要小心，使用这样的方法存在潜在的危险。你要知道 <code>dup</code> 方法和 <code>clone</code> 方法返回的是浅拷贝对象。对于像 <code>Array</code> 一样的集合，这意味着仅仅复制了容器本身而没有复制其中的元素。</p>
+<p>可以在不影响原始集合的情况下增添或移除其中的元素，但修改元素本身则是有影响的。原始集合及其副本引用了相同的元素对象。修改任一元素都会影响到集合本身，同样也会影响到任何引用这一元素的对象。</p>
+<pre class=" language-ruby"><code class="language-ruby">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Polar"</span><span class="token punctuation">]</span>
+
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>dup <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token string">"Bear"</span>
+<span class="token comment" spellcheck="true">#=> ["Polar", "Bear"]</span>
+
+b<span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token punctuation">{</span><span class="token operator">|</span>x<span class="token operator">|</span> x<span class="token punctuation">.</span>sub<span class="token operator">!</span><span class="token punctuation">(</span><span class="token string">'lar'</span><span class="token punctuation">,</span> <span class="token string">'oh'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">#=> ["Pooh", "Bear"]</span>
+
+a
+<span class="token comment" spellcheck="true">#=> ["Pooh"]</span>
+</code></pre>
+<blockquote>
+<p>对于多数对象来说，可以使用 <code>Marshal</code> 来完成深拷贝。</p>
+</blockquote>
+<p>可以使用 <code>Marshal</code> 类将一个集合及其所持有的元素序列化，然后再反序列化：</p>
+<pre class=" language-ruby"><code class="language-ruby">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Monkey"</span><span class="token punctuation">,</span> <span class="token string">"Brains"</span><span class="token punctuation">]</span>
+
+b <span class="token operator">=</span> <span class="token constant">Marshal</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token constant">Marshal</span><span class="token punctuation">.</span><span class="token function">dump</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#=> ["Monkey", "Brains"]</span>
+
+b<span class="token punctuation">.</span><span class="token keyword">each</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token symbol">:upcase!</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#=> ["MONKEY", "BRAINS"]</span>
+
+a
+<span class="token comment" spellcheck="true">#=> ["Monkey", "Brains"]</span>
+</code></pre>
+<p>使用 <code>Marshal</code> 来解决这一问题这某种程度上有一定的局限性。抛开对对象序列化和反序列化的时间不说，你还得考虑这一过程中需要的内存。毫无疑问，对象的副本会持有其本身的内存空间，而使用 <code>Marshal::dump</code> 中序列化时创建的字节流也是会占用内存的。转储和加载大对象会使程序消耗大内存更多。</p>
+<p>一个潜在的更加严峻的问题时并非所有对象都可以被 <code>Marshal</code> 序列化。那些持有闭包的对象以及那些具有单例方法的对象时无法被序列化的。<code>Ruby</code> 的一些核心类也是不能被 <code>Marshal</code> 序列化的。这包括 <code>IO</code> 以及 <code>File</code> 等类型。对于所有这样的情形，在使用 <code>Marshal::dump</code> 进行序列化时会抛出一个 <code>TypeError</code> 异常。</p>
+<h2 id="了解如何通过-reduce-方法折叠集合"><a href="#了解如何通过-reduce-方法折叠集合" class="headerlink" title="了解如何通过 reduce 方法折叠集合"></a>了解如何通过 <code>reduce</code> 方法折叠集合</h2><blockquote>
+<p>总是要给累加器一个初值。</p>
+<p>给予 <code>reduce</code> 的块总是要返回一个累加器。对当前累加器的修改是可行的，要记住从块中返回。</p>
+</blockquote>
+<p>假设我们有一个存储用户的数组，我们希望从中筛选出那些年龄大于或者等于 <code>21</code> 岁的人群。之后我们希望将这个用户数组转换成一个姓名数组。在没有使用 <code>reduce</code> 的时候，你可能会这样写：</p>
+<pre class=" language-ruby"><code class="language-ruby">users<span class="token punctuation">.</span>select <span class="token punctuation">{</span><span class="token operator">|</span>u<span class="token operator">|</span> u<span class="token punctuation">.</span>age <span class="token operator">>=</span> <span class="token number">21</span><span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token symbol">:name</span><span class="token punctuation">)</span>
+</code></pre>
+<p>当然这么做肯定是可行的，但并不高效。<code>select</code> 方法会遍历整个用户数组并返回新数组。这个新数组之后会再次进行遍历并映射成另一个值只包含名字的新数组。如果我们使用 <code>reduce</code> ，则无需创建或遍历多个数组：</p>
+<pre class=" language-ruby"><code class="language-ruby">users<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token operator">|</span>names<span class="token punctuation">,</span> user<span class="token operator">|</span>
+  names <span class="token operator">&lt;</span><span class="token operator">&lt;</span> user<span class="token punctuation">.</span>name <span class="token keyword">if</span> user<span class="token punctuation">.</span>age <span class="token operator">>=</span> <span class="token number">21</span>
+  names
+<span class="token keyword">end</span>
+</code></pre>
+<h2 id="力争代码被有效测试过"><a href="#力争代码被有效测试过" class="headerlink" title="力争代码被有效测试过"></a>力争代码被有效测试过</h2><blockquote>
 <p>使用模糊测试和属性测试工具，帮助测试代码的快乐路径和异常路径。</p>
 </blockquote>
 <p>在测试中，一个常犯的错误是我们只写快乐路径 <code>happy path</code> 测试。这是刚写完开发代码之后写测试时常见的情况。快乐路径测试，是指被测代码的前提条件都被满足的前提下，仅测试有效出入的测试方法。</p>
@@ -426,9 +552,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://tuliang.org/li-zheng-dai-ma-bei-you-xiao-ce-shi-guo/';
-        this.page.identifier = '/li-zheng-dai-ma-bei-you-xiao-ce-shi-guo/';
-        this.page.title = '力争代码被有效测试过';
+        this.page.url = 'https://tuliang.org/effective-ruby-gai-shan-ruby-cheng-xu-de-48-tiao-jian-yi/';
+        this.page.identifier = '/effective-ruby-gai-shan-ruby-cheng-xu-de-48-tiao-jian-yi/';
+        this.page.title = 'Effective Ruby 改善Ruby程序的48条建议';
     };
     let disqus_shortname = 'tuliang';
 
@@ -452,20 +578,22 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="/li-zheng-dai-ma-bei-you-xiao-ce-shi-guo/">
+                <a href="/effective-ruby-gai-shan-ruby-cheng-xu-de-48-tiao-jian-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="力争代码被有效测试过">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Effective Ruby 改善Ruby程序的48条建议">
                         
-                        <span class="card-title">力争代码被有效测试过</span>
+                        <span class="card-title">Effective Ruby 改善Ruby程序的48条建议</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-使用模糊测试和属性测试工具，帮助测试代码的快乐路径和异常路径。
+                    <div class="summary">Effective Ruby 改善Ruby程序的48条建议留神，常量是可变的
+总是将常量冻结 freeze，从而防止其被改变。
 
-在测试中，一个常犯的错误是我们只写快乐路径 happy path 测试。这是刚写完开发代码之后写测试时常见的情况。快乐路径测试，是指被测代码的前提条件都被满足的前提下，仅测</div>
+不使用 freeze ，常量可以修改。
+MY_CONSTANT = "foo"
+MY_CONSTANT &lt</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-07
@@ -474,8 +602,8 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/测试/" class="post-category" target="_blank">
-                                    测试
+                            <a href="/categories/阅读/" class="post-category" target="_blank">
+                                    阅读
                                 </a>
                             
                             
