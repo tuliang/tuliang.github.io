@@ -21,6 +21,8 @@
             
             <tag> Ruby </tag>
             
+            <tag> 测试 </tag>
+            
         </tags>
       
     </entry>
@@ -118,8 +120,6 @@
         <tags>
             
             <tag> Java </tag>
-            
-            <tag> 架构 </tag>
             
             <tag> 分布式 </tag>
             

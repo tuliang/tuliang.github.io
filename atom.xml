@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-11-09T17:48:47.459Z</updated>
+  <updated>2018-11-09T17:54:17.158Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tuliang.org/effective-ruby-gai-shan-ruby-cheng-xu-de-48-tiao-jian-yi/"/>
     <id>https://tuliang.org/effective-ruby-gai-shan-ruby-cheng-xu-de-48-tiao-jian-yi/</id>
     <published>2018-11-07T09:08:35.000Z</published>
-    <updated>2018-11-09T17:48:47.459Z</updated>
+    <updated>2018-11-09T17:54:17.158Z</updated>
     
     <summary type="html">
     
@@ -39,6 +39,8 @@
     
     
       <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+      <category term="测试" scheme="https://tuliang.org/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
@@ -137,7 +139,7 @@
     <link href="https://tuliang.org/da-xing-wang-zhan-xi-tong-yu-java-zhong-jian-jian-kai-fa-shi-jian/"/>
     <id>https://tuliang.org/da-xing-wang-zhan-xi-tong-yu-java-zhong-jian-jian-kai-fa-shi-jian/</id>
     <published>2015-04-17T13:05:48.000Z</published>
-    <updated>2018-11-05T13:13:30.579Z</updated>
+    <updated>2018-11-09T17:53:36.741Z</updated>
     
     <summary type="html">
     
@@ -156,8 +158,6 @@
     
     
       <category term="Java" scheme="https://tuliang.org/tags/Java/"/>
-    
-      <category term="架构" scheme="https://tuliang.org/tags/%E6%9E%B6%E6%9E%84/"/>
     
       <category term="分布式" scheme="https://tuliang.org/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
