@@ -4,6 +4,7 @@ date: 2018-11-07 17:08:35
 categories: 阅读
 tags:
   - Ruby
+  - 测试
 ---
 # Effective Ruby 改善Ruby程序的48条建议
 
