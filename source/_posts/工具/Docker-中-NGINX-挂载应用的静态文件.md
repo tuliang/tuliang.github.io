@@ -1,7 +1,7 @@
 ---
 title: Docker 中 NGINX 挂载应用的静态文件
 date: 2018-11-01 02:10:13
-categories: 容器
+categories: 工具
 tags:
   - Docker
   - Docker Compose
