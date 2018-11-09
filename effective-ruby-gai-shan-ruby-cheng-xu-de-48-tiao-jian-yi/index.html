@@ -403,7 +403,7 @@ puts <span class="token constant">Defaults</span><span class="token punctuation"
 
 <span class="token constant">Defaults</span><span class="token punctuation">:</span><span class="token symbol">:TIMEOUT</span> <span class="token operator">=</span> <span class="token number">6</span> <span class="token comment" spellcheck="true">#=> FrozenError (can't modify frozen Module)</span>
 </code></pre>
-<h2 id="推荐使用-Struct-而非-Hash-存储结构化数据"><a href="#推荐使用-Struct-而非-Hash-存储结构化数据" class="headerlink" title="推荐使用 Struct 而非 Hash 存储结构化数据"></a>推荐使用 <code>Struct</code> 而非 <code>Hash</code> 存储结构化数据</h2><blockquote>
+<h2 id="推荐使用-Struct-而非-Hash-存储结构化数据"><a href="#推荐使用-Struct-而非-Hash-存储结构化数据" class="headerlink" title="推荐使用 Struct 而非 Hash 存储结构化数据"></a>推荐使用 Struct 而非 Hash 存储结构化数据</h2><blockquote>
 <p>在处理结构化数据时，如果创建一个新类不那么合适时，推荐使用 <code>Struct</code> 而非 <code>Hash</code></p>
 <p>将 <code>Struct::new</code> 的返回值赋给常量，并像类一样使用它。</p>
 </blockquote>
@@ -466,7 +466,7 @@ a
 </code></pre>
 <p>使用 <code>Marshal</code> 来解决这一问题这某种程度上有一定的局限性。抛开对对象序列化和反序列化的时间不说，你还得考虑这一过程中需要的内存。毫无疑问，对象的副本会持有其本身的内存空间，而使用 <code>Marshal::dump</code> 中序列化时创建的字节流也是会占用内存的。转储和加载大对象会使程序消耗大内存更多。</p>
 <p>一个潜在的更加严峻的问题时并非所有对象都可以被 <code>Marshal</code> 序列化。那些持有闭包的对象以及那些具有单例方法的对象时无法被序列化的。<code>Ruby</code> 的一些核心类也是不能被 <code>Marshal</code> 序列化的。这包括 <code>IO</code> 以及 <code>File</code> 等类型。对于所有这样的情形，在使用 <code>Marshal::dump</code> 进行序列化时会抛出一个 <code>TypeError</code> 异常。</p>
-<h2 id="了解如何通过-reduce-方法折叠集合"><a href="#了解如何通过-reduce-方法折叠集合" class="headerlink" title="了解如何通过 reduce 方法折叠集合"></a>了解如何通过 <code>reduce</code> 方法折叠集合</h2><blockquote>
+<h2 id="了解如何通过-reduce-方法折叠集合"><a href="#了解如何通过-reduce-方法折叠集合" class="headerlink" title="了解如何通过 reduce 方法折叠集合"></a>了解如何通过 reduce 方法折叠集合</h2><blockquote>
 <p>总是要给累加器一个初值。</p>
 <p>给予 <code>reduce</code> 的块总是要返回一个累加器。对当前累加器的修改是可行的，要记住从块中返回。</p>
 </blockquote>
