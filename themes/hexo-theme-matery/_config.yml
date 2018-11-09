@@ -63,7 +63,7 @@ reward:
 profile:
   avatar: /medias/avatar.jpg
   career: 软件工程师
-  introduction: 
+  introduction: 人生有梦 各自精彩
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
