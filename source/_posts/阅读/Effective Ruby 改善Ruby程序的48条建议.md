@@ -69,7 +69,7 @@ Defaults.freeze
 Defaults::TIMEOUT = 6 #=> FrozenError (can't modify frozen Module)
 ```
 
-## 推荐使用 `Struct` 而非 `Hash` 存储结构化数据
+## 推荐使用 Struct 而非 Hash 存储结构化数据
 
 > 在处理结构化数据时，如果创建一个新类不那么合适时，推荐使用 `Struct` 而非 `Hash`
 >
@@ -149,7 +149,7 @@ a
 
 一个潜在的更加严峻的问题时并非所有对象都可以被 `Marshal` 序列化。那些持有闭包的对象以及那些具有单例方法的对象时无法被序列化的。`Ruby` 的一些核心类也是不能被 `Marshal` 序列化的。这包括 `IO` 以及 `File` 等类型。对于所有这样的情形，在使用 `Marshal::dump` 进行序列化时会抛出一个 `TypeError` 异常。
 
-## 了解如何通过 `reduce` 方法折叠集合
+## 了解如何通过 reduce 方法折叠集合
 
 > 总是要给累加器一个初值。
 >
