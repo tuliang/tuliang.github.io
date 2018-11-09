@@ -7,6 +7,8 @@ tags:
   - HTML5
   - Ruby
 ---
+# Web 文件下载和查看
+
 在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。
 其实浏览器的行为是可以人为控制的，最简单的方法是使用 `HTML5 download Attribute`。
 
@@ -19,7 +21,7 @@ tags:
 
 浏览器行为是由 `HTTP Head` 中的 `Content-Disposition` 来控制的，例如
 
-```
+```html
 Content-Disposition: attachment; filename="fname.txt"
 ```
 
@@ -31,6 +33,7 @@ Content-Disposition: attachment; filename="fname.txt"
 url = object.url_for(:read, response_content_disposition: "attachment; filename=\"#{filename}\"")
 ```
 
-#### 参考文档
+## 参考文档
+
 - http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html
 - http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/S3/S3Object.html
