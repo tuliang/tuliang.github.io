@@ -6,8 +6,8 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Web 文件下载和查看, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用 HTML5 download Attribute。
-&amp;lt;!-- will download as &#34;expenses.pdf&#34;">
+    <meta name="description" content="Web 文件下载和查看在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。其实浏览器的行为是可以人为控制的，最简单的方法是使用 HTML5 download Attribute。
+&amp;lt;!-- will download as &#34;ex">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -359,18 +359,19 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。<br>其实浏览器的行为是可以人为控制的，最简单的方法是使用 <code>HTML5 download Attribute</code>。</p>
+                <h1 id="Web-文件下载和查看"><a href="#Web-文件下载和查看" class="headerlink" title="Web 文件下载和查看"></a>Web 文件下载和查看</h1><p>在浏览器中点击一个文件链接，会被浏览器直接打开或者下载。<br>其实浏览器的行为是可以人为控制的，最简单的方法是使用 <code>HTML5 download Attribute</code>。</p>
 <pre class=" language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- will download as "expenses.pdf" --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/files/expenses.pdf<span class="token punctuation">"</span></span> <span class="token attr-name">download</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>expenses.pdf<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Download Your Expense Report<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>这种方式虽然简单，但是兼容性不太好。查看<a href="http://caniuse.com/download" target="_blank" rel="noopener">http://caniuse.com/download</a>，我们可以发现很多版本都不支持这个属性。</p>
 <p>浏览器行为是由 <code>HTTP Head</code> 中的 <code>Content-Disposition</code> 来控制的，例如</p>
-<pre><code>Content-Disposition: attachment; filename=&quot;fname.txt&quot;
-</code></pre><p>它的意思是将该文件作为附件，并且下载的文件名是 <code>fname.txt</code>。</p>
+<pre class=" language-html"><code class="language-html">Content-Disposition: attachment; filename="fname.txt"
+</code></pre>
+<p>它的意思是将该文件作为附件，并且下载的文件名是 <code>fname.txt</code>。</p>
 <p>如果使用 <code>S3</code> 下载文件，使用 <code>AWS</code> 的 <code>api</code> 可以生成下载的 <code>url</code>:</p>
 <pre class=" language-ruby"><code class="language-ruby">url <span class="token operator">=</span> object<span class="token punctuation">.</span><span class="token function">url_for</span><span class="token punctuation">(</span><span class="token symbol">:read</span><span class="token punctuation">,</span> response_content_disposition<span class="token punctuation">:</span> <span class="token string">"attachment; filename=\"<span class="token interpolation"><span class="token delimiter tag">#{</span>filename<span class="token delimiter tag">}</span></span>\""</span><span class="token punctuation">)</span>
 </code></pre>
-<h4 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h4><ul>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
 <li><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html" target="_blank" rel="noopener">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html</a></li>
 <li><a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/S3/S3Object.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/S3/S3Object.html</a></li>
 </ul>
