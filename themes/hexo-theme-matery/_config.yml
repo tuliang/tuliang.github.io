@@ -48,7 +48,7 @@ indexbtn:
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # 是否激活文章 TOC 功能，并配置TOC支持选中哪些标题类型.
 toc:
-  enable: true
+  enable: false
   heading: h2, h3, h4
 
 # 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
@@ -62,7 +62,7 @@ reward:
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
   avatar: /medias/avatar.jpg
-  career: 软件工程师
+  career: 工程师
   introduction: 人生有梦 各自精彩
 
 # config my projects informations in about page.
@@ -86,19 +86,19 @@ mySkills:
     Ruby:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
       percent: 80%
-    Rails:
-      background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
-      percent: 80%
-    Docker:
-      background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
-      percent: 60%
-    JavaScript:
+    C / C++:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
       percent: 60%
-    HTML & CSS:
+    MySQL / PostgreSQL:
+      background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
+      percent: 60%
+    Redis:
+      background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
+      percent: 60%
+    Linux:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
       percent: 60%
-    SQL:
+    Nginx:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
       percent: 60%
     
