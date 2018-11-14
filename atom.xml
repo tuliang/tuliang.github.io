@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-11-09T17:54:17.158Z</updated>
+  <updated>2018-11-14T06:27:30.690Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>成为技术领导者</title>
+    <link href="https://tuliang.org/cheng-wei-ji-zhu-ling-dao-zhe/"/>
+    <id>https://tuliang.org/cheng-wei-ji-zhu-ling-dao-zhe/</id>
+    <published>2018-11-14T06:24:51.000Z</published>
+    <updated>2018-11-14T06:27:30.690Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;成为技术领导者&quot;&gt;&lt;a href=&quot;#成为技术领导者&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="阅读" scheme="https://tuliang.org/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="软件工程" scheme="https://tuliang.org/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+      <category term="方法论" scheme="https://tuliang.org/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+      <category term="思维" scheme="https://tuliang.org/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+      <category term="个人管理" scheme="https://tuliang.org/tags/%E4%B8%AA%E4%BA%BA%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>Effective Ruby 改善Ruby程序的48条建议</title>
@@ -551,34 +583,6 @@
     
     
       <category term="Git" scheme="https://tuliang.org/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript 变量声明提前</title>
-    <link href="https://tuliang.org/javascript-bian-liang-sheng-ming-ti-qian/"/>
-    <id>https://tuliang.org/javascript-bian-liang-sheng-ming-ti-qian/</id>
-    <published>2012-10-17T09:12:48.000Z</published>
-    <updated>2018-10-31T14:41:00.705Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;code&gt;JavaScript&lt;/code&gt; 使用了函数作用域，变量在声明它们的函数体以及这个函数体嵌套的任意函数体内都是有定义的。&lt;/p&gt;
-&lt;p&gt;到底是什么意思呢？我们来看下面这段代码&lt;/p&gt;
-&lt;pre class=&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="https://tuliang.org/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="https://tuliang.org/tags/JavaScript/"/>
     
   </entry>
   
