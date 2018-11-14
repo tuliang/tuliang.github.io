@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>grep 显示标题</title>
+      <link href="/grep-xian-shi-biao-ti/"/>
+      <url>/grep-xian-shi-biao-ti/</url>
+      
+        <content type="html"><![CDATA[<h1 id="grep-显示标题"><a href="#grep-显示标题" class="headerlink" title="grep 显示标题"></a>grep 显示标题</h1><p>我们使用 <code>grep</code> 获取信息时，结果会丢失标题。</p><pre class=" language-shell"><code class="language-shell">$ ps aux | head -1; ps aux | grep nginxdeploy   25879  0.0  0.0   9000   376 pts/0    R+   18:38   0:00 grep --color=auto nginxroot     32065  0.0  0.0  36836  5932 ?        Ss   Nov10   0:00 nginx: master process nginx -g daemon off;systemd+ 32128  0.0  0.0  37340  3840 ?        S    Nov10   0:00 nginx: worker process</code></pre><p><code>Google</code> 一下可以找到一个方法：</p><p>先用命令本身加 <code>head -1</code> 取到标题，然后再使用该命令输出内容，两者叠加输出即得到所要结果。</p><pre class=" language-shell"><code class="language-shell">$ ps aux | head -1; ps aux | grep nginxUSER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMANDdeploy   25879  0.0  0.0   9000   376 pts/0    R+   18:38   0:00 grep --color=auto nginxroot     32065  0.0  0.0  36836  5932 ?        Ss   Nov10   0:00 nginx: master process nginx -g daemon off;systemd+ 32128  0.0  0.0  37340  3840 ?        S    Nov10   0:00 nginx: worker process</code></pre><p>这种方法似乎就是我们想要的解决方案了，但是问题是命令要运行 2 次。</p><p>我们回想一下 <code>grep</code> 的本质是什么？它其实是使用正则表达式去获取信息。</p><p>以上面的命令为例，丢失标题问题的本质是因为我们使用时，告诉 <code>grep</code> 去查找包含 <code>nginx</code> 的信息，而标题里面并没有 <code>nginx</code>。</p><p>想清楚了这一点，那么只要我们同时匹配标题的一部分，只运行 <code>1</code> 次命令，也可以实现同样的效果。</p><pre class=" language-shell"><code class="language-shell">$ ps aux | grep -E 'PID|nginx'USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMANDdeploy   25879  0.0  0.0   9000   376 pts/0    R+   18:38   0:00 grep --color=auto nginxroot     32065  0.0  0.0  36836  5932 ?        Ss   Nov10   0:00 nginx: master process nginx -g daemon off;systemd+ 32128  0.0  0.0  37340  3840 ?        S    Nov10   0:00 nginx: worker process</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>成为技术领导者</title>
       <link href="/cheng-wei-ji-zhu-ling-dao-zhe/"/>
       <url>/cheng-wei-ji-zhu-ling-dao-zhe/</url>
