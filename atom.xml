@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-11-15T12:03:03.111Z</updated>
+  <updated>2018-11-15T12:14:35.141Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://tuliang.org/liu-lan-shu-shi-jian/"/>
     <id>https://tuliang.org/liu-lan-shu-shi-jian/</id>
     <published>2018-11-15T12:01:00.000Z</published>
-    <updated>2018-11-15T12:03:03.111Z</updated>
+    <updated>2018-11-15T12:14:35.141Z</updated>
     
     <summary type="html">
     
@@ -42,6 +42,8 @@
       <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
     
       <category term="Rails" scheme="https://tuliang.org/tags/Rails/"/>
+    
+      <category term="Redis" scheme="https://tuliang.org/tags/Redis/"/>
     
   </entry>
   
