@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>浏览数实践</title>
+      <link href="/liu-lan-shu-shi-jian/"/>
+      <url>/liu-lan-shu-shi-jian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="浏览数实践"><a href="#浏览数实践" class="headerlink" title="浏览数实践"></a>浏览数实践</h1><p>我们分析一下，浏览数更新很频繁，那么使用传统的关系型数据库并不合适。</p><p>那么使用 <code>Memcached</code> 呢？也不太合适，有 <code>2</code> 点，一是 <code>Memcached</code> 没有原子性的增量 increment 能力，二是数据持久化的问题。</p><p>综上所述，<code>Redis</code> 是最好的选择。</p><p>添加 <code>gem</code></p><pre class=" language-ruby"><code class="language-ruby">gem <span class="token string">'redis'</span><span class="token punctuation">,</span> <span class="token string">'~> 4.0'</span></code></pre><p>在 <code>config</code> 中新建文件 <code>redis.rb</code></p><pre class=" language-ruby"><code class="language-ruby"><span class="token keyword">require</span> <span class="token string">"redis"</span><span class="token variable">$redis</span> <span class="token operator">=</span> <span class="token constant">Redis</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>host<span class="token punctuation">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span> port<span class="token punctuation">:</span> <span class="token number">6379</span><span class="token punctuation">)</span></code></pre><p>在对应的 <code>Modle</code> 中添加方法</p><pre class=" language-ruby"><code class="language-ruby"><span class="token keyword">def</span> up_hits  <span class="token variable">$redis</span><span class="token punctuation">.</span><span class="token function">hincrby</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"hits"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">end</span><span class="token keyword">def</span> hits  <span class="token variable">$redis</span><span class="token punctuation">.</span><span class="token function">hget</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"hits"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to_i<span class="token keyword">end</span><span class="token keyword">def</span> key  <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span>downcase<span class="token delimiter tag">}</span></span>_<span class="token interpolation"><span class="token delimiter tag">#{</span>id<span class="token delimiter tag">}</span></span>"</span><span class="token keyword">end</span></code></pre><p>在对应的 <code>Controller</code> 中使用</p><pre class=" language-ruby"><code class="language-ruby"><span class="token variable">@example</span><span class="token punctuation">.</span>up_hits</code></pre><p>在对应的 <code>View</code> 中使用</p><pre class=" language-ruby"><code class="language-ruby"><span class="token variable">@example</span><span class="token punctuation">.</span>hits</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ruby </tag>
+            
+            <tag> Rails </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>grep 显示标题</title>
       <link href="/grep-xian-shi-biao-ti/"/>
       <url>/grep-xian-shi-biao-ti/</url>
@@ -234,7 +259,7 @@
       <link href="/rails-singular-resources/"/>
       <url>/rails-singular-resources/</url>
       
-        <content type="html"><![CDATA[<p><code>Rails</code> 中 <code>Controller</code> 如果不是复数，写 <code>path</code> 或 <code>url</code> 的时候就必须加上 <code>index</code>，这样看上去就很 <code>low</code>。</p><pre class=" language-ruby"><code class="language-ruby">resources <span class="token symbol">:photo</span> <span class="token keyword">do</span>    collection <span class="token keyword">do</span>        get <span class="token string">'search'</span>    <span class="token keyword">end</span><span class="token keyword">end</span><span class="token comment" spellcheck="true"># search_photo_index GET    /photo/search(.:format)</span></code></pre><p>我们查看 <a href="http://guides.rubyonrails.org/routing.html#singular-resources" target="_blank" rel="noopener">文档</a>，发现可以这样做</p><pre class=" language-ruby"><code class="language-ruby">resource <span class="token symbol">:photo</span><span class="token punctuation">,</span> controller<span class="token punctuation">:</span> photo <span class="token keyword">do</span>    collection <span class="token keyword">do</span>        get <span class="token string">'search'</span>    <span class="token keyword">end</span><span class="token keyword">end</span><span class="token comment" spellcheck="true"># search_photo GET    /photo/search(.:format)</span></code></pre><p>需要注意的是经过这样修改后，访问 <code>/photo</code> 不再调用 <code>index action</code> 而是调用 <code>show action</code>。</p>]]></content>
+        <content type="html"><![CDATA[<p><code>Rails</code> 中 <code>Controller</code> 如果不是复数，写 <code>path</code> 或 <code>url</code> 的时候就必须加上 <code>index</code>，这样看上去就很 <code>low</code>。</p><pre class=" language-ruby"><code class="language-ruby">resources <span class="token symbol">:photo</span> <span class="token keyword">do</span>    collection <span class="token keyword">do</span>    get <span class="token string">'search'</span>    <span class="token keyword">end</span><span class="token keyword">end</span><span class="token comment" spellcheck="true"># search_photo_index GET    /photo/search(.:format)</span></code></pre><p>我们查看 <a href="http://guides.rubyonrails.org/routing.html#singular-resources" target="_blank" rel="noopener">文档</a>，发现可以这样做</p><pre class=" language-ruby"><code class="language-ruby">resource <span class="token symbol">:photo</span><span class="token punctuation">,</span> controller<span class="token punctuation">:</span> photo <span class="token keyword">do</span>    collection <span class="token keyword">do</span>    get <span class="token string">'search'</span>    <span class="token keyword">end</span><span class="token keyword">end</span><span class="token comment" spellcheck="true"># search_photo GET    /photo/search(.:format)</span></code></pre><p>需要注意的是经过这样修改后，访问 <code>/photo</code> 不再调用 <code>index action</code> 而是调用 <code>show action</code>。</p>]]></content>
       
       
       <categories>
@@ -245,6 +270,8 @@
       
       
         <tags>
+            
+            <tag> Ruby </tag>
             
             <tag> Rails </tag>
             

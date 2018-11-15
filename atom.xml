@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-11-14T14:00:05.636Z</updated>
+  <updated>2018-11-15T12:03:03.111Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浏览数实践</title>
+    <link href="https://tuliang.org/liu-lan-shu-shi-jian/"/>
+    <id>https://tuliang.org/liu-lan-shu-shi-jian/</id>
+    <published>2018-11-15T12:01:00.000Z</published>
+    <updated>2018-11-15T12:03:03.111Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;浏览数实践&quot;&gt;&lt;a href=&quot;#浏览数实践&quot; class=&quot;headerlink&quot; title=&quot;浏览数实践&quot;&gt;&lt;/a&gt;浏览数实践&lt;/h1&gt;&lt;p&gt;我们分析一下，浏览数更新很频繁，那么使用传统的关系型数据库并不合适。&lt;/p&gt;
+&lt;p&gt;那么使用
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+      <category term="Rails" scheme="https://tuliang.org/tags/Rails/"/>
+    
+  </entry>
   
   <entry>
     <title>grep 显示标题</title>
@@ -284,7 +313,7 @@
     <link href="https://tuliang.org/rails-singular-resources/"/>
     <id>https://tuliang.org/rails-singular-resources/</id>
     <published>2014-10-24T15:25:53.000Z</published>
-    <updated>2018-11-02T13:35:40.361Z</updated>
+    <updated>2018-11-15T12:02:39.230Z</updated>
     
     <summary type="html">
     
@@ -300,6 +329,8 @@
     
       <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
     
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
     
       <category term="Rails" scheme="https://tuliang.org/tags/Rails/"/>
     
@@ -555,33 +586,6 @@
     
     
       <category term="Objective-C" scheme="https://tuliang.org/tags/Objective-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决 JavaScript 指向不明</title>
-    <link href="https://tuliang.org/jie-jue-javascript-zhi-xiang-bu-ming/"/>
-    <id>https://tuliang.org/jie-jue-javascript-zhi-xiang-bu-ming/</id>
-    <published>2012-12-23T14:33:02.000Z</published>
-    <updated>2018-10-31T14:35:50.759Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;用面向对象的方式编写 &lt;code&gt;JavaScript&lt;/code&gt; 时，在类中经常会出现 &lt;code&gt;this&lt;/code&gt; 指向不明的问题。&lt;/p&gt;
-&lt;p&gt;解决这个问题很简单，在对象中将 &lt;code&gt;this&lt;/code&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="https://tuliang.org/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="https://tuliang.org/tags/JavaScript/"/>
     
   </entry>
   

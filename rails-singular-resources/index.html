@@ -8,8 +8,8 @@
     <meta name="keywords" content="Rails Singular Resources, 不做咸鱼的小明, 涂亮, tuliang">
     <meta name="description" content="Rails 中 Controller 如果不是复数，写 path 或 url 的时候就必须加上 index，这样看上去就很 low。
 resources :photo do  
-  collection do    
-    get &#39;se">
+  collection do
+    get &#39;search">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -236,6 +236,10 @@ resources :photo do
             
             <div class="article-tag">
                 
+                <a href="/tags/Ruby/" target="_blank">
+                    <span class="chip bg-color">Ruby</span>
+                </a>
+                
                 <a href="/tags/Rails/" target="_blank">
                     <span class="chip bg-color">Rails</span>
                 </a>
@@ -264,7 +268,7 @@ resources :photo do
             <div id="articleContent">
                 <p><code>Rails</code> 中 <code>Controller</code> 如果不是复数，写 <code>path</code> 或 <code>url</code> 的时候就必须加上 <code>index</code>，这样看上去就很 <code>low</code>。</p>
 <pre class=" language-ruby"><code class="language-ruby">resources <span class="token symbol">:photo</span> <span class="token keyword">do</span>  
-  collection <span class="token keyword">do</span>    
+  collection <span class="token keyword">do</span>
     get <span class="token string">'search'</span>  
   <span class="token keyword">end</span>
 <span class="token keyword">end</span>
@@ -273,7 +277,7 @@ resources :photo do
 </code></pre>
 <p>我们查看 <a href="http://guides.rubyonrails.org/routing.html#singular-resources" target="_blank" rel="noopener">文档</a>，发现可以这样做</p>
 <pre class=" language-ruby"><code class="language-ruby">resource <span class="token symbol">:photo</span><span class="token punctuation">,</span> controller<span class="token punctuation">:</span> photo <span class="token keyword">do</span>  
-  collection <span class="token keyword">do</span>    
+  collection <span class="token keyword">do</span>
     get <span class="token string">'search'</span>  
   <span class="token keyword">end</span>
 <span class="token keyword">end</span>
