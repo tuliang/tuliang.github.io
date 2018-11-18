@@ -277,28 +277,12 @@
 <h3 id="用于表示程序的对象"><a href="#用于表示程序的对象" class="headerlink" title="用于表示程序的对象"></a>用于表示程序的对象</h3><p>语言处理器在词法分析阶段将程序分割为单词后，将开始构造抽象语法树（AST，Abstract Syntax Tree）。抽象语法树是一种用于表示程序结构的树形结构。</p>
 <p>构造抽象语法树的过程称为语法分析，依然属于语言处理器的前半阶段。经过词法分析后，程序已经被分解为一个个单词。语法分析的主要任务是分析单词之间的关系，如判断哪些单词属于同一个表达式或语句，以及处理左右括号（单词）的配对等问题。语法分析的结果能够通过抽象语法树来表示。这一阶段还会检查程序中是否含有语法错误。</p>
 <p>以 <code>13 + x * 2</code> 为例</p>
-<h4 id="单词序列"><a href="#单词序列" class="headerlink" title="单词序列"></a>单词序列</h4><pre class=" language-mermaid"><code class="language-mermaid">graph TD
-A(13)
-A2(+)
-A3(x)
-A4(*)
-A5(2)
-</code></pre>
-<h4 id="抽象语法树"><a href="#抽象语法树" class="headerlink" title="抽象语法树"></a>抽象语法树</h4><pre class=" language-mermaid"><code class="language-mermaid">graph TD
-A(+) --> A2(13)
-A --> A3(*)
-A3 --> A4(x)
-A3 --> A5(2)
-</code></pre>
+<h4 id="单词序列"><a href="#单词序列" class="headerlink" title="单词序列"></a>单词序列</h4><p><img src="https://www.tuliang.org/images/2018/QQ20181119-000259@2x.png" alt="image"></p>
+<h4 id="抽象语法树"><a href="#抽象语法树" class="headerlink" title="抽象语法树"></a>抽象语法树</h4><p><img src="https://www.tuliang.org/images/2018/QQ20181119-000231@2x.png" alt="image"></p>
 <p>抽象语法树仅用于表示语法分析的结果，因此通过语法分析得到的单词并不一定要与抽象语法树的节点一一对应。抽象语法树是一种去除了多余信息的抽象树形结构。例如</p>
 <p><code>13 + x * 2</code></p>
 <p>这样一个表达式来说，它与之前的例子不同，包含了括号。乘法运算的左值不再是 <code>x</code> 而是 <code>13 + x</code>。那么它的抽象语法树是</p>
-<pre class=" language-mermaid"><code class="language-mermaid">graph TD
-A(*) --> A2(+)
-A --> A3(2)
-A2 --> A4(13)
-A2 --> A5(x)
-</code></pre>
+<p><img src="https://www.tuliang.org/images/2018/QQ20181119-000241@2x.png" alt="image"></p>
 <p>程序中的括号等信息不必出现在抽象语法树中。除了括号，句尾的分号等无关紧要的单词通常也不会出现在抽象语法树中。</p>
 <blockquote>
 <p>抽象化原本指的就是去除多余的内容，抽取出事物的本质。</p>
@@ -315,17 +299,9 @@ A2 --> A5(x)
 <p>y = x + 2</p>
 <p>`<code></code></p>
 </blockquote>
-<h4 id="单词序列-1"><a href="#单词序列-1" class="headerlink" title="单词序列"></a>单词序列</h4><pre class=" language-mermaid"><code class="language-mermaid">graph TD
-A(#)
-A2(标题)
-A3(```)
-A4(x = 1)
-A5(y = x + 2)
-A6(```)
-</code></pre>
+<h4 id="单词序列-1"><a href="#单词序列-1" class="headerlink" title="单词序列"></a>单词序列</h4><p><img src="https://www.tuliang.org/images/2018/QQ20181119-000609@2x.png" alt="image"></p>
 <p>部分代码</p>
 <pre class=" language-ruby"><code class="language-ruby"><span class="token variable">@regex</span> <span class="token operator">=</span> <span class="token operator">/</span><span class="token punctuation">(</span><span class="token operator">^</span><span class="token comment" spellcheck="true">###)|(^##)|(^#)|(^```)|(.+)/</span>
-
 
 <span class="token keyword">def</span> read
   <span class="token builtin">File</span><span class="token punctuation">.</span><span class="token function">readlines</span><span class="token punctuation">(</span><span class="token variable">@filename</span><span class="token punctuation">)</span><span class="token punctuation">.</span>each_with_index <span class="token keyword">do</span> <span class="token operator">|</span>line<span class="token punctuation">,</span> i<span class="token operator">|</span>
@@ -343,8 +319,6 @@ A6(```)
     array<span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>item<span class="token operator">|</span>
       <span class="token function">add_token</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
     <span class="token keyword">end</span>
-  <span class="token keyword">else</span>
-    <span class="token comment" spellcheck="true"># 空行</span>
   <span class="token keyword">end</span>
 <span class="token keyword">end</span>
 
@@ -367,13 +341,7 @@ A6(```)
 <span class="token keyword">end</span>
 </code></pre>
 <h3 id="构造抽象语法树"><a href="#构造抽象语法树" class="headerlink" title="构造抽象语法树"></a>构造抽象语法树</h3><p>抽象语法树使用栈转树的方式实现</p>
-<h4 id="抽象语法树-1"><a href="#抽象语法树-1" class="headerlink" title="抽象语法树"></a>抽象语法树</h4><pre class=" language-mermaid"><code class="language-mermaid">graph TD
-A(root) --> A2(#)
-A --> A3(```)
-A2 --> A4(标题)
-A3 --> A5(x = 1)
-A3 --> A6(y = x + 2)
-</code></pre>
+<h4 id="抽象语法树-1"><a href="#抽象语法树-1" class="headerlink" title="抽象语法树"></a>抽象语法树</h4><p><img src="https://www.tuliang.org/images/2018/QQ20181119-000209@2x.png" alt="image"></p>
 <p>部分代码</p>
 <pre class=" language-ruby"><code class="language-ruby"><span class="token keyword">def</span> ast_runner
   index <span class="token operator">=</span> <span class="token number">0</span>
@@ -469,7 +437,10 @@ Code
 </pre></pre></pre></pre></code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从 <code>分割单词</code> 获得单词序列到 <code>构造抽象语法树</code>，再到<code>生成代码</code>，基本上实现了一个最简单的编译器。</p>
 <p>在做的过程中你会发现编译原理的确是大作业，细做的话每一步，有太多东西，另外解释器也不简单。</p>
-<p>项目代码： <a href="https://github.com/tuliang/ruby-markdown" target="_blank" rel="noopener">ruby-markdown</a></p>
+<ul>
+<li><a href="https://www.tuliang.org/qian-tan-markdown-bian-yi-qi/" target="_blank" rel="noopener">博客地址 浅谈 Markdown 编译器</a></li>
+<li><a href="https://github.com/tuliang/ruby-markdown" target="_blank" rel="noopener">项目代码 ruby-markdown</a></li>
+</ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://book.douban.com/subject/25908672/" target="_blank" rel="noopener">两周自制脚本语言</a></li>
 <li><a href="https://www.bilibili.com/video/av17649289" target="_blank" rel="noopener">编译原理（哈工大）</a></li>
