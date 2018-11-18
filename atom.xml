@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-11-15T12:14:35.141Z</updated>
+  <updated>2018-11-18T16:11:51.906Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅谈 Markdown 编译器</title>
+    <link href="https://tuliang.org/qian-tan-markdown-bian-yi-qi/"/>
+    <id>https://tuliang.org/qian-tan-markdown-bian-yi-qi/</id>
+    <published>2018-11-18T15:32:36.000Z</published>
+    <updated>2018-11-18T16:11:51.906Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;浅谈-Markdown-编译器&quot;&gt;&lt;a href=&quot;#浅谈-Markdown-编译器&quot; class=&quot;headerlink&quot; title=&quot;浅谈 Markdown 编译器&quot;&gt;&lt;/a&gt;浅谈 Markdown
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+      <category term="编译原理" scheme="https://tuliang.org/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>浏览数实践</title>
@@ -557,37 +585,6 @@
     
     
       <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>斯坦福-iPad 和 iPhone 应用开发(iOS5)</title>
-    <link href="https://tuliang.org/si-tan-fu-ipad-he-iphone-ying-yong-kai-fa-ios5/"/>
-    <id>https://tuliang.org/si-tan-fu-ipad-he-iphone-ying-yong-kai-fa-ios5/</id>
-    <published>2013-01-21T14:03:21.000Z</published>
-    <updated>2018-11-02T14:14:33.263Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;师介绍&lt;/p&gt;
-&lt;p&gt;讲师: Paul Hegarty&lt;/p&gt;
-&lt;p&gt;介绍: 斯坦福大学软件工程学教授，主要教授iOS应用的开发、编程。&lt;/p&gt;
-&lt;p&gt;课程介绍&lt;/p&gt;
-&lt;p&gt;最新更新课程，适用于 &lt;code&gt;iOS 5&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;本课程介绍了使用
-        
-      
-    
-    </summary>
-    
-      <category term="公开课" scheme="https://tuliang.org/categories/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
-    
-    
-      <category term="Objective-C" scheme="https://tuliang.org/tags/Objective-C/"/>
     
   </entry>
   
