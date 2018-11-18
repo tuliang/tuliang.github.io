@@ -50,24 +50,11 @@ tags:
 
 #### 单词序列
 
-```mermaid
-graph TD
-A(13)
-A2(+)
-A3(x)
-A4(*)
-A5(2)
-```
+![image](https://www.tuliang.org/images/2018/QQ20181119-000259@2x.png)
 
 #### 抽象语法树
 
-```mermaid
-graph TD
-A(+) --> A2(13)
-A --> A3(*)
-A3 --> A4(x)
-A3 --> A5(2)
-```
+![image](https://www.tuliang.org/images/2018/QQ20181119-000231@2x.png)
 
 抽象语法树仅用于表示语法分析的结果，因此通过语法分析得到的单词并不一定要与抽象语法树的节点一一对应。抽象语法树是一种去除了多余信息的抽象树形结构。例如
 
@@ -75,18 +62,11 @@ A3 --> A5(2)
 
 这样一个表达式来说，它与之前的例子不同，包含了括号。乘法运算的左值不再是 `x` 而是 `13 + x`。那么它的抽象语法树是
 
-```mermaid
-graph TD
-A(*) --> A2(+)
-A --> A3(2)
-A2 --> A4(13)
-A2 --> A5(x)
-```
+![image](https://www.tuliang.org/images/2018/QQ20181119-000241@2x.png)
 
 程序中的括号等信息不必出现在抽象语法树中。除了括号，句尾的分号等无关紧要的单词通常也不会出现在抽象语法树中。
 
 > 抽象化原本指的就是去除多余的内容，抽取出事物的本质。
-
 
 ## 实战
 
@@ -110,21 +90,12 @@ A2 --> A5(x)
 
 #### 单词序列
 
-```mermaid
-graph TD
-A(#)
-A2(标题)
-A3(```)
-A4(x = 1)
-A5(y = x + 2)
-A6(```)
-```
+![image](https://www.tuliang.org/images/2018/QQ20181119-000609@2x.png)
 
 部分代码
 
 ```ruby
 @regex = /(^###)|(^##)|(^#)|(^```)|(.+)/
-
 
 def read
   File.readlines(@filename).each_with_index do |line, i|
@@ -142,8 +113,6 @@ def readline(line)
     array.each do |item|
       add_token(item)
     end
-  else
-    # 空行
   end
 end
 
@@ -172,14 +141,7 @@ end
 
 #### 抽象语法树
 
-```mermaid
-graph TD
-A(root) --> A2(#)
-A --> A3(```)
-A2 --> A4(标题)
-A3 --> A5(x = 1)
-A3 --> A6(y = x + 2)
-```
+![image](https://www.tuliang.org/images/2018/QQ20181119-000209@2x.png)
 
 
 部分代码
@@ -288,7 +250,8 @@ Code
 
 在做的过程中你会发现编译原理的确是大作业，细做的话每一步，有太多东西，另外解释器也不简单。
 
-项目代码： [ruby-markdown](https://github.com/tuliang/ruby-markdown)
+- [博客地址 浅谈 Markdown 编译器](https://www.tuliang.org/qian-tan-markdown-bian-yi-qi/)
+- [项目代码 ruby-markdown](https://github.com/tuliang/ruby-markdown)
 
 ## 参考
 
