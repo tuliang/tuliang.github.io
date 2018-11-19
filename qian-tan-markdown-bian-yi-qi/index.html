@@ -278,11 +278,11 @@
 <p>构造抽象语法树的过程称为语法分析，依然属于语言处理器的前半阶段。经过词法分析后，程序已经被分解为一个个单词。语法分析的主要任务是分析单词之间的关系，如判断哪些单词属于同一个表达式或语句，以及处理左右括号（单词）的配对等问题。语法分析的结果能够通过抽象语法树来表示。这一阶段还会检查程序中是否含有语法错误。</p>
 <p>以 <code>13 + x * 2</code> 为例</p>
 <h4 id="单词序列"><a href="#单词序列" class="headerlink" title="单词序列"></a>单词序列</h4><p><img src="https://www.tuliang.org/images/2018/QQ20181119-000259@2x.png" alt="image"></p>
-<h4 id="抽象语法树"><a href="#抽象语法树" class="headerlink" title="抽象语法树"></a>抽象语法树</h4><p><img src="https://www.tuliang.org/images/2018/QQ20181119-000231@2x.png" alt="image"></p>
+<h4 id="抽象语法树"><a href="#抽象语法树" class="headerlink" title="抽象语法树"></a>抽象语法树</h4><p><img src="https://www.tuliang.org/images/2018/QQ20181119-000241@2x.png" alt="image"></p>
 <p>抽象语法树仅用于表示语法分析的结果，因此通过语法分析得到的单词并不一定要与抽象语法树的节点一一对应。抽象语法树是一种去除了多余信息的抽象树形结构。例如</p>
-<p><code>13 + x * 2</code></p>
+<p><code>(13 + x) * 2</code></p>
 <p>这样一个表达式来说，它与之前的例子不同，包含了括号。乘法运算的左值不再是 <code>x</code> 而是 <code>13 + x</code>。那么它的抽象语法树是</p>
-<p><img src="https://www.tuliang.org/images/2018/QQ20181119-000241@2x.png" alt="image"></p>
+<p><img src="https://www.tuliang.org/images/2018/QQ20181119-000231@2x.png" alt="image"></p>
 <p>程序中的括号等信息不必出现在抽象语法树中。除了括号，句尾的分号等无关紧要的单词通常也不会出现在抽象语法树中。</p>
 <blockquote>
 <p>抽象化原本指的就是去除多余的内容，抽取出事物的本质。</p>
