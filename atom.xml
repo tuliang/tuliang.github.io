@@ -371,7 +371,7 @@
     <link href="https://tuliang.org/wang-ye-xuan-ran-shu-xue-gong-shi/"/>
     <id>https://tuliang.org/wang-ye-xuan-ran-shu-xue-gong-shi/</id>
     <published>2014-10-01T13:14:41.000Z</published>
-    <updated>2018-11-05T13:23:39.993Z</updated>
+    <updated>2018-11-30T12:53:46.424Z</updated>
     
     <summary type="html">
     
@@ -380,7 +380,7 @@
         
         
           &lt;p&gt;数学公式一般使用 LaTeX，但是在网页上一般将 LaTeX 渲染成为图片。&lt;/p&gt;
-&lt;p&gt;在一堆文字中放进几个图片难看又麻烦，稍微找了一下发现一个神器: &lt;a href=&quot;http://www.mathjax.org/&quot; target=&quot;_blank&quot;
+&lt;p&gt;在一堆文字中放进几个图片难看又麻烦，稍微找了一下发现一个神器: &lt;a href=&quot;https://www.mathjax.org/&quot; target=&quot;_blank&quot;
         
       
     
