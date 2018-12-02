@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-11-19T16:03:28.145Z</updated>
+  <updated>2018-12-02T02:38:46.229Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nginx 进程结构</title>
+    <link href="https://tuliang.org/nginx-jin-cheng-jie-gou/"/>
+    <id>https://tuliang.org/nginx-jin-cheng-jie-gou/</id>
+    <published>2018-12-02T02:24:48.000Z</published>
+    <updated>2018-12-02T02:38:46.229Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Nginx-进程结构&quot;&gt;&lt;a href=&quot;#Nginx-进程结构&quot; class=&quot;headerlink&quot; title=&quot;Nginx 进程结构&quot;&gt;&lt;/a&gt;Nginx 进程结构&lt;/h1&gt;&lt;h2 id=&quot;进程结构&quot;&gt;&lt;a href=&quot;#进程结构&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Nginx" scheme="https://tuliang.org/tags/Nginx/"/>
+    
+  </entry>
   
   <entry>
     <title>浅谈 Markdown 编译器</title>
@@ -557,34 +583,6 @@
     
     
       <category term="Git" scheme="https://tuliang.org/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP 神奇的分号</title>
-    <link href="https://tuliang.org/php-shen-qi-de-fen-hao/"/>
-    <id>https://tuliang.org/php-shen-qi-de-fen-hao/</id>
-    <published>2013-03-01T14:52:35.000Z</published>
-    <updated>2018-10-31T14:57:14.566Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;今天在开发过程中，遇到两种分号的神奇问题，特此记录。&lt;/p&gt;
-&lt;pre class=&quot; language-php&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;&lt;span class=&quot;token delimiter&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="PHP" scheme="https://tuliang.org/tags/PHP/"/>
     
   </entry>
   

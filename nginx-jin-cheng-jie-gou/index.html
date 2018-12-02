@@ -1,0 +1,505 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Nginx 进程结构, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="Nginx 进程结构进程结构一般来说 Nginx 有一个父进程 Master，和一个或多个子进程。
+子进程分两类，一种是 Worker 进程，另一种是 Cache 相关的进程。
+Cache 在多个 Worker 间共享使用。同时被进程 Ca">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Nginx 进程结构 | 不做咸鱼的小明</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">不做咸鱼的小明</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/fund" class="waves-effect waves-light">
+            
+            <i class="fa fa-bar-chart"></i>
+            
+            <span>基金</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">不做咸鱼的小明</div>
+        <div class="logo-desc">
+            
+            人生有梦 各自精彩
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/fund" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bar-chart"></i>
+                
+                基金
+            </a>
+        </li>
+        
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Nginx 进程结构
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/Nginx/" target="_blank">
+                    <span class="chip bg-color">Nginx</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/工具/" class="post-category" target="_blank">
+                        工具
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-02
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Nginx-进程结构"><a href="#Nginx-进程结构" class="headerlink" title="Nginx 进程结构"></a>Nginx 进程结构</h1><h2 id="进程结构"><a href="#进程结构" class="headerlink" title="进程结构"></a>进程结构</h2><p>一般来说 Nginx 有一个父进程 Master，和一个或多个子进程。</p>
+<p>子进程分两类，一种是 Worker 进程，另一种是 Cache 相关的进程。</p>
+<p>Cache 在多个 Worker 间共享使用。同时被进程 Cache manager 和 Cache loader 使用。Cache loader 做缓存的载入，Cache manager 做缓存的管理。这些进程间的通讯都是使用共享内存来解决的。</p>
+<p>为什么不用多线程？因为线程之间是共享地址空间的，当某一个第三方模块引发了地址空间的段错误时，地址越界出现时，会导致整个进程挂掉。</p>
+<p>Nginx 希望每个 Worker 进程从头到尾占有一个 CPU，所以往往不止要把 Worker 进程的数量配置与服务器的 CPU 核数一致以外，还需要把每一个 Worker 进程与某一个 CPU 核绑定在一起。这样可以更好的每个 CPU 核上面的 CPU 缓存来减少缓存失效的命中率。</p>
+<p>不仅仅是缓存的原因，一个进程从头到尾占有一个 CPU，减少 CPU 上下文切换的次数和耗时，让 CPU 更多的时间用在运行进程上。</p>
+<h3 id="Master-进程"><a href="#Master-进程" class="headerlink" title="Master 进程"></a>Master 进程</h3><p>监控 Worker 进程，接受信号</p>
+<ul>
+<li>CHLD，子进程终止的时候会向父进程发送 CHLD。Master 进程通过这个信号维持 Worker 进程的数量。</li>
+</ul>
+<p>管理 Worker 进程，发送信号</p>
+<ul>
+<li>TERM/INT，立刻停止进程。</li>
+<li>QUIT，优雅的退出，等请求处理完才退出，用户无感知。</li>
+<li>HUP，重载配置文件。</li>
+<li>USR1，重新打开日志文件，做日志文件的切割。</li>
+</ul>
+<p>下面 2 个信号，Nginx 命令行中没有对应的操作，只能通过 kill 直接向 Master 进程发送</p>
+<ul>
+<li>USR2，平滑升级，此时旧的 Nginx 主进程 Master 将会把自己的进程文件改名为 .oldbin，然后执行新版 Nginx。新旧 Nginx 会同时运行，共同处理请求。</li>
+<li>WINCH，平滑升级，逐步停止旧版 Nginx 的 Worker 进程就都会随着任务执行完毕而退出，新版的 Nginx 的 Worker 进程会逐渐取代旧版 Worker 进程。</li>
+</ul>
+<h3 id="Worker-进程"><a href="#Worker-进程" class="headerlink" title="Worker 进程"></a>Worker 进程</h3><p>和上面对应，接受信号</p>
+<ul>
+<li>TERM/INT</li>
+<li>QUIT</li>
+<li>USR1</li>
+<li>WINCH</li>
+</ul>
+<h3 id="Nginx-命令行"><a href="#Nginx-命令行" class="headerlink" title="Nginx 命令行"></a>Nginx 命令行</h3><p>启动 Nginx 以后，Nginx 会把 Master 进程的 pid 记录到一个文件中，一般是 Nginx 安装目录下 logs/nginx.pid。</p>
+<p>我们平时使用的命令行其实就是对这个 pid 发送对应的信号。</p>
+<ul>
+<li>reload: HUP</li>
+<li>reopen: USR1</li>
+<li>stop: TERM</li>
+<li>quit: QUIT</li>
+</ul>
+
+            </div>
+            <hr>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://tuliang.org/nginx-jin-cheng-jie-gou/';
+        this.page.identifier = '/nginx-jin-cheng-jie-gou/';
+        this.page.title = 'Nginx 进程结构';
+    };
+    let disqus_shortname = 'tuliang';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="card">
+                <a href="/nginx-jin-cheng-jie-gou/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Nginx 进程结构">
+                        
+                        <span class="card-title">Nginx 进程结构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">Nginx 进程结构进程结构一般来说 Nginx 有一个父进程 Master，和一个或多个子进程。
+子进程分两类，一种是 Worker 进程，另一种是 Cache 相关的进程。
+Cache 在多个 Worker 间共享使用。同时被进程 Ca</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/工具/" class="post-category" target="_blank">
+                                    工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Nginx/" target="_blank">
+                        <span class="chip bg-color">Nginx</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/qian-tan-markdown-bian-yi-qi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="浅谈 Markdown 编译器">
+                        
+                        <span class="card-title">浅谈 Markdown 编译器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">浅谈 Markdown 编译器作者不是科班出身，基础比较差。一直在补习一些基础知识，也包括编译原理。最近和朋友交流的时候有提到 AST(抽象语法树)，虽然以前也零散的看了一些文章，实际上还是比较模糊的。
+在这一篇文章中，我会尝试谈一下编译器</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Ruby/" target="_blank">
+                        <span class="chip bg-color">Ruby</span>
+                    </a>
+                    
+                    <a href="/tags/编译原理/" target="_blank">
+                        <span class="chip bg-color">编译原理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://github.com/tuliang/" target="_blank">涂亮</a> 基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</body>
+</html>
