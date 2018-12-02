@@ -76,6 +76,11 @@ myProjects:
       iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
       url: https://github.com/tuliang/in-the-eyes
       desc: 一个使用 Ruby on Rails 的图片网站。
+    ruby-markdown:
+      icon: fa-file-text-o
+      iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
+      url: https://github.com/tuliang/ruby-markdown
+      desc: 一个 Ruby 实现的 Markdown 编译器。
 
 # config my skills informations in about page.
 # If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
@@ -94,13 +99,13 @@ mySkills:
       percent: 40%
     Redis:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
-      percent: 10%
+      percent: 20%
     Linux:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
-      percent: 40%
+      percent: 50%
     Nginx:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
-      percent: 10%
+      percent: 20%
     
 
 # config gallery of my photos in about page.
