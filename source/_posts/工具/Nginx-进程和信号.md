@@ -1,11 +1,11 @@
 ---
-title: Nginx 进程结构
+title: Nginx 进程和信号
 date: 2018-12-02 10:24:48
 categories: 工具
 tags:
   - Nginx
 ---
-# Nginx 进程结构
+# Nginx 进程和信号
 
 ## 进程结构
 
@@ -36,8 +36,8 @@ Nginx 希望每个 Worker 进程从头到尾占有一个 CPU，所以往往不�
 
 下面 2 个信号，Nginx 命令行中没有对应的操作，只能通过 kill 直接向 Master 进程发送
 
-- USR2，平滑升级，此时旧的 Nginx 主进程 Master 将会把自己的进程文件改名为 .oldbin，然后执行新版 Nginx。新旧 Nginx 会同时运行，共同处理请求。
-- WINCH，平滑升级，逐步停止旧版 Nginx 的 Worker 进程就都会随着任务执行完毕而退出，新版的 Nginx 的 Worker 进程会逐渐取代旧版 Worker 进程。
+- USR2，热升级第一阶段，启动新进程。旧的 Nginx 主进程 Master 将会把自己的进程文件改名为 .oldbin，然后执行新版 Nginx。此时新旧 Nginx 会同时运行，共同处理请求。
+- WINCH，热升级第二阶段，停止老进程。逐步停止旧版 Nginx 的 Worker 进程就都会随着任务执行完毕而退出，新版的 Nginx 的 Worker 进程会逐渐取代旧版 Worker 进程。
 
 ### Worker 进程
 
@@ -58,3 +58,28 @@ Nginx 希望每个 Worker 进程从头到尾占有一个 CPU，所以往往不�
 - reopen: USR1
 - stop: TERM
 - quit: QUIT
+
+### reload 流程
+
+1. 向 Master 进程发送 HUP 信号（reload 命令）
+2. Master 进程校验配置语法是否正确
+3. Master 进程更新监听端口（比如新配置增加了监听 443 端口）
+4. Master 进程用新配置启动新的 Worker 子进程
+5. Master 进程向老 Worker 子进程发送 QUIT 信号
+6. 老 Worker 子进程关闭监听句柄，处理完当前连接后结束进程
+
+在 1.11.11 的版本中，增加了 worker_shutdown_timeout 参数来设置优雅退出 Worker 进程的超时时间。
+
+### 热升级流程
+
+1. 将旧 Nginx 文件换成新 Nginx 文件（注意备份）
+2. 向 Master 进程发送 USR2 信号
+3. Master 进程修改 pid 文件名，加后缀 .oldbin
+4. Master 进程用新 Nginx 文件启动新 Master 进程
+5. 向老 Master 进程发送 WINCH 信号，老 Master 进程会优雅关闭老 Worker 进程
+6. 此时老 Master 进程依然存活，如果出现问题需要回滚。向老 Master 进程发送 HUP，然后向新 Master 发送 QUIT 即可。（注意恢复备份文件）
+7. 正常升级后，通过 kill -QUIT 信号关闭老 Master 进程
+
+新老 Master 进程，同时存在，那么是怎么同时监听端口的？
+
+新老 Master 进程是父子进程，所以可以同时监听。
