@@ -94,7 +94,7 @@ mySkills:
     C / C++:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
       percent: 1%
-    MySQL / PostgreSQL:
+    MySQL:
       background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
       percent: 40%
     Redis:
