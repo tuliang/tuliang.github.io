@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-12-02T02:38:46.229Z</updated>
+  <updated>2018-12-02T10:41:08.101Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Nginx 进程结构</title>
-    <link href="https://tuliang.org/nginx-jin-cheng-jie-gou/"/>
-    <id>https://tuliang.org/nginx-jin-cheng-jie-gou/</id>
+    <title>Nginx 进程和信号</title>
+    <link href="https://tuliang.org/nginx-jin-cheng-he-xin-hao/"/>
+    <id>https://tuliang.org/nginx-jin-cheng-he-xin-hao/</id>
     <published>2018-12-02T02:24:48.000Z</published>
-    <updated>2018-12-02T02:38:46.229Z</updated>
+    <updated>2018-12-02T10:41:08.101Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;h1 id=&quot;Nginx-进程结构&quot;&gt;&lt;a href=&quot;#Nginx-进程结构&quot; class=&quot;headerlink&quot; title=&quot;Nginx 进程结构&quot;&gt;&lt;/a&gt;Nginx 进程结构&lt;/h1&gt;&lt;h2 id=&quot;进程结构&quot;&gt;&lt;a href=&quot;#进程结构&quot;
+          &lt;h1 id=&quot;Nginx-进程和信号&quot;&gt;&lt;a href=&quot;#Nginx-进程和信号&quot; class=&quot;headerlink&quot; title=&quot;Nginx 进程和信号&quot;&gt;&lt;/a&gt;Nginx 进程和信号&lt;/h1&gt;&lt;h2 id=&quot;进程结构&quot;&gt;&lt;a href=&quot;#进程结构&quot;
         
       
     
