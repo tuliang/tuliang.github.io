@@ -83,3 +83,13 @@ Nginx 希望每个 Worker 进程从头到尾占有一个 CPU，所以往往不�
 新老 Master 进程，同时存在，那么是怎么同时监听端口的？
 
 新老 Master 进程是父子进程，所以可以同时监听。
+
+### 优雅关闭 Worker 进程
+
+优雅关闭是指 HTTP 请求，如果代理的是 WebSocket、TCP、UDP，这时候 Nginx 是无法进行优雅关闭的。
+
+1. 设置定时器（这个功能默认不开启，配置文件有设置 worker_shutdown_timeout 才会生效）
+2. 关闭监听句柄
+3. 关闭空闲连接
+4. 在循环中等待全部连接关闭（如果设置了 worker_shutdown_timeout，超时后会强制关闭全部连接）
+5. 退出进程
