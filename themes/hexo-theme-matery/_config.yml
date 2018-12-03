@@ -91,7 +91,7 @@ mySkills:
     Ruby:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
       percent: 60%
-    C / C++:
+    Golang:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
       percent: 1%
     MySQL:
