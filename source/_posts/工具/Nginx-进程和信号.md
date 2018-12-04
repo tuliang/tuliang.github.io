@@ -93,3 +93,5 @@ Nginx 希望每个 Worker 进程从头到尾占有一个 CPU，所以往往不�
 3. 关闭空闲连接
 4. 在循环中等待全部连接关闭（如果设置了 worker_shutdown_timeout，超时后会强制关闭全部连接）
 5. 退出进程
+
+更多信息可以参考官方文档 [Starting, Stopping, and Restarting NGINX](https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/)
