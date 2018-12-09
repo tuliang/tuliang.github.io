@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>Redis 持久化</title>
+      <link href="/redis-chi-jiu-hua/"/>
+      <url>/redis-chi-jiu-hua/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Redis-持久化"><a href="#Redis-持久化" class="headerlink" title="Redis 持久化"></a>Redis 持久化</h1><p>Redis 提供了两种不同的持久化方法来将数据存储到硬盘里面。一种方法叫快照（snapshotting），它可以将存在于某一时刻的所有数据都写入硬盘里面。另一种方法叫只追加文件（append-only file，AOF），它会在执行写命令时，将被执行的写命令复制到硬盘里面。这两种持久化方式可以同时使用，也可以单独使用，甚至都不使用。</p><h2 id="快照持久化"><a href="#快照持久化" class="headerlink" title="快照持久化"></a>快照持久化</h2><p>Redis 可以通过创建快照来获得存储在内存里面的数据在某个时间点上的副本。</p><p>创建快照的办法有以下几种。</p><ul><li>客户端通过发送 BGSAVE 命令来创建一个快照。Redis 会调用 fork 来创建一个子进程，然后子进程负责将快照写入硬盘，而父进程则继续处理命令请求。</li><li>客户端还可以发送 SAVE 命令来创建一个快照，接到命令的 Redis 在快照创建完毕之前将不再响应任何其它命令。</li><li>如果设置了 save 配置，比如 save 60 10000，那么从 Redis 最近一次创建快照之后算起，当 “60 秒之内有 10000 次写入” 这个条件被满足时，Redis 就会自动触发 BGSAVE 命令。如果设置了多个 save 配置选项，那么当任意一个配置的条件被满足时，就会触发一次 BGSAVE 命令。</li><li>当 Redis 通过 SHUTDOWN 命令接收到关闭服务器的请求时，或者接收到标准 TERM 信号时，会执行一个 SAVE 命令，并在命令执行完毕之后关闭。</li><li>当一个 Redis 连接另一个 Redis，并向对方发送 SYNC 命令开始一次复制操作的时候，那么主服务器会执行 BGSAVE 命令。</li></ul><p>在只使用快照持久化来保存数据时，一定要记住：如果系统真的发生崩溃，用户将丢失最近一次快照之后更改的所有数据。因此，快照持久化只适用于那些即使丢失一部分数据也不会造成问题的程序，而不能接受这种数据损失的程序则可以使用 AOF 持久化。</p><h2 id="AOF-持久化"><a href="#AOF-持久化" class="headerlink" title="AOF 持久化"></a>AOF 持久化</h2><p>简单来说，AOF 持久化会将被执行的写命令写到 AOF 文件的末尾，以此来记录数据发生的变化。因此，Redis 只要从头到尾重新执行一次 AOF 文件包含的所有写命令，就可以恢复 AOF 文件所记录的数据集。AOF 可以通过设置 appendonly yes 配置选项来打开。</p><p>appendonly 选项及同步频率</p><ul><li>always 每个 Redis 写命令都要同步写入硬盘。这样做会严重降低速度。</li><li>everysec 每秒执行一次同步，显式地将多个写命令同步到硬盘。</li><li>no 让操作系统来决定应该何时进行同步。</li></ul><h3 id="文件同步"><a href="#文件同步" class="headerlink" title="文件同步"></a>文件同步</h3><p>在向硬盘写入文件时，至少会发生 3 件事。当调用 file.write() 方法（或者其他编程语言里面的类似操作）对文件进行写入时，写入的内容首先会被存储到缓冲区，然后操作系统会在将来的某个时候将缓冲区存储的内容写入硬盘，而数据只有在被写入硬盘之后，才算是真正地保存到了硬盘里面。用户可以通过调用 file.flush() 方法来请求操作系统尽快地将缓冲区存储地数据写入硬盘里，但具体何时执行写入操作仍然由操作系统决定。除此之外，用户还可以命令操作系统将文件同步（fsync）到硬盘，同步操作会一直阻塞直到指定的文件被写入硬盘为止。</p><h3 id="警告-固态硬盘和-appendfsync-always"><a href="#警告-固态硬盘和-appendfsync-always" class="headerlink" title="警告 固态硬盘和 appendfsync always"></a>警告 固态硬盘和 appendfsync always</h3><p>使用固体硬盘的用户请谨慎使用 appendfsync always 选项，因为这个选项让 Redis 每次只写入一个命令，而不是像其他选项那样一次写入多个命令，这种不断写入少量数据的做法有可能会引发严重的写入放大（write amplification）问题，在某些情况下甚至会将固体硬盘的寿命从原来的几年降低为几个月。</p><h3 id="重写-压缩-AOF-文件"><a href="#重写-压缩-AOF-文件" class="headerlink" title="重写/压缩 AOF 文件"></a>重写/压缩 AOF 文件</h3><p>为了解决 AOF 文件不断增大的问题，用户可以发送 BGREWRITEAOF 命令，这个命令会通过移除 AOF 文件中的冗余命令来重写文件。BGREWRITEAOF 的工作原理和 BGSAVE 创建快照的工作原理非常相似，会创建一个子进程，然后由子进程负责对 AOF 文件进行重写。</p><p>AOF 持久化也可以通过设置 auto-aof-rewrite-percentage 和 auto-aof-rewrite-min-size 选项来自动执行 BGREWRITEAOF。</p><h2 id="Redis-复制的启动过程"><a href="#Redis-复制的启动过程" class="headerlink" title="Redis 复制的启动过程"></a>Redis 复制的启动过程</h2><h3 id="表-1-从服务器连接主服务器时的步骤"><a href="#表-1-从服务器连接主服务器时的步骤" class="headerlink" title="表 1 从服务器连接主服务器时的步骤"></a>表 1 从服务器连接主服务器时的步骤</h3><table><thead><tr><th>步骤</th><th>主服务器操作</th><th>从服务器操作</th></tr></thead><tbody><tr><td>1</td><td>等待命令</td><td>连接主服务器，发送 SYNC 命令</td></tr><tr><td>2</td><td>开始执行 BGSAVE，并使用缓冲区记录 BGSAVE 之后执行的所有写命令</td><td>根据配置来决定是继续使用现有的数据来处理客户端的命令，还是向发送请求的客户端返回错误</td></tr><tr><td>3</td><td>BGSAVE 执行完毕，向从服务器发送快照文件，并在发送期间继续使用缓冲区记录被执行的写命令</td><td>丢弃所有旧数据，开始载入主服务器发来的快照文件</td></tr><tr><td>4</td><td>快照文件发送完毕，开始向从服务器发送存储在缓冲区里面的写命令</td><td>完成对快照文件的解释操作，开始接受命令请求</td></tr><tr><td>5</td><td>缓冲区存储的写命令发送完毕。从现在开始，每执行一个写命令，就向从服务器发送相同的写命令</td><td>执行主服务器发来的所有存储在缓冲区里面的写命令。并从现在开始，接收并执行主服务器传来的每个写命令</td></tr></tbody></table><h3 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h3><p><strong>从服务器在进行同步，会清空自己的所有数据</strong> 从服务器在于主服务器进行初始连接时，数据库中原有的所有数据都将丢失，并被替换成主服务器发来的数据。</p><p><strong>Redis 不支持主主复制（master-master replication）</strong> 被相互设置为主服务器的两个 Redis 实例只会持续地占用大量资源并且持续不断地尝试与对方进行通信，根据客户端连接的服务器不同，客户端的请求可能会得到不一致的数据，或者得不到数据。</p><h3 id="多个从服务器"><a href="#多个从服务器" class="headerlink" title="多个从服务器"></a>多个从服务器</h3><h4 id="表-2-当有新的从服务器连接主服务器时，有时可以重用已有的快照文件"><a href="#表-2-当有新的从服务器连接主服务器时，有时可以重用已有的快照文件" class="headerlink" title="表 2 当有新的从服务器连接主服务器时，有时可以重用已有的快照文件"></a>表 2 当有新的从服务器连接主服务器时，有时可以重用已有的快照文件</h4><table><thead><tr><th>当有新的从服务器连接主服务器时</th><th>主服务器操作</th></tr></thead><tbody><tr><td>表 1 中步骤 3 尚未执行</td><td>所有从服务器会接收到相同的快照文件和相同的缓冲区写命令</td></tr><tr><td>表 1 中步骤 3 正在执行或者已经执行完毕</td><td>当主服务器与较早进行连接的从服务器执行完复制所需的 5 个步骤之后，主服务器会与新连接的从服务器执行一次新的复制流程</td></tr></tbody></table><h3 id="主从链"><a href="#主从链" class="headerlink" title="主从链"></a>主从链</h3><p>当读请求的重要性明显高于写请求的重要性，并且读请求的数量远远超出一台服务器可以处理的范围时，用户就需要添加新的从服务器来处理读请求。随着负载不断上升，主服务器可能会无法快速地更新所有从服务器，或者因为重新连接和重新同步从服务器而导致系统超载。为了缓解这个问题，用户可以创建一个由 Redis 主从节点（master/slave node）组成的中间层来分担服务器的复制工作，如果下图所示。</p><p><img src="https://www.tuliang.org/images/2018/QQ20181209-182956@2x.png" alt="image"></p><p>因为 Redis 的主服务器和从服务器并没有特别不同的地方，所以从服务器也可以拥有自己的从服务器，并形成主从链（master/slave chaining）。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Nginx 进程和信号</title>
       <link href="/nginx-jin-cheng-he-xin-hao/"/>
       <url>/nginx-jin-cheng-he-xin-hao/</url>

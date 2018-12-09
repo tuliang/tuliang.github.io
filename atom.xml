@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-12-04T14:27:47.663Z</updated>
+  <updated>2018-12-09T10:32:16.699Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis 持久化</title>
+    <link href="https://tuliang.org/redis-chi-jiu-hua/"/>
+    <id>https://tuliang.org/redis-chi-jiu-hua/</id>
+    <published>2018-12-09T10:10:23.000Z</published>
+    <updated>2018-12-09T10:32:16.699Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Redis-持久化&quot;&gt;&lt;a href=&quot;#Redis-持久化&quot; class=&quot;headerlink&quot; title=&quot;Redis 持久化&quot;&gt;&lt;/a&gt;Redis 持久化&lt;/h1&gt;&lt;p&gt;Redis
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Redis" scheme="https://tuliang.org/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>Nginx 进程和信号</title>
@@ -556,33 +582,6 @@
     
     
       <category term="Siege" scheme="https://tuliang.org/tags/Siege/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 彻底删除文件</title>
-    <link href="https://tuliang.org/git-che-di-shan-chu-wen-jian/"/>
-    <id>https://tuliang.org/git-che-di-shan-chu-wen-jian/</id>
-    <published>2013-08-13T14:58:34.000Z</published>
-    <updated>2018-10-31T15:01:11.685Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;一般 &lt;code&gt;git&lt;/code&gt; 删除文件使用 &lt;code&gt;git rm&lt;/code&gt; 就可以了，但是有时候某些文件你甚至不想让它出现在 &lt;code&gt;git&lt;/code&gt; 的 &lt;code&gt;log&lt;/code&gt;中。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;github&lt;/code&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Git" scheme="https://tuliang.org/tags/Git/"/>
     
   </entry>
   
