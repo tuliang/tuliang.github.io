@@ -1,0 +1,613 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="使用 Docker Compose 搭建一个 MySQL 主从服务, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="使用 Docker Compose 搭建一个 MySQL 主从服务安装 Docker for Mac先安装 Docker for Mac
+准备好文件docker-compose.ymlversion: &#39;3&#39;
+services:
+  mys">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>使用 Docker Compose 搭建一个 MySQL 主从服务 | 不做咸鱼的小明</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">不做咸鱼的小明</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/fund" class="waves-effect waves-light">
+            
+            <i class="fa fa-bar-chart"></i>
+            
+            <span>基金</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">不做咸鱼的小明</div>
+        <div class="logo-desc">
+            
+            人生有梦 各自精彩
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/fund" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bar-chart"></i>
+                
+                基金
+            </a>
+        </li>
+        
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        使用 Docker Compose 搭建一个 MySQL 主从服务
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/Docker/" target="_blank">
+                    <span class="chip bg-color">Docker</span>
+                </a>
+                
+                <a href="/tags/Docker-Compose/" target="_blank">
+                    <span class="chip bg-color">Docker Compose</span>
+                </a>
+                
+                <a href="/tags/MySQL/" target="_blank">
+                    <span class="chip bg-color">MySQL</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/工具/" class="post-category" target="_blank">
+                        工具
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-13
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="使用-Docker-Compose-搭建一个-MySQL-主从服务"><a href="#使用-Docker-Compose-搭建一个-MySQL-主从服务" class="headerlink" title="使用 Docker Compose 搭建一个 MySQL 主从服务"></a>使用 Docker Compose 搭建一个 MySQL 主从服务</h1><h2 id="安装-Docker-for-Mac"><a href="#安装-Docker-for-Mac" class="headerlink" title="安装 Docker for Mac"></a>安装 Docker for Mac</h2><p>先安装 <a href="https://docs.docker.com/docker-for-mac/" target="_blank" rel="noopener">Docker for Mac</a></p>
+<h2 id="准备好文件"><a href="#准备好文件" class="headerlink" title="准备好文件"></a>准备好文件</h2><h3 id="docker-compose-yml"><a href="#docker-compose-yml" class="headerlink" title="docker-compose.yml"></a>docker-compose.yml</h3><pre class=" language-yml"><code class="language-yml">version: '3'
+services:
+  mysql-master:
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "3306:3306"
+    build:
+      context: .
+      dockerfile: ./docker/mysql/master/DockerFile
+    links:
+      - mysql-slave
+  mysql-slave:
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "3406:3306"
+    build:
+      context: .
+      dockerfile: ./docker/mysql/slave/DockerFile
+</code></pre>
+<h3 id="docker-mysql-master-DockerFile"><a href="#docker-mysql-master-DockerFile" class="headerlink" title="docker/mysql/master/DockerFile"></a>docker/mysql/master/DockerFile</h3><pre class=" language-DockerFile"><code class="language-DockerFile">FROM mysql:5.6.40
+
+WORKDIR /
+
+COPY docker/mysql/master/my.cnf /etc/my.cnf
+</code></pre>
+<h3 id="docker-mysql-master-my-cnf"><a href="#docker-mysql-master-my-cnf" class="headerlink" title="docker/mysql/master/my.cnf"></a>docker/mysql/master/my.cnf</h3><pre class=" language-conf"><code class="language-conf">[mysqld]
+# [必须]启用二进制日志
+log-bin=mysql-bin 
+# [必须]服务器唯一ID，默认是1，一般取IP最后一段  
+server-id=1
+## 复制过滤：也就是指定哪个数据库不用同步（mysql库一般不同步）
+binlog-ignore-db=mysql
+</code></pre>
+<h3 id="docker-mysql-slave-DockerFile"><a href="#docker-mysql-slave-DockerFile" class="headerlink" title="docker/mysql/slave/DockerFile"></a>docker/mysql/slave/DockerFile</h3><pre class=" language-DockerFile"><code class="language-DockerFile">FROM mysql:5.6.40
+
+WORKDIR /
+
+COPY docker/mysql/slave/my.cnf /etc/my.cnf
+</code></pre>
+<h3 id="docker-mysql-slave-my-cnf"><a href="#docker-mysql-slave-my-cnf" class="headerlink" title="docker/mysql/slave/my.cnf"></a>docker/mysql/slave/my.cnf</h3><pre class=" language-conf"><code class="language-conf">[mysqld]
+# [必须]服务器唯一ID，默认是1，一般取IP最后一段  
+server-id=2
+</code></pre>
+<h2 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h2><pre class=" language-shell"><code class="language-shell">docker-compose build
+</code></pre>
+<h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><pre class=" language-shell"><code class="language-shell">docker-compose up -d
+</code></pre>
+<h2 id="MySQL-主从设置"><a href="#MySQL-主从设置" class="headerlink" title="MySQL 主从设置"></a>MySQL 主从设置</h2><h3 id="进入-MySQL-Master"><a href="#进入-MySQL-Master" class="headerlink" title="进入 MySQL Master"></a>进入 MySQL Master</h3><h4 id="创建同步用户"><a href="#创建同步用户" class="headerlink" title="创建同步用户"></a>创建同步用户</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">user</span> repl<span class="token punctuation">;</span>
+</code></pre>
+<h4 id="设置同步用户的权限"><a href="#设置同步用户的权限" class="headerlink" title="设置同步用户的权限"></a>设置同步用户的权限</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">GRANT</span> <span class="token keyword">REPLICATION</span> SLAVE <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'repl'</span>@'<span class="token operator">%</span><span class="token string">' IDENTIFIED BY '</span>repl'<span class="token punctuation">;</span>
+</code></pre>
+<h4 id="显示-master-状态"><a href="#显示-master-状态" class="headerlink" title="显示 master 状态"></a>显示 master 状态</h4><pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">show</span> master <span class="token keyword">status</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+----------+--------------+------------------+-------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">File</span>             <span class="token operator">|</span> Position <span class="token operator">|</span> Binlog_Do_DB <span class="token operator">|</span> Binlog_Ignore_DB <span class="token operator">|</span> Executed_Gtid_Set <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+----------+--------------+------------------+-------------------+</span>
+<span class="token operator">|</span> mysql<span class="token operator">-</span>bin<span class="token number">.000004</span> <span class="token operator">|</span>      <span class="token number">397</span> <span class="token operator">|</span>              <span class="token operator">|</span> mysql            <span class="token operator">|</span>                   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+----------+--------------+------------------+-------------------+</span>
+</code></pre>
+<p>记住 <code>File</code> 和 <code>Position</code> 里面的值，比如 <code>mysql-bin.000004</code> 和 <code>397</code>。</p>
+<h3 id="进入-MySQL-Slave"><a href="#进入-MySQL-Slave" class="headerlink" title="进入 MySQL Slave"></a>进入 MySQL Slave</h3><h4 id="设置连接-Master-的参数"><a href="#设置连接-Master-的参数" class="headerlink" title="设置连接 Master 的参数"></a>设置连接 Master 的参数</h4><p>记得修改 <code>MASTER_LOG_FILE</code> 和 <code>MASTER_LOG_POS</code> 的值。</p>
+<pre class=" language-sql"><code class="language-sql">CHANGE MASTER <span class="token keyword">TO</span>
+    MASTER_HOST<span class="token operator">=</span><span class="token string">'mysql-master'</span><span class="token punctuation">,</span>
+    MASTER_USER<span class="token operator">=</span><span class="token string">'repl'</span><span class="token punctuation">,</span>
+    MASTER_PASSWORD<span class="token operator">=</span><span class="token string">'repl'</span><span class="token punctuation">,</span>
+    MASTER_LOG_FILE<span class="token operator">=</span><span class="token string">'mysql-bin.000004'</span><span class="token punctuation">,</span>
+    MASTER_LOG_POS<span class="token operator">=</span><span class="token number">397</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="启动-slave-服务"><a href="#启动-slave-服务" class="headerlink" title="启动 slave 服务"></a>启动 slave 服务</h4><pre class=" language-sql"><code class="language-sql"><span class="token keyword">start</span> slave<span class="token punctuation">;</span>
+</code></pre>
+<h4 id="显示-slave-状态"><a href="#显示-slave-状态" class="headerlink" title="显示 slave 状态"></a>显示 slave 状态</h4><pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">show</span> slave <span class="token keyword">status</span>\G
+<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> <span class="token number">1</span><span class="token punctuation">.</span> <span class="token keyword">row</span> <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span>
+               Slave_IO_State: Waiting <span class="token keyword">for</span> master <span class="token keyword">to</span> send event
+                  Master_Host: mysql<span class="token operator">-</span>master
+                  Master_User: repl
+                  Master_Port: <span class="token number">3306</span>
+                Connect_Retry: <span class="token number">60</span>
+              Master_Log_File: mysql<span class="token operator">-</span>bin<span class="token number">.000004</span>
+          Read_Master_Log_Pos: <span class="token number">397</span>
+               Relay_Log_File: mysqld<span class="token operator">-</span>relay<span class="token operator">-</span>bin<span class="token number">.000002</span>
+                Relay_Log_Pos: <span class="token number">596</span>
+        Relay_Master_Log_File: mysql<span class="token operator">-</span>bin<span class="token number">.000004</span>
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+              Replicate_Do_DB:
+          Replicate_Ignore_DB:
+           Replicate_Do_Table:
+       Replicate_Ignore_Table:
+      Replicate_Wild_Do_Table:
+  Replicate_Wild_Ignore_Table:
+                   Last_Errno: <span class="token number">0</span>
+                   Last_Error:
+                 Skip_Counter: <span class="token number">0</span>
+          Exec_Master_Log_Pos: <span class="token number">710</span>
+              Relay_Log_Space: <span class="token number">770</span>
+              Until_Condition: None
+               Until_Log_File:
+                Until_Log_Pos: <span class="token number">0</span>
+           Master_SSL_Allowed: <span class="token keyword">No</span>
+           Master_SSL_CA_File:
+           Master_SSL_CA_Path:
+              Master_SSL_Cert:
+            Master_SSL_Cipher:
+               Master_SSL_Key:
+        Seconds_Behind_Master: <span class="token number">0</span>
+Master_SSL_Verify_Server_Cert: <span class="token keyword">No</span>
+                Last_IO_Errno: <span class="token number">0</span>
+                Last_IO_Error:
+               Last_SQL_Errno: <span class="token number">0</span>
+               Last_SQL_Error:
+  Replicate_Ignore_Server_Ids:
+             Master_Server_Id: <span class="token number">1</span>
+                  Master_UUID: <span class="token number">c67c8183</span><span class="token operator">-</span><span class="token number">feb2</span><span class="token operator">-</span><span class="token number">11e8</span><span class="token operator">-</span><span class="token number">9a5e</span><span class="token operator">-</span><span class="token number">0242ac120006</span>
+             Master_Info_File: <span class="token operator">/</span>var<span class="token operator">/</span>lib<span class="token operator">/</span>mysql<span class="token operator">/</span>master<span class="token punctuation">.</span>info
+                    SQL_Delay: <span class="token number">0</span>
+          SQL_Remaining_Delay: <span class="token boolean">NULL</span>
+      Slave_SQL_Running_State: Slave has <span class="token keyword">read</span> <span class="token keyword">all</span> relay log<span class="token punctuation">;</span> waiting <span class="token keyword">for</span> the slave I<span class="token operator">/</span>O thread <span class="token keyword">to</span> <span class="token keyword">update</span> it
+           Master_Retry_Count: <span class="token number">86400</span>
+                  Master_Bind:
+      Last_IO_Error_Timestamp:
+     Last_SQL_Error_Timestamp:
+               Master_SSL_Crl:
+           Master_SSL_Crlpath:
+           Retrieved_Gtid_Set:
+            Executed_Gtid_Set:
+                Auto_Position: <span class="token number">0</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+</code></pre>
+<p>当 <code>Slave_IO_Running</code> 和 <code>Slave_SQL_Running</code> 为 <code>Yes</code> 时，说明同步服务正常。</p>
+<p>这时候就可以运行一些 <code>SQL</code> 语句来验证同步服务是否正常了。</p>
+
+            </div>
+            <hr>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://tuliang.org/shi-yong-docker-compose-da-jian-yi-ge-mysql-zhu-cong-fu-wu/';
+        this.page.identifier = '/shi-yong-docker-compose-da-jian-yi-ge-mysql-zhu-cong-fu-wu/';
+        this.page.title = '使用 Docker Compose 搭建一个 MySQL 主从服务';
+    };
+    let disqus_shortname = 'tuliang';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="card">
+                <a href="/shi-yong-docker-compose-da-jian-yi-ge-mysql-zhu-cong-fu-wu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="使用 Docker Compose 搭建一个 MySQL 主从服务">
+                        
+                        <span class="card-title">使用 Docker Compose 搭建一个 MySQL 主从服务</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">使用 Docker Compose 搭建一个 MySQL 主从服务安装 Docker for Mac先安装 Docker for Mac
+准备好文件docker-compose.ymlversion: '3'
+services:
+  mys</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/工具/" class="post-category" target="_blank">
+                                    工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/" target="_blank">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                    <a href="/tags/Docker-Compose/" target="_blank">
+                        <span class="chip bg-color">Docker Compose</span>
+                    </a>
+                    
+                    <a href="/tags/MySQL/" target="_blank">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/redis-chi-jiu-hua/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Redis 持久化">
+                        
+                        <span class="card-title">Redis 持久化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">Redis 持久化Redis 提供了两种不同的持久化方法来将数据存储到硬盘里面。一种方法叫快照（snapshotting），它可以将存在于某一时刻的所有数据都写入硬盘里面。另一种方法叫只追加文件（append-only file，AOF），</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/工具/" class="post-category" target="_blank">
+                                    工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Redis/" target="_blank">
+                        <span class="chip bg-color">Redis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://github.com/tuliang/" target="_blank">涂亮</a> 基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a> 的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/tuliang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:info@tuliang.org" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 331431214" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</body>
+</html>
