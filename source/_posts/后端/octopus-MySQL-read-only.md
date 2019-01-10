@@ -53,7 +53,7 @@ p connection.shard_names
 # ["slave", "master"]
 ```
 
-找到了关键点，那么解决方案就很简单了，在 `rails` 启动时去修改它，比如利用 monkey patch
+找到了关键点，那么解决方案就很简单了，在 `rails` 启动时去修改它，比如写一个 `monkey patch`
 
 ```ruby
 # config/initializers/octopus.rb
@@ -107,6 +107,6 @@ mysql> show global variables like '%read_only%';
 >
 > - Setting read_only to OFF implicitly forces super_read_only to OFF.
 
-对，我们找到了原因，本地开发环境一般使用 `root` 账号，它拥有 SUPER privilege，read_only 自然管不住它。
+对，我们找到了原因，本地开发环境一般使用 `root` 账号，它拥有 `SUPER privilege`，`read_only` 自然管不住它。
 
-在本地开发环境复现问题很简单，使用一个没有 SUPER privilege 权限的账号，或者使用 `set global super_read_only=ON;` 将 SUPER 也限制为只读。
+在本地开发环境复现问题很简单，使用一个没有 `SUPER privilege` 权限的账号，或者使用 `set global super_read_only=ON;` 将 `SUPER` 也限制为只读。
