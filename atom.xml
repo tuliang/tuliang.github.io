@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2018-12-13T13:10:42.046Z</updated>
+  <updated>2019-01-10T14:23:14.684Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>octopus MySQL read only</title>
+    <link href="https://tuliang.org/octopus-mysql-read-only/"/>
+    <id>https://tuliang.org/octopus-mysql-read-only/</id>
+    <published>2019-01-10T13:39:20.000Z</published>
+    <updated>2019-01-10T14:23:14.684Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;octopus-MySQL-read-only&quot;&gt;&lt;a href=&quot;#octopus-MySQL-read-only&quot; class=&quot;headerlink&quot; title=&quot;octopus MySQL read only&quot;&gt;&lt;/a&gt;octopus MySQL
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+      <category term="Rails" scheme="https://tuliang.org/tags/Rails/"/>
+    
+      <category term="MySQL" scheme="https://tuliang.org/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 Docker Compose 搭建一个 MySQL 主从服务</title>
@@ -38,11 +68,11 @@
       <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
+      <category term="MySQL" scheme="https://tuliang.org/tags/MySQL/"/>
+    
       <category term="Docker" scheme="https://tuliang.org/tags/Docker/"/>
     
       <category term="Docker Compose" scheme="https://tuliang.org/tags/Docker-Compose/"/>
-    
-      <category term="MySQL" scheme="https://tuliang.org/tags/MySQL/"/>
     
   </entry>
   
@@ -558,33 +588,6 @@
     
     
       <category term="Emacs" scheme="https://tuliang.org/tags/Emacs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS3 圆角无效</title>
-    <link href="https://tuliang.org/css3-yuan-jiao-wu-xiao/"/>
-    <id>https://tuliang.org/css3-yuan-jiao-wu-xiao/</id>
-    <published>2013-11-07T13:34:45.000Z</published>
-    <updated>2018-11-02T13:47:36.138Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;今天在做页面的时候遇到 &lt;code&gt;CSS3&lt;/code&gt; 圆角无效的情况，实例代码: &lt;/p&gt;
-&lt;pre class=&quot; language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="https://tuliang.org/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="CSS3" scheme="https://tuliang.org/tags/CSS3/"/>
     
   </entry>
   
