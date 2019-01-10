@@ -297,7 +297,7 @@ alias_method <span class="token symbol">:migrate</span><span class="token punctu
 <pre class=" language-ruby"><code class="language-ruby">p connection<span class="token punctuation">.</span>shard_names
 <span class="token comment" spellcheck="true"># ["slave", "master"]</span>
 </code></pre>
-<p>找到了关键点，那么解决方案就很简单了，在 <code>rails</code> 启动时去修改它，比如利用 monkey patch</p>
+<p>找到了关键点，那么解决方案就很简单了，在 <code>rails</code> 启动时去修改它，比如写一个 <code>monkey patch</code></p>
 <pre class=" language-ruby"><code class="language-ruby"><span class="token comment" spellcheck="true"># config/initializers/octopus.rb</span>
 
 <span class="token keyword">return</span> <span class="token keyword">unless</span> <span class="token constant">Octopus</span><span class="token punctuation">.</span>enabled<span class="token operator">?</span>
@@ -342,8 +342,8 @@ alias_method <span class="token symbol">:migrate</span><span class="token punctu
 </li>
 </ul>
 </blockquote>
-<p>对，我们找到了原因，本地开发环境一般使用 <code>root</code> 账号，它拥有 SUPER privilege，read_only 自然管不住它。</p>
-<p>在本地开发环境复现问题很简单，使用一个没有 SUPER privilege 权限的账号，或者使用 <code>set global super_read_only=ON;</code> 将 SUPER 也限制为只读。</p>
+<p>对，我们找到了原因，本地开发环境一般使用 <code>root</code> 账号，它拥有 <code>SUPER privilege</code>，<code>read_only</code> 自然管不住它。</p>
+<p>在本地开发环境复现问题很简单，使用一个没有 <code>SUPER privilege</code> 权限的账号，或者使用 <code>set global super_read_only=ON;</code> 将 <code>SUPER</code> 也限制为只读。</p>
 
             </div>
             <hr>
