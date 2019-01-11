@@ -90,16 +90,16 @@ mySkills:
   data:
     Ruby:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
-      percent: 60%
+      percent: 70%
     Golang:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
       percent: 1%
     MySQL:
       background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
-      percent: 40%
+      percent: 50%
     Redis:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
-      percent: 20%
+      percent: 40%
     Linux:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
       percent: 50%
@@ -146,7 +146,7 @@ gitment:
 # disqus config, default disabled
 # Disqus评论模块的配置，默认为不激活
 disqus:
-  enable: true
+  enable: false
   shortname: tuliang
 
 # Livere comment configuration, the default is not activated
