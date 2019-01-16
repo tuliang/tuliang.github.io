@@ -121,7 +121,7 @@ var rawData = [
 
 var data = splitData(rawData);
 
-var title = "单位净值: " 
+var title = "基金净值: "
     + data.values[data.values.length-1] 
     + " 当天涨幅: " + data.values4[data.values4.length-1] + "%";
 $('.post-cate').append(title);
@@ -129,7 +129,7 @@ $('.post-cate').append(title);
 var post_date = data.categoryData[data.categoryData.length-1];
 $('.post-date').append(post_date);
 
-var year = "今年收益: " 
+var year = "基金收益: "
     + buildData(data.values[data.values.length-1], data.values[0]) + "%"
     + " 上证指数: " + buildData(data.values2[data.values2.length-1], data.values2[0]) + "%"
     + " 恒生指数: " + buildData(data.values3[data.values3.length-1], data.values3[0]) + "%";
