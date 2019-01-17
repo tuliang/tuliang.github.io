@@ -10,11 +10,11 @@ tags:
 
 ## 背景
 
-[redis](https://github.com/redis/redis-rb) 这个 gem 在最新的 4.1 版中终于开始支持 Redis Cluster。
+[redis](https://github.com/redis/redis-rb) 这个 gem 在最新的 4.1 版中开始支持 Redis Cluster。
 
 ### 开发环境
 
-我们需要在开发环境搭建一个 Redis Cluster，最方便快捷的方法是使用 docker 和 docker-compose，并且使用其他人配置好的 image。
+我们需要在开发环境搭建一个 Redis Cluster，最方便快捷的方法是使用 docker 和 docker-compose，并且使用配置好的 image。
 
 在 docker-compose.yml 中添加下列代码
 
