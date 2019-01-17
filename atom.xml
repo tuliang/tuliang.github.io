@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2019-01-10T14:28:18.121Z</updated>
+  <updated>2019-01-17T12:02:49.245Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis Cluster 实践</title>
+    <link href="https://tuliang.org/redis-cluster-shi-jian/"/>
+    <id>https://tuliang.org/redis-cluster-shi-jian/</id>
+    <published>2019-01-17T12:01:03.000Z</published>
+    <updated>2019-01-17T12:02:49.245Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Redis-Cluster-实践&quot;&gt;&lt;a href=&quot;#Redis-Cluster-实践&quot; class=&quot;headerlink&quot; title=&quot;Redis Cluster 实践&quot;&gt;&lt;/a&gt;Redis Cluster 实践&lt;/h1&gt;&lt;h2 id=&quot;背景&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
+    
+      <category term="Redis" scheme="https://tuliang.org/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>octopus MySQL read only</title>
@@ -561,33 +589,6 @@
       <category term="HTTP" scheme="https://tuliang.org/tags/HTTP/"/>
     
       <category term="HTML5" scheme="https://tuliang.org/tags/HTML5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac 更新 Emacs</title>
-    <link href="https://tuliang.org/mac-geng-xin-emacs/"/>
-    <id>https://tuliang.org/mac-geng-xin-emacs/</id>
-    <published>2014-03-17T13:55:11.000Z</published>
-    <updated>2018-11-02T14:02:06.673Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;最近买了 &lt;code&gt;hhkb&lt;/code&gt; 开始折腾 &lt;code&gt;Emacs&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Mac&lt;/code&gt; 自带 &lt;code&gt;Emacs&lt;/code&gt;，但是版本比较老是
-        
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="Emacs" scheme="https://tuliang.org/tags/Emacs/"/>
     
   </entry>
   

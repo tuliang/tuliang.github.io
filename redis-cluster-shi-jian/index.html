@@ -5,10 +5,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="octopus MySQL read only, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="octopus MySQL read only最近在线上遇到一个问题，使用 rails db:migrate 时，会去写只读库。
-经过排查发现是 octopus 这个 gem 造成的。
-查看相关文档，并没有什么收获，倒是 Issues 里有">
+    <meta name="keywords" content="Redis Cluster 实践, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="Redis Cluster 实践背景redis 这个 gem 在最新的 4.1 版中终于开始支持 Redis Cluster。
+开发环境我们需要在开发环境搭建一个 Redis Cluster，最方便快捷的方法是使用 docker 和 doc">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>octopus MySQL read only | 不做咸鱼的小明</title>
+    <title>Redis Cluster 实践 | 不做咸鱼的小明</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -209,13 +208,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        octopus MySQL read only
+                        Redis Cluster 实践
                     </div>
                 </div>
             </div>
@@ -239,12 +238,8 @@
                     <span class="chip bg-color">Ruby</span>
                 </a>
                 
-                <a href="/tags/Rails/" target="_blank">
-                    <span class="chip bg-color">Rails</span>
-                </a>
-                
-                <a href="/tags/MySQL/" target="_blank">
-                    <span class="chip bg-color">MySQL</span>
+                <a href="/tags/Redis/" target="_blank">
+                    <span class="chip bg-color">Redis</span>
                 </a>
                 
             </div>
@@ -262,88 +257,68 @@
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-01-10
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-17
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="octopus-MySQL-read-only"><a href="#octopus-MySQL-read-only" class="headerlink" title="octopus MySQL read only"></a>octopus MySQL read only</h1><p>最近在线上遇到一个问题，使用 <code>rails db:migrate</code> 时，会去写只读库。</p>
-<p>经过排查发现是 <a href="https://github.com/thiagopradi/octopus" target="_blank" rel="noopener">octopus</a> 这个 gem 造成的。</p>
-<p>查看相关文档，并没有什么收获，倒是 <a href="https://github.com/thiagopradi/octopus/issues/345" target="_blank" rel="noopener">Issues</a> 里有一堆反映问题的。</p>
-<p>既然 <code>octopus</code> 改变了 <code>rails db:migrate</code> 的原始行为，那么在源码中通过 <code>migrate</code> 之类的关键字肯定能找到。</p>
-<p>很快，就在 <code>lib/octopus/migration.rb</code> 中找到了。</p>
-<pre class=" language-ruby"><code class="language-ruby"><span class="token comment" spellcheck="true"># https://github.com/thiagopradi/octopus/blob/master/lib/octopus/migration.rb#L70</span>
-
-alias_method <span class="token symbol">:migrate_without_octopus</span><span class="token punctuation">,</span> <span class="token symbol">:migrate</span>
-alias_method <span class="token symbol">:migrate</span><span class="token punctuation">,</span> <span class="token symbol">:migrate_with_octopus</span>
+                <h1 id="Redis-Cluster-实践"><a href="#Redis-Cluster-实践" class="headerlink" title="Redis Cluster 实践"></a>Redis Cluster 实践</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://github.com/redis/redis-rb" target="_blank" rel="noopener">redis</a> 这个 gem 在最新的 4.1 版中终于开始支持 Redis Cluster。</p>
+<h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><p>我们需要在开发环境搭建一个 Redis Cluster，最方便快捷的方法是使用 docker 和 docker-compose，并且使用其他人配置好的 image。</p>
+<p>在 docker-compose.yml 中添加下列代码</p>
+<pre class=" language-yml"><code class="language-yml">version: '3'
+services:
+  redis-cluster:
+    image: grokzen/redis-cluster
+    environment:
+     - IP=0.0.0.0
+    ports:
+      - '7000-7007:7000-7007'
 </code></pre>
-<p>可以看到它使用 <code>alias_method</code> 这种别名，替换了 <code>migrate</code> 函数。</p>
-<p>这里有一种解决方案是使用 <code>alias_method</code>，反向替换回去，但是并不一定好，毕竟我们还要继续使用 <code>octopus</code>。</p>
-<p>先看看 <code>migrate_with_octopus</code> 到底做了什么？</p>
-<pre class=" language-ruby"><code class="language-ruby"><span class="token comment" spellcheck="true"># https://github.com/thiagopradi/octopus/blob/master/lib/octopus/migration.rb#L157</span>
+<p>使用 <code>docker-compose up -d</code> 启动服务即可。</p>
+<h3 id="更新代码"><a href="#更新代码" class="headerlink" title="更新代码"></a>更新代码</h3><p>在 Gemfile 中设置 redis gem 的版本为 4.1</p>
+<pre class=" language-ruby"><code class="language-ruby">gem <span class="token string">"redis"</span><span class="token punctuation">,</span> <span class="token string">"~> 4.1"</span>
+</code></pre>
+<p>在 application.rb 中修改 session_store 和 cache_store</p>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token constant">Rails</span><span class="token punctuation">.</span>application<span class="token punctuation">.</span>configure <span class="token keyword">do</span>
+  <span class="token comment" spellcheck="true"># Redis Session Store (redis-rails Gem)</span>
+  config<span class="token punctuation">.</span>session_store <span class="token symbol">:redis_store</span><span class="token punctuation">,</span> servers<span class="token punctuation">:</span> <span class="token punctuation">{</span> cluster<span class="token punctuation">:</span> <span class="token string">%w[redis://127.0.0.1:7000]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> expires_in<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">.</span>month
 
-<span class="token keyword">def</span> <span class="token function">migrate_with_octopus</span><span class="token punctuation">(</span>migrations_paths<span class="token punctuation">,</span> target_version <span class="token operator">=</span> <span class="token keyword">nil</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>block<span class="token punctuation">)</span>
-  <span class="token keyword">return</span> <span class="token function">migrate_without_octopus</span><span class="token punctuation">(</span>migrations_paths<span class="token punctuation">,</span> target_version<span class="token punctuation">,</span> <span class="token operator">&amp;</span>block<span class="token punctuation">)</span> <span class="token keyword">unless</span> connection<span class="token punctuation">.</span>is_a<span class="token operator">?</span><span class="token punctuation">(</span><span class="token constant">Octopus</span><span class="token punctuation">:</span><span class="token symbol">:Proxy</span><span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true"># Redis Cache Store (redis-rails Gem)</span>
+  config<span class="token punctuation">.</span>cache_store <span class="token operator">=</span> <span class="token symbol">:redis_store</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> cluster<span class="token punctuation">:</span> <span class="token string">%w[redis://127.0.0.1:7000]</span> <span class="token punctuation">}</span>
 
-  connection<span class="token punctuation">.</span><span class="token function">send_queries_to_multiple_shards</span><span class="token punctuation">(</span>connection<span class="token punctuation">.</span>shard_names<span class="token punctuation">)</span> <span class="token keyword">do</span>
-    <span class="token function">migrate_without_octopus</span><span class="token punctuation">(</span>migrations_paths<span class="token punctuation">,</span> target_version<span class="token punctuation">,</span> <span class="token operator">&amp;</span>block<span class="token punctuation">)</span>
-  <span class="token keyword">end</span>
+  <span class="token comment" spellcheck="true"># Redis Cache Store (ActiveSupport)</span>
+  config<span class="token punctuation">.</span>cache_store <span class="token operator">=</span> <span class="token symbol">:redis_cache_store</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> cluster<span class="token punctuation">:</span> <span class="token string">%w[redis://127.0.0.1:7000]</span> <span class="token punctuation">}</span>
 <span class="token keyword">end</span>
 </code></pre>
-<p>在 <code>migrate_with_octopus</code> 中，循环执行 <code>migrate_without_octopus</code>，而它就是 <code>migrate</code> 的别名，即<code>migrate_with_octopus</code> 中，在循环执行 <code>migrate</code>。</p>
-<p>那么我们把 <code>connection.shard_names</code> 打出来看看，你想的没错，它是一个数组</p>
-<pre class=" language-ruby"><code class="language-ruby">p connection<span class="token punctuation">.</span>shard_names
-<span class="token comment" spellcheck="true"># ["slave", "master"]</span>
+<p>在其他地方使用 Redis Cluster</p>
+<pre class=" language-ruby"><code class="language-ruby">redis <span class="token operator">=</span> <span class="token constant">Redis</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>cluster<span class="token punctuation">:</span> <span class="token string">%w[redis://127.0.0.1:7000]</span><span class="token punctuation">)</span>
 </code></pre>
-<p>找到了关键点，那么解决方案就很简单了，在 <code>rails</code> 启动时去修改它，比如写一个 <code>monkey patch</code></p>
-<pre class=" language-ruby"><code class="language-ruby"><span class="token comment" spellcheck="true"># config/initializers/octopus.rb</span>
-
-<span class="token keyword">return</span> <span class="token keyword">unless</span> <span class="token constant">Octopus</span><span class="token punctuation">.</span>enabled<span class="token operator">?</span>
-
-<span class="token keyword">module</span> <span class="token constant">Octopus</span>
-  <span class="token keyword">class</span> <span class="token class-name">ProxyConfig</span>
-    <span class="token comment" spellcheck="true"># cover shard_names method</span>
-    <span class="token keyword">def</span> shard_names
-      <span class="token comment" spellcheck="true"># support db those commands</span>
-      <span class="token keyword">if</span> <span class="token constant">ARGV</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/^db:/</span><span class="token punctuation">)</span><span class="token punctuation">.</span>present<span class="token operator">?</span>
-        <span class="token punctuation">[</span><span class="token string">"master"</span><span class="token punctuation">]</span>
-      <span class="token keyword">else</span>
-        <span class="token comment" spellcheck="true"># default</span>
-        shards<span class="token punctuation">.</span>keys
-      <span class="token keyword">end</span>
-    <span class="token keyword">end</span>
-  <span class="token keyword">end</span>
-<span class="token keyword">end</span>
-</code></pre>
-<h2 id="为什么本地开发环境不会遇到这个问题？"><a href="#为什么本地开发环境不会遇到这个问题？" class="headerlink" title="为什么本地开发环境不会遇到这个问题？"></a>为什么本地开发环境不会遇到这个问题？</h2><p>使用 <code>show global variables like &quot;%read_only%&quot;;</code> 查看</p>
-<pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">show</span> <span class="token keyword">global</span> variables <span class="token operator">like</span> <span class="token string">'%read_only%'</span><span class="token punctuation">;</span>
-<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-------+</span>
-<span class="token operator">|</span> Variable_name    <span class="token operator">|</span> <span class="token keyword">Value</span> <span class="token operator">|</span>
-<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-------+</span>
-<span class="token operator">|</span> innodb_read_only <span class="token operator">|</span> <span class="token keyword">OFF</span>   <span class="token operator">|</span>
-<span class="token operator">|</span> read_only        <span class="token operator">|</span> <span class="token keyword">ON</span>    <span class="token operator">|</span>
-<span class="token operator">|</span> super_read_only  <span class="token operator">|</span> <span class="token keyword">OFF</span>   <span class="token operator">|</span>
-<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-------+</span>
-</code></pre>
-<p><code>read_only</code> 的确是 <code>ON</code> 啊，为什么不生效？</p>
-<p>一同显示的还有 <code>innodb_read_only</code> 和 <code>super_read_only</code> 它们是什么？</p>
-<p>查看<a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_read_only" target="_blank" rel="noopener">官方文档</a></p>
+<h3 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h3><p>从单机变成集群之后，数据分片了，分散到不同机器，但是实际需求要求相关联的 <code>key</code> 分配到相同机器。</p>
+<p>因为业务或者性能问题，我们会使用 Redis 的 pipelined、multi 和 Rails.cache.read_multi，这些场景下都需要 <code>key</code> 分配到相同机器。</p>
+<p>但是 Redis Cluster 的分片方案是服务端提供分片，规则不是客户端控制的。</p>
+<p>针对这些场景 Redis Cluster 提供了 <a href="https://redis.io/topics/cluster-spec#keys-hash-tags" target="_blank" rel="noopener">Keys hash tags</a> 的功能，简单来说是：</p>
 <blockquote>
-<p>When the read_only system variable is enabled, the server permits no client updates except from users who have the CONNECTION_ADMIN or SUPER privilege. This variable is disabled by default.</p>
-<p>The server also supports a super_read_only system variable (disabled by default), which has these effects:</p>
-<ul>
-<li><p>If super_read_only is enabled, the server prohibits client updates, even from users who have the SUPER privilege.</p>
-</li>
-<li><p>Setting super_read_only to ON implicitly forces read_only to ON.</p>
-</li>
-<li><p>Setting read_only to OFF implicitly forces super_read_only to OFF.</p>
-</li>
-</ul>
+<p>当一个 key 包含 {} 的时候，就不对整个 key 做 hash，而仅对 {} 包括的字符串做 hash。</p>
 </blockquote>
-<p>对，我们找到了原因，本地开发环境一般使用 <code>root</code> 账号，它拥有 <code>SUPER privilege</code>，<code>read_only</code> 自然管不住它。</p>
-<p>在本地开发环境复现问题很简单，使用一个没有 <code>SUPER privilege</code> 权限的账号，或者使用 <code>set global super_read_only=ON;</code> 将 <code>SUPER</code> 也限制为只读。</p>
+<pre class=" language-ruby"><code class="language-ruby">redis <span class="token operator">=</span> <span class="token constant">Redis</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>cluster<span class="token punctuation">:</span> <span class="token string">%w[redis://127.0.0.1:7000]</span><span class="token punctuation">)</span>
+
+redis<span class="token punctuation">.</span><span class="token function">mget</span><span class="token punctuation">(</span><span class="token string">'key1'</span><span class="token punctuation">,</span> <span class="token string">'key2'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#=> Redis::CommandError (CROSSSLOT Keys in request don't hash to the same slot)</span>
+
+redis<span class="token punctuation">.</span><span class="token function">mget</span><span class="token punctuation">(</span><span class="token string">'{key}1'</span><span class="token punctuation">,</span> <span class="token string">'{key}2'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#=> [nil, nil]</span>
+</code></pre>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文只是一个简单的例子，不能在生产环境中直接使用。</p>
+<p>在生产环境需要考虑 Redis 的各个客户端，同时要考虑数据迁移和兼容的问题，升级到 Redis Cluster 要非常谨慎和细心。</p>
+<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><ul>
+<li><a href="https://github.com/redis/redis-rb/wiki/Cluster-mode" target="_blank" rel="noopener">Cluster mode</a></li>
+<li><a href="https://github.com/Grokzen/docker-redis-cluster" target="_blank" rel="noopener">Grokzen/docker-redis-cluster</a></li>
+<li><a href="https://made.livesense.co.jp/entry/2018/10/17/135245" target="_blank" rel="noopener">RubyのRedis Client LibraryをCluster Modeに対応させた話</a></li>
+<li><a href="https://github.com/redis/redis-rb/pull/716" target="_blank" rel="noopener">Add Redis Cluster support</a></li>
+<li><a href="http://blog.text.wiki/2015/09/20/redis-hash-tag.html" target="_blank" rel="noopener">Redis技巧:分片技术和Hash Tag</a></li>
+</ul>
 
             </div>
             <hr>
@@ -366,7 +341,7 @@ alias_method <span class="token symbol">:migrate</span><span class="token punctu
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/redis-cluster-shi-jian/">
                     <div class="card-image">
@@ -381,9 +356,9 @@ alias_method <span class="token symbol">:migrate</span><span class="token punctu
                     <div class="summary">Redis Cluster 实践背景redis 这个 gem 在最新的 4.1 版中终于开始支持 Redis Cluster。
 开发环境我们需要在开发环境搭建一个 Redis Cluster，最方便快捷的方法是使用 docker 和 doc</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -396,6 +371,7 @@ alias_method <span class="token symbol">:migrate</span><span class="token punctu
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -416,30 +392,29 @@ alias_method <span class="token symbol">:migrate</span><span class="token punctu
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/shi-yong-docker-compose-da-jian-yi-ge-mysql-zhu-cong-fu-wu/">
+                <a href="/octopus-mysql-read-only/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="使用 Docker Compose 搭建一个 MySQL 主从服务">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="octopus MySQL read only">
                         
-                        <span class="card-title">使用 Docker Compose 搭建一个 MySQL 主从服务</span>
+                        <span class="card-title">octopus MySQL read only</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">使用 Docker Compose 搭建一个 MySQL 主从服务安装 Docker for Mac先安装 Docker for Mac
-准备好文件docker-compose.ymlversion: '3'
-services:
-  mys</div>
+                    <div class="summary">octopus MySQL read only最近在线上遇到一个问题，使用 rails db:migrate 时，会去写只读库。
+经过排查发现是 octopus 这个 gem 造成的。
+查看相关文档，并没有什么收获，倒是 Issues 里有</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/工具/" class="post-category" target="_blank">
-                                    工具
+                            <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
                                 </a>
                             
                             
@@ -449,16 +424,16 @@ services:
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Ruby/" target="_blank">
+                        <span class="chip bg-color">Ruby</span>
+                    </a>
+                    
+                    <a href="/tags/Rails/" target="_blank">
+                        <span class="chip bg-color">Rails</span>
+                    </a>
+                    
                     <a href="/tags/MySQL/" target="_blank">
                         <span class="chip bg-color">MySQL</span>
-                    </a>
-                    
-                    <a href="/tags/Docker/" target="_blank">
-                        <span class="chip bg-color">Docker</span>
-                    </a>
-                    
-                    <a href="/tags/Docker-Compose/" target="_blank">
-                        <span class="chip bg-color">Docker Compose</span>
                     </a>
                     
                 </div>
