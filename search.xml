@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>LeetCode 344. Reverse String</title>
+      <link href="/leetcode-344-reverse-string/"/>
+      <url>/leetcode-344-reverse-string/</url>
+      
+        <content type="html"><![CDATA[<h1 id="LeetCode-344-Reverse-String"><a href="#LeetCode-344-Reverse-String" class="headerlink" title="LeetCode 344. Reverse String"></a><a href="https://leetcode.com/problems/reverse-string/" target="_blank" rel="noopener">LeetCode 344. Reverse String</a></h1><blockquote><p>Easy</p></blockquote><p>Write a function that reverses a string. The input string is given as an array of characters <code>char[]</code>.</p><p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array</strong> <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener">in-place</a> with O(1) extra memory.</p><p>You may assume all the characters consist of <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" target="_blank" rel="noopener">printable ascii characters</a>.</p><h2 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h2><pre class=" language-code"><code class="language-code">Input: ["h","e","l","l","o"]Output: ["o","l","l","e","h"]</code></pre><h2 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h2><pre class=" language-code"><code class="language-code">Input: ["H","a","n","n","a","h"]Output: ["h","a","n","n","a","H"]</code></pre><h2 id="Go-Code"><a href="#Go-Code" class="headerlink" title="Go Code"></a>Go Code</h2><p>使用双索引技术，时间复杂度 <code>O(n/2)</code>。</p><pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">reverseString</span><span class="token punctuation">(</span>s <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>    <span class="token keyword">var</span> length <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>    <span class="token keyword">if</span> length <span class="token operator">&lt;=</span> <span class="token number">1</span> <span class="token punctuation">{</span>        <span class="token keyword">return</span>    <span class="token punctuation">}</span>    <span class="token keyword">var</span> head <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">0</span>    <span class="token keyword">var</span> tail <span class="token builtin">int</span> <span class="token operator">=</span> length<span class="token number">-1</span>    <span class="token keyword">for</span> head <span class="token operator">&lt;</span> tail <span class="token punctuation">{</span>        s<span class="token punctuation">[</span>head<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>tail<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span>tail<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>head<span class="token punctuation">]</span>        head<span class="token operator">++</span>        tail<span class="token operator">--</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法与数据结构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> Go </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Redis Cluster 实践</title>
       <link href="/redis-cluster-shi-jian/"/>
       <url>/redis-cluster-shi-jian/</url>

@@ -5,9 +5,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Redis Cluster 实践, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="Redis Cluster 实践背景redis 这个 gem 在最新的 4.1 版中开始支持 Redis Cluster。
-开发环境我们需要在开发环境搭建一个 Redis Cluster，最方便快捷的方法是使用 docker 和 docke">
+    <meta name="keywords" content="LeetCode 344. Reverse String, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="LeetCode 344. Reverse String
+Easy
+
+Write a function that reverses a string. The input string is given as an array of cha">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Redis Cluster 实践 | 不做咸鱼的小明</title>
+    <title>LeetCode 344. Reverse String | 不做咸鱼的小明</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -208,13 +210,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Redis Cluster 实践
+                        LeetCode 344. Reverse String
                     </div>
                 </div>
             </div>
@@ -234,12 +236,12 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/Ruby/" target="_blank">
-                    <span class="chip bg-color">Ruby</span>
+                <a href="/tags/算法/" target="_blank">
+                    <span class="chip bg-color">算法</span>
                 </a>
                 
-                <a href="/tags/Redis/" target="_blank">
-                    <span class="chip bg-color">Redis</span>
+                <a href="/tags/Go/" target="_blank">
+                    <span class="chip bg-color">Go</span>
                 </a>
                 
             </div>
@@ -249,76 +251,52 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/后端/" class="post-category" target="_blank">
-                        后端
+                    <a href="/categories/算法与数据结构/" class="post-category" target="_blank">
+                        算法与数据结构
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-01-17
+                    <i class="fa fa-clock-o fa-fw"></i>2019-02-15
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Redis-Cluster-实践"><a href="#Redis-Cluster-实践" class="headerlink" title="Redis Cluster 实践"></a>Redis Cluster 实践</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://github.com/redis/redis-rb" target="_blank" rel="noopener">redis</a> 这个 gem 在最新的 4.1 版中开始支持 Redis Cluster。</p>
-<h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><p>我们需要在开发环境搭建一个 Redis Cluster，最方便快捷的方法是使用 docker 和 docker-compose，并且使用配置好的 image。</p>
-<p>在 docker-compose.yml 中添加下列代码</p>
-<pre class=" language-yml"><code class="language-yml">version: '3'
-services:
-  redis-cluster:
-    image: grokzen/redis-cluster
-    environment:
-     - IP=0.0.0.0
-    ports:
-      - '7000-7007:7000-7007'
-</code></pre>
-<p>使用 <code>docker-compose up -d</code> 启动服务即可。</p>
-<h3 id="更新代码"><a href="#更新代码" class="headerlink" title="更新代码"></a>更新代码</h3><p>在 Gemfile 中设置 redis gem 的版本为 4.1</p>
-<pre class=" language-ruby"><code class="language-ruby">gem <span class="token string">"redis"</span><span class="token punctuation">,</span> <span class="token string">"~> 4.1"</span>
-</code></pre>
-<p>在 application.rb 中修改 session_store 和 cache_store</p>
-<pre class=" language-ruby"><code class="language-ruby"><span class="token constant">Rails</span><span class="token punctuation">.</span>application<span class="token punctuation">.</span>configure <span class="token keyword">do</span>
-  <span class="token comment" spellcheck="true"># Redis Session Store (redis-rails Gem)</span>
-  config<span class="token punctuation">.</span>session_store <span class="token symbol">:redis_store</span><span class="token punctuation">,</span> servers<span class="token punctuation">:</span> <span class="token punctuation">{</span> cluster<span class="token punctuation">:</span> <span class="token string">%w[redis://127.0.0.1:7000]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> expires_in<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">.</span>month
-
-  <span class="token comment" spellcheck="true"># Redis Cache Store (redis-rails Gem)</span>
-  config<span class="token punctuation">.</span>cache_store <span class="token operator">=</span> <span class="token symbol">:redis_store</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> cluster<span class="token punctuation">:</span> <span class="token string">%w[redis://127.0.0.1:7000]</span> <span class="token punctuation">}</span>
-
-  <span class="token comment" spellcheck="true"># Redis Cache Store (ActiveSupport)</span>
-  config<span class="token punctuation">.</span>cache_store <span class="token operator">=</span> <span class="token symbol">:redis_cache_store</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> cluster<span class="token punctuation">:</span> <span class="token string">%w[redis://127.0.0.1:7000]</span> <span class="token punctuation">}</span>
-<span class="token keyword">end</span>
-</code></pre>
-<p>在其他地方使用 Redis Cluster</p>
-<pre class=" language-ruby"><code class="language-ruby">redis <span class="token operator">=</span> <span class="token constant">Redis</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>cluster<span class="token punctuation">:</span> <span class="token string">%w[redis://127.0.0.1:7000]</span><span class="token punctuation">)</span>
-</code></pre>
-<h3 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h3><p>从单机变成集群之后，数据分片了，分散到不同机器，但是实际需求要求相关联的 <code>key</code> 分配到相同机器。</p>
-<p>因为业务或者性能问题，我们会使用 Redis 的 pipelined、multi 和 Rails.cache.read_multi，这些场景下都需要 <code>key</code> 分配到相同机器。</p>
-<p>但是 Redis Cluster 的分片方案是服务端提供分片，规则不是客户端控制的。</p>
-<p>针对这些场景 Redis Cluster 提供了 <a href="https://redis.io/topics/cluster-spec#keys-hash-tags" target="_blank" rel="noopener">Keys hash tags</a> 的功能，简单来说是：</p>
-<blockquote>
-<p>当一个 key 包含 {} 的时候，就不对整个 key 做 hash，而仅对 {} 包括的字符串做 hash。</p>
+                <h1 id="LeetCode-344-Reverse-String"><a href="#LeetCode-344-Reverse-String" class="headerlink" title="LeetCode 344. Reverse String"></a><a href="https://leetcode.com/problems/reverse-string/" target="_blank" rel="noopener">LeetCode 344. Reverse String</a></h1><blockquote>
+<p>Easy</p>
 </blockquote>
-<pre class=" language-ruby"><code class="language-ruby">redis <span class="token operator">=</span> <span class="token constant">Redis</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>cluster<span class="token punctuation">:</span> <span class="token string">%w[redis://127.0.0.1:7000]</span><span class="token punctuation">)</span>
-
-redis<span class="token punctuation">.</span><span class="token function">mget</span><span class="token punctuation">(</span><span class="token string">'key1'</span><span class="token punctuation">,</span> <span class="token string">'key2'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#=> Redis::CommandError (CROSSSLOT Keys in request don't hash to the same slot)</span>
-
-redis<span class="token punctuation">.</span><span class="token function">mget</span><span class="token punctuation">(</span><span class="token string">'{key}1'</span><span class="token punctuation">,</span> <span class="token string">'{key}2'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#=> [nil, nil]</span>
+<p>Write a function that reverses a string. The input string is given as an array of characters <code>char[]</code>.</p>
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array</strong> <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener">in-place</a> with O(1) extra memory.</p>
+<p>You may assume all the characters consist of <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" target="_blank" rel="noopener">printable ascii characters</a>.</p>
+<h2 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h2><pre class=" language-code"><code class="language-code">Input: ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
 </code></pre>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文只是一个简单的例子，不能在生产环境中直接使用。</p>
-<p>在生产环境需要考虑 Redis 的各个客户端，同时要考虑数据迁移和兼容的问题，升级到 Redis Cluster 要非常谨慎和细心。</p>
-<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><ul>
-<li><a href="https://github.com/redis/redis-rb/wiki/Cluster-mode" target="_blank" rel="noopener">Cluster mode</a></li>
-<li><a href="https://github.com/Grokzen/docker-redis-cluster" target="_blank" rel="noopener">Grokzen/docker-redis-cluster</a></li>
-<li><a href="https://made.livesense.co.jp/entry/2018/10/17/135245" target="_blank" rel="noopener">RubyのRedis Client LibraryをCluster Modeに対応させた話</a></li>
-<li><a href="https://github.com/redis/redis-rb/pull/716" target="_blank" rel="noopener">Add Redis Cluster support</a></li>
-<li><a href="http://blog.text.wiki/2015/09/20/redis-hash-tag.html" target="_blank" rel="noopener">Redis技巧:分片技术和Hash Tag</a></li>
-</ul>
+<h2 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h2><pre class=" language-code"><code class="language-code">Input: ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
+</code></pre>
+<h2 id="Go-Code"><a href="#Go-Code" class="headerlink" title="Go Code"></a>Go Code</h2><p>使用双索引技术，时间复杂度 <code>O(n/2)</code>。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">reverseString</span><span class="token punctuation">(</span>s <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> length <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> length <span class="token operator">&lt;=</span> <span class="token number">1</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> head <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> tail <span class="token builtin">int</span> <span class="token operator">=</span> length<span class="token number">-1</span>
+
+    <span class="token keyword">for</span> head <span class="token operator">&lt;</span> tail <span class="token punctuation">{</span>
+        s<span class="token punctuation">[</span>head<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>tail<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span>tail<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>head<span class="token punctuation">]</span>
+
+        head<span class="token operator">++</span>
+        tail<span class="token operator">--</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
 
             </div>
             <hr>
@@ -341,7 +319,7 @@ redis<span class="token punctuation">.</span><span class="token function">mget</
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/leetcode-344-reverse-string/">
                     <div class="card-image">
@@ -358,9 +336,9 @@ Easy
 
 Write a function that reverses a string. The input string is given as an array of cha</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -373,6 +351,7 @@ Write a function that reverses a string. The input string is given as an array o
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -393,22 +372,21 @@ Write a function that reverses a string. The input string is given as an array o
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/octopus-mysql-read-only/">
+                <a href="/redis-cluster-shi-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="octopus MySQL read only">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Redis Cluster 实践">
                         
-                        <span class="card-title">octopus MySQL read only</span>
+                        <span class="card-title">Redis Cluster 实践</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">octopus MySQL read only最近在线上遇到一个问题，使用 rails db:migrate 时，会去写只读库。
-经过排查发现是 octopus 这个 gem 造成的。
-查看相关文档，并没有什么收获，倒是 Issues 里有</div>
+                    <div class="summary">Redis Cluster 实践背景redis 这个 gem 在最新的 4.1 版中开始支持 Redis Cluster。
+开发环境我们需要在开发环境搭建一个 Redis Cluster，最方便快捷的方法是使用 docker 和 docke</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-10
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-17
                             </span>
                         <span class="publish-author">
                             
@@ -429,12 +407,8 @@ Write a function that reverses a string. The input string is given as an array o
                         <span class="chip bg-color">Ruby</span>
                     </a>
                     
-                    <a href="/tags/Rails/" target="_blank">
-                        <span class="chip bg-color">Rails</span>
-                    </a>
-                    
-                    <a href="/tags/MySQL/" target="_blank">
-                        <span class="chip bg-color">MySQL</span>
+                    <a href="/tags/Redis/" target="_blank">
+                        <span class="chip bg-color">Redis</span>
                     </a>
                     
                 </div>
