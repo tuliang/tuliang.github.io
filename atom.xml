@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2019-02-15T12:23:44.118Z</updated>
+  <updated>2019-02-20T12:11:31.394Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 1. Two Sum</title>
+    <link href="https://tuliang.org/leetcode-1-two-sum/"/>
+    <id>https://tuliang.org/leetcode-1-two-sum/</id>
+    <published>2019-02-20T12:00:54.000Z</published>
+    <updated>2019-02-20T12:11:31.394Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;LeetCode-1-Two-Sum&quot;&gt;&lt;a href=&quot;#LeetCode-1-Two-Sum&quot; class=&quot;headerlink&quot; title=&quot;LeetCode 1. Two Sum&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="算法与数据结构" scheme="https://tuliang.org/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="算法" scheme="https://tuliang.org/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="Go" scheme="https://tuliang.org/tags/Go/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 344. Reverse String</title>
@@ -558,35 +586,6 @@
     
     
       <category term="MathJax" scheme="https://tuliang.org/tags/MathJax/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面向对象设计实践指南-Ruby语言描述</title>
-    <link href="https://tuliang.org/mian-xiang-dui-xiang-she-ji-shi-jian-zhi-nan-ruby-yu-yan-miao-shu/"/>
-    <id>https://tuliang.org/mian-xiang-dui-xiang-she-ji-shi-jian-zhi-nan-ruby-yu-yan-miao-shu/</id>
-    <published>2014-09-03T13:25:07.000Z</published>
-    <updated>2018-11-05T13:26:37.766Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;设计是保留可变性的艺术，而非达到完美性的行为。&lt;/p&gt;
-&lt;p&gt;编写出的代码应该具有如下几个特点:   &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;透明性（Transportation）: 在所更改的代码，以及在远处依赖于它的代码里，更改所产生的后果应该显而易见。 
-        
-      
-    
-    </summary>
-    
-      <category term="阅读" scheme="https://tuliang.org/categories/%E9%98%85%E8%AF%BB/"/>
-    
-    
-      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
     
   </entry>
   
