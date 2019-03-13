@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2019-02-20T12:11:31.394Z</updated>
+  <updated>2019-03-13T12:47:52.599Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅谈 Go 语言作用域</title>
+    <link href="https://tuliang.org/qian-tan-go-yu-yan-zuo-yong-yu/"/>
+    <id>https://tuliang.org/qian-tan-go-yu-yan-zuo-yong-yu/</id>
+    <published>2019-03-13T12:46:08.000Z</published>
+    <updated>2019-03-13T12:47:52.599Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;浅谈-Go-语言作用域&quot;&gt;&lt;a href=&quot;#浅谈-Go-语言作用域&quot; class=&quot;headerlink&quot; title=&quot;浅谈 Go 语言作用域&quot;&gt;&lt;/a&gt;浅谈 Go 语言作用域&lt;/h1&gt;&lt;pre class=&quot; language-go&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Go" scheme="https://tuliang.org/tags/Go/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 1. Two Sum</title>
@@ -559,33 +585,6 @@
       <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
     
       <category term="Rails" scheme="https://tuliang.org/tags/Rails/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网页渲染数学公式</title>
-    <link href="https://tuliang.org/wang-ye-xuan-ran-shu-xue-gong-shi/"/>
-    <id>https://tuliang.org/wang-ye-xuan-ran-shu-xue-gong-shi/</id>
-    <published>2014-10-01T13:14:41.000Z</published>
-    <updated>2018-11-30T12:53:46.424Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;数学公式一般使用 LaTeX，但是在网页上一般将 LaTeX 渲染成为图片。&lt;/p&gt;
-&lt;p&gt;在一堆文字中放进几个图片难看又麻烦，稍微找了一下发现一个神器: &lt;a href=&quot;https://www.mathjax.org/&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://tuliang.org/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="MathJax" scheme="https://tuliang.org/tags/MathJax/"/>
     
   </entry>
   

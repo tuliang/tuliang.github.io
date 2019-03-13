@@ -5,11 +5,18 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode 1. Two Sum, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="LeetCode 1. Two Sum
-Easy
+    <meta name="keywords" content="浅谈 Go 语言作用域, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="浅谈 Go 语言作用域package main
 
-Given an array of integers, return indices of the two numbers such that they add up to a speci">
+import &#34;fmt&#34;
+
+var block = &#34;package&#34;
+
+func main() {
+  block := &#34;function&#34;
+
+  {
+    // := 会声明一个新变">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +24,7 @@ Given an array of integers, return indices of the two numbers such that they add
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode 1. Two Sum | 不做咸鱼的小明</title>
+    <title>浅谈 Go 语言作用域 | 不做咸鱼的小明</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -210,13 +217,13 @@ Given an array of integers, return indices of the two numbers such that they add
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode 1. Two Sum
+                        浅谈 Go 语言作用域
                     </div>
                 </div>
             </div>
@@ -236,10 +243,6 @@ Given an array of integers, return indices of the two numbers such that they add
             
             <div class="article-tag">
                 
-                <a href="/tags/算法/" target="_blank">
-                    <span class="chip bg-color">算法</span>
-                </a>
-                
                 <a href="/tags/Go/" target="_blank">
                     <span class="chip bg-color">Go</span>
                 </a>
@@ -251,91 +254,72 @@ Given an array of integers, return indices of the two numbers such that they add
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/算法与数据结构/" class="post-category" target="_blank">
-                        算法与数据结构
+                    <a href="/categories/后端/" class="post-category" target="_blank">
+                        后端
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-02-20
+                    <i class="fa fa-clock-o fa-fw"></i>2019-03-13
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="LeetCode-1-Two-Sum"><a href="#LeetCode-1-Two-Sum" class="headerlink" title="LeetCode 1. Two Sum"></a><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">LeetCode 1. Two Sum</a></h1><blockquote>
-<p>Easy</p>
-</blockquote>
-<p>Given an array of integers, return <strong>indices</strong> of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have <strong>exactly</strong> one solution, and you may not use the same element twice.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><pre class=" language-code"><code class="language-code">Given nums = [2, 7, 11, 15], target = 9,
+                <h1 id="浅谈-Go-语言作用域"><a href="#浅谈-Go-语言作用域" class="headerlink" title="浅谈 Go 语言作用域"></a>浅谈 Go 语言作用域</h1><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-Because nums[0] + nums[1] = 2 + 7 = 9,
-return [0, 1].
-</code></pre>
-<h2 id="Go-Code"><a href="#Go-Code" class="headerlink" title="Go Code"></a>Go Code</h2><p>最容易理解的双循环穷举，时间复杂度 <code>O(n^2)</code>。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>nums <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> target <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> length <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token function">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-    <span class="token keyword">var</span> i <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">var</span> block <span class="token operator">=</span> <span class="token string">"package"</span>
 
-    <span class="token keyword">for</span> i <span class="token operator">&lt;</span> length <span class="token punctuation">{</span>
-        <span class="token keyword">var</span> j <span class="token builtin">int</span> <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  block <span class="token operator">:=</span> <span class="token string">"function"</span>
 
-        <span class="token keyword">for</span> j <span class="token operator">&lt;</span> length <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> target <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>i<span class="token punctuation">,</span> j<span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-
-            j<span class="token operator">++</span>
-        <span class="token punctuation">}</span>
-
-        i<span class="token operator">++</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> <span class="token boolean">nil</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>使用 HashMap 查找元素时间为 <code>O(1)</code> 的特性，时间复杂度 <code>O(2n)</code>。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>nums <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> target <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token punctuation">{</span>
-  length <span class="token operator">:=</span> <span class="token function">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-
-  <span class="token keyword">var</span> m <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-  <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-    m<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
+  <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// := 会声明一个新变量并且将其初始化</span>
+    block <span class="token operator">:=</span> <span class="token string">"inner"</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"The block is %s.\n"</span><span class="token punctuation">,</span> block<span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
 
-  <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-    index <span class="token operator">:=</span> target <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"The block is %s.\n"</span><span class="token punctuation">,</span> block<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>输出</p>
+<pre class=" language-shell"><code class="language-shell">The block is inner.
+The block is function.
+</code></pre>
+<p>在这里 <code>block := &quot;inner&quot;</code> 等价于 <code>var block = &quot;inner&quot;</code>，它声明了一个新变量并且将其初始化。</p>
+<p>在 <code>{}</code> 这个代码块中新的变量 <code>block</code> 和<code>main</code> 中声明的 <code>block</code> 名称相同。</p>
+<ul>
+<li>在 <code>{}</code> 这个代码块中，它的优先级更高。</li>
+<li>它的作用范围只在 <code>{}</code> 这个代码块中。</li>
+</ul>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-    <span class="token comment" spellcheck="true">// 排除 i 和 m[index] 相等的情况</span>
-    <span class="token keyword">if</span> num<span class="token punctuation">,</span> ok <span class="token operator">:=</span> m<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span> ok <span class="token operator">&amp;&amp;</span> i <span class="token operator">!=</span> num <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>i<span class="token punctuation">,</span> num<span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+
+<span class="token keyword">var</span> block <span class="token operator">=</span> <span class="token string">"package"</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  block <span class="token operator">:=</span> <span class="token string">"function"</span>
+
+  <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// = 会覆盖 block</span>
+    block <span class="token operator">=</span> <span class="token string">"inner"</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"The block is %s.\n"</span><span class="token punctuation">,</span> block<span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
 
-  <span class="token keyword">return</span> <span class="token boolean">nil</span>
+  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"The block is %s.\n"</span><span class="token punctuation">,</span> block<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>进一步优化，时间复杂度 <code>O(n)</code>。</p>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>nums <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> target <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span> <span class="token punctuation">{</span>
-    m <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-    <span class="token keyword">for</span> i<span class="token punctuation">,</span> num <span class="token operator">:=</span> <span class="token keyword">range</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> index<span class="token punctuation">,</span> ok <span class="token operator">:=</span> m<span class="token punctuation">[</span>target <span class="token operator">-</span> num<span class="token punctuation">]</span><span class="token punctuation">;</span> ok <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>index<span class="token punctuation">,</span> i<span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-
-        m<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> i
-    <span class="token punctuation">}</span>
-
-  <span class="token keyword">return</span> <span class="token boolean">nil</span>
-<span class="token punctuation">}</span>
+<p>输出</p>
+<pre class=" language-shell"><code class="language-shell">The block is inner.
+The block is inner.
 </code></pre>
+<p>这种情况很好理解：在 <code>{}</code> 这个代码块中，使用 <code>=</code> 改变了变量 <code>block</code> 的值。</p>
 
             </div>
             <hr>
@@ -358,7 +342,7 @@ return [0, 1].
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/qian-tan-go-yu-yan-zuo-yong-yu/">
                     <div class="card-image">
@@ -382,9 +366,9 @@ func main() {
   {
     // := 会声明一个新变</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -397,6 +381,7 @@ func main() {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -413,23 +398,23 @@ func main() {
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/leetcode-344-reverse-string/">
+                <a href="/leetcode-1-two-sum/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="LeetCode 344. Reverse String">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="LeetCode 1. Two Sum">
                         
-                        <span class="card-title">LeetCode 344. Reverse String</span>
+                        <span class="card-title">LeetCode 1. Two Sum</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">LeetCode 344. Reverse String
+                    <div class="summary">LeetCode 1. Two Sum
 Easy
 
-Write a function that reverses a string. The input string is given as an array of cha</div>
+Given an array of integers, return indices of the two numbers such that they add up to a speci</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-20
                             </span>
                         <span class="publish-author">
                             
