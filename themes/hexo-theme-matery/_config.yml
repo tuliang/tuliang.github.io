@@ -93,7 +93,7 @@ mySkills:
       percent: 70%
     Golang:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
-      percent: 20%
+      percent: 30%
     MySQL:
       background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
       percent: 50%
