@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tuliang.org/"/>
-  <updated>2019-03-13T12:47:52.599Z</updated>
+  <updated>2019-03-28T14:23:17.656Z</updated>
   <id>https://tuliang.org/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Go 语言的 goroutine</title>
+    <link href="https://tuliang.org/go-yu-yan-de-goroutine/"/>
+    <id>https://tuliang.org/go-yu-yan-de-goroutine/</id>
+    <published>2019-03-28T14:14:05.000Z</published>
+    <updated>2019-03-28T14:23:17.656Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Go-语言的-goroutine&quot;&gt;&lt;a href=&quot;#Go-语言的-goroutine&quot; class=&quot;headerlink&quot; title=&quot;Go 语言的 goroutine&quot;&gt;&lt;/a&gt;Go 语言的
+        
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="Go" scheme="https://tuliang.org/tags/Go/"/>
+    
+  </entry>
   
   <entry>
     <title>浅谈 Go 语言作用域</title>
@@ -64,9 +90,9 @@
       <category term="算法与数据结构" scheme="https://tuliang.org/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="算法" scheme="https://tuliang.org/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="Go" scheme="https://tuliang.org/tags/Go/"/>
+    
+      <category term="算法" scheme="https://tuliang.org/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -92,9 +118,9 @@
       <category term="算法与数据结构" scheme="https://tuliang.org/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="算法" scheme="https://tuliang.org/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="Go" scheme="https://tuliang.org/tags/Go/"/>
+    
+      <category term="算法" scheme="https://tuliang.org/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -557,34 +583,6 @@
       <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
     
       <category term="并发编程" scheme="https://tuliang.org/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Rails Singular Resources</title>
-    <link href="https://tuliang.org/rails-singular-resources/"/>
-    <id>https://tuliang.org/rails-singular-resources/</id>
-    <published>2014-10-24T15:25:53.000Z</published>
-    <updated>2018-11-15T12:02:39.230Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;code&gt;Rails&lt;/code&gt; 中 &lt;code&gt;Controller&lt;/code&gt; 如果不是复数，写 &lt;code&gt;path&lt;/code&gt; 或 &lt;code&gt;url&lt;/code&gt; 的时候就必须加上 &lt;code&gt;index&lt;/code&gt;，这样看上去就很
-        
-      
-    
-    </summary>
-    
-      <category term="后端" scheme="https://tuliang.org/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="Ruby" scheme="https://tuliang.org/tags/Ruby/"/>
-    
-      <category term="Rails" scheme="https://tuliang.org/tags/Rails/"/>
     
   </entry>
   

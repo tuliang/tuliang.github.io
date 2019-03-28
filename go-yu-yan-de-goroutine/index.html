@@ -5,18 +5,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="浅谈 Go 语言作用域, 不做咸鱼的小明, 涂亮, tuliang">
-    <meta name="description" content="浅谈 Go 语言作用域package main
+    <meta name="keywords" content="Go 语言的 goroutine, 不做咸鱼的小明, 涂亮, tuliang">
+    <meta name="description" content="Go 语言的 goroutineGo 语言中，主 goroutine 中的代码执行完毕，当前程序就会立刻结束运行，无论其他 goroutine 是否正在运行。
+package main
 
 import &#34;fmt&#34;
 
-var block = &#34;package&#34;
-
-func main() {
-  block := &#34;function&#34;
-
-  {
-    // := 会声明一个新变">
+func main() ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +19,7 @@ func main() {
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>浅谈 Go 语言作用域 | 不做咸鱼的小明</title>
+    <title>Go 语言的 goroutine | 不做咸鱼的小明</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -217,13 +212,13 @@ func main() {
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        浅谈 Go 语言作用域
+                        Go 语言的 goroutine
                     </div>
                 </div>
             </div>
@@ -262,64 +257,123 @@ func main() {
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-03-13
+                    <i class="fa fa-clock-o fa-fw"></i>2019-03-28
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="浅谈-Go-语言作用域"><a href="#浅谈-Go-语言作用域" class="headerlink" title="浅谈 Go 语言作用域"></a>浅谈 Go 语言作用域</h1><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
-
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">var</span> block <span class="token operator">=</span> <span class="token string">"package"</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  block <span class="token operator">:=</span> <span class="token string">"function"</span>
-
-  <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// := 会声明一个新变量并且将其初始化</span>
-    block <span class="token operator">:=</span> <span class="token string">"inner"</span>
-    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"The block is %s.\n"</span><span class="token punctuation">,</span> block<span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-
-  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"The block is %s.\n"</span><span class="token punctuation">,</span> block<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>输出</p>
-<pre class=" language-shell"><code class="language-shell">The block is inner.
-The block is function.
-</code></pre>
-<p>在这里 <code>block := &quot;inner&quot;</code> 等价于 <code>var block = &quot;inner&quot;</code>，它声明了一个新变量并且将其初始化。</p>
-<p>在 <code>{}</code> 这个代码块中新的变量 <code>block</code> 和<code>main</code> 中声明的 <code>block</code> 名称相同。</p>
-<ul>
-<li>在 <code>{}</code> 这个代码块中，它的优先级更高。</li>
-<li>它的作用范围只在 <code>{}</code> 这个代码块中。</li>
-</ul>
+                <h1 id="Go-语言的-goroutine"><a href="#Go-语言的-goroutine" class="headerlink" title="Go 语言的 goroutine"></a>Go 语言的 goroutine</h1><p><code>Go</code> 语言中，主 <code>goroutine</code> 中的代码执行完毕，当前程序就会立刻结束运行，无论其他 <code>goroutine</code> 是否正在运行。</p>
 <pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<span class="token keyword">var</span> block <span class="token operator">=</span> <span class="token string">"package"</span>
-
 <span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  block <span class="token operator">:=</span> <span class="token string">"function"</span>
-
-  <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// = 会覆盖 block</span>
-    block <span class="token operator">=</span> <span class="token string">"inner"</span>
-    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"The block is %s.\n"</span><span class="token punctuation">,</span> block<span class="token punctuation">)</span>
+  <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+    <span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
-
-  fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"The block is %s.\n"</span><span class="token punctuation">,</span> block<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>输出</p>
-<pre class=" language-shell"><code class="language-shell">The block is inner.
-The block is inner.
+<p>执行上面的代码，会发现在绝大部分情况下，是什么都没有输出的。</p>
+<p>其他 <code>goroutine</code> 还没有执行到 <code>fmt.Println(i)</code> 时，主 <code>goroutine</code> 中的代码就执行完毕了，让当前程序立刻结束运行。</p>
+<p>如何让其他 goroutine 先执行完呢？最简单的方法，是让主 <code>goroutine</code> 等待一下。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">"fmt"</span>
+  <span class="token string">"time"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+    <span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>Millisecond <span class="token operator">*</span> <span class="token number">500</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>这种情况很好理解：在 <code>{}</code> 这个代码块中，使用 <code>=</code> 改变了变量 <code>block</code> 的值。</p>
+<p>问题解决了，但是，等待多久是合适的呢？这是一个新的问题。</p>
+<p>这种情况，我们应该用 <code>sync.WaitGroup</code>。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">"fmt"</span>
+  <span class="token string">"sync"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> waitgroup sync<span class="token punctuation">.</span>WaitGroup
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+    waitgroup<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+      waitgroup<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  waitgroup<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>我们看到 <code>sync.WaitGroup</code> 解决了等待的问题，但是打印的全是 10，顺序不确定线程也不安全。</p>
+<p>那么问题来了，如何让多个 <code>goroutine</code> 按顺序执行并且线程安全？</p>
+<p>一般来说，我们使用锁解决这种问题，而自旋锁就是一种具体的实现。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">"fmt"</span>
+  <span class="token string">"sync"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> mu sync<span class="token punctuation">.</span>Mutex
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+    mu<span class="token punctuation">.</span><span class="token function">Lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fun <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+      <span class="token keyword">defer</span> mu<span class="token punctuation">.</span><span class="token function">Unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">go</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>在 <code>GO</code> 语言中，通道是一种比锁更简单的实现。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">"fmt"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  message <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+    <span class="token keyword">go</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      message <span class="token operator">&lt;-</span> i
+    <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">&lt;-</span>message<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="通道和锁"><a href="#通道和锁" class="headerlink" title="通道和锁"></a>通道和锁</h2><p>通道的能力是让数据流动起来，擅长的是数据流动的场景。</p>
+<ul>
+<li>传递数据的所有权，即把某个数据发送给其他协程</li>
+<li>分发任务，每个任务都是一个数据</li>
+<li>交流异步结果，结果是一个数据</li>
+</ul>
+<p>锁的能力是数据不动，某段时间只给一个协程访问数据的权限擅长数据位置固定的场景。</p>
+<ul>
+<li>缓存</li>
+<li>状态</li>
+</ul>
 
             </div>
             <hr>
@@ -342,7 +396,7 @@ The block is inner.
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/go-yu-yan-de-goroutine/">
                     <div class="card-image">
@@ -361,9 +415,63 @@ import "fmt"
 
 func main() </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-28
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Go/" target="_blank">
+                        <span class="chip bg-color">Go</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/qian-tan-go-yu-yan-zuo-yong-yu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="浅谈 Go 语言作用域">
+                        
+                        <span class="card-title">浅谈 Go 语言作用域</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">浅谈 Go 语言作用域package main
+
+import "fmt"
+
+var block = "package"
+
+func main() {
+  block := "function"
+
+  {
+    // := 会声明一个新变</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -381,56 +489,6 @@ func main() </div>
                     
                     <a href="/tags/Go/" target="_blank">
                         <span class="chip bg-color">Go</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/leetcode-1-two-sum/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="LeetCode 1. Two Sum">
-                        
-                        <span class="card-title">LeetCode 1. Two Sum</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">LeetCode 1. Two Sum
-Easy
-
-Given an array of integers, return indices of the two numbers such that they add up to a speci</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-20
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/算法与数据结构/" class="post-category" target="_blank">
-                                    算法与数据结构
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Go/" target="_blank">
-                        <span class="chip bg-color">Go</span>
-                    </a>
-                    
-                    <a href="/tags/算法/" target="_blank">
-                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
