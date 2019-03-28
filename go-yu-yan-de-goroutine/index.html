@@ -279,7 +279,7 @@ func main() ">
 </code></pre>
 <p>执行上面的代码，会发现在绝大部分情况下，是什么都没有输出的。</p>
 <p>其他 <code>goroutine</code> 还没有执行到 <code>fmt.Println(i)</code> 时，主 <code>goroutine</code> 中的代码就执行完毕了，让当前程序立刻结束运行。</p>
-<p>如何让其他 goroutine 先执行完呢？最简单的方法，是让主 <code>goroutine</code> 等待一下。</p>
+<p>如何让其他 <code>goroutine</code> 先执行完呢？最简单的方法，是让主 <code>goroutine</code> 等待一下。</p>
 <pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
@@ -297,8 +297,8 @@ func main() ">
   time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>Millisecond <span class="token operator">*</span> <span class="token number">500</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>问题解决了，但是，等待多久是合适的呢？这是一个新的问题。</p>
-<p>这种情况，我们应该用 <code>sync.WaitGroup</code>。</p>
+<p>没有输出的问题解决了，但是，等待多久是合适的呢？</p>
+<p>这种情况，<code>Sleep</code> 是一个不太好的实现，我们应该用 <code>sync.WaitGroup</code>。</p>
 <pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
@@ -320,7 +320,7 @@ func main() ">
   waitgroup<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>我们看到 <code>sync.WaitGroup</code> 解决了等待的问题，但是打印的全是 10，顺序不确定线程也不安全。</p>
+<p>我们看到 <code>sync.WaitGroup</code> 解决了等待时间不确定的问题，但是打印出来全是 <code>10</code>，执行顺序不确定线程也不安全。</p>
 <p>那么问题来了，如何让多个 <code>goroutine</code> 按顺序执行并且线程安全？</p>
 <p>一般来说，我们使用锁解决这种问题，而自旋锁就是一种具体的实现。</p>
 <pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
@@ -344,7 +344,7 @@ func main() ">
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>在 <code>GO</code> 语言中，通道是一种比锁更简单的实现。</p>
+<p>在 <code>GO</code> 语言中，通道是比锁更简单的实现。</p>
 <pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
@@ -369,7 +369,7 @@ func main() ">
 <li>分发任务，每个任务都是一个数据</li>
 <li>交流异步结果，结果是一个数据</li>
 </ul>
-<p>锁的能力是数据不动，某段时间只给一个协程访问数据的权限擅长数据位置固定的场景。</p>
+<p>锁的能力是数据不动，某段时间只给一个协程访问数据的权限，擅长数据位置固定的场景。</p>
 <ul>
 <li>缓存</li>
 <li>状态</li>
