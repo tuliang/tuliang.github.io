@@ -456,87 +456,92 @@ var rawData = [
   ["2020-02-21", 1.4088, 3039.67, 27308.81]
 ]
 
-var data = splitData(rawData);
 
-var title = "基金净值: "
-    + data.values[data.values.length-1] 
-    + " 当天涨幅: " + data.values4[data.values4.length-1] + "%";
-$('.post-cate').append(title);
+    
+// 异步加载数据
+$.get('data.json').done(function (rawData) {
+    var data = splitData(rawData.data);
 
-var post_date = data.categoryData[data.categoryData.length-1];
-$('.post-date').append(post_date);
+    var title = "基金净值: "
+        + data.values[data.values.length-1] 
+        + " 当天涨幅: " + data.values4[data.values4.length-1] + "%";
+    $('.post-cate').append(title);
 
-var year = "基金收益: "
-    + buildData(data.values[data.values.length-1], data.values[0]) + "%"
-    + " 上证指数: " + buildData(data.values2[data.values2.length-1], data.values2[0]) + "%"
-    + " 恒生指数: " + buildData(data.values3[data.values3.length-1], data.values3[0]) + "%";
-$('.article-tag span').text(year)
+    var post_date = data.categoryData[data.categoryData.length-1];
+    $('.post-date').append(post_date);
 
-// 基于准备好的dom，初始化echarts实例
-var myChart = echarts.init(document.getElementById('main'));
+    var year = "基金收益: "
+        + buildData(data.values[data.values.length-1], data.values[0]) + "%"
+        + " 上证指数: " + buildData(data.values2[data.values2.length-1], data.values2[0]) + "%"
+        + " 恒生指数: " + buildData(data.values3[data.values3.length-1], data.values3[0]) + "%";
+    $('.article-tag span').text(year)
 
-// 指定图表的配置项和数据
-var option = {
-    textStyle: {
-        fontFamily: 'Microsoft YaHei, 微软雅黑, Arial, Verdana, sans-serif'
-    },
-    title: {
-        text: '净值走势'
-    },
-    tooltip : {
-        trigger: 'axis'
-    },
-    legend: {
-        data: legend
-    },
-    grid: {
-        left: 50,
-        right: 80,
-        bottom: 50,
-        containLabel: true
-    },
-    xAxis : [
-        {
-            type : 'category',
-            boundaryGap : false,
-            data : data.categoryData
-        }
-    ],
-    yAxis : [
-        {
-            type : 'value',
-            min: 0.9
-        }
-    ],
-    series : [
-        {
-            name:'小明基金',
-            type:'line',
-            data: data.values
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        textStyle: {
+            fontFamily: 'Microsoft YaHei, 微软雅黑, Arial, Verdana, sans-serif'
         },
-        {
-            name:'上证指数',
-            type:'line',
-            data: data.values2
+        title: {
+            text: '净值走势'
         },
-        {
-            name:'恒生指数',
-            type:'line',
-            data: data.values3
-        }
-    ],
-    dataZoom: [
-        {
-            id: 'dataZoomX',
-            type: 'slider',
-            xAxisIndex: [0],
-            filterMode: 'filter'
-        }
-    ]
-};
-
-// 使用刚指定的配置项和数据显示图表。
-myChart.setOption(option);
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data: legend
+        },
+        grid: {
+            left: 50,
+            right: 80,
+            bottom: 50,
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : data.categoryData
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                min: 0.9
+            }
+        ],
+        series : [
+            {
+                name:'小明基金',
+                type:'line',
+                data: data.values
+            },
+            {
+                name:'上证指数',
+                type:'line',
+                data: data.values2
+            },
+            {
+                name:'恒生指数',
+                type:'line',
+                data: data.values3
+            }
+        ],
+        dataZoom: [
+            {
+                id: 'dataZoomX',
+                type: 'slider',
+                xAxisIndex: [0],
+                filterMode: 'filter'
+            }
+        ]
+    };
+    
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+});
 </script>
 
               </div>
