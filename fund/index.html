@@ -118,10 +118,18 @@ function buildData(next, prev) {
 // 异步加载数据
 $.get('/data.json').done(function (rawData) {
     var data = splitData(rawData.data);
+    
+    var fundNetWorth = data.values[data.values.length-1];
+    var dateBegin = new Date("2018/10/19 00:00:00");
+    var dateEnd = new Date();
+    var dateDiff = dateEnd.getTime() - dateBegin.getTime();
+    var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));
+    var annualized = fundNetWorth*dayDiff/365;
 
     var title = "基金净值: "
-        + data.values[data.values.length-1] 
-        + " 当天涨幅: " + data.values4[data.values4.length-1] + "%";
+        + fundNetWorth 
+        + " 当天涨幅: " + data.values4[data.values4.length-1] + "%"
+        + " 年化收益率: " + annualized + "%";
     $('.post-cate').append(title);
 
     var post_date = data.categoryData[data.categoryData.length-1];
