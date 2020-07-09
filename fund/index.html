@@ -124,6 +124,7 @@ $.get('/data.json').done(function (rawData) {
     var dateEnd = new Date();
     var dateDiff = dateEnd.getTime() - dateBegin.getTime();
     var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));
+    console.log(dayDiff);
     var annualized = (fundNetWorth * dayDiff / 365 - 1).toFixed(2);
 
     var title = "基金净值: "
