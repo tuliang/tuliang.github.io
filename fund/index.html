@@ -126,9 +126,6 @@ $.get('/data.json').done(function (rawData) {
     var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));
     console.log(dayDiff);
 
-    var startValue = data.length - 300;
-    console.log(startValue);
-
     var title = "基金净值: "
         + fundNetWorth 
         + " 当天涨幅: " + data.values4[data.values4.length-1] + "%";
@@ -201,8 +198,7 @@ $.get('/data.json').done(function (rawData) {
                 id: 'dataZoomX',
                 type: 'slider',
                 xAxisIndex: 0,
-                filterMode: 'filter',
-                startValue: startValue
+                filterMode: 'filter'
             }
         ]
     };
