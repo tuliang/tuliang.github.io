@@ -120,11 +120,6 @@ $.get('/data.json').done(function (rawData) {
     var data = splitData(rawData.data);
     
     var fundNetWorth = data.values[data.values.length-1];
-    var dateBegin = new Date("2018/10/19 00:00:00");
-    var dateEnd = new Date();
-    var dateDiff = dateEnd.getTime() - dateBegin.getTime();
-    var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));
-    console.log(dayDiff);
 
     var title = "基金净值: "
         + fundNetWorth 
@@ -143,10 +138,8 @@ $.get('/data.json').done(function (rawData) {
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));
     
-    var start = data.values.length-365;
-    console.log(start);
-    var end = data.values.length-1;
-    console.log(end);
+    var startValue = data.values.length-365;
+    console.log(startValue);
 
     // 指定图表的配置项和数据
     var option = {
@@ -203,8 +196,7 @@ $.get('/data.json').done(function (rawData) {
                 type: 'slider',
                 xAxisIndex: 0,
                 filterMode: 'filter',
-                start: start,
-                end: end
+                startValue: startValue
             }
         ]
     };
