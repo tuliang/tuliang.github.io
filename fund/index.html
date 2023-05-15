@@ -142,6 +142,8 @@ $.get('/data.json').done(function (rawData) {
 
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));
+    
+    var start = data.values.length-365;
 
     // 指定图表的配置项和数据
     var option = {
@@ -197,7 +199,8 @@ $.get('/data.json').done(function (rawData) {
                 id: 'dataZoomX',
                 type: 'slider',
                 xAxisIndex: 0,
-                filterMode: 'filter'
+                filterMode: 'filter',
+                start: start
             }
         ]
     };
