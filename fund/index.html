@@ -144,6 +144,7 @@ $.get('/data.json').done(function (rawData) {
     var myChart = echarts.init(document.getElementById('main'));
     
     var start = data.values.length-365;
+    console.log(start);
 
     // 指定图表的配置项和数据
     var option = {
@@ -206,6 +207,7 @@ $.get('/data.json').done(function (rawData) {
     };
     
     // 使用刚指定的配置项和数据显示图表。
+    console.log(option);
     myChart.setOption(option);
 });
 </script>
