@@ -145,6 +145,8 @@ $.get('/data.json').done(function (rawData) {
     
     var start = data.values.length-365;
     console.log(start);
+    var end = data.values.length-1;
+    console.log(end);
 
     // 指定图表的配置项和数据
     var option = {
@@ -201,7 +203,8 @@ $.get('/data.json').done(function (rawData) {
                 type: 'slider',
                 xAxisIndex: 0,
                 filterMode: 'filter',
-                start: start
+                start: start,
+                end: end
             }
         ]
     };
